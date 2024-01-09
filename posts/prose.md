@@ -1,6 +1,6 @@
 ---
 title: prose.sh
-description: guide to using prose.sh 
+description: A blog platform for hackers
 keywords: [pico, prose]
 ---
 

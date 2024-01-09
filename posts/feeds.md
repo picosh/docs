@@ -1,6 +1,6 @@
 ---
 title: feeds.sh
-description: guide to using feeds.sh 
+description: An rss email notification service
 keywords: [pico, feeds]
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: tuns.sh
-description: A guide to using tuns.sh
+description: Access localhost using https
 keywords: [pico, tuns]
 ---
 
@@ -13,9 +13,9 @@ localhost using SSH. Once you have a pico account (as setup on our other
 services) and we apply a feature flag to your user, you'll be able to login to
 `tuns.sh`.
 
-## Closed beta
+> NOTICE: This service is currently in closed beta
 
-Anyone can get an invite!
+However, anyone can get an invite!
 
 The only requirement is to stay in our IRC channel and be willing to provide
 feedback on how we can improve the service.

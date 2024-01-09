@@ -92,6 +92,11 @@ func main() {
 			Href: "/privacy",
 			Page: pager("privacy.md"),
 		},
+		{
+			Text: "About",
+			Href: "/about",
+			Page: pager("about.md"),
+		},
 	}
 
 	config := &pdocs.DocConfig{

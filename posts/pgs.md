@@ -1,12 +1,12 @@
 ---
 title: pgs.sh
-description: guide to using pgs.sh 
+description: A zero-dependency static site hosting service for hackers
 keywords: [pico, pgs]
 ---
 
-## Closed beta
+> NOTICE: This service is currently in closed beta
 
-Anyone can get an invite!
+However, anyone can get an invite!
 
 The only requirement is to stay in our IRC channel and be willing to provide
 feedback on how we can improve the service.

@@ -1,6 +1,6 @@
 ---
 title: lists.sh
-description: guide to using lists.sh 
+description: A microblog for lists
 keywords: [pico, lists]
 ---
 

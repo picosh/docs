@@ -38,3 +38,16 @@ When you SSH again, use your username that you set in the CMS.
 ```bash
 ssh glossy@prose.sh
 ```
+
+## Next Steps
+
+What service did you want to use first? Read the docs to get started with any of
+our services:
+
+- [pgs.sh](/pgs)
+- [prose.sh](/prose)
+- [pastes.sh](/prose)
+- [imgs.sh](/imgs)
+- [feeds.sh](/feeds)
+- [lists.sh](/lists)
+- [tuns.sh](/tuns)

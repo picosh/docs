@@ -1,6 +1,6 @@
 ---
 title: imgs.sh
-description: guide to using imgs.sh 
+description: Image hosting for hackers
 keywords: [pico, imgs]
 ---
 
