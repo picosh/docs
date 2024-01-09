@@ -1,0 +1,55 @@
+{{template "base" .}}
+
+{{define "title"}}{{.Data.Title}}{{end}}
+
+{{define "meta"}}
+<script src="/docs.js"></script>
+{{end}}
+
+{{define "attrs"}}class="container-center"{{end}}
+
+{{define "body"}}
+<div class="docs">
+  <nav class="toc">
+    {{template "toc" .}}
+    {{template "footer" .}}
+  </nav>
+
+  <main class="content">
+    <div class="container">
+      <button type="button" class="toc-btn">nav</button>
+
+      <h1 class="text-2xl text-underline-hdr text-hdr inline-block">{{.Data.Title}}</h1>
+      <p>{{.Data.Description}}</p>
+
+      <hr />
+
+      <article class="md">
+        {{.Data.Html}}
+      </article>
+
+      <div class="flex justify-between gap">
+        {{if .Prev}}
+          <a class="box flex items-center" href="{{.Prev.GenHref}}">
+            <div class="flex flex-col items-start">
+              <div class="text-sm font-grey-light">&lt;&lt; PREVIOUS</div>
+              <div class="text-xl">{{.Prev.Text}}</div>
+            </div>
+          </a>
+        {{end}}
+
+        {{if .Next}}
+          <a class="box flex items-center justify-end" href="{{.Next.GenHref}}">
+            <div class="flex flex-col items-end">
+              <div class="text-sm font-grey-light">
+                NEXT &gt;&gt;
+              </div>
+              <div class="text-xl">{{.Next.Text}}</div>
+            </div>
+          </a>
+        {{end}}
+      </div>
+    </div>
+  </main>
+</div>
+{{end}}
