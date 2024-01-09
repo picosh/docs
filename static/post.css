@@ -14,7 +14,8 @@
 .md h2 a,
 .md h3 a,
 .md h4 a {
-  color: var(--grey);
+  color: var(--grey-light);
+  text-decoration: none;
 }
 
 .md h1 {
