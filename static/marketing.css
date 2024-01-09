@@ -1,0 +1,61 @@
+.hero {
+  padding: 10rem 0;
+}
+
+.mk-nav {
+  padding: 1rem;
+}
+
+.mk-nav a,
+.mk-nav a:visited,
+.mk-nav a:visited:hover,
+.mk-nav a:hover {
+  color: var(--white);
+  text-decoration: none;
+}
+
+.mk-nav a:visited:hover,
+.mk-nav a:hover {
+  text-decoration: underline;
+}
+
+.mk-header {
+  line-height: 1;
+  display: inline-block;
+  background-image: linear-gradient(to right, #FF5555, #FF79C6, #F8F859);
+  color: transparent;
+  background-clip: text;
+  border: 3px solid #FF79C6;
+  padding: 8px 10px 10px 10px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 4px 0px black;
+}
+
+.mk-subheader {
+  font-size: 2rem;
+  line-height: 1;
+  border-bottom: none;
+  margin: 10px 0;
+  padding: 0;
+}
+
+.mk-desc {
+  margin: 0;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+  gap: 1rem;
+}
+
+.features > div {
+  border-radius: 10px;
+  border: 1px solid var(--white);
+  padding: 1rem;
+}
+
+.features h2 {
+  border: none;
+  padding: 0;
+}

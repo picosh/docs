@@ -1,0 +1,114 @@
+/* ==== MARKDOWN ==== */
+
+.md h1,
+.md h2,
+.md h3,
+.md h4 {
+  margin: 1.5rem 0;
+  font-weight: bold;
+  border-bottom: 2px solid var(--grey);
+  padding-bottom: 15px;
+}
+
+.md h1 a,
+.md h2 a,
+.md h3 a,
+.md h4 a {
+  color: var(--grey);
+}
+
+.md h1 {
+  font-size: 1.60rem;
+  line-height: 1.15;
+}
+
+.md h2 {
+  font-size: 1.45rem;
+  line-height: 1.15;
+}
+
+.md h3 {
+  font-size: 1.20rem;
+}
+
+.md h4 {
+  font-size: 1rem;
+}
+
+/* ==== POST ==== */
+
+.text-hdr {
+  color: var(--hover);
+}
+
+.text-underline-hdr {
+  border-bottom: 3px solid var(--hover);
+  padding-bottom: 3px;
+}
+
+.docs {
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  grid-template-rows: auto 1fr;
+}
+
+.toc {
+  padding: 0 1rem;
+  overflow-y: auto;
+}
+
+.toc ul, ol {
+  list-style: none;
+  padding: 0 0 0 0.5rem;
+}
+
+.toc li {
+  margin: 0 0 0.15rem 0;
+}
+
+.toc li:first-child {
+  margin-top: 0;
+}
+
+.toc a {
+  color: var(--grey-light);
+}
+
+.toc-btn {
+  display: none;
+}
+
+.current {
+  background-color: var(--blockquote-bg) !important;
+  border-right: 5px solid var(--blockquote);
+}
+
+.current a {
+  color: var(--white);
+}
+
+.current-page a {
+  color: var(--white);
+}
+
+@media only screen and (max-width: 600px) {
+  .toc {
+    width: 0px;
+    padding: 0;
+  }
+
+  .nav-show {
+    width: 95%;
+  }
+
+  .toc-btn {
+    display: block;
+  }
+
+  .docs {
+    grid-template-columns: auto 1fr;
+  }
+}
