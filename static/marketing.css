@@ -19,18 +19,6 @@
   text-decoration: underline;
 }
 
-.mk-header {
-  line-height: 1;
-  display: inline-block;
-  background-image: linear-gradient(to right, #FF5555, #FF79C6, #F8F859);
-  color: transparent;
-  background-clip: text;
-  border: 3px solid #FF79C6;
-  padding: 8px 10px 10px 10px;
-  border-radius: 10px;
-  box-shadow: 0px 2px 4px 0px black;
-}
-
 .mk-subheader {
   font-size: 2rem;
   line-height: 1;
@@ -47,12 +35,6 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
   gap: 1rem;
-}
-
-.features > div {
-  border-radius: 10px;
-  border: 1px solid var(--white);
-  padding: 1rem;
 }
 
 .features h2 {

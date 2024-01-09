@@ -31,6 +31,7 @@
     --hover: #d73a49;
     --grey: #ccc;
     --grey-light: #6a708e;
+    --shadow: #252525;
   }
 }
 
@@ -50,6 +51,7 @@
     --hover: #ff80bf;
     --grey: #414558;
     --grey-light: #6a708e;
+    --shadow: #252525;
   }
 }
 
@@ -428,20 +430,38 @@ figure {
 
 /* ==== HELPERS ==== */
 
+.logo-header {
+  line-height: 1;
+  display: inline-block;
+  background-image: linear-gradient(to right, #FF5555, #FF79C6, #F8F859);
+  color: transparent;
+  background-clip: text;
+  border: 3px solid #FF79C6;
+  padding: 8px 10px 10px 10px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 0px 0px var(--shadow);
+}
+
 .btn-link {
   border: 3px solid hsl(var(--main-hue), 92%, 66%);
   background-color: hsl(var(--main-hue), 92%, 66%);
   padding: 0.5rem 1rem;
   border-radius: 0.25rem;
-  box-shadow: 0px 1px 2px 0px black;
+  box-shadow: 0px 5px 0px 0px var(--shadow);
   color: var(--white);
   text-decoration: none;
   font-weight: bold;
 }
 
-.btn-link:visited,
 .btn-link:visited:hover,
 .btn-link:hover {
+  border: 3px solid hsl(260, 92%, 66%);
+  background-color: hsl(260, 92%, 66%);
+  color: var(--white);
+  transform: scale(.98, .98);
+}
+
+.btn-link:visited {
   color: var(--white);
 }
 
@@ -450,11 +470,9 @@ figure {
   border-radius: .5rem;
   padding: 1rem;
   text-decoration: none;
-  box-shadow: 0px 1px 2px 0px black;
+  box-shadow: 0px 5px 0px 0px var(--shadow);
   color: var(--white);
   width: 100%;
-  max-width: 200px;
-  height: 100px;
 }
 
 .box:hover {
