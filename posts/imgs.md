@@ -76,6 +76,9 @@ We have an API that allows users to resize images on-the-fly. Currently we only
 support downscaling.
 
 ```md
-[!profile](/profile/x500) # auto scale width [!profile](/profile/500x500) #
-scale width and height [!profile](/profile/500x) # auto scale height
+[!profile](/profile/x500) # auto scale width
+
+[!profile](/profile/500x500) # scale width and height
+
+[!profile](/profile/500x) # auto scale height
 ```

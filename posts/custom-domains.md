@@ -15,7 +15,10 @@ Let's Encrypt. In order for this to work, 2 DNS records need to be created:
 `CNAME` for the domain to the pico service (subdomains or DNS hosting with CNAME
 flattening) or `A` record.
 
-## For prose.sh
+## prose.sh
+
+Setting up a custom domain for prose is the same as all the other services,
+except for pgs -- more on that later.
 
 ```
 CNAME subdomain.yourcustomdomain.com -> prose.sh
@@ -47,7 +50,7 @@ an endpoint to check whether or not custom domains are setup:
 curl -vvvv https://prose.sh/check?domain=xxx
 ```
 
-## For pgs.sh
+## pgs.sh
 
 [pgs.sh](https://pgs.sh) is a little different in that we allow the user to
 configure custom domains per project so it's a little different.
@@ -61,7 +64,7 @@ _pgs.subdomain.yourcustomdomain.com.    300     IN      TXT
 "{user}-{project}"
 ```
 
-### Example: top-level domain
+### Example: Top-Level Domain
 
 - Custom domain `erock.io`
 - User `erock`
@@ -74,7 +77,7 @@ erock.io.         300     IN      CNAME   pgs.sh.
 _pgs.erock.io.    300     IN      TXT     "erock-kittens"
 ```
 
-### Example: subdomain
+### Example: Subdomain
 
 - Custom domain `meow.erock.io`
 - User `erock`
@@ -92,5 +95,5 @@ _pgs.meow.erock.io.    300     IN      TXT     "erock-kittens"
 In that case, you need to get the IP address of the service you want to point to
 and then use that as an `A` record.
 
-> WARNING: We make no gaurentees that our IP addresses will stay the same. Use
-> at your own risk!
+> WARNING: We make **no** guarantees that our IP addresses will stay the same.
+> Use at your own risk!

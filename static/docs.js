@@ -20,12 +20,16 @@ function init() {
   scrollEl.addEventListener("scroll", updateNav, { passive: true });
   window.addEventListener("load", updateNav);
 
+  const docs = document.querySelector(".docs");
   const nav = document.querySelector(".toc");
+  const main = document.querySelector("main");
   const btns = document.querySelectorAll(".toc-btn");
   btns.forEach((btn) => {
     btn.addEventListener("click", (e) => {
       e.preventDefault();
-      nav.classList.toggle("nav-show");
+      docs.classList.toggle("navi");
+      // nav.classList.toggle("nav-show");
+      // main.classList.toggle("hidden");
     });
   });
 
