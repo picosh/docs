@@ -7,15 +7,20 @@ keywords: [pico, getting, started]
 > All of our services use the same database, so when you create an account with
 > one, you also have access to all of our other services.
 
+For the purposes of creating a pico account, this guide will use the `prose.sh`
+service to create one.
+
 ## Create your account with Public-Key Cryptography
 
 We don't need your email address.
 
-To get started, simply ssh into any service's CMS.
+To get started, simply SSH into any service's CMS.
 
 ```bash
 ssh new@prose.sh
 ```
+
+![pico-account-create](https://hey.imgs.sh/pico-account-create.png)
 
 > Note: `new` is a special username that will always send you to account
 > creation, even with multiple accounts associated with your key-pair.
