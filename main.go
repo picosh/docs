@@ -68,9 +68,14 @@ func main() {
 			Page: pager("tuns.md"),
 		},
 		{
-			Text: "Community",
-			Href: "/comms",
-			Page: pager("comms.md"),
+			Text: "IRC",
+			Href: "/irc",
+			Page: pager("irc.md"),
+			Children: []*pdocs.Sitemap{
+				{Text: "Web"},
+				{Text: "Senpai"},
+				{Text: "Connect to Libera"},
+			},
 		},
 		{
 			Text: "FAQ",
