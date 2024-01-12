@@ -15,21 +15,19 @@ function init() {
   topNav();
 
   let throttle = null;
-  const headers = document.querySelectorAll("h2,h3,h4");
-  const scrollEl = document.querySelector("body");
+  const headers = document.querySelectorAll("h2");
+  const scrollEl = window;
   scrollEl.addEventListener("scroll", updateNav, { passive: true });
   window.addEventListener("load", updateNav);
 
-  const docs = document.querySelector(".docs");
+  const docs = document.querySelector("body");
   const nav = document.querySelector(".toc");
-  const main = document.querySelector("main");
+  const main = document.querySelector(".post");
   const btns = document.querySelectorAll(".toc-btn");
   btns.forEach((btn) => {
     btn.addEventListener("click", (e) => {
       e.preventDefault();
       docs.classList.toggle("navi");
-      // nav.classList.toggle("nav-show");
-      // main.classList.toggle("hidden");
     });
   });
 
