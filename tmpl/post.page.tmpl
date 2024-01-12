@@ -7,52 +7,50 @@
 <script src="/docs.js"></script>
 {{end}}
 
-{{define "attrs"}}class="container"{{end}}
+{{define "attrs"}}class=""{{end}}
 
 {{define "body"}}
-<div class="docs">
-  <nav class="toc">
-    {{template "toc" .}}
-    {{template "footer" .}}
-  </nav>
+<nav class="toc">
+  {{template "toc" .}}
+  {{template "footer" .}}
+</nav>
 
-  <main class="content">
-    <button type="button" class="toc-btn btn-icon mt flex items-center justify-center">
-      <svg style="width:20px; height:20px" viewBox="0 0 20 20">
-        <path fill="currentColor" d="M1,4 H18 V6 H1 V4 M1,9 H18 V11 H1 V7 M3,14 H18 V16 H1 V14" />
-      </svg>
-    </button>
+<main class="post">
+  <button type="button" class="toc-btn btn-icon mt flex items-center justify-center">
+    <svg style="width:20px; height:20px" viewBox="0 0 20 20">
+      <path fill="currentColor" d="M1,4 H18 V6 H1 V4 M1,9 H18 V11 H1 V7 M3,14 H18 V16 H1 V14" />
+    </svg>
+  </button>
 
-    <h1 class="text-2xl text-underline-hdr text-hdr inline-block">{{.Data.Title}}</h1>
-    <h2 class="text-xl">{{.Data.Description}}</h2>
+  <h1 class="text-2xl text-underline-hdr text-hdr inline-block">{{.Data.Title}}</h1>
+  <h2 class="text-xl">{{.Data.Description}}</h2>
 
-    <hr />
+  <hr />
 
-    <article class="md">
-      {{.Data.Html}}
-    </article>
+  <article class="md">
+    {{.Data.Html}}
+  </article>
 
-    <div class="flex justify-between gap mt-8 mb-16">
-      {{if .Prev}}
-        <a class="box pager max-w-half flex items-center" href="{{.Prev.GenHref}}">
-          <div class="flex flex-col items-start">
-            <div class="text-sm font-grey-light">&lt;&lt; PREVIOUS</div>
-            <div class="text-xl">{{.Prev.Text}}</div>
+  <div class="flex justify-between gap mt-8 mb-16">
+    {{if .Prev}}
+      <a class="box pager max-w-half flex items-center" href="{{.Prev.GenHref}}">
+        <div class="flex flex-col items-start">
+          <div class="text-sm font-grey-light">&lt;&lt; PREVIOUS</div>
+          <div class="text-xl">{{.Prev.Text}}</div>
+        </div>
+      </a>
+    {{end}}
+
+    {{if .Next}}
+      <a class="box pager max-w-half flex items-center justify-end" href="{{.Next.GenHref}}">
+        <div class="flex flex-col items-end">
+          <div class="text-sm font-grey-light">
+            NEXT &gt;&gt;
           </div>
-        </a>
-      {{end}}
-
-      {{if .Next}}
-        <a class="box pager max-w-half flex items-center justify-end" href="{{.Next.GenHref}}">
-          <div class="flex flex-col items-end">
-            <div class="text-sm font-grey-light">
-              NEXT &gt;&gt;
-            </div>
-            <div class="text-xl align-right">{{.Next.Text}}</div>
-          </div>
-        </a>
-      {{end}}
-    </div>
-  </main>
-</div>
+          <div class="text-xl align-right">{{.Next.Text}}</div>
+        </div>
+      </a>
+    {{end}}
+  </div>
+</main>
 {{end}}

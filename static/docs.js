@@ -16,7 +16,7 @@ function init() {
 
   let throttle = null;
   const headers = document.querySelectorAll("h2,h3,h4");
-  const scrollEl = document.querySelector(".content");
+  const scrollEl = document.querySelector("body");
   scrollEl.addEventListener("scroll", updateNav, { passive: true });
   window.addEventListener("load", updateNav);
 
