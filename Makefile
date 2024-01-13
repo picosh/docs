@@ -11,3 +11,7 @@ ssg:
 dev: ssg
 	rsync -vr ./public/ hey@pgs.sh:/docs-local
 .PHONY: dev
+
+fmt:
+	deno fmt
+.PHONY: fmt

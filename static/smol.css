@@ -431,6 +431,10 @@ figure {
 }
 
 .gap {
+  gap: 0.5rem;
+}
+
+.gap-2 {
   gap: 1rem;
 }
 
