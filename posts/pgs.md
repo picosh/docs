@@ -20,12 +20,11 @@ ask for an invite.
 - Terminal workflow
 - No client-side installation required to fully manage static sites
 - Distinct static sites as projects
-- Unlimited projects created on-the-fly (no need to create a project first)
-- Deploy using `rsync`, `scp`, or `sftp`
-- Promotion/rollback support (via symbolic linking from one project to another)
+- Unlimited projects, created on-the-fly (no need to create a project first)
+- Deploy using [rsync, sftp, or scp](/file-uploads)
+- Promotion/rollback support
 - Managed HTTPS for all projects (e.g. `https://erock-myproject.pgs.sh`)
-- [Custom domains](/custom-domains) for projects (managed simply by `TXT`
-  records)
+- [Custom domains](/custom-domains#pgssh) for projects
 - [User-defined redirects](#user-defined-redirects)
 - [SPA support](#single-page-applications)
 - 1GB max storage
