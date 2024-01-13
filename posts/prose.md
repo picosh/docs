@@ -7,7 +7,7 @@ keywords: [pico, prose]
 ## Features
 
 - Github flavor markdown
-- [Custom domains](/custom-domains)
+- [Custom domains](/custom-domains#prosesh)
 - Looks great on any device
 - Bring your own editor
 - You control the source files
@@ -48,7 +48,7 @@ Cya!
 When your post is ready to be published, copy the file to our server with a
 familiar command:
 
-```
+```bash
 rsync ~/blog/* prose.sh:/
 ```
 
@@ -83,7 +83,7 @@ rsync ~/blog/*.jpg prose.sh:/
 We support adding frontmatter to the top of your markdown posts. A frontmatter
 looks like the following:
 
-```
+```md
 ---
 title: some title!
 description: this is a great description
@@ -109,7 +109,7 @@ to you to style it. For convenience we added an `id` to the containing element
 There's a special file you can upload `_readme.md` which will allow users to add
 a bio and links to their blog landing page.
 
-```
+```md
 ---
 title: some title!
 description: this is a great description
@@ -149,7 +149,7 @@ post pages.
 Inside the `_readme.md` metadata file, there's a variable layout option that
 will change the layout of your blog index page.
 
-```
+```md
 ---
 layout: aside # or default
 ---

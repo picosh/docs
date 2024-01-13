@@ -4,10 +4,13 @@ description: How to upload and download files from pico services
 keywords: [pico, file, upload, download]
 ---
 
+All of our services require users to send us files in order to manage content.
+Read the [How it Works](/how-it-works) for an under-the-hood, technical summary.
+
 ## How do I upload files?
 
-Unless otherwise specified, all of services support the following ways to upload
-files to our services.
+Unless otherwise specified, all our services support the following ways to
+upload files.
 
 ### rsync
 
@@ -41,6 +44,8 @@ single files to projects, but we also support "deploying" static sites with
 [promotion and rollback](/pgs#project-promotion-and-rollback).
 
 ## How do I delete files?
+
+We have a couple ways to delete files depending on your use-case.
 
 ### sftp
 

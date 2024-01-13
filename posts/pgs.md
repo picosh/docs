@@ -20,10 +20,10 @@ ask for an invite.
 - Terminal workflow
 - No client-side installation required to fully manage static sites
 - Distinct static sites as projects
-- Unlimited projects, created on-the-fly (no need to create a project first)
+- Unlimited projects, created instantly upon upload
 - Deploy using [rsync, sftp, or scp](/file-uploads)
 - Promotion/rollback support
-- Managed HTTPS for all projects (e.g. `https://erock-myproject.pgs.sh`)
+- Managed HTTPS for all projects
 - [Custom domains](/custom-domains#pgssh) for projects
 - [User-defined redirects](#user-defined-redirects)
 - [SPA support](#single-page-applications)
@@ -46,7 +46,7 @@ on-the-fly. Further, we provide TLS for every project automatically. In this
 case the url for the project above would look something like
 `https://{username}-myproj.pgs.sh`.
 
-## Project promotion and rollback
+## Instant promotion and rollback
 
 Additionally you can setup a pipeline for promotion and rollbacks, which will
 instantly update your project.
@@ -55,9 +55,9 @@ instantly update your project.
 ssh pgs.sh link project-prod project-d0131d4
 ```
 
-A common way to perform promotions within pgs.sh is to setup CI/CD so every push
-to main would trigger a build and create a new project based on the git commit
-hash (e.g. `project-d0131d4`).
+A common way to perform promotions within pgs.sh is to setup CI/CD so every
+`git` push to `main` would trigger a build and create a new project based on the
+git commit hash (e.g. `project-d0131d4`).
 
 This command will create a symbolic link from `project-prod` to
 `project-d0131d4`. Want to rollback a release? Just change the link for
@@ -154,7 +154,7 @@ Read more about it at [netflify](https://docs.netlify.com/routing/redirects).
 
 ## Single-Page Applications
 
-pgs supports SPAs! Upload a `_redirects` file your project:
+We support SPAs! Upload a `_redirects` file to your project:
 
 ```
 /*  /index.html  200
