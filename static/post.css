@@ -60,13 +60,14 @@ body {
 
 .toc {
   position: fixed;
-  left: 100px;
+  left: 0;
   right: 0;
   top: 0;
   bottom: 0;
-  max-width: 350px;
+  max-width: 250px;
   margin: 0;
   display: block;
+  padding-left: 25px;
 }
 
 .post {
@@ -112,7 +113,7 @@ body {
   min-width: 150px;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
   body {
     padding: 0 1rem;
   }

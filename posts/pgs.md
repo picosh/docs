@@ -47,7 +47,7 @@ on-the-fly. Further, we provide TLS for every project automatically. In this
 case the url for the project above would look something like
 `https://{username}-myproj.pgs.sh`.
 
-## Project promotion and rollbacks
+## Project promotion and rollback
 
 Additionally you can setup a pipeline for promotion and rollbacks, which will
 instantly update your project.

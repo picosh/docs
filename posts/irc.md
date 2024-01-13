@@ -4,12 +4,12 @@ description: How we interact with our users
 keywords: [pico, irc, bouncer]
 ---
 
-All of our realtime communication happens through IRC at #pico.sh @ libera.chat.
+All our realtime communication happens through IRC at #pico.sh @ libera.chat.
 
-We are also excited to announce that we have a hosted IRC bouncer and web client
-that all pico users can use.
+We are delighted to provide a hosted IRC bouncer and web client for us on the
+team as well as pico users.
 
-> NOTE: for libera.chat you must
+> NOTE: For libera.chat you must
 > [ensure you have a libera account.](https://libera.chat/guides/registration)
 
 ## Generate a login token for bouncer
@@ -17,7 +17,7 @@ that all pico users can use.
 ![pico-token-menu](https://hey.imgs.sh/pico-token-menu.png)
 
 - SSH into a pico service CMS (e.g. `ssh prose.sh`)
-- Select "tokens" submenu
+- Select "Manage Tokens" submenu
 - Type "n" to generate a new token
 - Save token someplace safe
 
@@ -25,10 +25,12 @@ that all pico users can use.
 
 Next you need to pick a client to connect to the bouncer and finish setup:
 
-- [web - chat.pico.sh](#web)
-- [terminal - senpai](#senpai)
+- [web](#web) - at [chat.pico.sh](https://chat.pico.sh)
+- [terminal](#senpai) - senpai
 
 ## Web
+
+We provide pico users with a self-hosted version of gamja.
 
 ### Log into [chat.pico.sh](https://chat.pico.sh)
 
@@ -46,15 +48,18 @@ Next you need to pick a client to connect to the bouncer and finish setup:
   connection. Did you mean to use a specific network?" that's okay
 - Message `BouncerServ` (`/msg BouncerServ help`) to configure the bouncer
 
-### Libera
-
-[Connect to libera.chat](#connect-to-libera)
+Next step is to [connect to libera.chat](#connect-to-libera) section.
 
 ## Senpai
+
+Senpai is a modern terminal client coupled pretty tightly to `soju` development
+so it's a great fit for us at pico -- we use it.
 
 [senpai (terminal client)](https://git.sr.ht/~delthas/senpai)
 
 ### Configure senpai
+
+Create a config file
 
 ```bash
 mkdir -p ~/.config/senpai
@@ -70,15 +75,13 @@ password "<pico-token>"
 tls true
 ```
 
-### Open senpai
+Open senpai
 
 ```bash
 senpai
 ```
 
-### Libera
-
-[Connect to libera.chat](#connect-to-libera)
+Next step is to [connect to libera.chat](#connect-to-libera) section.
 
 ## Connect to libera
 
@@ -112,8 +115,8 @@ That's it! Join any other channels or networks using the same method.
 
 ## References
 
-- [bouncer: ircs://irc.pico.sh:6697](ircs://irc.pico.sh:6697)
+- [pico bouncer](ircs://irc.pico.sh:6697)
 - [soju man page](https://soju.im/doc/soju.1.html)
-- [soju (bouncer)](https://git.sr.ht/~emersion/soju)
-- [gamja (web client)](https://git.sr.ht/~emersion/gamja)
-- [senpai (terminal client)](https://git.sr.ht/~delthas/senpai)
+- [soju](https://git.sr.ht/~emersion/soju)
+- [gamja](https://git.sr.ht/~emersion/gamja)
+- [senpai](https://git.sr.ht/~delthas/senpai)

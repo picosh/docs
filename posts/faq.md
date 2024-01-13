@@ -39,9 +39,22 @@ This accepts the default file location. At the prompt, type a secure passphrase.
 
 Yes! You can either:
 
-- a) create a new keypair and use that for authentication or
-- b) use the same keypair and ssh into our CMS using our special username
+- create a new keypair and use that for authentication; or
+- use the same keypair and ssh into our CMS using our special username
   `ssh new@prose.sh`
 
 Please note that if you use the same keypair for multiple accounts, you will
 need to always specify the user when logging into our CMS.
+
+## Why do I provide my username when using SSH?
+
+> We recommend supplying your username everytime you interact with our SSH Apps.
+
+Technically, if you only have one pico account then it doesn't matter. However,
+when you don't provide a user when using SSH, then your default user is
+provided. Does that really matter? Probably not, but it is leaking information
+you might not otherwise want us to know about. We can see that user in our logs.
+
+Always providing your username is ideal and if you have multiple pico accounts
+then we **require** your username everytime. So it's just good practice to
+always provide the username.

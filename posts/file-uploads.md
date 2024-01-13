@@ -6,8 +6,8 @@ keywords: [pico, file, upload, download]
 
 ## How do I upload files?
 
-Unless otherwise specified, all of our services support the following ways to
-upload files to our services.
+Unless otherwise specified, all of services support the following ways to upload
+files to our services.
 
 ### rsync
 
@@ -36,11 +36,9 @@ sftp> put hello-world.md
 
 ## How do I update files?
 
-> You do **not** need to re-upload **all** of your files everytime you make a
-> change to a single post or file.
-
-All you have to do to update a post or file is re-upload the file using the same
-tools previously explained.
+Just send us the files you want to update. With [pgs.sh](/pgs) you can upload
+single files to projects, but we also support "deploying" static sites with
+[promotion and rollback](/pgs#project-promotion-and-rollback).
 
 ## How do I delete files?
 
@@ -51,7 +49,7 @@ The easiest way to delete a file is via [sftp](#sftp).
 ### 0-byte file
 
 Because `scp` does not natively support deleting files, we didn't want to bake
-that behavior into my ssh server.
+that behavior into our SSH Apps.
 
 However, if a user wants to delete a post they can delete the contents of the
 file and then upload it to our server. If the file contains 0 bytes, we will
@@ -59,16 +57,16 @@ remove the post. For example, if you want to delete `delete.md` you could:
 
 ```bash
 cp /dev/null delete.md
-scp ./delete.md prose.sh:/
+scp ./delete.md {user}@prose.sh:/
 ```
 
 ### CMS
 
-Alternatively, most of our services have a way to delete posts via the SSH App
-CMS. For example, if you want to delete a post on prose:
+Alternatively, most our services have a way to delete posts via the SSH App CMS.
+For example, if you want to delete a post on prose:
 
 ```bash
-ssh prose.sh
+ssh {user}@prose.sh
 # Click "Manage Posts"
 # Highlight the post you want to delete
 # Press "X"
@@ -78,3 +76,7 @@ ssh prose.sh
 
 Using the same tools describe [here](#how-do-i-upload-files) just reverse the
 order of `src` and `dest`!
+
+```bash
+rsync {user}@prose.sh:/ .
+```
