@@ -68,6 +68,7 @@ body {
   margin: 0;
   display: block;
   padding-left: 25px;
+  overflow-y: auto;
 }
 
 .post {
