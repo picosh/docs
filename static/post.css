@@ -1,7 +1,3 @@
-main {
-  overflow-y: scroll;
-}
-
 .text-hdr {
   color: var(--hover);
 }
