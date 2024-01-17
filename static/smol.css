@@ -19,20 +19,21 @@
   :root {
     --main-hue: 250;
     --white: #6a737d;
-    --white-dark: #c6c6c6;
-    --code: #fff8d3;
-    --code-border: #f0d547;
+    --white-light: #cfe0f4;
+    --white-dark: #9b9b9b;
+    --code: #e3e5e8;
+    --code-border: #e3e5e8;
     --pre: #f6f8fa;
-    --bg-color: #fff;
+    --bg-color: #fdfdfd;
     --text-color: #24292f;
     --link-color: #005cc5;
     --visited: #6f42c1;
     --blockquote: #005cc5;
-    --blockquote-bg: #fff;
+    --blockquote-bg: #cfe0f4;
     --hover: #d73a49;
     --grey: #ccc;
     --grey-light: #6a708e;
-    --shadow: #252525;
+    --shadow: #e8e8e8;
   }
 }
 
@@ -40,6 +41,7 @@
   :root {
     --main-hue: 250;
     --white: #f2f2f2;
+    --white-light: #f2f2f2;
     --white-dark: #c6c6c6;
     --code: #414558;
     --code-border: #252525;
@@ -581,7 +583,7 @@ figure {
   padding: 0.5rem 1rem;
   border-radius: 0.25rem;
   box-shadow: 0px 5px 0px 0px var(--shadow);
-  color: var(--white);
+  color: var(--white-light);
   text-decoration: none;
   font-weight: bold;
 }
@@ -590,12 +592,12 @@ figure {
 .btn-link:hover {
   border: 3px solid hsl(260, 92%, 66%);
   background-color: hsl(260, 92%, 66%);
-  color: var(--white);
+  color: var(--white-light);
   transform: scale(.98, .98);
 }
 
 .btn-link:visited {
-  color: var(--white);
+  color: var(--white-light);
 }
 
 .box {

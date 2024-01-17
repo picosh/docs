@@ -61,12 +61,12 @@ function init() {
       }
       const nav = document.getElementById("nav-" + h.id);
       if (nav) {
-        nav.classList.toggle("current", h === (h3 || h2 || h1));
+        nav.classList.toggle("current", h === h1);
       }
     }
 
     // Throttle to avoid crashes in Safari
-    const h = h4 || h3 || h2 || h1;
+    const h = h1;
     pathhash = location.pathname + (h ? "#" + h.id : "");
     if (throttle === null) {
       throttle = setTimeout(updatePathname, 300);
