@@ -65,18 +65,6 @@ cp /dev/null delete.md
 scp ./delete.md {user}@prose.sh:/
 ```
 
-## CMS
-
-Alternatively, most our services have a way to delete posts via the SSH App CMS.
-For example, if you want to delete a post on prose:
-
-```bash
-ssh {user}@prose.sh
-# Click "Manage Posts"
-# Highlight the post you want to delete
-# Press "X"
-```
-
 # How do I download files?
 
 Using the same tools describe [here](#how-do-i-upload-files) just reverse the
