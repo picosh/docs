@@ -58,3 +58,10 @@ you might not otherwise want us to know about. We can see that user in our logs.
 Always providing your username is ideal and if you have multiple pico accounts
 then we **require** your username everytime. So it's just good practice to
 always provide the username.
+
+## How can I use `git` to sync my content?
+
+All you need is your provide key and [one of the upload tools we
+support](/file-uploads)
+
+For example, [here is how we deploy the pico blog](https://github.com/picosh/official-blog/blob/main/.github/workflows/publish.yml)
