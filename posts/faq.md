@@ -4,7 +4,7 @@ description: Answers to frequently asked questions
 keywords: [pico, faq, question, answer]
 ---
 
-## Permission denied when using SSH
+# Permission denied when using SSH
 
 Unfortunately SHA-2 RSA keys are not currently supported.
 
@@ -24,7 +24,7 @@ If you’re curious about the inner workings of this problem have a look at:
 - [go-review](https://go-review.googlesource.com/c/crypto/+/220037)
 - [golang/crypto#197](https://github.com/golang/crypto/pull/197)
 
-## Generating a new SSH key
+# Generating a new SSH key
 
 [Github Reference](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
 
@@ -35,7 +35,7 @@ ssh-keygen -t ed25519 -C "your_email@example.com"
 When you're prompted to "Enter a file in which to save the key," press Enter.
 This accepts the default file location. At the prompt, type a secure passphrase.
 
-## Can I create multiple accounts?
+# Can I create multiple accounts?
 
 Yes! You can either:
 
@@ -46,7 +46,7 @@ Yes! You can either:
 Please note that if you use the same keypair for multiple accounts, you will
 need to always specify the user when logging into our CMS.
 
-## Why do I provide my username when using SSH?
+# Why do I provide my username when using SSH?
 
 > We recommend supplying your username everytime you interact with our SSH Apps.
 
@@ -59,7 +59,7 @@ Always providing your username is ideal and if you have multiple pico accounts
 then we **require** your username everytime. So it's just good practice to
 always provide the username.
 
-## How can I use `git` to sync my content?
+# How can I use `git` to sync my content?
 
 All you need is your provide key and [one of the upload tools we
 support](/file-uploads)

@@ -4,7 +4,7 @@ description: Details on our privacy and security approach.
 keywords: [pico, privacy, policy]
 ---
 
-## Account Data
+# Account Data
 
 In order to have a functional account at pico.sh, we need to store your public
 key. That is the only piece of information we record for a user.
@@ -20,14 +20,14 @@ only email you when:
 - Service interuptions
 - Service availability
 
-## Third parties
+# Third parties
 
 We have a strong commitment to never share any user data with any third-parties.
 
-## Service Providers
+# Service Providers
 
 We host our server on oracle cloud.
 
-## Cookies
+# Cookies
 
 We do not use any cookies, not even account authentication.

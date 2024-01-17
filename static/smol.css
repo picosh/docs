@@ -19,6 +19,7 @@
   :root {
     --main-hue: 250;
     --white: #6a737d;
+    --white-dark: #c6c6c6;
     --code: #fff8d3;
     --code-border: #f0d547;
     --pre: #f6f8fa;
@@ -39,6 +40,7 @@
   :root {
     --main-hue: 250;
     --white: #f2f2f2;
+    --white-dark: #c6c6c6;
     --code: #414558;
     --code-border: #252525;
     --pre: #252525;
@@ -157,7 +159,7 @@ hr {
   color: inherit;
   border: 0;
   margin: 0;
-  height: 1px;
+  height: 2px;
   background: var(--grey);
   margin: 1rem auto;
   text-align: center;
@@ -273,7 +275,7 @@ figure {
 }
 
 .text-2xl {
-  font-size: 1.85rem;
+  font-size: 2rem;
   line-height: 1.15;
 }
 
@@ -513,10 +515,9 @@ figure {
 .md h2,
 .md h3,
 .md h4 {
-  margin: 1.5rem 0;
+  padding: 0;
+  margin: 1.5rem 0 0.9rem 0;
   font-weight: bold;
-  border-bottom: 2px solid var(--grey);
-  padding-bottom: 15px;
 }
 
 .md h1 a,
@@ -528,21 +529,26 @@ figure {
 }
 
 .md h1 {
-  font-size: 1.60rem;
+  font-size: 1.7rem;
   line-height: 1.15;
+  border-bottom: 2px solid var(--grey);
+  padding-bottom: 1rem;
 }
 
 .md h2 {
-  font-size: 1.45rem;
+  font-size: 1.4rem;
   line-height: 1.15;
+  color: var(--white-dark);
 }
 
 .md h3 {
   font-size: 1.20rem;
+  color: var(--white-dark);
 }
 
 .md h4 {
   font-size: 1rem;
+  color: var(--white-dark);
 }
 
 /* ==== HELPERS ==== */

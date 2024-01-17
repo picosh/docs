@@ -24,12 +24,12 @@ Join our IRC channel
 [#pico.sh @ libera.chat](https://web.libera.chat/gamja?autojoin=#pico.sh) and
 ask for an invite.
 
-## Features
+# Features
 
 - Tunnels to localhost using SSH
 - Create a private connection from a remote service to your localhost
 
-## HTTP(S) Tunnels
+# HTTP(S) Tunnels
 
 ```bash
 $ ssh -p 2222 -R 80:httpbin.org:80 tuns.sh
@@ -51,7 +51,7 @@ started.
 HTTP(S) tunnels also support
 [custom domains](https://github.com/antoniomika/sish#custom-domains).
 
-## TCP Tunnels
+# TCP Tunnels
 
 ```bash
 $ ssh -p 2222 -R 10001:httpbin.org:80 tuns.sh
@@ -64,7 +64,7 @@ TCP: tuns.sh:10001
 Which will allow me to access http://tuns.sh:10001 (or any other tcp service,
 `httpbin.org:80` just happens to be an HTTP server)
 
-## And so much more
+# And so much more
 
 That's just the beginning of what tuns.sh can do. Under the hood we're using a
 project

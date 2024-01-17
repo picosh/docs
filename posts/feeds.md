@@ -4,7 +4,7 @@ description: An rss email notification service
 keywords: [pico, feeds]
 ---
 
-## Features
+# Features
 
 - Receive email digests for your RSS feeds
 - We try to render all content within the feed as HTML (with ability to disable
@@ -12,7 +12,7 @@ keywords: [pico, feeds]
 - Create 1-to-many email digests
 - Set digest interval from `10min` to `30day`
 
-## Subscribe to feeds
+# Subscribe to feeds
 
 Use our [plain text lists spec](/plain-text-lists) to create a txt file named
 `daily.txt` (as an example).
@@ -34,7 +34,7 @@ Then copy the file to our server
 rsync daily.txt feeds.sh:/
 ```
 
-## Privacy
+# Privacy
 
 We don't do anything with your email besides send an email digest. If you delete
 the post containing your email address, we no longer have you email address.
@@ -42,7 +42,7 @@ the post containing your email address, we no longer have you email address.
 Posts are also not accessible by the public and we provide no endpoints to view
 these posts.
 
-## Digest interval options
+# Digest interval options
 
 ```
 10min
@@ -54,12 +54,12 @@ these posts.
 30day
 ```
 
-## Can I create multiple email digests?
+# Can I create multiple email digests?
 
 You are free to upload as many email digests as you like, referencing different
 rss feeds, emails, and digest intervals.
 
-## Inline content
+# Inline content
 
 By default we attempt to render all content within a feed as HTML inside an
 email digest. Sometimes users just want us to send them the links so they can

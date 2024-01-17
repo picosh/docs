@@ -15,7 +15,7 @@ function init() {
   topNav();
 
   let throttle = null;
-  const headers = document.querySelectorAll("h2");
+  const headers = document.querySelectorAll("h1,h2");
   const scrollEl = window;
   scrollEl.addEventListener("scroll", updateNav, { passive: true });
   window.addEventListener("load", updateNav);

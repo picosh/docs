@@ -15,7 +15,7 @@ Join our IRC channel
 [#pico.sh @ libera.chat](https://web.libera.chat/gamja?autojoin=#pico.sh) and
 ask for an invite.
 
-## Features
+# Features
 
 - Terminal workflow
 - No client-side installation required to fully manage static sites
@@ -32,7 +32,7 @@ ask for an invite.
 - All assets are public-only
 - [Only web assets are supported](#what-file-types-are-supported)
 
-## Publish your site with one command
+# Publish your site with one command
 
 When your site is ready to be published, copy the files to our server with a
 familiar command:
@@ -46,7 +46,7 @@ on-the-fly. Further, we provide TLS for every project automatically. In this
 case the url for the project above would look something like
 `https://{username}-myproj.pgs.sh`.
 
-## Instant promotion and rollback
+# Instant promotion and rollback
 
 Additionally you can setup a pipeline for promotion and rollbacks, which will
 instantly update your project.
@@ -67,7 +67,7 @@ We also built a [github action](https://github.com/picosh/pgs-action) that
 handles all the logic for uploading to pgs.sh.
 [Here's an example of it in action.](https://erock-git-neovimcraft.pgs.sh/tree/main/item/.github/workflows/deploy.yml.html#27)
 
-## Manage your projects with a remote CLI
+# Manage your projects with a remote CLI
 
 Our management system is done via ssh commands.
 
@@ -118,7 +118,7 @@ ssh pgs.sh prune prefix
 ssh pgs.sh retain prefix
 ```
 
-## What file types are supported?
+# What file types are supported?
 
 ```
 html
@@ -146,13 +146,13 @@ map
 webmanifest
 ```
 
-## User-defined Redirects
+# User-defined Redirects
 
 We support custom redirects via a special file `_redirects`.
 
 Read more about it at [netflify](https://docs.netlify.com/routing/redirects).
 
-## Single-Page Applications
+# Single-Page Applications
 
 We support SPAs! Upload a `_redirects` file to your project:
 

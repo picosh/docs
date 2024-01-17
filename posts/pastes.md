@@ -4,7 +4,7 @@ description: A pastebin for hackers
 keywords: [pico, pastes]
 ---
 
-## Features
+# Features
 
 - Pastes last 90 days by default
 - [Ability to set custom expiration](#how-do-i-set-expiration-date)
@@ -18,7 +18,7 @@ keywords: [pico, pastes]
 - Minimalist design
 - 100% open source
 
-## Pipe Support
+# Pipe Support
 
 ```bash
 echo "foobar" | ssh pastes.sh
@@ -29,7 +29,7 @@ echo "foobar" | ssh pastes.sh FILENAME
 echo "foobar" | ssh -T pastes.sh
 ```
 
-## How do I set expiration date?
+# How do I set expiration date?
 
 Yes. The default expiration date for a paste is 90 days. We do allow the user to
 set the paste to never expire. We also allow custom duration or timestamp.
@@ -42,7 +42,7 @@ echo "foobar" | ssh pastes.sh FILENAME expires=2023-12-12
 echo "foobar" | ssh pastes.sh FILENAME expires=1h
 ```
 
-## How do I unlist a paste?
+# How do I unlist a paste?
 
 Yes. Unlisted in this context means it does not show up on your user landing
 page where we show all of your pastes. In this case, yes, you can "hide" it

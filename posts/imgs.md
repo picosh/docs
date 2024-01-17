@@ -4,7 +4,7 @@ description: Image hosting for hackers
 keywords: [pico, imgs]
 ---
 
-## Features
+# Features
 
 - Delightful terminal workflow
 - Share public images from the terminal
@@ -17,18 +17,18 @@ keywords: [pico, imgs]
 - 10MB max image size
 - 1GB max storage
 
-## What it is
+# What it is
 
 - A place to host **public** images
 - A place to host your blog images
 - We moderate all images
 
-## What it isn't
+# What it isn't
 
 - Not a general cloud photo storage solution
 - Not a place to backup or store your photos
 
-## Publish your images with one command
+# Publish your images with one command
 
 When your image is ready to be published, copy the file to our server with a
 familiar command:
@@ -39,12 +39,12 @@ rsync *.jpg imgs.sh:/
 
 We'll either create or update the images for you.
 
-## Web optimized
+# Web optimized
 
 When a user uploads an image, we immediately convert it to `webp`. Then we have
 an API that serves those web optimized images.
 
-## How does imgs integrate with other pico services?
+# How does imgs integrate with other pico services?
 
 We allow any of our other services to upload images from those services to imgs.
 For example, if you want to upload images for prose.sh all you have to do is
@@ -60,7 +60,7 @@ Then when you want to reference the file, you can reference it like so:
 ![profile pic](/profile.jpg)
 ```
 
-## What file types are supported?
+# What file types are supported?
 
 ```
 jpg
@@ -70,7 +70,7 @@ webp
 svg
 ```
 
-## Image manipulation
+# Image manipulation
 
 We have an API that allows users to resize images on-the-fly. Currently we only
 support downscaling.

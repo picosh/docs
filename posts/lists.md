@@ -4,7 +4,7 @@ description: A microblog for lists
 keywords: [pico, lists]
 ---
 
-## Features
+# Features
 
 - Just lists
 - Looks great on any device
@@ -20,7 +20,7 @@ keywords: [pico, lists]
 - Minimalist design
 - 100% open source
 
-## Publish your posts with one command
+# Publish your posts with one command
 
 When your post is ready to be published, copy the file to our server with a
 familiar command:
@@ -31,11 +31,11 @@ rsync ~/lists/*.txt lists.sh:/
 
 We'll either create or update the lists for you.
 
-## Plain text format
+# Plain text format
 
 A [simple specification](/plain-text-lists) that is flexible and with no frills.
 
-## How do I change my blog's name?
+# How do I change my blog's name?
 
 All you have to do is create a post titled `_header.txt` and add some
 information to the list.
@@ -47,7 +47,7 @@ information to the list.
 => https://twitter.com/xyz twitter
 ```
 
-## How do I add an introduction to my blog?
+# How do I add an introduction to my blog?
 
 All you have to do is create a post titled `_readme.txt` and add some
 information to the list.
@@ -61,7 +61,7 @@ I like to sing. Dance. And I like to have fun fun fun!
 Whatever is inside the `_readme` file will get rendered (as a list) right above
 your blog posts. Neat!
 
-## How can I change the layout of my blog?
+# How can I change the layout of my blog?
 
 Inside the `_header.txt` metadata file, there's a variable `layout` option that
 will change the layout of your blog index page.

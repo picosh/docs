@@ -10,7 +10,7 @@ keywords: [pico, getting, started]
 For the purposes of creating a pico account, this guide will use the `prose.sh`
 service to create one.
 
-## Create your account with Public-Key Cryptography
+# Create your account with Public-Key Cryptography
 
 We don't need your email address.
 
@@ -44,7 +44,7 @@ When you SSH again, use your username that you set in the CMS.
 ssh glossy@prose.sh
 ```
 
-## Next Steps
+# Next Steps
 
 What service did you want to use first? Read the docs to get started with any of
 our services:

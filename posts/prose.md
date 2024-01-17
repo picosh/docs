@@ -4,7 +4,7 @@ description: A blog platform for hackers
 keywords: [pico, prose]
 ---
 
-## Features
+# Features
 
 - Github flavor markdown
 - [Custom domains](/custom-domains#prosesh)
@@ -22,7 +22,7 @@ keywords: [pico, prose]
 - Minimalist design
 - 100% open source
 
-## You control the source files
+# You control the source files
 
 Create posts using your favorite editor in plain text files.
 
@@ -43,7 +43,7 @@ Check out some resources:
 Cya!
 ```
 
-## Publish your posts with one command
+# Publish your posts with one command
 
 When your post is ready to be published, copy the file to our server with a
 familiar command:
@@ -54,14 +54,14 @@ rsync ~/blog/* prose.sh:/
 
 We'll either create or update the posts for you.
 
-## Terminal workflow without installation
+# Terminal workflow without installation
 
 Since we are leveraging tools you already have on your computer (`ssh` and
 `rsync`), there is nothing to install.
 
 This provides the convenience of a web app, but from inside your terminal!
 
-## Upload images for your blog
+# Upload images for your blog
 
 We also support image uploading (jpg, png, gif, webp, svg). Simply upload your
 images alongside your markdown files and then reference them from root `/`:
@@ -78,7 +78,7 @@ title: hello world!
 rsync ~/blog/*.jpg prose.sh:/
 ```
 
-## Metadata
+# Metadata
 
 We support adding frontmatter to the top of your markdown posts. A frontmatter
 looks like the following:
@@ -95,7 +95,7 @@ draft: true
 ---
 ```
 
-## How can I add a footer to all of my posts?
+# How can I add a footer to all of my posts?
 
 We have a special file `_footer.md` that will be appended to every single blog
 post.
@@ -104,7 +104,7 @@ There is nothing that differentiates itself from the rest of the post so it's up
 to you to style it. For convenience we added an `id` to the containing element
 `post-footer`.
 
-## How can I customize my blog page?
+# How can I customize my blog page?
 
 There's a special file you can upload `_readme.md` which will allow users to add
 a bio and links to their blog landing page.
@@ -125,7 +125,7 @@ layout: aside # or default
 ---
 ```
 
-## How can I change the theme of my blog?
+# How can I change the theme of my blog?
 
 There's a special file you can upload `_styles.css` which will allow users to
 add a CSS file to their page. It will be the final CSS file loaded on the page
@@ -144,7 +144,7 @@ post pages.
 }
 ```
 
-## How can I change the layout of my blog?
+# How can I change the layout of my blog?
 
 Inside the `_readme.md` metadata file, there's a variable layout option that
 will change the layout of your blog index page.
