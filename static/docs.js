@@ -32,7 +32,7 @@ function init() {
   });
 
   function updateNav() {
-    let h2, h3, h4;
+    let h1, h2, h3, h4;
     for (let i = 0; i < headers.length; i++) {
       const h = headers[i];
       const top = h.getBoundingClientRect().top;
@@ -40,7 +40,10 @@ function init() {
         break;
       }
 
-      if (h.tagName === "H2") {
+      if (h.tagName === "H1") {
+        h1 = h;
+        h2 = h3 = h4 = null;
+      } else if (h.tagName === "H2") {
         h2 = h;
         h3 = h4 = null;
       } else if (h.tagName === "H3") {
@@ -58,12 +61,12 @@ function init() {
       }
       const nav = document.getElementById("nav-" + h.id);
       if (nav) {
-        nav.classList.toggle("current", h === (h3 || h2));
+        nav.classList.toggle("current", h === (h3 || h2 || h1));
       }
     }
 
     // Throttle to avoid crashes in Safari
-    const h = h4 || h3 || h2;
+    const h = h4 || h3 || h2 || h1;
     pathhash = location.pathname + (h ? "#" + h.id : "");
     if (throttle === null) {
       throttle = setTimeout(updatePathname, 300);
