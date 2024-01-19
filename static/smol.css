@@ -594,11 +594,6 @@ figure {
 .box {
   border: 2px solid var(--grey-light);
   padding: 0.5rem 0.75rem;
-  text-decoration: none;
-}
-
-.box:hover {
-  border: 2px solid var(--hover);
 }
 
 @media only screen and (max-width: 40em) {
