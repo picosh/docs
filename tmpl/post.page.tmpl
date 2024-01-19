@@ -2,26 +2,14 @@
 
 {{define "title"}}{{.Data.Title}}{{end}}
 
-{{define "meta"}}
-<link rel="stylesheet" href="/post.css" />
-<script src="/docs.js"></script>
-{{end}}
+{{define "meta"}}{{end}}
 
-{{define "attrs"}}class=""{{end}}
+{{define "attrs"}}class="container-sm"{{end}}
 
 {{define "body"}}
-<nav class="toc">
-  {{template "toc" .}}
-  {{template "footer" .}}
-</nav>
+{{template "nav" .}}
 
 <main class="post">
-  <button type="button" class="toc-btn btn-icon mt flex items-center justify-center">
-    <svg style="width:20px; height:20px" viewBox="0 0 20 20">
-      <path fill="currentColor" d="M1,4 H18 V6 H1 V4 M1,9 H18 V11 H1 V7 M3,14 H18 V16 H1 V14" />
-    </svg>
-  </button>
-
   <h1 class="text-2xl text-underline-hdr text-hdr inline-block">{{.Data.Title}}</h1>
   <h2 class="text-xl">{{.Data.Description}}</h2>
 
@@ -31,26 +19,44 @@
     {{.Data.Html}}
   </article>
 
-  <div class="flex justify-between gap-2 mt-8 mb-16">
+  <div class="flex justify-between gap-2 my-4">
     {{if .Prev}}
-      <a class="box pager max-w-half flex items-center" href="{{.Prev.GenHref}}">
+      <div class="pager max-w-half flex items-center">
         <div class="flex flex-col items-start">
-          <div class="text-sm font-grey-light">&lt;&lt; PREVIOUS</div>
-          <div class="text-xl">{{.Prev.Text}}</div>
+          <div class="text-sm font-grey-light">&lt;&lt; PREV</div>
+          <a href="{{.Prev.GenHref}}" class="text-xl link-alt-adj">{{.Prev.Text}}</a>
         </div>
-      </a>
+      </div>
     {{end}}
 
     {{if .Next}}
-      <a class="box pager max-w-half flex items-center justify-end" href="{{.Next.GenHref}}">
+      <div class="pager max-w-half flex items-center justify-end">
         <div class="flex flex-col items-end">
           <div class="text-sm font-grey-light">
             NEXT &gt;&gt;
           </div>
-          <div class="text-xl align-right">{{.Next.Text}}</div>
+          <a href="{{.Next.GenHref}}" class="text-xl align-right link-alt-adj">{{.Next.Text}}</a>
         </div>
-      </a>
+      </div>
     {{end}}
   </div>
 </main>
+
+<div class="sitemap text-sm mb-4 text-center">
+{{range .Sitemap -}}
+  <div>
+  {{- if (and $.Prev (eq $.Prev.GenHref .GenHref)) -}}
+  <a href="{{.GenHref}}" class="link-alt-adj">{{.Text}}</a>
+  {{- else if (and $.Next (eq $.Next.GenHref .GenHref)) -}}
+  <a href="{{.GenHref}}" class="link-alt-adj">{{.Text}}</a>
+  {{- else if (eq $.Href .GenHref) -}}
+  <a href="{{.GenHref}}" class="link-alt-hover">{{.Text}}</a>
+  {{- else -}}
+  <a href="{{.GenHref}}" class="link-alt">{{.Text}}</a>
+  {{- end -}}
+  </div>
+{{- end}}
+</div>
+
+{{template "footer" .}}
 {{end}}

@@ -261,7 +261,12 @@ figure {
 }
 
 .container {
-  max-width: 900px;
+  max-width: 50em;
+  width: 100%;
+}
+
+.container-sm {
+  max-width: 40em;
   width: 100%;
 }
 
@@ -272,12 +277,17 @@ figure {
   justify-content: center;
 }
 
+.mono {
+  font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo,
+    monospace;
+}
+
 .text-3xl {
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 
 .text-2xl {
-  font-size: 2rem;
+  font-size: 1.9rem;
   line-height: 1.15;
 }
 
@@ -531,20 +541,20 @@ figure {
 }
 
 .md h1 {
-  font-size: 1.7rem;
+  font-size: 1.6rem;
   line-height: 1.15;
   border-bottom: 2px solid var(--grey);
   padding-bottom: 1rem;
 }
 
 .md h2 {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   line-height: 1.15;
   color: var(--white-dark);
 }
 
 .md h3 {
-  font-size: 1.20rem;
+  font-size: 1.2rem;
   color: var(--white-dark);
 }
 
@@ -567,59 +577,31 @@ figure {
   box-shadow: 0px 5px 0px 0px var(--shadow);
 }
 
-.btn-icon {
-  border: 3px solid hsl(var(--main-hue), 92%, 66%);
-  background-color: hsl(var(--main-hue), 92%, 66%);
-  padding: 0.25rem 0.3rem;
-  border-radius: 0.25rem;
-  box-shadow: 0px 5px 0px 0px var(--shadow);
-  color: var(--white);
-  cursor: pointer;
-}
-
-.btn-link {
-  border: 3px solid hsl(var(--main-hue), 92%, 66%);
-  background-color: hsl(var(--main-hue), 92%, 66%);
-  padding: 0.5rem 1rem;
-  border-radius: 0.25rem;
-  box-shadow: 0px 5px 0px 0px var(--shadow);
-  color: var(--white-light);
+.btn-link,
+.btn-link:visited {
+  border: 2px solid var(--link-color);
+  color: var(--link-color);
+  padding: 0.4rem 1rem;
   text-decoration: none;
   font-weight: bold;
 }
 
 .btn-link:visited:hover,
 .btn-link:hover {
-  border: 3px solid hsl(260, 92%, 66%);
-  background-color: hsl(260, 92%, 66%);
-  color: var(--white-light);
-  transform: scale(.98, .98);
-}
-
-.btn-link:visited {
-  color: var(--white-light);
+  border: 2px solid var(--hover);
 }
 
 .box {
   border: 2px solid var(--grey-light);
-  border-radius: .5rem;
-  padding: 1rem;
+  padding: 0.5rem 0.75rem;
   text-decoration: none;
-  box-shadow: 0px 5px 0px 0px var(--shadow);
-  color: var(--white);
 }
 
 .box:hover {
-  border: 2px solid var(--white);
+  border: 2px solid var(--hover);
 }
 
-.box:visited,
-.box:visited:hover,
-.box:hover {
-  color: var(--white);
-}
-
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 40em) {
   body {
     padding: 0 1rem;
   }

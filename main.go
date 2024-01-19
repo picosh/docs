@@ -13,6 +13,11 @@ func main() {
 			Page: pager("marketing.md"),
 		},
 		{
+			Text: "Sitemap",
+			Href: "/sitemap",
+			Page: pager("sitemap.md"),
+		},
+		{
 			Text: "Getting Started",
 			Href: "/getting-started",
 			Page: pager("getting-started.md"),
