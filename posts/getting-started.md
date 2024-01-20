@@ -34,7 +34,6 @@ glossy.prose.sh
 glossy.pgs.sh
 glossy.pastes.sh
 glossy.imgs.sh
-glossy.lists.sh
 ```
 
 After that, just set a username and you're ready to start using our services!
@@ -54,5 +53,4 @@ our services:
 - [pastes.sh](/prose)
 - [imgs.sh](/imgs)
 - [feeds.sh](/feeds)
-- [lists.sh](/lists)
 - [tuns.sh](/tuns)

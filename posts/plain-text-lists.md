@@ -58,13 +58,13 @@ Hyperlinks are denoted by the prefix `=>`. The following text should then be the
 hyperlink.
 
 ```
-=> https://lists.sh
+=> https://prose.sh
 ```
 
 Optionally you can supply the hyperlink text immediately following the link.
 
 ```
-=> https://lists.sh microblog for lists
+=> https://prose.sh blog platform for hackers 
 ```
 
 # Nested lists

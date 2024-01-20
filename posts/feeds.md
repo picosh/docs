@@ -24,7 +24,6 @@ to receive email notifications.
 =: email rss@myemail.com
 =: digest_interval 1day
 => https://hey.prose.sh/rss
-=> https://hey.lists.sh/rss
 => https://erock.prose.sh/rss
 ```
 
