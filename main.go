@@ -63,11 +63,6 @@ func main() {
 			Page: pager("feeds.md"),
 		},
 		{
-			Text: "Lists",
-			Href: "/lists",
-			Page: pager("lists.md"),
-		},
-		{
 			Text: "Tunnels",
 			Href: "/tuns",
 			Page: pager("tuns.md"),
