@@ -1,21 +1,36 @@
 ---
 title: Operations
-description: pico operations
-keywords: [pico, operation, ops]
+description: Terms of service and other legal requirements.
+keywords: [pico, operations, terms, service, lega]
 ---
 
 # Purpose
 
-Our services exist to allow people to create and share their thoughts without
-the need to set up their own server or be part of a platform that shows ads or
-tracks its users. Ethics
+pico.sh services exist to promote communication and collaboration on the web and
+be a place of experimentation for its userbase.
 
-We are committed to:
+# Contract
 
-- No browser-based tracking of visitor behavior.
-- No attempt to identify users.
-- Never sell any user or visitor data.
-- No ads — ever.
+When you use pico.sh services you agree to all these terms. Your use of our
+services is also subject to our [Privacy Policy](/privacy), which covers how we
+collect, use, share, and store your personal information.
+
+We may modify this contract, and our [Privacy Policy](/privacy) from time to
+time. If you object to these changes, you are encouraged to close your account.
+
+# Obligations
+
+You are eligible to enter this Contract and you are at least our "Minimum Age."
+
+"Minimum Age" means 13 years old. However, if law requires that you must be
+older for pico.sh to lawfully provide the Services to you without parental
+consent (including using of your personal data) then the Minimum Age is such
+older age.
+
+To use pico.sh services, you agree that:
+
+- You must be the "Minimum Age" or older; and
+- You are not already restricted from using the services.
 
 # Code of Content Publication
 
@@ -26,7 +41,43 @@ such as race, color, national origin, sex, disability, religion, or sexual
 orientation, which will be taken down immediately.
 
 If one notices something along those lines in a blog please let us know at
-hello@pico.sh.
+[abuse@pico.sh](mailto:abuse@pico.sh).
+
+# DMCA Policy
+
+This policy statement lists our requirements for notice of copyright
+infringement and for responses to such a notice if you or your materials are
+accused.
+
+To notify us of copyright infringement, you must send a written communication to
+our Copyright Notices Department, at the contact points listed below.
+
+That written communication should include the following:
+
+- A physical or electronic signature of a person authorized to act on behalf of
+  the owner of an exclusive right that is allegedly infringed
+- Identification of the copyrighted work claimed to have been infringed, or, if
+  multiple copyrighted works at a single online site are covered by a single
+  notification, a representative list of such works at that site
+- Identification of the material that is claimed to be infringing or to be the
+  subject of infringing activity and that is to be removed or access to which is
+  to be disabled, and information reasonably sufficient to permit us to locate
+  the material.
+- Information reasonably sufficient to permit us to contact the complaining
+  party, such as an address, telephone number, and, if available, an electronic
+  mail address at which the complaining party may be contacted.
+- A statement that the complaining party has a good faith belief that use of the
+  material in the manner complained of is not authorized by the copyright owner,
+  its agent, or the law.
+- A statement that the information in the notification is accurate, and under
+  penalty of perjury, that the complaining party is authorized to act on behalf
+  of the owner of an exclusive right that is allegedly infringed.
+
+Please send all notices required by this policy to our Copyright Notice
+Department at:
+
+> pico.sh LLC 206 E Huron St STE 103 Ann Arbor MI 48104
+> [dmca@pico.sh](mailto:dmca@pico.sh)
 
 # Liability
 
@@ -64,13 +115,15 @@ offer service-level agreements but do take uptime seriously.
 
 # Contact and Support
 
-Email us at hello@pico.sh with any questions.
+Email us at [hello@pico.sh](mailto:hello@pico.sh) with any questions.
 
 # Acknowledgments
 
-In particular we would like to thank:
+In particular we would like to thank the following communities:
 
-- The charm.sh community
-- The golang community
-- The postgresql community
-- The caddy community
+- charm.sh
+- golang
+- postgresql
+- caddy
+- omg.lol
+- bearblog

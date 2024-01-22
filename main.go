@@ -101,7 +101,19 @@ func main() {
 			Tag: "Spec",
 		},
 		{
-			Text: "operations",
+			Text: "About us",
+			Href: "/about",
+			Page: pager("about.md"),
+			Tag: "About",
+		},
+		{
+			Text: "Abuse",
+			Href: "/abuse",
+			Page: pager("abuse.md"),
+			Tag: "About",
+		},
+		{
+			Text: "Operations",
 			Href: "/ops",
 			Page: pager("ops.md"),
 			Tag: "About",
@@ -110,12 +122,6 @@ func main() {
 			Text: "Privacy policy",
 			Href: "/privacy",
 			Page: pager("privacy.md"),
-			Tag: "About",
-		},
-		{
-			Text: "About us",
-			Href: "/about",
-			Page: pager("about.md"),
 			Tag: "About",
 		},
 	}
