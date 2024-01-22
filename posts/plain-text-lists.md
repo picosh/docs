@@ -64,7 +64,7 @@ hyperlink.
 Optionally you can supply the hyperlink text immediately following the link.
 
 ```
-=> https://prose.sh blog platform for hackers 
+=> https://prose.sh blog platform for hackers
 ```
 
 # Nested lists

@@ -53,11 +53,6 @@ these posts.
 30day
 ```
 
-# Can I create multiple email digests?
-
-You are free to upload as many email digests as you like, referencing different
-rss feeds, emails, and digest intervals.
-
 # Inline content
 
 By default we attempt to render all content within a feed as HTML inside an
@@ -69,3 +64,13 @@ If you don't want to see all the content, simply add a variable to your post:
 ```
 =: inline_content false
 ```
+
+# Can I create multiple email digests?
+
+You are free to upload as many email digests as you like, referencing different
+rss feeds, emails, and digest intervals.
+
+# Can I fetch Reddit RSS feeds?
+
+Yes, but you need to use the RSS links from `https://old.reddit.com`. The new
+reddit doesn't appear to work properly.

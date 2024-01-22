@@ -61,7 +61,8 @@ always provide the username.
 
 # How can I use `git` to sync my content?
 
-All you need is your provide key and [one of the upload tools we
-support](/file-uploads)
+All you need is your provide key and
+[one of the upload tools we support](/file-uploads)
 
-For example, [here is how we deploy the pico blog](https://github.com/picosh/official-blog/blob/main/.github/workflows/publish.yml)
+For example,
+[here is how we deploy the pico blog](https://github.com/picosh/official-blog/blob/main/.github/workflows/publish.yml)
