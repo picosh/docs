@@ -68,23 +68,6 @@
   padding-bottom: 3px;
 }
 
-.toc ul, ol {
-  list-style: none;
-  padding: 0 0 0 0.5rem;
-}
-
-.toc li {
-  margin: 0 0 0.15rem 0;
-}
-
-.toc li:first-child {
-  margin-top: 0;
-}
-
-.toc a {
-  color: var(--grey-light);
-}
-
 .current {
   background-color: var(--blockquote-bg) !important;
   border-right: 5px solid var(--blockquote);

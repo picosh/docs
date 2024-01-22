@@ -1,18 +1,14 @@
 {{define "toc"}}
-<ol>
-  {{range .Sitemap}}
-    <li>
-      <a href="{{.GenHref}}">{{.Text}}</a>
-
-      {{if eq (len .Children) 0}}
-      {{else}}
-        <ul>
-          {{range .Children}}
-            <li><a href="{{.GenHref}}">{{.Text}}</a></li>
-          {{end}}
-        </ul>
-      {{end}}
-    </li>
+<div>
+  {{range $key, $value := .SitemapByTag}}
+    <div class="box my">
+      <h2 class="text-xl">{{$key}}</h2>
+      <ul>
+        {{range $value}}
+          <li><a href="{{.GenHref}}">{{.Text}}</a></li>
+        {{end}}
+      </ul>
+    </div>
   {{end}}
-</ol>
+</div>
 {{end}}

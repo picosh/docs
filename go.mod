@@ -2,6 +2,8 @@ module github.com/picosh/docs
 
 go 1.21.5
 
+replace github.com/picosh/pdocs => /home/erock/dev/pico/pdocs
+
 require github.com/picosh/pdocs v0.0.0-20240119040637-408257a1d93c
 
 require (
