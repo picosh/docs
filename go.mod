@@ -2,9 +2,9 @@ module github.com/picosh/docs
 
 go 1.21.5
 
-replace github.com/picosh/pdocs => /home/erock/dev/pico/pdocs
+// replace github.com/picosh/pdocs => /home/erock/dev/pico/pdocs
 
-require github.com/picosh/pdocs v0.0.0-20240119040637-408257a1d93c
+require github.com/picosh/pdocs v0.0.0-20240122053603-749f8ca95244
 
 require (
 	github.com/alecthomas/chroma v0.10.0 // indirect
