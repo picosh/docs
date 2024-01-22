@@ -80,7 +80,7 @@ Department at:
 pico.sh LLC
 206 E Huron St STE 103
 Ann Arbor MI 48104
-[dmca@pico.sh](mailto:dmca@pico.sh)
+dmca@pico.sh
 ```
 
 # Liability
