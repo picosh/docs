@@ -1,5 +1,5 @@
 ---
-title: Plain Text Lists
+title: Plain text lists
 description: Our spec for plain text lists
 keywords: [pico, lists, spec, plain, text]
 ---

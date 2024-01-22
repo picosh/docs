@@ -1,5 +1,5 @@
 ---
-title: Getting Started
+title: Getting started
 description: How to use pico services 
 keywords: [pico, getting, started]
 ---

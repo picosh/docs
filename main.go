@@ -8,7 +8,7 @@ func main() {
 	pager := pdocs.Pager("./posts")
 	sitemap := []*pdocs.Sitemap{
 		{
-			Text: "Marketing",
+			Text: "Home",
 			Href: "/",
 			Page: pager("marketing.md"),
 		},

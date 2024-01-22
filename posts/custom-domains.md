@@ -1,5 +1,5 @@
 ---
-title: Custom Domains
+title: Custom domains
 description: A guide to setting up your domain to point to pico services
 keywords: [pico, custom, domain]
 ---

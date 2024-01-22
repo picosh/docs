@@ -1,5 +1,5 @@
 ---
-title: How it Works
+title: How it works
 description: A brief description of how our services work
 keywords: [pico, how, it, works]
 ---

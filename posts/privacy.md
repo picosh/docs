@@ -1,5 +1,5 @@
 ---
-title: Privacy Policy
+title: Privacy policy
 description: Details on our privacy and security approach.
 keywords: [pico, privacy, policy]
 ---
