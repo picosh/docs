@@ -76,8 +76,12 @@ That written communication should include the following:
 Please send all notices required by this policy to our Copyright Notice
 Department at:
 
-> pico.sh LLC 206 E Huron St STE 103 Ann Arbor MI 48104
-> [dmca@pico.sh](mailto:dmca@pico.sh)
+```
+pico.sh LLC
+206 E Huron St STE 103
+Ann Arbor MI 48104
+[dmca@pico.sh](mailto:dmca@pico.sh)
+```
 
 # Liability
 
