@@ -61,7 +61,7 @@ always provide the username.
 
 # How can I use `git` to sync my content?
 
-All you need is your provide key and
+All you need is your private key and
 [one of the upload tools we support](/file-uploads)
 
 For example,

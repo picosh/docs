@@ -4,7 +4,12 @@ description: How we interact with our users
 keywords: [pico, irc, bouncer]
 ---
 
-All our realtime communication happens through IRC at #pico.sh @ libera.chat.
+All our realtime communication happens through IRC: #pico.sh @
+[libera.chat](https://libera.chat).
+
+If you don't want to use our bouncer and just want to quickly connect to our
+channel, then we recommend
+[the libera-hosted web client](https://web.libera.chat/gamja?autojoin=#pico.sh).
 
 We are delighted to provide a hosted IRC bouncer and web client for us on the
 team as well as pico users.
@@ -115,6 +120,7 @@ That's it! Join any other channels or networks using the same method.
 
 # References
 
+- [libera.chat](https://libera.chat)
 - [pico bouncer](ircs://irc.pico.sh:6697)
 - [soju man page](https://soju.im/doc/soju.1.html)
 - [soju](https://git.sr.ht/~emersion/soju)

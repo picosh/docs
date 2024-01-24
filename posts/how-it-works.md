@@ -15,8 +15,8 @@ golang binaries that interface with SSH in unique ways.
 we use to enable all our SSH apps to work seamlessly with SSH clients.
 
 Whenever a user uploads a file to our SSH app, we don't actually store anything
-on our VM from the user. Instead we transfer the file to our database and
-sometimes our object store.
+on our VM from the user. Instead we transfer the file to our database or our
+object store.
 
 We support a few clients for file uploads:
 
