@@ -4,16 +4,12 @@ description: A zero-dependency static site hosting service for hackers
 keywords: [pico, pgs]
 ---
 
-> NOTICE: This service is currently in closed beta
+> NOTICE: This service is currently in **public beta**
 
-However, anyone can get an invite!
-
-The only requirement is to stay in our IRC channel and be willing to provide
-feedback on how we can improve the service.
-
-Join our IRC channel
-[#pico.sh @ libera.chat](https://web.libera.chat/gamja?autojoin=#pico.sh) and
-ask for an invite.
+What does public beta mean? Users are able to freely use this service but we have
+more strict storage limits than what we will have when the service is generally
+available. Specifically, we are setting the following limits: **25MB max storage
+and 5MB max file size**.
 
 # Features
 
@@ -27,7 +23,7 @@ ask for an invite.
 - [Custom domains](/custom-domains#pgssh) for projects
 - [User-defined redirects](#user-defined-redirects)
 - [SPA support](#single-page-applications)
-- 1GB max storage
+- 10GB max storage
 - 50MB max file size
 - All assets are public-only
 - [Only web assets are supported](#what-file-types-are-supported)

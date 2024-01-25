@@ -14,8 +14,8 @@ keywords: [pico, imgs]
 - Hotlinking encouraged!
 - No javascript
 - No ads
-- 10MB max image size
-- 1GB max storage
+- 500MB max storage
+- 10MB max file size
 
 # What it is
 
