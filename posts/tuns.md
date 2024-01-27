@@ -31,3 +31,10 @@ The only requirement is to stay in our IRC channel and be willing to provide
 feedback on how we can improve the service.
 
 Join our [IRC channel](/irc) and ask for an invite.
+
+# Ready to join pico?
+
+<div class="flex flex-col items-center justify-center">
+  <p>Create an account using only your SSH key.</p>
+  <a href="/getting-started" class="btn-link">Get Started</a>
+</div>

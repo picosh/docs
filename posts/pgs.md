@@ -151,3 +151,10 @@ We support SPAs! Upload a `_redirects` file to your project:
 ```
 /*  /index.html  200
 ```
+
+# Ready to join pico?
+
+<div class="flex flex-col items-center justify-center">
+  <p>Create an account using only your SSH key.</p>
+  <a href="/getting-started" class="btn-link">Get Started</a>
+</div>
