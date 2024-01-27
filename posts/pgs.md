@@ -61,10 +61,10 @@ handles all the logic for uploading to pgs.sh.
 
 # Manage your projects with a remote CLI
 
-Our management system is done via ssh commands.
+Our management system is done via SSH commands.
 
 > Our CLI commands are currently in active development so the list of available
-> commands are changing.
+> commands are subject to change.
 
 The best way to learn about all the commands we support is via an SSH command:
 
@@ -86,13 +86,13 @@ commands:
 # storage usage stats
 ssh pgs.sh stats
 
-# list all project (and their links)
+# list all projects (and their links)
 ssh pgs.sh ls
 
 # list all project dependencies
 ssh pgs.sh depends project-x
 
-# link a project
+# link a project (e.g. folder symlink)
 ssh pgs.sh link project-x project-y
 
 # unlink a project
