@@ -4,16 +4,14 @@ description: A zero-dependency static site hosting service for hackers
 keywords: [pico, pgs]
 ---
 
-> NOTICE: This service is currently in **public beta**
-
-What does public beta mean? Users are able to freely use this service but we have
-more strict storage limits than what we will have when the service is generally
-available. Specifically, we are setting the following limits: **25MB max storage
-and 5MB max file size**.
+> NOTICE: This service is currently in **public beta**! What does public beta
+> mean? Users are able to freely use this service but we have more strict
+> storage limits compared to when it is generally available. Specifically, we
+> are setting the following limits: **25MB max storage and 5MB max file size**.
 
 # Features
 
-- Terminal workflow
+- Terminal workflows
 - No client-side installation required to fully manage static sites
 - Distinct static sites as projects
 - Unlimited projects, created instantly upon upload
@@ -23,10 +21,8 @@ and 5MB max file size**.
 - [Custom domains](/custom-domains#pgssh) for projects
 - [User-defined redirects](#user-defined-redirects)
 - [SPA support](#single-page-applications)
-- 10GB max storage
-- 50MB max file size
-- All assets are public-only
 - [Only web assets are supported](#what-file-types-are-supported)
+- All assets are public-only
 
 # Publish your site with one command
 
