@@ -572,6 +572,7 @@ figure {
 .logo-header {
   line-height: 1;
   display: inline-block;
+  background-color: #FF79C6;
   background-image: linear-gradient(to right, #FF5555, #FF79C6, #F8F859);
   color: transparent;
   background-clip: text;
@@ -579,6 +580,11 @@ figure {
   padding: 8px 10px 10px 10px;
   border-radius: 10px;
   box-shadow: 0px 5px 0px 0px var(--shadow);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
 }
 
 .btn-link,
