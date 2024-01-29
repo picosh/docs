@@ -5,12 +5,12 @@ keywords: [pico, imgs]
 ---
 
 There are two ways to upload images to pico: through [prose.sh](/prose) or
-[pgs.sh](/pgs).  They both share the exact same features as each other, they
-just serve different purposes.
+[pgs.sh](/pgs). They both share similar features to each other, they just serve
+different purposes and have different storage limits.
 
 # Features
 
-- Images are web optimized by default
+- Images can be web optimized
 - API to modify images on-the-fly (e.g. dimensions)
 
 # What it is
@@ -35,11 +35,21 @@ rsync *.jpg prose.sh:/
 
 We'll either create or update the images for you.
 
+Or if you are using [pgs.sh](/pgs):
+
+```bash
+rsync *.jpg pgs.sh:/imgs
+```
+
 # Web optimized
 
-We do our best to web optimize the images being delivered from pico to users.
-We use [imageproxy](https://github.com/willnorris/imageproxy) to serve images
-from our object store.
+We do our best to web optimize the images being delivered from pico to users. We
+use [imageproxy](https://github.com/willnorris/imageproxy) to serve images from
+our object store.
+
+By default, images served from [prose.sh](/prose) are web optimized. We do not
+automatically optimize images from [pgs.sh](/pgs) because we try to subscribe to
+the principle of least surprise.
 
 # What file types are supported?
 

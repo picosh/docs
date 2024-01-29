@@ -33,7 +33,6 @@ will create the following domains on your behalf:
 glossy.prose.sh
 glossy.pgs.sh
 glossy.pastes.sh
-glossy.imgs.sh
 ```
 
 After that, just set a username and you're ready to start using our services!
@@ -51,6 +50,5 @@ our services:
 - [pgs.sh](/pgs)
 - [prose.sh](/prose)
 - [pastes.sh](/prose)
-- [imgs.sh](/imgs)
 - [feeds.sh](/feeds)
 - [tuns.sh](/tuns)
