@@ -48,6 +48,12 @@ func main() {
 			Tag: "Services",
 		},
 		{
+			Text: "Tunnels",
+			Href: "/tuns",
+			Page: pager("tuns.md"),
+			Tag: "Services",
+		},
+		{
 			Text: "Prose",
 			Href: "/prose",
 			Page: pager("prose.md"),
@@ -60,22 +66,16 @@ func main() {
 			Tag: "Services",
 		},
 		{
-			Text: "Images",
-			Href: "/imgs",
-			Page: pager("imgs.md"),
-			Tag: "Services",
-		},
-		{
 			Text: "Feeds",
 			Href: "/feeds",
 			Page: pager("feeds.md"),
 			Tag: "Services",
 		},
 		{
-			Text: "Tunnels",
-			Href: "/tuns",
-			Page: pager("tuns.md"),
-			Tag: "Services",
+			Text: "Images",
+			Href: "/imgs",
+			Page: pager("imgs.md"),
+			Tag: "Help",
 		},
 		{
 			Text: "IRC",
