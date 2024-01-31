@@ -65,15 +65,15 @@ svg
 
 # Image manipulation
 
-We have an API that allows users to resize images on-the-fly. Currently we only
-support downscaling.
+Our services support an API to manipulate images on-the-fly!  Listed below are
+all the supported options:
 
 ```md
-[!profile](/profile.jpg/s:500) # auto scale width
+[!profile](/profile.jpg/s:500) # auto downscale width
 
-[!profile](/profile.jpg/s::500) # auto scale height
+[!profile](/profile.jpg/s::500) # auto downscale height
 
-[!profile](/profile.jpg/s:500:500) # scale width and height
+[!profile](/profile.jpg/s:500:500) # downscale width and height
 
 [!profile](/profile.jpg/q:50) # set quality to 50 (scale is 1-100)
 
