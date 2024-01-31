@@ -69,9 +69,9 @@ Our services support an API to manipulate images on-the-fly!  Listed below are
 all the supported options:
 
 ```md
-[!profile](/profile.jpg/s:500) # auto downscale width
+[!profile](/profile.jpg/s:500) # downscale width, preserve aspect ratio
 
-[!profile](/profile.jpg/s::500) # auto downscale height
+[!profile](/profile.jpg/s::500) # downscale height, preserve aspect ratio
 
 [!profile](/profile.jpg/s:500:500) # downscale width and height
 
