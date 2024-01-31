@@ -37,7 +37,7 @@ Check out some resources:
 
 - [pico.sh](https://pico.sh)
 - [antoniomika](https://antoniomika.me)
-- [erock.io](https://erock.io)
+- [bower.sh](https://bower.sh)
 
 Cya!
 ```
@@ -62,8 +62,8 @@ This provides the convenience of a web app, but from inside your terminal!
 
 # Upload images for your blog
 
-We also support image uploading (jpg, png, gif, webp, svg). Simply upload your
-images alongside your markdown files and then reference them from root `/`:
+We also support [image uploading](/imgs). Simply upload your images alongside
+your markdown files and then reference them from root `/`:
 
 ```md
 ---
@@ -76,6 +76,10 @@ title: hello world!
 ```bash
 rsync ~/blog/*.jpg prose.sh:/
 ```
+
+When you upload an image to prose, we make it web optimized (e.g. strip exif,
+convert to webp, and reduce filesize). We also support an
+[image manipulation API](/imgs#image-manipulation)!
 
 # Metadata
 

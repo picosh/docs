@@ -11,7 +11,7 @@ different purposes and have different storage limits.
 # Features
 
 - Images can be web optimized
-- API to modify images on-the-fly (e.g. dimensions)
+- API to modify images on-the-fly (e.g. dimensions, quality, orientation)
 
 # What it is
 
@@ -47,9 +47,11 @@ We do our best to web optimize the images being delivered from pico to users. We
 use [imageproxy](https://github.com/willnorris/imageproxy) to serve images from
 our object store.
 
-By default, images served from [prose.sh](/prose) are web optimized. We do not
-automatically optimize images from [pgs.sh](/pgs) because we try to subscribe to
-the principle of least surprise.
+By default, images served from [prose.sh](/prose) are web optimized, meaning we
+convert images to webp and reduce the quality.
+
+We do **not** automatically optimize images from [pgs.sh](/pgs) because we try
+to subscribe to the principle of least surprise.
 
 # What file types are supported?
 
@@ -67,9 +69,15 @@ We have an API that allows users to resize images on-the-fly. Currently we only
 support downscaling.
 
 ```md
-[!profile](/profile.jpg/x500) # auto scale width
+[!profile](/profile.jpg/s:500) # auto scale width
 
-[!profile](/profile.jpg/500x500) # scale width and height
+[!profile](/profile.jpg/s::500) # auto scale height
 
-[!profile](/profile.jp/500x) # auto scale height
+[!profile](/profile.jpg/s:500:500) # scale width and height
+
+[!profile](/profile.jpg/q:50) # set quality to 50 (scale is 1-100)
+
+[!profile](/profile.jpg/rt:90) # rotate image (choices: 90, 180, 270)
+
+[!profile](/profile.jpg/ext:webp) # convert image to webp
 ```

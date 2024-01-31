@@ -21,6 +21,7 @@ keywords: [pico, pgs]
 - [Custom domains](/custom-domains#pgssh) for projects
 - [User-defined redirects](#user-defined-redirects)
 - [SPA support](#single-page-applications)
+- [Image manipulation API](/imgs#image-manipulation)
 - [Only web assets are supported](#what-file-types-are-supported)
 - All assets are public-only
 
