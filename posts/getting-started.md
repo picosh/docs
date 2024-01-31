@@ -50,5 +50,5 @@ our services:
 - [pgs.sh](/pgs)
 - [tuns.sh](/tuns)
 - [prose.sh](/prose)
-- [pastes.sh](/prose)
+- [pastes.sh](/pastes)
 - [feeds.sh](/feeds)
