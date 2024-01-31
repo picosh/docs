@@ -48,7 +48,7 @@ use [imageproxy](https://github.com/willnorris/imageproxy) to serve images from
 our object store.
 
 By default, images served from [prose.sh](/prose) are web optimized, meaning we
-convert images to webp and reduce the quality.
+strip exif data, convert images to webp, and reduce the quality.
 
 We do **not** automatically optimize images from [pgs.sh](/pgs) because we try
 to subscribe to the principle of least surprise.
