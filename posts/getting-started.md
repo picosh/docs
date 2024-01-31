@@ -48,7 +48,7 @@ What service did you want to use first? Read the docs to get started with any of
 our services:
 
 - [pgs.sh](/pgs)
+- [tuns.sh](/tuns)
 - [prose.sh](/prose)
 - [pastes.sh](/prose)
 - [feeds.sh](/feeds)
-- [tuns.sh](/tuns)
