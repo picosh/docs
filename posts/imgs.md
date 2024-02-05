@@ -65,7 +65,7 @@ svg
 
 # Image manipulation
 
-Our services support an API to manipulate images on-the-fly!  Listed below are
+Our services support an API to manipulate images on-the-fly! Listed below are
 all the supported options:
 
 ```md
