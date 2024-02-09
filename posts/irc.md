@@ -68,10 +68,10 @@ Create a config file
 
 ```bash
 mkdir -p ~/.config/senpai
-touch ~/.config/senpai/senpai.cfg
+touch ~/.config/senpai/senpai.scfg
 ```
 
-Edit `senpai.cfg`
+Edit `senpai.scfg`
 
 ```
 address ircs://irc.pico.sh:6697
