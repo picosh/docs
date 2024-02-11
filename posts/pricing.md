@@ -3,22 +3,24 @@ title: pricing
 description: Become a pico+ member
 ---
 
-**$20 USD per year**
+<div class="box">
+  <h3 class="m-0 p-0 text-lg">$20/year</h3>
+</div>
 
 # Includes
 
 - 10GB asset storage for [pgs.sh](/pgs)
-- 2GB image storage for [prose.sh](/prose)
 - 2GB image registry storage for [imgs.sh](/imgs)
+- 1GB image storage for [prose.sh](/prose)
 - Full access to [tuns.sh](/tuns)
-- Access to private IRC `pico+` server
+- Access to private IRC `pico+` channel
 
 # Join the `pico+` community
 
-There are **(3)** ways to subscribe. We try our best to provide immediate access
+There are a few ways to purchase a membership. We try our best to provide immediate access
 to `pico+` regardless of payment method. However, after you pay, please message
 us via [email](mailto:hello@pico.sh) or [IRC](/irc) and we will grant you
-membership access ASAP.
+membership access asap.
 
 ## Stripe
 
@@ -29,11 +31,6 @@ This is the quickest way to access `pico+`.
 The Stripe payment method unfortunately requires email address. We will never
 use your email for anything unless absolutely necessary.
 
-## Crypto
-
-- BTC: xxx
-- ETH: yyy
-
 ## Snail mail
 
 Send cash or check to:
@@ -42,8 +39,8 @@ Send cash or check to:
 > 206 E Huron St STE 103\
 > Ann Arbor MI 48104
 
-Message us when you have sent it and we will grant you temporary access to
-`pico+`.
+Message us when payment is in transit and we will grant you temporary access to
+`pico+` that will be converted to a full year.
 
 # Need higher limits?
 
@@ -59,4 +56,4 @@ services as we build them.
 We provide a special RSS feed for all pico users for us to send direct
 notifications. This is where we will send you `pico+` expiration notifications.
 To be clear, this is opt-in because we do not collect your email address. Read
-more about it on the [feeds.sh](/feeds) service.
+more about in the [feeds.sh](/feeds) docs.

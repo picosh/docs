@@ -116,7 +116,7 @@ func main() {
 		{
 			Text: "Images",
 			Href: "/images",
-			Page: pager("imgs.md"),
+			Page: pager("images.md"),
 			Tag:  "Help",
 			Children: []*pdocs.Sitemap{
 				pdocs.AnchorTagSitemap("What file types are supported"),

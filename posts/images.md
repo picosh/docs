@@ -1,7 +1,7 @@
 ---
 title: Images
 description: How image hosting works at pico
-keywords: [pico, imgs]
+keywords: [pico, images]
 ---
 
 There are two ways to upload images to pico: through [prose.sh](/prose) or
