@@ -85,6 +85,12 @@ func main() {
 			Tag:  "Services",
 		},
 		{
+			Text: "imgs.sh",
+			Href: "/imgs",
+			Page: pager("imgs.md"),
+			Tag:  "Services",
+		},
+		{
 			Text: "prose.sh",
 			Href: "/prose",
 			Page: pager("prose.md"),
