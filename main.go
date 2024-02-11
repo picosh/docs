@@ -45,6 +45,12 @@ func main() {
 			},
 		},
 		{
+			Text: "Pricing",
+			Href: "/pricing",
+			Page: pager("pricing.md"),
+			Tag:  "pico+",
+		},
+		{
 			Text: "Custom domains",
 			Href: "/custom-domains",
 			Page: pager("custom-domains.md"),
@@ -56,7 +62,7 @@ func main() {
 			},
 		},
 		{
-			Text: "Pages",
+			Text: "pgs.sh",
 			Href: "/pgs",
 			Page: pager("pgs.md"),
 			Tag:  "Services",
@@ -67,13 +73,13 @@ func main() {
 			},
 		},
 		{
-			Text: "Tunnels",
+			Text: "tuns.sh",
 			Href: "/tuns",
 			Page: pager("tuns.md"),
 			Tag:  "Services",
 		},
 		{
-			Text: "Prose",
+			Text: "prose.sh",
 			Href: "/prose",
 			Page: pager("prose.md"),
 			Tag:  "Services",
@@ -86,7 +92,7 @@ func main() {
 			},
 		},
 		{
-			Text: "Pastes",
+			Text: "pastes.sh",
 			Href: "/pastes",
 			Page: pager("pastes.md"),
 			Tag:  "Services",
@@ -97,7 +103,7 @@ func main() {
 			},
 		},
 		{
-			Text: "Feeds",
+			Text: "feeds.sh",
 			Href: "/feeds",
 			Page: pager("feeds.md"),
 			Tag:  "Services",
@@ -109,7 +115,7 @@ func main() {
 		},
 		{
 			Text: "Images",
-			Href: "/imgs",
+			Href: "/images",
 			Page: pager("imgs.md"),
 			Tag:  "Help",
 			Children: []*pdocs.Sitemap{

@@ -62,7 +62,7 @@ This provides the convenience of a web app, but from inside your terminal!
 
 # Upload images for your blog
 
-We also support [image uploading](/imgs). Simply upload your images alongside
+We also support [image uploading](/images). Simply upload your images alongside
 your markdown files and then reference them from root `/`:
 
 ```md
@@ -79,7 +79,7 @@ rsync ~/blog/*.jpg prose.sh:/
 
 When you upload an image to prose, we make it web optimized (e.g. strip exif,
 convert to webp, and reduce filesize). We also support an
-[image manipulation API](/imgs#image-manipulation)!
+[image manipulation API](/images#image-manipulation)!
 
 # Metadata
 
