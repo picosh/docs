@@ -1,0 +1,105 @@
+{{template "base" .}}
+
+{{define "title"}}{{.Data.Title}}{{end}}
+
+{{define "meta"}}{{end}}
+
+{{define "attrs"}}class="container-sm"{{end}}
+
+{{define "body"}}
+{{template "nav" .}}
+
+<main class="post">
+  <h1 class="text-2xl text-underline-hdr text-hdr inline-block">{{.Data.Title}}</h1>
+  <h2 class="text-xl">{{.Data.Description}}</h2>
+
+  <hr />
+
+  <div class="group mb-4">
+    <div class="box">
+      <p>There are a few ways to purchase a membership. We try our best to
+      provide immediate access to <code>pico+</code> regardless of payment method.
+      However, after you pay, please message us via
+      <a href="mailto:hello@pico.sh">email</a> or <a href="/irc">IRC</a>
+      and we will grant you membership access asap.
+      </p>
+
+      <p>
+        By joining <code>pico+</code> you agree to the <a href="/ops">terms of service</a> and <a href="/privacy">privacy policy</a>.
+      </p>
+
+    </div>
+
+    <div class="box">
+      <h3 class="text-lg">Stripe</h3>
+      <div class="my-2">
+        <a href="https://buy.stripe.com/8wMeYLcVybTQgwwbIK" class="btn-link" target="_blank">
+          JOIN
+        </a>
+      </div>
+      <p>
+        This is the quickest way to access <code>pico+</code>. The Stripe payment
+        method unfortunately requires an email address. We will never
+        use your email for anything unless absolutely necessary.
+      </p>
+    </div>
+
+    <div class="box">
+      <h3 class="text-lg">Snail Mail</h3>
+      <p>Send cash or check to:</p>
+      <div>
+        <div class="font-bold">pico.sh LLC</div>
+        <div>206 E Huron St STE 103</div>
+        <div>Ann Arbor MI 48104</div>
+      </div>
+      <p>
+        Message us when payment is in transit and we will grant you temporary access to
+        <code>pico+</code> that will be converted to a full year.
+      </p>
+    </div>
+
+    <div class="box">
+      <h3 class="text-lg">Need higher limits?</h3>
+      <p>
+        We are more than happy to extend limits. Just message us and we can chat.
+      </p>
+    </div>
+
+    <div class="box">
+      <h3 class="text-lg">Notes</h3>
+
+      <p>
+        We do not maintain active subscriptions for <code>pico+</code>. Every year you must pay
+        again. We do not take monthly payments, you must pay for a year up-front.
+        Pricing is subject to change because we plan on continuing to include more
+        services as we build them.
+      </p>
+
+      <p>
+        We provide a special RSS feed for all pico users for us to send direct
+        notifications. This is where we will send you <code>pico+</code> expiration notifications.
+        To be clear, this is opt-in because we do not collect your email address. Read
+        more about in the <a href="/feeds">feeds.sh docs</a>.
+      </p>
+    </div>
+  </div>
+</main>
+
+<div class="sitemap text-sm mb-4 text-center">
+{{range .Sitemap -}}
+  <div>
+  {{- if (and $.Prev (eq $.Prev.GenHref .GenHref)) -}}
+  <a href="{{.GenHref}}" class="link-alt-adj">{{.Text}}</a>
+  {{- else if (and $.Next (eq $.Next.GenHref .GenHref)) -}}
+  <a href="{{.GenHref}}" class="link-alt-adj">{{.Text}}</a>
+  {{- else if (eq $.Href .GenHref) -}}
+  <a href="{{.GenHref}}" class="link-alt-hover">{{.Text}}</a>
+  {{- else -}}
+  <a href="{{.GenHref}}" class="link-alt">{{.Text}}</a>
+  {{- end -}}
+  </div>
+{{- end}}
+</div>
+
+{{template "footer" .}}
+{{end}}

@@ -45,9 +45,15 @@ func main() {
 			},
 		},
 		{
-			Text: "Pricing",
-			Href: "/pricing",
-			Page: pager("pricing.md"),
+			Text: "pico+",
+			Href: "/plus",
+			Page: pager("plus.md"),
+			Tag:  "pico+",
+		},
+		{
+			Text: "Join",
+			Href: "/join",
+			Page: pager("plus-join.md"),
 			Tag:  "pico+",
 		},
 		{
