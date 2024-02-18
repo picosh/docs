@@ -52,3 +52,9 @@ our services:
 - [prose.sh](/prose)
 - [pastes.sh](/pastes)
 - [feeds.sh](/feeds)
+
+# pico+
+
+Want access to our premium services?
+
+<a href="/plus" class="btn-link">JOIN</a>

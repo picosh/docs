@@ -11,9 +11,9 @@ description: A private docker image registry with a twist
 
 # How it works
 
-We leverage web tunnels to open a portal to our private image registry where
-you can access it via `localhost`.  This is accomplished by our open source
-library <a href="https://github.com/picosh/ptun">ptun</a>.
+We leverage web tunnels to open a portal to our private image registry where you
+can access it via `localhost`. This is accomplished by our open source library
+<a href="https://github.com/picosh/ptun">ptun</a>.
 
 # Example usage
 

@@ -16,18 +16,26 @@
   <hr />
 
   <div class="group mb-4">
-    <div class="box">
-      <p>There are a few ways to purchase a membership. We try our best to
+    <div>
+      There are a few ways to purchase a membership. We try our best to
       provide immediate access to <code>pico+</code> regardless of payment method.
       However, after you pay, please message us via
       <a href="mailto:hello@pico.sh">email</a> or <a href="/irc">IRC</a>
       and we will grant you membership access asap.
+
+      <p>
+        By joining <code>pico+</code> you agree to our <a href="/ops">terms of service</a> and <a href="/privacy">privacy policy</a>.
       </p>
 
       <p>
-        By joining <code>pico+</code> you agree to the <a href="/ops">terms of service</a> and <a href="/privacy">privacy policy</a>.
+        Before signing up, please make sure you have a pico account.
       </p>
 
+      <div>
+        <a href="/getting-started" class="btn-link">Create Account</a>
+      </div>
+
+      <hr />
     </div>
 
     <div class="box">
@@ -39,14 +47,14 @@
       </div>
       <p>
         This is the quickest way to access <code>pico+</code>. The Stripe payment
-        method unfortunately requires an email address. We will never
+        method requires an email address. We will never
         use your email for anything unless absolutely necessary.
       </p>
     </div>
 
     <div class="box">
       <h3 class="text-lg">Snail Mail</h3>
-      <p>Send cash or check to:</p>
+      <p>Send cash (USD) or check to:</p>
       <div>
         <div class="font-bold">pico.sh LLC</div>
         <div>206 E Huron St STE 103</div>
@@ -85,21 +93,7 @@
   </div>
 </main>
 
-<div class="sitemap text-sm mb-4 text-center">
-{{range .Sitemap -}}
-  <div>
-  {{- if (and $.Prev (eq $.Prev.GenHref .GenHref)) -}}
-  <a href="{{.GenHref}}" class="link-alt-adj">{{.Text}}</a>
-  {{- else if (and $.Next (eq $.Next.GenHref .GenHref)) -}}
-  <a href="{{.GenHref}}" class="link-alt-adj">{{.Text}}</a>
-  {{- else if (eq $.Href .GenHref) -}}
-  <a href="{{.GenHref}}" class="link-alt-hover">{{.Text}}</a>
-  {{- else -}}
-  <a href="{{.GenHref}}" class="link-alt">{{.Text}}</a>
-  {{- end -}}
-  </div>
-{{- end}}
-</div>
+{{template "sitemap-footer" .}}
 
 {{template "footer" .}}
 {{end}}
