@@ -4,6 +4,8 @@ description: A zero-dependency static site hosting service for hackers
 keywords: [pico, pgs]
 ---
 
+> NOTICE: This is a premium [pico+](/plus) service
+
 > NOTICE: This service is currently in **public beta**! What does public beta
 > mean? Users are able to freely use this service but we have more strict
 > storage limits compared to when it is generally available. Specifically, we
@@ -11,6 +13,7 @@ keywords: [pico, pgs]
 
 # Features
 
+- 10GB asset storage
 - Terminal workflows
 - No client-side installation required to fully manage static sites
 - Distinct static sites as projects

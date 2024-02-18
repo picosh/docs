@@ -49,6 +49,7 @@ our services:
 
 - [pgs.sh](/pgs)
 - [tuns.sh](/tuns)
+- [imgs.sh](/imgs)
 - [prose.sh](/prose)
 - [pastes.sh](/pastes)
 - [feeds.sh](/feeds)

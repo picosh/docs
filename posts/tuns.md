@@ -6,7 +6,7 @@ keywords: [pico, tuns]
 
 An ngrok alternative using just SSH.
 
-> NOTICE: This service is currently in **closed beta**
+> NOTICE: This is a premium [pico+](/plus) service
 
 # Features
 
