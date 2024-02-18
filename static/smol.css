@@ -595,6 +595,7 @@ figure {
   padding: 0.4rem 1rem;
   text-decoration: none;
   font-weight: bold;
+  display: inline-block;
 }
 
 .btn-link:visited:hover,
