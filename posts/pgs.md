@@ -1,6 +1,6 @@
 ---
 title: pgs.sh
-description: A zero-dependency static site hosting service for hackers
+description: A zero-install static site hosting service for hackers
 keywords: [pico, pgs]
 ---
 
@@ -26,7 +26,6 @@ keywords: [pico, pgs]
 - [SPA support](#single-page-applications)
 - [Image manipulation API](/images#image-manipulation)
 - [Only web assets are supported](#what-file-types-are-supported)
-- All assets are public-only
 
 # Publish your site with one command
 
@@ -39,8 +38,11 @@ rsync -rv public/ pgs.sh:/myproj
 
 That's it! There's no need to formally create a project, we create them
 on-the-fly. Further, we provide TLS for every project automatically. In this
-case the url for the project above would look something like
-`https://{username}-myproj.pgs.sh`.
+case the url for the project above would look like:
+
+```
+https://{username}-myproj.pgs.sh
+```
 
 # Instant promotion and rollback
 
@@ -154,6 +156,16 @@ We support SPAs! Upload a `_redirects` file to your project:
 
 ```
 /*  /index.html  200
+```
+
+# Reserved username project
+
+If you create a project with the same name as your username, then you can access
+it at:
+
+```bash
+rsync -rv public/ glossy@pgs.sh:/glossy
+# => https://glossy.pgs.sh
 ```
 
 # Ready to join pico?
