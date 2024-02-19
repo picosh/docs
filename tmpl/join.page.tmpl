@@ -39,7 +39,7 @@
     </div>
 
     <div class="box">
-      <h3 class="text-lg">Stripe</h3>
+      <h3 class="text-lg" id="stripe">Stripe</h3>
       <div class="my-2">
         <a href="https://buy.stripe.com/8wMeYLcVybTQgwwbIK" class="btn-link" target="_blank">
           JOIN
@@ -53,7 +53,7 @@
     </div>
 
     <div class="box">
-      <h3 class="text-lg">Snail Mail</h3>
+      <h3 class="text-lg" id="snail">Snail Mail</h3>
       <p>Send cash (USD) or check to:</p>
       <div>
         <div class="font-bold">pico.sh LLC</div>
@@ -73,21 +73,39 @@
       </p>
     </div>
 
+    <div>
+      <h3 class="text-lg" id="membership-notifications">Membership Notifications</h3>
+
+      <p>
+        We provide a special RSS feed for all pico users in order for us to send direct
+        notifications. This is where we will send you <code>pico+</code> expiration notifications.
+        To be clear, this is opt-in because we do not collect your email address.
+      </p>
+
+      <p>
+        In order to subscribe to <code>pico+</code> rss feed you must
+        <a href="/api-token">generate an API token</a>. After that just add
+        the following RSS feed to any of your feed readers -- or
+        <a href="/feeds">feeds.sh</a>.
+      </p>
+
+      <pre>https://auth.pico.sh/rss/:token</pre>
+
+      <p>Or for feeds: <code>rsync pico.txt feeds.sh:/</code></p>
+
+      <pre>=: email rss@myemail.com
+=: digest_interval 1day
+=> https://auth.pico.sh/rss/:token</pre>
+    </div>
+
     <div class="box">
-      <h3 class="text-lg">Notes</h3>
+      <h3 class="text-lg" id="notes">Notes</h3>
 
       <p>
         We do not maintain active subscriptions for <code>pico+</code>. Every year you must pay
         again. We do not take monthly payments, you must pay for a year up-front.
         Pricing is subject to change because we plan on continuing to include more
         services as we build them.
-      </p>
-
-      <p>
-        We provide a special RSS feed for all pico users for us to send direct
-        notifications. This is where we will send you <code>pico+</code> expiration notifications.
-        To be clear, this is opt-in because we do not collect your email address. Read
-        more about in the <a href="/feeds">feeds.sh docs</a>.
       </p>
     </div>
   </div>

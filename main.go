@@ -151,6 +151,17 @@ func main() {
 				Tag: "Community",
 			},
 			{
+				Text: "API Tokens",
+				Href: "/api-token",
+				Page: pager("api-token.md"),
+				Children: []*pdocs.Sitemap{
+					pdocs.AnchorTagSitemap("Web"),
+					pdocs.AnchorTagSitemap("Senpai"),
+					pdocs.AnchorTagSitemap("Connect to Libera"),
+				},
+				Tag: "Help",
+			},
+			{
 				Text: "FAQ",
 				Href: "/faq",
 				Page: pager("faq.md"),
