@@ -38,9 +38,9 @@ ssh glossy@pico.sh
 What service did you want to use first? Read the docs to get started with any of
 our services:
 
-- [pgs.sh](/pgs)
-- [tuns.sh](/tuns)
-- [imgs.sh](/imgs)
+- [pgs.sh](/pgs) <a href="/plus" class="link-alt-hover">(+)</a>
+- [tuns.sh](/tuns) <a href="/plus" class="link-alt-hover">(+)</a>
+- [imgs.sh](/imgs) <a href="/plus" class="link-alt-hover">(+)</a>
 - [prose.sh](/prose)
 - [pastes.sh](/pastes)
 - [feeds.sh](/feeds)
