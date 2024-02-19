@@ -1,6 +1,6 @@
 ---
 title: imgs.sh
-description: A private docker image registry with a twist
+description: A private docker image registry using SSH
 ---
 
 > NOTICE: This is a premium [pico+](/plus) service
@@ -8,6 +8,7 @@ description: A private docker image registry with a twist
 # Features
 
 - 2GB image storage limit
+- Private docker image registry
 - Use SSH keys for authentication
 - `docker push` and `docker pull` work exactly the same
 
