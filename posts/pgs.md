@@ -162,7 +162,7 @@ rsync -rv public/ glossy@pgs.sh:/glossy
 # => https://glossy.pgs.sh
 ```
 
-# CSP policies
+# Content security policy
 
 For pico domains we have modestly strict content-security policies.
 
