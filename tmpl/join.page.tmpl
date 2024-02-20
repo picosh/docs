@@ -87,13 +87,15 @@
       <p>
         In order to subscribe to <code>pico+</code> rss feed you must
         <a href="/api-token">generate an API token</a>. After that just add
-        the following RSS feed to any of your feed readers -- or
-        <a href="/feeds">feeds.sh</a>.
+        the following RSS feed to any of your feed readers.
       </p>
 
       <pre>https://auth.pico.sh/rss/:token</pre>
 
-      <p>Or for feeds: <code>rsync pico.txt feeds.sh:/</code></p>
+      <p>
+        With <a href="https://pico.sh/feeds">feeds.sh</a>:
+        <code>rsync pico.txt feeds.sh:/</code>
+      </p>
 
       <pre>=: email rss@myemail.com
 =: digest_interval 1day

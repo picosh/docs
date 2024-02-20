@@ -76,6 +76,7 @@ func main() {
 				Page: pager("pgs.md"),
 				Tag:  "Services",
 				Children: []*pdocs.Sitemap{
+					pdocs.AnchorTagSitemap("CLI Reference"),
 					pdocs.AnchorTagSitemap("What file types are supported"),
 					pdocs.AnchorTagSitemap("user-defined-redirects"),
 					pdocs.AnchorTagSitemap("single-page-applications"),

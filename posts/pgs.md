@@ -33,11 +33,14 @@ rsync -rv public/ pgs.sh:/myproj
 ```
 
 That's it! There's no need to formally create a project, we create them
-on-the-fly. Further, we provide TLS for every project automatically. In this
-case the url for the project above would look like:
+on-the-fly. Further, we provide TLS for every project automatically.
 
-```
-https://{username}-myproj.pgs.sh
+# Manage your projects with a remote CLI
+
+Use our CLI to manage projects:
+
+```bash
+ssh pgs.sh help
 ```
 
 # Instant promotion and rollback
@@ -61,12 +64,7 @@ We also built a [github action](https://github.com/picosh/pgs-action) that
 handles all the logic for uploading to pgs.sh.
 [Here's an example of it in action.](https://erock-git-neovimcraft.pgs.sh/tree/main/item/.github/workflows/deploy.yml.html#27)
 
-# Manage your projects with a remote CLI
-
-Our management system is done via SSH commands.
-
-> Our CLI commands are currently in active development so the list of available
-> commands are subject to change.
+# CLI Reference
 
 The best way to learn about all the commands we support is via an SSH command:
 
@@ -163,6 +161,17 @@ it at:
 rsync -rv public/ glossy@pgs.sh:/glossy
 # => https://glossy.pgs.sh
 ```
+
+# CSP policies
+
+For pico domains we have modestly strict content-security policies.
+
+```bash
+Content-Security-Policy "default-src 'self'; img-src * 'unsafe-inline'; style-src * 'unsafe-inline'"
+```
+
+If you need to access sites that are blocked by this CSP, then you can use a
+[custom domain](/custom-domains) which won't have those security restrictions.
 
 # Ready to join pico?
 
