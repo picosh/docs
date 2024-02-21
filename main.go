@@ -170,7 +170,6 @@ func main() {
 				Children: []*pdocs.Sitemap{
 					pdocs.AnchorTagSitemap("Permission denied when using SSH"),
 					pdocs.AnchorTagSitemap("Generating a new SSH key"),
-					pdocs.AnchorTagSitemap("Can I create multiple accounts"),
 					pdocs.AnchorTagSitemap("Why do I provide my username when using SSH"),
 					pdocs.AnchorTagSitemap("How can I use git to sync my content"),
 				},
