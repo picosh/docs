@@ -138,7 +138,7 @@ map
 webmanifest
 ```
 
-# User-defined Redirects
+# Custom Redirects
 
 We support custom redirects via a special file `_redirects`.
 
@@ -152,7 +152,7 @@ We support SPAs! Upload a `_redirects` file to your project:
 /*  /index.html  200
 ```
 
-# User-defined Headers
+# Custom Headers
 
 We support custom headers via a special file `_headers`.
 

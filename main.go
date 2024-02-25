@@ -78,8 +78,11 @@ func main() {
 				Children: []*pdocs.Sitemap{
 					pdocs.AnchorTagSitemap("CLI Reference"),
 					pdocs.AnchorTagSitemap("What file types are supported"),
-					pdocs.AnchorTagSitemap("user-defined-redirects"),
-					pdocs.AnchorTagSitemap("single-page-applications"),
+					pdocs.AnchorTagSitemap("Custom Redirects"),
+					pdocs.AnchorTagSitemap("Single-Page Applications"),
+					pdocs.AnchorTagSitemap("Custom Headers"),
+					pdocs.AnchorTagSitemap("Reserved Username Project"),
+					pdocs.AnchorTagSitemap("Content Security Policy"),
 				},
 			},
 			{
