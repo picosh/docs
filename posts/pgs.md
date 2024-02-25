@@ -152,6 +152,12 @@ We support SPAs! Upload a `_redirects` file to your project:
 /*  /index.html  200
 ```
 
+# User-defined Headers
+
+We support custom headers via a special file `_headers`.
+
+Read more about it at [netlify](https://docs.netlify.com/routing/headers).
+
 # Reserved username project
 
 If you create a project with the same name as your username, then you can access
