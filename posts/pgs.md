@@ -186,13 +186,71 @@ We have a very easy-to-setup guide on [custom domains](/custom-domains#pgssh).
 
 We support custom redirects via a special file `_redirects`.
 
-Read more about it at [netflify](https://docs.netlify.com/routing/redirects).
+```
+# Redirect browser request to what we serve
+/home                /
+/blog/post.php       /blog/post
+/news                /blog
+/wow                 https://wow.com
+/authors/c%C3%A9line /authors/about-c%C3%A9line
+```
+
+```
+# Redirect with a 301
+/home         /              301
+
+# Redirect with a 302
+/my-redirect  /              302
+
+# Show a custom 404 for this path
+/ecommerce    /store-closed  404
+
+# Rewrite a path
+/pass-through /index.html    200
+```
 
 # Custom Headers
 
 We support custom headers via a special file `_headers`.
 
-Read more about it at [netlify](https://docs.netlify.com/routing/headers).
+```
+# a path:
+/templates/index.html
+  # headers for that path:
+  X-Frame-Options: DENY
+  X-XSS-Protection: 1; mode=block
+# another path:
+/templates/index2.html
+  # headers for that path:
+  X-Frame-Options: SAMEORIGIN
+```
+
+```
+/*
+  X-Frame-Options: DENY
+  X-XSS-Protection: 1; mode=block
+```
+
+## Denied Headers
+
+These headers are **not** allowed:
+
+```
+Accept-Ranges
+Age
+Allow
+Alt-Svc
+Connection
+Content-Encoding
+Content-Length
+Content-Range
+Date
+Location
+Server
+Trailer
+Transfer-Encoding
+Upgrade
+```
 
 # Single-Page Applications
 
