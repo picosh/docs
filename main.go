@@ -46,20 +46,6 @@ func main() {
 				},
 			},
 			{
-				Text:   "pico+",
-				Href:   "/plus",
-				Page:   pager("plus.md"),
-				Tag:    "pico+",
-				Hidden: true,
-			},
-			{
-				Text:   "Join",
-				Href:   "/join",
-				Page:   pager("plus-join.md"),
-				Tag:    "pico+",
-				Hidden: true,
-			},
-			{
 				Text: "Custom domains",
 				Href: "/custom-domains",
 				Page: pager("custom-domains.md"),
@@ -132,6 +118,12 @@ func main() {
 					pdocs.AnchorTagSitemap("Can I create multiple email digests?"),
 					pdocs.AnchorTagSitemap("Can I fetch Reddit RSS feeds"),
 				},
+			},
+			{
+				Text: "pico+",
+				Href: "/plus",
+				Page: pager("plus.md"),
+				Tag:  "pico+",
 			},
 			{
 				Text: "Images",
@@ -212,6 +204,12 @@ func main() {
 				Href: "/privacy",
 				Page: pager("privacy.md"),
 				Tag:  "About",
+			},
+			{
+				Text: "Join",
+				Href: "/join",
+				Page: pager("plus-join.md"),
+				Tag:  "pico+",
 			},
 		},
 	}
