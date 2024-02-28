@@ -178,7 +178,7 @@ ssh -L 5000:localhost:80 -N hey-tunnels@pgs.sh
 
 Then open your browser to http://localhost:5000
 
-# Custom domains
+# Custom Domains
 
 We have a very easy-to-setup guide on [custom domains](/custom-domains#pgssh).
 
