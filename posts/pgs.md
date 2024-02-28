@@ -141,6 +141,9 @@ xml
 atom
 map
 webmanifest
+avif
+heic
+heif
 ```
 
 # Access Control List
