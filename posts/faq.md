@@ -42,3 +42,13 @@ All you need is your private key and
 
 For example,
 [here is how we deploy the pico blog](https://github.com/picosh/official-blog/blob/main/.github/workflows/publish.yml)
+
+# Are there any bandwidth limitations?
+
+Currently we get 10TB egress per month through our cloud provider. We are
+nowhere near that number today (~60GB/mo).
+
+So until we reach 10TB per month, there are no bandwidth limitations.
+
+Having said that, once we reach that number, we will average the cost across all
+users.
