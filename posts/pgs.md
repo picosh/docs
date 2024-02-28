@@ -17,8 +17,10 @@ keywords: [pico, pgs]
 - Deploy using [rsync, sftp, or scp](/file-uploads)
 - Promotion/rollback support
 - Managed HTTPS for all projects
+- [Private projects](#access-control-list)
 - [Custom domains](/custom-domains#pgssh) for projects
-- [User-defined redirects](#user-defined-redirects)
+- [Custom redirects](#custom-redirects)
+- [Custom headers](#custom-headers)
 - [SPA support](#single-page-applications)
 - [Image manipulation API](/images#image-manipulation)
 - [Only web assets are supported](#what-file-types-are-supported)
@@ -93,7 +95,7 @@ ssh pgs.sh ls
 ssh pgs.sh depends project-x
 
 # link a project (e.g. folder symlink)
-ssh pgs.sh link project-x project-y
+ssh pgs.sh link project-x --to project-y
 
 # unlink a project
 ssh pgs.sh unlink project-x
@@ -106,8 +108,11 @@ ssh pgs.sh rm project-x
 ssh pgs.sh prune prefix
 
 # delete all projects matching a prefix
-# except the latest (3) projects
+# except the last (3) recently updated projects
 ssh pgs.sh retain prefix
+
+# set project to private to only you and matching public keys
+ssh pgs.sh acl project-x --type pubkeys --acl sha256:xxx
 ```
 
 # What file types are supported?
@@ -138,11 +143,56 @@ map
 webmanifest
 ```
 
+# Access Control List
+
+Thanks to SSH tunnels we can provide restricted access to projects.
+
+We have three options:
+
+- public (default)
+- pubkeys (list of sha256 public keys to give read access to)
+- pico (list of pico users to grant read access to)
+
+```bash
+# access to anyone with a public key
+ssh pgs.sh acl project-x --type pubkeys 
+
+# access only to public keys provided
+ssh pgs.sh acl project-x --type pubkeys --acl sha256:xxx --acl sha256:yyy
+
+# access to anyone with a pico account
+ssh pgs.sh acl project-x --type pico
+
+# access only to pico users provided
+ssh pgs.sh acl project-x --type pico --acl antonio --acl erock
+
+# access to anyone
+ssh pgs.sh acl project-x --type public
+```
+
+To connect to a private project:
+
+```bash
+ssh -L 5000:localhost:80 -N hey-tunnels@pgs.sh
+```
+
+Then open your browser to http://localhost:5000
+
+# Custom domains
+
+We have a very easy-to-setup guide on [custom domains](/custom-domains#pgssh).
+
 # Custom Redirects
 
 We support custom redirects via a special file `_redirects`.
 
 Read more about it at [netflify](https://docs.netlify.com/routing/redirects).
+
+# Custom Headers
+
+We support custom headers via a special file `_headers`.
+
+Read more about it at [netlify](https://docs.netlify.com/routing/headers).
 
 # Single-Page Applications
 
@@ -151,12 +201,6 @@ We support SPAs! Upload a `_redirects` file to your project:
 ```
 /*  /index.html  200
 ```
-
-# Custom Headers
-
-We support custom headers via a special file `_headers`.
-
-Read more about it at [netlify](https://docs.netlify.com/routing/headers).
 
 # Reserved username project
 
