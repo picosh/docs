@@ -164,6 +164,7 @@ func main() {
 				Tag:  "Help",
 				Children: []*pdocs.Sitemap{
 					pdocs.AnchorTagSitemap("Permission denied when using SSH"),
+					pdocs.AnchorTagSitemap("How do I force the correct pico SSH key"),
 					pdocs.AnchorTagSitemap("Generating a new SSH key"),
 					pdocs.AnchorTagSitemap("Why do I provide my username when using SSH"),
 					pdocs.AnchorTagSitemap("How can I use git to sync my content"),
