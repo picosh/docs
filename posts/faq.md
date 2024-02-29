@@ -85,5 +85,5 @@ nowhere near that number today (~60GB/mo).
 
 So until we reach 10TB per month, there are no bandwidth limitations.
 
-Having said that, once we reach that number, we will average the cost across all
-users.
+Once we regularly reach our monthly allowance, we will have to re-evaluate our
+pricing structure.
