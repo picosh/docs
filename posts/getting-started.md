@@ -6,13 +6,18 @@ keywords: [pico, getting, started]
 
 # Create your account with Public-Key Cryptography
 
-We don't need your email address.
+We don't need your email address, all we need is an SSH keypair. So before you
+begin, please make sure you have a valid SSH keypair or
+[generate one](/faq#generating-a-new-ssh-key).
 
 To get started, simply SSH to our CMS:
 
 ```bash
-ssh new@pico.sh
+ssh pico.sh
 ```
+
+Getting `Permission denied (publickey)`?
+[Read how to fix it here](faq#permission-denied-when-using-ssh).
 
 ![pico-account-create](https://hey.imgs.sh/pico-account-create.png)
 
