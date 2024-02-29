@@ -6,23 +6,58 @@ keywords: [pico, faq, question, answer]
 
 # Permission denied when using SSH
 
-Unfortunately SHA-2 RSA keys are not currently supported.
+There are a couple reason why this might be happening. We require a public key
+for authentication to all of our services, so first make sure you have a valid
+SSH keypair.
 
-Unfortunately, due to a shortcoming in Go’s x/crypto/ssh package, we do not
-currently support access via new SSH RSA keys: only the old SHA-1 ones will
-work. Until we sort this out you’ll either need an SHA-1 RSA key or a key with
-another algorithm, e.g. Ed25519. Not sure what type of keys you have? You can
-check with the following:
+Not sure what type of keys you have? You can check with the following:
 
 ```bash
 find ~/.ssh/id_*.pub -exec ssh-keygen -l -f {} \;
 ```
 
-If you’re curious about the inner workings of this problem have a look at:
+After that we need to determine why our server is rejecting your public key.
+What is most helpful is if you run:
 
-- [golang/go#37278](https://github.com/golang/go/issues/37278)
-- [go-review](https://go-review.googlesource.com/c/crypto/+/220037)
-- [golang/crypto#197](https://github.com/golang/crypto/pull/197)
+```bash
+ssh -vvv pico.sh
+```
+
+If you cannot figure out what is wrong just by looking at that output, then you
+are more than welcome to join [irc](/irc) and send us a paste of the SSH logs.
+
+You should also make sure you have the correct file permissions set for your ssh
+folder and keys:
+
+```bash
+chmod 700 ~/.ssh
+chmod 644 ~/.ssh/id_ed25519.pub
+chmod 600 ~/.ssh/id_ed25519
+```
+
+# How do I force the correct pico SSH key?
+
+There are two ways, one is when SSHing to us:
+
+```bash
+ssh -o IdentitiesOnly=yes -i ~/.ssh/id_ed25519 pico.sh
+```
+
+The other is with an SSH config entry (`~/.ssh/config`):
+
+```bash
+Host pico.sh
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh/id_ed25519
+
+Host pgs.sh
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh/id_ed25519
+
+Host prose.sh
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh/id_ed25519
+```
 
 # Generating a new SSH key
 
