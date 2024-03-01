@@ -145,6 +145,18 @@ post pages.
 #blog {
     color: tomato;
 }
+
+header {}
+main {}
+footer {}
+article {}
+```
+
+Further we add the post slug as a class on the `body` element. So if you upload
+a file called `barrel.md` then the body element will have:
+
+```html
+<body id="post" class="barrel"></body>
 ```
 
 # How can I change the layout of my blog?
@@ -156,6 +168,19 @@ will change the layout of your blog index page.
 ---
 layout: aside # or default
 ---
+```
+
+# How can I change the default 404 page?
+
+Upload a `_404.md` which is formatted just like all the other posts.
+
+```md
+---
+title: Not found
+description: Where are you going?
+---
+
+This page doesn't exist.
 ```
 
 # Ready to join pico?
