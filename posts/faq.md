@@ -87,6 +87,16 @@ accounts.
 Other than that, you are welcome to create multiple pico accounts. Just keep in
 mind that each [pico+](/plus) membership is assigned to a single account.
 
+# Can I associate multiple SSH keypairs to a single account?
+
+Yes! You can manage your pubkeys for an account via our CMS:
+
+```bash
+ssh pico.sh
+# => Manage Keys
+# Press "n" to add a new pubkey
+```
+
 # Are there any bandwidth limitations?
 
 Currently we get 10TB egress per month through our cloud provider. We are
