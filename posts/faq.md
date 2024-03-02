@@ -78,6 +78,15 @@ All you need is your private key and
 For example,
 [here is how we deploy the pico blog](https://github.com/picosh/official-blog/blob/main/.github/workflows/publish.yml)
 
+# Can I create multiple pico accounts?
+
+Yes! The only requirement is that SSH keypairs added to our system must be
+unique across all users. So you cannot have the same pubkey across multiple pico
+accounts.
+
+Other than that, you are welcome to create multiple pico accounts. Just keep in
+mind that each [pico+](/plus) membership is assigned to a single account.
+
 # Are there any bandwidth limitations?
 
 Currently we get 10TB egress per month through our cloud provider. We are

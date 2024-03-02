@@ -168,6 +168,7 @@ func main() {
 					pdocs.AnchorTagSitemap("Generating a new SSH key"),
 					pdocs.AnchorTagSitemap("Why do I provide my username when using SSH"),
 					pdocs.AnchorTagSitemap("How can I use git to sync my content"),
+					pdocs.AnchorTagSitemap("Can I create multiple pico accounts"),
 					pdocs.AnchorTagSitemap("Are there any bandwidth limitations"),
 				},
 			},
