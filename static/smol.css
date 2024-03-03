@@ -344,6 +344,14 @@ figure {
   max-width: 50%;
 }
 
+.h-screen {
+  height: 100vh;
+}
+
+.w-screen {
+  width: 100vw;
+}
+
 .flex {
   display: flex;
 }
@@ -586,6 +594,14 @@ figure {
   -moz-background-clip: text;
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
+}
+
+.btn {
+  border: 2px solid var(--link-color);
+  color: var(--link-color);
+  padding: 0.4rem 1rem;
+  font-weight: bold;
+  display: inline-block;
 }
 
 .btn-link,
