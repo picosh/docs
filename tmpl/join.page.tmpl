@@ -4,117 +4,119 @@
 
 {{define "meta"}}{{end}}
 
-{{define "attrs"}}class="container-sm"{{end}}
+{{define "attrs"}}class="container"{{end}}
 
 {{define "body"}}
 {{template "nav" .}}
 
-<main class="post">
-  <h1 class="text-2xl text-underline-hdr text-hdr inline-block">{{.Data.Title}}</h1>
-  <h2 class="text-xl">{{.Data.Description}}</h2>
+<div class="post-container">
+  <main class="post flex-1">
+    <h1 class="text-2xl text-underline-hdr text-hdr inline-block">{{.Data.Title}}</h1>
+    <h2 class="text-xl">{{.Data.Description}}</h2>
 
-  <hr />
+    <hr />
 
-  <div class="text-center text-2xl my-4">$20/year</div>
+    <div class="text-center text-2xl my-4">$20/year</div>
 
-  <div class="group mb-4">
-    <div>
-      There are a few ways to purchase a membership. We try our best to
-      provide immediate access to <code>pico+</code> regardless of payment method.
-      However, after you pay, please message us via
-      <a href="mailto:hello@pico.sh">email</a> or <a href="/irc">IRC</a>
-      and we will grant you membership access asap.
-
-      <p>
-        By joining <code>pico+</code> you agree to our <a href="/ops">terms of service</a> and <a href="/privacy">privacy policy</a>.
-      </p>
-
-      <p>
-        Before giving us money, please make sure you have a pico account.
-        <a href="/getting-started">Create Account</a>
-      </p>
-
-      <hr />
-    </div>
-
-    <div class="box">
-      <h3 class="text-lg" id="stripe">Stripe</h3>
-      <div class="my-2">
-        <a href="https://buy.stripe.com/8wMeYLcVybTQgwwbIK" class="btn-link" target="_blank">
-          JOIN
-        </a>
-      </div>
-      <p>
-        This is the quickest way to access <code>pico+</code>. The Stripe payment
-        method requires an email address. We will never
-        use your email for anything unless absolutely necessary.
-      </p>
-    </div>
-
-    <div class="box">
-      <h3 class="text-lg" id="snail">Snail Mail</h3>
-      <p>Send cash (USD) or check to:</p>
+    <div class="group mb-4">
       <div>
-        <div class="font-bold">pico.sh LLC</div>
-        <div>206 E Huron St STE 103</div>
-        <div>Ann Arbor MI 48104</div>
+        There are a few ways to purchase a membership. We try our best to
+        provide immediate access to <code>pico+</code> regardless of payment method.
+        However, after you pay, please message us via
+        <a href="mailto:hello@pico.sh">email</a> or <a href="/irc">IRC</a>
+        and we will grant you membership access asap.
+
+        <p>
+          By joining <code>pico+</code> you agree to our <a href="/ops">terms of service</a> and <a href="/privacy">privacy policy</a>.
+        </p>
+
+        <p>
+          Before giving us money, please make sure you have a pico account.
+          <a href="/getting-started">Create Account</a>
+        </p>
+
+        <hr />
       </div>
-      <p>
-        Message us when payment is in transit and we will grant you temporary access to
-        <code>pico+</code> that will be converted to a full year.
-      </p>
+
+      <div class="box">
+        <h3 class="text-lg" id="stripe">Stripe</h3>
+        <div class="my-2">
+          <a href="https://buy.stripe.com/8wMeYLcVybTQgwwbIK" class="btn-link" target="_blank">
+            JOIN
+          </a>
+        </div>
+        <p>
+          This is the quickest way to access <code>pico+</code>. The Stripe payment
+          method requires an email address. We will never
+          use your email for anything unless absolutely necessary.
+        </p>
+      </div>
+
+      <div class="box">
+        <h3 class="text-lg" id="snail">Snail Mail</h3>
+        <p>Send cash (USD) or check to:</p>
+        <div>
+          <div class="font-bold">pico.sh LLC</div>
+          <div>206 E Huron St STE 103</div>
+          <div>Ann Arbor MI 48104</div>
+        </div>
+        <p>
+          Message us when payment is in transit and we will grant you temporary access to
+          <code>pico+</code> that will be converted to a full year.
+        </p>
+      </div>
+
+      <div class="box">
+        <h3 class="text-lg">Need higher limits?</h3>
+        <p>
+          We are more than happy to extend limits. Just message us and we can chat.
+        </p>
+      </div>
+
+      <div class="box">
+        <h3 class="text-lg" id="membership-notifications">Membership Notifications</h3>
+
+        <p>
+          We provide a special RSS feed for all pico users in order for us to send direct
+          notifications. This is where we will send you <code>pico+</code> expiration notifications.
+          To be clear, this is opt-in because we do not collect your email address.
+        </p>
+
+        <p>
+          In order to subscribe to <code>pico+</code> rss feed you must
+          <a href="/api-token">generate an API token</a>. After that just add
+          the following RSS feed to any of your feed readers.
+        </p>
+
+        <pre>https://auth.pico.sh/rss/:token</pre>
+
+        <p>
+          With <a href="https://pico.sh/feeds">feeds.sh</a>:
+          <code>rsync pico.txt feeds.sh:/</code>
+        </p>
+
+        <pre>=: email rss@myemail.com
+  =: digest_interval 1day
+  => https://auth.pico.sh/rss/:token</pre>
+      </div>
+
+      <div class="box">
+        <h3 class="text-lg" id="notes">Notes</h3>
+
+        <p>
+          We do not maintain active subscriptions for <code>pico+</code>. Every year you must pay
+          again. We do not take monthly payments, you must pay for a year up-front.
+          Pricing is subject to change because we plan on continuing to include more
+          services as we build them.
+        </p>
+      </div>
     </div>
 
-    <div class="box">
-      <h3 class="text-lg">Need higher limits?</h3>
-      <p>
-        We are more than happy to extend limits. Just message us and we can chat.
-      </p>
-    </div>
+    {{template "pager" .}}
+  </main>
 
-    <div class="box">
-      <h3 class="text-lg" id="membership-notifications">Membership Notifications</h3>
-
-      <p>
-        We provide a special RSS feed for all pico users in order for us to send direct
-        notifications. This is where we will send you <code>pico+</code> expiration notifications.
-        To be clear, this is opt-in because we do not collect your email address.
-      </p>
-
-      <p>
-        In order to subscribe to <code>pico+</code> rss feed you must
-        <a href="/api-token">generate an API token</a>. After that just add
-        the following RSS feed to any of your feed readers.
-      </p>
-
-      <pre>https://auth.pico.sh/rss/:token</pre>
-
-      <p>
-        With <a href="https://pico.sh/feeds">feeds.sh</a>:
-        <code>rsync pico.txt feeds.sh:/</code>
-      </p>
-
-      <pre>=: email rss@myemail.com
-=: digest_interval 1day
-=> https://auth.pico.sh/rss/:token</pre>
-    </div>
-
-    <div class="box">
-      <h3 class="text-lg" id="notes">Notes</h3>
-
-      <p>
-        We do not maintain active subscriptions for <code>pico+</code>. Every year you must pay
-        again. We do not take monthly payments, you must pay for a year up-front.
-        Pricing is subject to change because we plan on continuing to include more
-        services as we build them.
-      </p>
-    </div>
-  </div>
-
-  {{template "pager" .}}
-</main>
-
-{{template "sitemap-footer" .}}
+  {{template "sitemap-footer" .}}
+</div>
 
 {{template "footer" .}}
 {{end}}

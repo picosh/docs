@@ -4,25 +4,28 @@
 
 {{define "meta"}}{{end}}
 
-{{define "attrs"}}class="container-sm"{{end}}
+{{define "attrs"}}class="container"{{end}}
 
 {{define "body"}}
 {{template "nav" .}}
 
-<main class="post">
-  <h1 class="text-2xl text-underline-hdr text-hdr inline-block">{{.Data.Title}}</h1>
-  <h2 class="text-xl">{{.Data.Description}}</h2>
+<div class="post-container">
+  <main class="post flex-1">
+    <h1 class="text-2xl text-underline-hdr text-hdr inline-block">{{.Data.Title}}</h1>
+    <h2 class="text-xl">{{.Data.Description}}</h2>
 
-  <hr />
+    <hr />
 
-  <article class="md">
-    {{.Data.Html}}
-  </article>
+    <article class="md">
+      {{.Data.Html}}
+    </article>
 
-  {{template "pager" .}}
-</main>
+    {{template "pager" .}}
+  </main>
 
-{{template "sitemap-footer" .}}
+  {{template "sitemap-footer" .}}
+</div>
+
 
 {{template "footer" .}}
 {{end}}

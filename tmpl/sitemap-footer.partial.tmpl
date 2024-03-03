@@ -1,5 +1,5 @@
 {{define "sitemap-footer"}}
-<div class="sitemap text-sm mb-4 text-center">
+<div class="sitemap text-sm mb-4">
 {{range .Sitemap.Children -}}
   <div>
   {{- if (and $.Prev (eq $.Prev.GenHref .GenHref)) -}}
