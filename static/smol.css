@@ -613,6 +613,10 @@ figure {
   display: inline-block;
 }
 
+.btn-link:hover {
+  border: 2px solid var(--hover);
+}
+
 .btn-link,
 .btn-link:visited {
   border: 2px solid var(--link-color);
