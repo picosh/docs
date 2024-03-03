@@ -60,15 +60,6 @@
   padding: 1rem;
 }
 
-.text-hdr {
-  color: var(--hover);
-}
-
-.text-underline-hdr {
-  border-bottom: 3px solid var(--hover);
-  padding-bottom: 3px;
-}
-
 .current {
   background-color: var(--blockquote-bg) !important;
   border-right: 5px solid var(--blockquote);

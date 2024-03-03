@@ -324,6 +324,15 @@ figure {
   padding-bottom: 3px;
 }
 
+.text-hdr {
+  color: var(--hover);
+}
+
+.text-underline-hdr {
+  border-bottom: 3px solid var(--hover);
+  padding-bottom: 3px;
+}
+
 .font-bold {
   font-weight: bold;
 }
