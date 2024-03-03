@@ -171,6 +171,7 @@ func main() {
 					pdocs.AnchorTagSitemap("Can I create multiple pico accounts"),
 					pdocs.AnchorTagSitemap("Can I associate multiple SSH keypairs to a single account"),
 					pdocs.AnchorTagSitemap("Are there any bandwidth limitations"),
+					pdocs.AnchorTagSitemap("How can I delete my account and content"),
 				},
 			},
 			{

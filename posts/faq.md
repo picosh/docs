@@ -98,3 +98,14 @@ So until we reach 10TB per month, there are no bandwidth limitations.
 
 Once we regularly reach our monthly allowance, we will have to re-evaluate our
 pricing structure.
+
+# How can I delete my account and content?
+
+You are able to delete your account yourself, but it is a little hidden.
+
+```bash
+ssh pico.sh
+# select "Manage keys"
+# Delete all of your keys
+# Confirm delete your account
+```
