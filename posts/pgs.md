@@ -144,7 +144,14 @@ webmanifest
 avif
 heic
 heif
+opus
+wav
+mp3
+mp4
+mpeg
 ```
+
+Don't see a file format you need?  Contact us.
 
 # Access Control List
 
