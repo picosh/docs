@@ -292,6 +292,12 @@ Content-Security-Policy "default-src 'self'; img-src * 'unsafe-inline'; style-sr
 If you need to access sites that are blocked by this CSP, then you can use a
 [custom domain](/custom-domains) which won't have those security restrictions.
 
+# Does pages have a CDN or multi-region support?
+
+At this point in time, we are able to serve content from a single VM. If this
+service gains traction we will commit to having a CDN with multiple regions in
+the US.
+
 # Ready to join pico?
 
 <div class="flex flex-col items-center justify-center">

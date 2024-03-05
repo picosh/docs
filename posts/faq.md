@@ -99,7 +99,11 @@ So until we reach 10TB per month, there are no bandwidth limitations.
 Once we regularly reach our monthly allowance, we will have to re-evaluate our
 pricing structure.
 
-# How can I delete my account and content?
+# How can I delete my content?
+
+[File uploads](/file-uploads#how-do-i-delete-files)
+
+# How can I delete my account with my content?
 
 You are able to delete your account yourself, but it is a little hidden.
 
