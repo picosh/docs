@@ -149,9 +149,10 @@ wav
 mp3
 mp4
 mpeg
+wasm
 ```
 
-Don't see a file format you need?  Contact us.
+Don't see a file format you need? Contact us.
 
 # Access Control List
 
