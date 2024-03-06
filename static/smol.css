@@ -287,6 +287,19 @@ figure {
     monospace;
 }
 
+.link-alt,
+.link-alt:visited,
+.link-alt:visited:hover,
+.link-alt:hover {
+  color: var(--white);
+  text-decoration: none;
+}
+
+.link-alt:visited:hover,
+.link-alt:hover {
+  text-decoration: underline;
+}
+
 .text-3xl {
   font-size: 2.5rem;
 }

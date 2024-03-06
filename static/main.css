@@ -38,19 +38,6 @@
   text-decoration: underline;
 }
 
-.link-alt,
-.link-alt:visited,
-.link-alt:visited:hover,
-.link-alt:hover {
-  color: var(--white);
-  text-decoration: none;
-}
-
-.link-alt:visited:hover,
-.link-alt:hover {
-  text-decoration: underline;
-}
-
 .hero {
   padding: 5rem 0;
 }
