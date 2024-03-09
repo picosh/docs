@@ -3,7 +3,7 @@ title: Web Tunnels
 description: Passwordless authentication for the web
 ---
 
-You ready to experience a new way to authenticate websites?
+Are you ready to experience a new way to authenticate users on your website?
 
 We could describe how it works, but it would be easier to show you. Run this
 command:
