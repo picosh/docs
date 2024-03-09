@@ -177,6 +177,12 @@ func main() {
 				},
 			},
 			{
+				Text: "Web Tunnels",
+				Href: "/tunnels",
+				Page: pager("tunnels.md"),
+				Tag:  "Lab",
+			},
+			{
 				Text: "Lab",
 				Href: "/lab",
 				Page: pager("lab.md"),
