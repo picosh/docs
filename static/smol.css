@@ -354,6 +354,30 @@ figure {
   font-size: 0.875rem;
 }
 
+.text-xs {
+  font-size: 0.6rem;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.border {
+  border: 2px solid var(--grey-light);
+}
+
+.text-left {
+  text-align: left;
+}
+
 .text-center {
   text-align: center;
 }
