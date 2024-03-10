@@ -34,14 +34,19 @@ To use pico.sh services, you agree that:
 
 # Code of Content Publication
 
-Content in pico.sh services is unfiltered and unmonitored. Users are free to
-publish any combination of words and pixels except for: content of animosity or
-disparagement of an individual or a group on account of a group characteristic
-such as race, color, national origin, sex, disability, religion, or sexual
-orientation, which will be taken down immediately.
+Content in pico.sh services is unfiltered but monitored. Users are free to
+publish any combination of words and pixels with a few exceptions.
 
-If one notices something along those lines in a blog please let us know at
-[abuse@pico.sh](mailto:abuse@pico.sh).
+If someone else might own the copyright to it, don't upload it. Don't upload
+gore, "hate speech" (i.e. demeaning race, gender, age, religious or sexual
+orientation, etc.), or material that is threatening, harassing, defamatory, or
+that encourages violence or crime. Don't upload illegal content, nudity, or
+adult sexual content. Don't impersonate someone else. If you do or if you do
+anything illegal, in addition to any other legal rights we may have, we will ban
+you, delete all your images, and report you to the authorities if necessary.
+
+If anyone notices something along those lines in any content published on our
+platform, please let us know at [abuse@pico.sh](mailto:abuse@pico.sh).
 
 # DMCA Policy
 
@@ -90,21 +95,6 @@ website shall not be liable, in law or in equity, to them or to any third party
 for any direct, indirect, incidental, lost profits, special, consequential,
 punitive or exemplary damages.
 
-# Analytics
-
-We are committed to zero browser-based tracking or trying to identify visitors.
-This means we do not try to understand the user based on cookies or IP address.
-We do not store personally identifiable information.
-
-However, in order to provide a better service, we do have some analytics on
-content. List of metrics we track for content:
-
-- anonymous view counts
-
-We might also inspect the headers of HTTP requests to determine some tertiary
-information about the request. For example we might inspect the User-Agent or
-Referer to filter out requests from bots.
-
 # Account Terms
 
 The user is responsible for all content posted and all actions performed with
@@ -131,3 +121,4 @@ In particular we would like to thank the following communities:
 - caddy
 - omg.lol
 - bearblog
+- write.as
