@@ -107,6 +107,13 @@ there will be people trying to do something nefarious.
 We provide pico.sh services on an "as is" and "as available" basis. We do not
 offer service-level agreements but do take uptime seriously.
 
+# Refund Policy
+
+Our refund policy is simple: If you are unsatisfied with the services we
+provide, we will refund 100% of your purchase. We may ask follow-up questions to
+better understand how we can improve our services, but a refund will always be
+granted.
+
 # Contact and Support
 
 Email us at [hello@pico.sh](mailto:hello@pico.sh) with any questions.
