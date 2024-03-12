@@ -184,10 +184,13 @@ ssh pgs.sh acl project-x --type public
 To connect to a private project:
 
 ```bash
-ssh -L 5000:localhost:80 -N hey-tunnels@pgs.sh
+ssh -L 1337:localhost:80 -N {subdomain}@pgs.sh
+
+# for example our pico UI is only available through an SSH tunnel:
+ssh -L 1337:localhost:80 -N pico-ui@pgs.sh
 ```
 
-Then open your browser to http://localhost:5000
+Then open your browser to http://localhost:1337
 
 # Custom Domains
 
