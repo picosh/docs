@@ -8,7 +8,7 @@ keywords: [pico, pgs]
 
 # Features
 
-- 25MB asset storage with **free trial**
+- 5MB asset storage with **free trial**
 - 10GB asset storage with [pico+](/plus)
 - Terminal workflows
 - No client-side installation required to fully manage static sites

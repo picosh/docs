@@ -46,6 +46,12 @@ func main() {
 				},
 			},
 			{
+				Text: "UI",
+				Href: "/ui",
+				Page: pager("ui.md"),
+				Tag:  "Help",
+			},
+			{
 				Text: "Custom domains",
 				Href: "/custom-domains",
 				Page: pager("custom-domains.md"),

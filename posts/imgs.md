@@ -21,10 +21,12 @@ can access it via `localhost`. This is accomplished by our open source library
 # Example usage
 
 ```bash
-ssh -L 5000:localhost:80 -N imgs.sh 
+ssh -L 1338:localhost:80 -N imgs.sh 
 # separate terminal
-docker push localhost:5000/my-img:latest
-docker pull localhost:5000/my-img:latest
+docker push localhost:1338/my-img:latest
+docker pull localhost:1338/my-img:latest
+# or use the docker API
+curl http://localhost:1338/v2/_catalog
 ```
 
 # GitHub Action
