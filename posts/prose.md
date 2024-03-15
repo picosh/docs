@@ -8,19 +8,18 @@ keywords: [pico, prose]
 
 - Github flavor markdown
 - [Custom domains](/custom-domains#prosesh)
+- Publish posts using [rsync, sftp, or scp](/file-uploads)
 - Looks great on any device
 - Bring your own editor
 - You control the source files
 - Terminal workflow with no installation
 - Public-key based authentication
-- Use sftp to manage blog
 - No ads, zero browser-based tracking
 - No attempt to identify users
 - No platform lock-in
 - No javascript
 - Subscriptions via RSS
 - Minimalist design
-- 100% open source
 
 # You control the source files
 
@@ -49,7 +48,13 @@ familiar command:
 
 ```bash
 rsync ~/blog/* prose.sh:/
+# - or -
+scp ~/blog/* prose.sh:/
+# - or -
+sftp prose.sh
 ```
+
+[Read more about uploading files](/file-uploads).
 
 We'll either create or update the posts for you.
 
@@ -91,12 +96,35 @@ looks like the following:
 title: some title!
 description: this is a great description
 date: 2022-06-28
-tags: feature, announcement
+tags: [feature, announcement]
 image: og_image.jpg
 card: summary # or summary_large_image
 draft: true
 ---
 ```
+
+# Unlisted posts
+
+When a post has a date in the future or `draft: true` then the post will be
+**unlisted**. This means that it will **not** be shown on your blog page nor
+will it show up in your built-in RSS feed.
+
+However, the post is still publicly accessible! This gives users the ability to
+share posts before "publishing" them.
+
+# How are blogs structured?
+
+Think of your blog as a flat list of files, similar to how your blog is rendered
+as a flat list of posts.
+
+> All filenames uploaded to prose must be unique.
+
+We do **not** support storing files in different folders. On your local machine,
+you can store files however you like, but once uploaded to us, we lose all
+directory structure information and only keep the filename.
+
+For example, if you have two posts in different folders but the same filename
+and try to upload them to prose, the second post will overwrite the first one.
 
 # How can I add a footer to all of my posts?
 
