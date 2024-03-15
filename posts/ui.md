@@ -18,7 +18,7 @@ ssh pico.sh
 
 # Web UI
 
-This is an experimental web-based UI leverage [web tunnels](/tunnels).
+This is an experimental web-based UI leveraging [web tunnels](/tunnels).
 
 To use the web UI, create an SSH local forward connection to our [pgs](/pgs)
 site:
