@@ -224,12 +224,6 @@ func main() {
 				Page: pager("privacy.md"),
 				Tag:  "About",
 			},
-			{
-				Text: "Join",
-				Href: "/join",
-				Page: pager("plus-join.md"),
-				Tag:  "pico+",
-			},
 		},
 	}
 

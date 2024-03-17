@@ -8,7 +8,7 @@ API tokens are used for when we cannot leverage SSH pubkey authentication.
 Common examples:
 
 - [connecting to our bouncer](/irc)
-- [pico+ rss feed](/join#membership-notifications)
+- pico+ rss feed
 
 ![pico-token-menu](https://hey.imgs.sh/pico-token-menu.png)
 
