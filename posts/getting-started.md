@@ -32,10 +32,11 @@ glossy.pastes.sh
 ```
 
 After that, just set a username and you're ready to start using our services!
-When you SSH again, use your username that you set in the CMS.
+
+From now on when you SSH to us it'll bring you to our account management system:
 
 ```bash
-ssh glossy@pico.sh
+ssh pico.sh
 ```
 
 # Next Steps

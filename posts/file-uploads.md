@@ -15,19 +15,34 @@ upload files.
 ## rsync
 
 ```bash
-rsync hello-world.md {user}@{service}:/
+rsync hello-world.md {service}:/
 ```
+
+For pgs:
+
+```bash
+rsync -rv public/ {service}:/site/
+```
+
+### What rsync options are supported?
+
+Because in our golang SSH server we re-implement `rsync`, many options are
+currently not supported. For example, `--delete` and `--dry-run` are not
+supported. At this time, the only options we supported are the following:
+
+- `-r`
+- `-v`
 
 ## scp
 
 ```bash
-scp hello-world.md {user}@{service}:/
+scp hello-world.md {service}:/
 ```
 
 ## sftp
 
 ```bash
-sftp {user}@{service}
+sftp {service}
 
 sftp> ls
 hello-world.md
@@ -62,7 +77,7 @@ remove the post. For example, if you want to delete `delete.md` you could:
 
 ```bash
 cp /dev/null delete.md
-scp ./delete.md {user}@prose.sh:/
+scp ./delete.md prose.sh:/
 ```
 
 # How do I download files?
@@ -71,5 +86,5 @@ Using the same tools describe [here](#how-do-i-upload-files) just reverse the
 order of `src` and `dest`!
 
 ```bash
-rsync {user}@prose.sh:/ .
+rsync prose.sh:/ .
 ```
