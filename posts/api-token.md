@@ -7,6 +7,7 @@ API tokens are used for when we cannot leverage SSH pubkey authentication.
 
 Common examples:
 
+- account recovery
 - [connecting to our bouncer](/irc)
 - pico+ rss feed
 

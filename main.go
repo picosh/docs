@@ -180,6 +180,7 @@ func main() {
 					pdocs.AnchorTagSitemap("Are there any bandwidth limitations"),
 					pdocs.AnchorTagSitemap("How can I delete my content"),
 					pdocs.AnchorTagSitemap("How can I delete my account and content"),
+					pdocs.AnchorTagSitemap("I lost my SSH private key how can I recover my account"),
 				},
 			},
 			{
@@ -204,6 +205,12 @@ func main() {
 				Text: "About us",
 				Href: "/about",
 				Page: pager("about.md"),
+				Tag:  "About",
+			},
+			{
+				Text: "Contact us",
+				Href: "/contact",
+				Page: pager("contact.md"),
 				Tag:  "About",
 			},
 			{

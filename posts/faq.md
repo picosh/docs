@@ -113,3 +113,10 @@ ssh pico.sh
 # Delete all of your keys
 # Confirm delete your account
 ```
+
+# I lost my SSH private key how can I recover my account?
+
+After account creation, we **highly** recommend users generate an
+[API Token](/api-token) and store that someplace safe. If you lose your SSH
+private key and [contact us](/contact), we can use that API token to confirm you
+own the pico account and manually recover it for you.

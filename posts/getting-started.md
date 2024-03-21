@@ -41,6 +41,10 @@ ssh pico.sh
 
 # Next Steps
 
+> After you have created your pico account, we **highly** recommend creating an
+> [API token](/api-token) and keeping it someplace safe. This is how users can
+> recover their account if they lose their SSH private key.
+
 What service did you want to use first? Read the docs to get started with any of
 our services:
 
