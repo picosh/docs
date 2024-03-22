@@ -100,6 +100,7 @@ tags: [feature, announcement]
 image: og_image.jpg
 card: summary # or summary_large_image
 draft: true
+toc: true # or false or integer for max heading depth
 ---
 ```
 
