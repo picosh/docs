@@ -146,13 +146,13 @@ the blog index page and changes the blog post link back to the main blog page.
 appended to the end of this list.
 
 `image` and `card` are used for og and image metadata when for when a blog is
-shared.  If a blog post does not have its own `image` or `card` properties,
-then it will assume the blog's `image` and `card` properties.
+shared. If a blog post does not have its own `image` or `card` properties, then
+it will assume the blog's `image` and `card` properties.
 
 `favicon` will change the `favicon` for the blog and posts.
 
-`layout` changes the layout of the blog index page.  The only options are
-`aside` or `default`.
+`layout` changes the layout of the blog index page. The only options are `aside`
+or `default`.
 
 # How can I customize a blog post?
 
@@ -173,6 +173,31 @@ aliases:
   - 2023/03/10/my-post
 ---
 ```
+
+`title` changes the title of the blog post.
+
+`description` changes the description metadata for the blog post.
+
+`date` is the published date. It ought to be in `YYYY-MM-DD` format. If this
+date is set to the future, the post will be unlisted until the date provided is
+today or in the past.
+
+`image` and `card` are used for og and image metadata when for when a blog is
+shared. If a blog post does not have its own `image` or `card` properties, then
+it will assume the blog's `image` and `card` properties.
+
+`draft` will change the listing status of a blog post. If `draft: true` then the
+post will be published but unlisted. It will not show up on the blog index page
+or RSS feed for your blog.
+
+`toc` adds a table of contents to the blog post based on the headers. If set to
+`false` then no table will be rendered. If set to `true` then table will be
+rendered. If set to an integer greater than `0` then it will set the max heading
+depth to that value. So if set to `2` the table will only render links of
+heading `h1` and `h2`.
+
+`aliases` will redirect all routes listed in this list to this blog post.
+Primarily used for migrating from a different blog platform to prose.
 
 # How can I change the theme of my blog?
 
