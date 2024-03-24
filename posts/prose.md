@@ -86,15 +86,6 @@ When you upload an image to prose, we make it web optimized (e.g. strip exif,
 convert to webp, and reduce filesize). We also support an
 [image manipulation API](/images#image-manipulation)!
 
-# Unlisted posts
-
-When a post has a date in the future or `draft: true` then the post will be
-**unlisted**. This means that it will **not** be shown on your blog page nor
-will it show up in your built-in RSS feed.
-
-However, the post is still publicly accessible! This gives users the ability to
-share posts before "publishing" them.
-
 # How are blogs structured?
 
 Think of your blog as a flat list of files, similar to how your blog is rendered
@@ -137,22 +128,36 @@ layout: aside # or default
 ---
 ```
 
-`title` changes your blog's name which will show up as the metadata title for
-the blog index page and changes the blog post link back to the main blog page.
+## `title`
 
-`description` is used as the metadata description on the blog page.
+Title changes your blog's name which will show up as the metadata title for the
+blog index page and changes the blog post link back to the main blog page.
 
-`nav` are the navigation links on the blog index page. The `rss` link is always
-appended to the end of this list.
+## `description`
+
+The description is used as the metadata description on the blog page.
+
+## `nav`
+
+This property sets the navigation links on the blog index page. The `rss` link
+is always appended to the end of this list.
+
+## `image` and `card`
 
 `image` and `card` are used for og and image metadata when for when a blog is
 shared. If a blog post does not have its own `image` or `card` properties, then
 it will assume the blog's `image` and `card` properties.
 
+## `favicon`
+
 `favicon` will change the `favicon` for the blog and posts.
 
-`layout` changes the layout of the blog index page. The only options are `aside`
-or `default`.
+## `layout`
+
+`layout` changes the layout of the blog index page. The options are:
+
+- `aside`
+- `default`
 
 # How can I customize a blog post?
 
@@ -174,21 +179,33 @@ aliases:
 ---
 ```
 
+## `title`
+
 `title` changes the title of the blog post.
+
+## `description`
 
 `description` changes the description metadata for the blog post.
 
-`date` is the published date. It ought to be in `YYYY-MM-DD` format. If this
-date is set to the future, the post will be unlisted until the date provided is
-today or in the past.
+## `date`
+
+This is the published date. It ought to be in `YYYY-MM-DD` format. If this date
+is set to the future, the post will be unlisted until the date provided is today
+or in the past.
+
+## `image` and `card`
 
 `image` and `card` are used for og and image metadata when for when a blog is
 shared. If a blog post does not have its own `image` or `card` properties, then
 it will assume the blog's `image` and `card` properties.
 
+## `draft`
+
 `draft` will change the listing status of a blog post. If `draft: true` then the
 post will be published but unlisted. It will not show up on the blog index page
 or RSS feed for your blog.
+
+## `toc`
 
 `toc` adds a table of contents to the blog post based on the headers. If set to
 `false` then no table will be rendered. If set to `true` then table will be
@@ -196,8 +213,19 @@ rendered. If set to an integer greater than `0` then it will set the max heading
 depth to that value. So if set to `2` the table will only render links of
 heading `h1` and `h2`.
 
-`aliases` will redirect all routes listed in this list to this blog post.
-Primarily used for migrating from a different blog platform to prose.
+## `aliases`
+
+This property will redirect all routes listed to this blog post. Primarily used
+for migrating from a different blog platform to prose.
+
+# Unlisted posts
+
+When a post has a date in the future or `draft: true` then the post will be
+**unlisted**. This means that it will **not** be shown on your blog page nor
+will it show up in your built-in RSS feed.
+
+However, the post is still publicly accessible! This gives users the ability to
+share posts before "publishing" them.
 
 # How can I change the theme of my blog?
 
@@ -228,17 +256,6 @@ a file called `barrel.md` then the body element will have:
 
 ```html
 <body id="post" class="barrel"></body>
-```
-
-# How can I change the layout of my blog?
-
-Inside the `_readme.md` metadata file, there's a variable layout option that
-will change the layout of your blog index page.
-
-```md
----
-layout: aside # or default
----
 ```
 
 # How can I change the default 404 page?
