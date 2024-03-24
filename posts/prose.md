@@ -205,10 +205,30 @@ be rendered. If set to an integer greater than `0` then it will set the max
 heading depth to that value. So if set to `2` the table will only render links
 of heading `h1` and `h2`.
 
+Examples:
+
+```md
+---
+toc: false # no table of contents
+toc: true # table of contents with all headings
+toc: 1 # with only h1 headings
+toc: 2 # with only h1 and h2 headings
+toc: 3 # with only h1, h2, and h3 headings
+---
+```
+
 ## `aliases`
 
 This property will redirect all routes listed to this blog post. Primarily used
 for migrating from a different blog platform to prose.
+
+```md
+---
+aliases:
+  - 2023/03/10/my-post
+  - my-post.html
+---
+```
 
 ## Without frontmatter
 
