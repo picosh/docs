@@ -86,24 +86,6 @@ When you upload an image to prose, we make it web optimized (e.g. strip exif,
 convert to webp, and reduce filesize). We also support an
 [image manipulation API](/images#image-manipulation)!
 
-# Metadata
-
-We support adding frontmatter to the top of your markdown posts. A frontmatter
-looks like the following:
-
-```md
----
-title: some title!
-description: this is a great description
-date: 2022-06-28
-tags: [feature, announcement]
-image: og_image.jpg
-card: summary # or summary_large_image
-draft: true
-toc: true # or false or integer for max heading depth
----
-```
-
 # Unlisted posts
 
 When a post has a date in the future or `draft: true` then the post will be
@@ -136,7 +118,7 @@ There is nothing that differentiates itself from the rest of the post so it's up
 to you to style it. For convenience we added an `id` to the containing element
 `post-footer`.
 
-# How can I customize my blog page?
+# How can I customize my blog?
 
 There's a special file you can upload `_readme.md` which will allow users to add
 a bio and links to their blog landing page.
@@ -151,9 +133,44 @@ nav:
 image: og_image.jpg
 card: summary # or summary_large_image
 favicon: favicon.ico
+layout: aside # or default
+---
+```
+
+`title` changes your blog's name which will show up as the metadata title for
+the blog index page and changes the blog post link back to the main blog page.
+
+`description` is used as the metadata description on the blog page.
+
+`nav` are the navigation links on the blog index page. The `rss` link is always
+appended to the end of this list.
+
+`image` and `card` are used for og and image metadata when for when a blog is
+shared.  If a blog post does not have its own `image` or `card` properties,
+then it will assume the blog's `image` and `card` properties.
+
+`favicon` will change the `favicon` for the blog and posts.
+
+`layout` changes the layout of the blog index page.  The only options are
+`aside` or `default`.
+
+# How can I customize a blog post?
+
+We support adding frontmatter to the top of your markdown posts. A frontmatter
+looks like the following:
+
+```md
+---
+title: some title!
+description: this is a great description
+date: 2022-06-28
+tags: [feature, announcement]
+image: og_image.jpg
+card: summary # or summary_large_image
+draft: true
+toc: true # or false or integer for max heading depth
 aliases:
   - 2023/03/10/my-post
-layout: aside # or default
 ---
 ```
 
