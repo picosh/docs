@@ -100,15 +100,6 @@ directory structure information and only keep the filename.
 For example, if you have two posts in different folders but the same filename
 and try to upload them to prose, the second post will overwrite the first one.
 
-# How can I add a footer to all of my posts?
-
-We have a special file `_footer.md` that will be appended to every single blog
-post.
-
-There is nothing that differentiates itself from the rest of the post so it's up
-to you to style it. For convenience we added an `id` to the containing element
-`post-footer`.
-
 # How can I customize my blog?
 
 There's a special file you can upload `_readme.md` which will allow users to add
@@ -144,17 +135,18 @@ is always appended to the end of this list.
 
 ## `image` and `card`
 
-`image` and `card` are used for og and image metadata when for when a blog is
+These properties are used for og and image metadata when for when a blog is
 shared. If a blog post does not have its own `image` or `card` properties, then
 it will assume the blog's `image` and `card` properties.
 
 ## `favicon`
 
-`favicon` will change the `favicon` for the blog and posts.
+This property will change the `favicon` for the blog and posts. Link to an ico
+image.
 
 ## `layout`
 
-`layout` changes the layout of the blog index page. The options are:
+This property changes the layout of the blog index page. The options are:
 
 - `aside`
 - `default`
@@ -181,11 +173,11 @@ aliases:
 
 ## `title`
 
-`title` changes the title of the blog post.
+Title changes the title of the blog post.
 
 ## `description`
 
-`description` changes the description metadata for the blog post.
+Description changes the description metadata for the blog post.
 
 ## `date`
 
@@ -195,23 +187,23 @@ or in the past.
 
 ## `image` and `card`
 
-`image` and `card` are used for og and image metadata when for when a blog is
+These properties are used for og and image metadata when for when a blog is
 shared. If a blog post does not have its own `image` or `card` properties, then
 it will assume the blog's `image` and `card` properties.
 
 ## `draft`
 
-`draft` will change the listing status of a blog post. If `draft: true` then the
-post will be published but unlisted. It will not show up on the blog index page
-or RSS feed for your blog.
+This property will change the listing status of a blog post. If `draft: true`
+then the post will be published but unlisted. It will not show up on the blog
+index page or RSS feed for your blog.
 
 ## `toc`
 
-`toc` adds a table of contents to the blog post based on the headers. If set to
-`false` then no table will be rendered. If set to `true` then table will be
-rendered. If set to an integer greater than `0` then it will set the max heading
-depth to that value. So if set to `2` the table will only render links of
-heading `h1` and `h2`.
+This property adds a table of contents to the blog post based on the headers. If
+set to `false` then no table will be rendered. If set to `true` then table will
+be rendered. If set to an integer greater than `0` then it will set the max
+heading depth to that value. So if set to `2` the table will only render links
+of heading `h1` and `h2`.
 
 ## `aliases`
 
@@ -226,6 +218,15 @@ will it show up in your built-in RSS feed.
 
 However, the post is still publicly accessible! This gives users the ability to
 share posts before "publishing" them.
+
+# How can I add a footer to all of my posts?
+
+We have a special file `_footer.md` that will be appended to every single blog
+post.
+
+There is nothing that differentiates itself from the rest of the post so it's up
+to you to style it. For convenience we added an `id` to the containing element
+`post-footer`.
 
 # How can I change the theme of my blog?
 
