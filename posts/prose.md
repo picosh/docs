@@ -210,6 +210,14 @@ of heading `h1` and `h2`.
 This property will redirect all routes listed to this blog post. Primarily used
 for migrating from a different blog platform to prose.
 
+## Without frontmatter
+
+If the user does not provide a frontmatter, we will set the following defaults:
+
+- `date` set to date when uploaded
+- `title` inferred from first h1 header (e.g. `# header`) or else the filename
+- `tags` inferred from any hashtags inside content
+
 # Unlisted posts
 
 When a post has a date in the future or `draft: true` then the post will be
