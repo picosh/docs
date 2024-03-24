@@ -95,11 +95,13 @@ func main() {
 				Page: pager("prose.md"),
 				Tag:  "Services",
 				Children: []*pdocs.Sitemap{
-					pdocs.AnchorTagSitemap("Metadata"),
+					pdocs.AnchorTagSitemap("How are blogs structured"),
+					pdocs.AnchorTagSitemap("How can I customize my blog"),
+					pdocs.AnchorTagSitemap("How can I customize a blog post"),
+					pdocs.AnchorTagSitemap("Unlisted posts"),
 					pdocs.AnchorTagSitemap("How can I add a footer to all of my posts"),
-					pdocs.AnchorTagSitemap("How can I customize my blog page"),
 					pdocs.AnchorTagSitemap("How can I change the theme of my blog"),
-					pdocs.AnchorTagSitemap("How can I change the layout of my blog"),
+					pdocs.AnchorTagSitemap("How can I change the default 404 page"),
 				},
 			},
 			{
