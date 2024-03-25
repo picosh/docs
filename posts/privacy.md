@@ -36,13 +36,26 @@ developers as needed.
 # Analytics
 
 We are committed to zero browser-based tracking or trying to identify visitors.
-This means we do not try to understand the user based on cookies or IP address.
-We do not store personally identifiable information.
+We do not use cookies.
 
-However, in order to provide a better service, we do have some analytics on
-content. List of metrics we track for content:
+We do collect anonymous usage statistics for our services. List of metrics we
+track:
 
-- Anonymous view counts
+- Anonymous IP Address (`/16` IPv4 subnet mask and `/64` IPv6 subnet mask)
+- URL (host and path only)
+- Referer (domain name only)
+- User-Agent
+
+The data is used to analyze the behaviour of the website visitors to identify
+potential pitfalls like not found pages, search engine indexing issues and to
+find out which contents are the most appreciated. Once the data is processed,
+pico.sh LLC generates reports for website owners to take action, for example
+changing the layout of the pages, publishing some fresh content, etc.
+
+Our analytic software was built by us and is not shared with anyone outside of
+pico.sh LLC and our site owners.
+
+We only collect visitor usage statistics for website owners who enable it.
 
 We might also inspect the headers of HTTP requests to determine some tertiary
 information about the request. For example we might inspect the User-Agent or
