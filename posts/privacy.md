@@ -41,7 +41,7 @@ We do not use cookies.
 We do collect anonymous usage statistics for our services. List of metrics we
 track:
 
-- Anonymous IP Address (`/16` IPv4 subnet mask, `/64` IPv6 subnet mask, HMAC
+- Anonymous IP Address (`/24` IPv4 subnet mask, `/64` IPv6 subnet mask, HMAC
   sha256)
 - URL (host and path only)
 - Referer (domain name only)
