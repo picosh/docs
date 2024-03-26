@@ -66,4 +66,8 @@
     column-count: 2;
     width: 100%;
   }
+
+  .mk-nav {
+    padding: 1rem 0;
+  }
 }
