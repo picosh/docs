@@ -5,6 +5,10 @@ description: Passwordless authentication for the web
 
 Are you ready to experience a new way to authenticate users on your website?
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/pRLC7dzxZzc?si=CR3W0v9vaRTbQAee" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+[![Introducing Web Tunnels](http://img.youtube.com/vi/pRLC7dzxZzc/0.jpg)](https://youtu.be/pRLC7dzxZzc?si=CR3W0v9vaRTbQAee)
+
 By leveraging SSH tunnels, we can use pubkey cryptography to authenticate users
 on the web. No passwords, no JWTs, no bearer tokens, no complicated webauthn,
 and no passkeys. All we need is an SSH keypair.
