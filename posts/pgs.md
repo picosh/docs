@@ -4,11 +4,13 @@ description: A zero-install static site hosting service for hackers
 keywords: [pico, pgs]
 ---
 
+The easiest way to deploy static sites on the web.
+
 > NOTICE: This is a premium [pico+](/plus) service with a **free trial**
 
 # Features
 
-- 5MB asset storage with **free trial**
+- 25MB asset storage with **free trial**
 - 10GB asset storage with [pico+](/plus)
 - Terminal workflows
 - No client-side installation required to fully manage static sites
