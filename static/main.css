@@ -49,7 +49,7 @@
 
 @media only screen and (max-width: 800px) {
   body {
-    padding: 0 1rem;
+    padding: 0 0.75rem;
   }
 
   header {
