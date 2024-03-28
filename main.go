@@ -50,6 +50,11 @@ func main() {
 				Href: "/ui",
 				Page: pager("ui.md"),
 				Tag:  "Help",
+				Children: []*pdocs.Sitemap{
+					pdocs.AnchorTagSitemap("SSH TUI"),
+					pdocs.AnchorTagSitemap("Web UI"),
+					pdocs.AnchorTagSitemap("SSH Config"),
+				},
 			},
 			{
 				Text: "Custom domains",

@@ -29,6 +29,20 @@ ssh -L 1337:localhost:80 -N pico-ui@pgs.sh
 
 Then open your browser and navigate to [localhost:1337](http://localhost:1337).
 
+## SSH Config
+
+The SSH tunnel command can be quite a lot to remember if you aren't using it
+consistently everyday. Instead, you can setup an SSH config entry to do all the
+work for you, here is an example config entry inside `~/.ssh/config`:
+
+```
+Host ui
+    User pico-ui
+    Hostname pgs.sh
+    LocalForward 0.0.0.0:1337 localhost:80
+    SessionType none
+```
+
 ## imgs
 
 If you want to view your docker repositories on [imgs.sh](https://pico/imgs.sh)

@@ -297,8 +297,8 @@ Content-Security-Policy "default-src 'self'; img-src * 'unsafe-inline'; style-sr
 If you need to access sites that are blocked by this CSP, then you can use a
 [custom domain](/custom-domains) which won't have those security restrictions.
 
-Alternatively, you can upload a [`_headers`](#custom-headers) file that lets you override the
-default CSP.
+Alternatively, you can upload a [`_headers`](#custom-headers) file that lets you
+override the default CSP.
 
 ```
 /*
