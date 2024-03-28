@@ -4,6 +4,10 @@ description: A pastebin for hackers
 keywords: [pico, pastes]
 ---
 
+The easiest pastebin on the web.
+
+> pastes.sh is a free service
+
 # Features
 
 - Pastes last 90 days by default

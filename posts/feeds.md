@@ -4,6 +4,10 @@ description: An rss email notification service
 keywords: [pico, feeds]
 ---
 
+Stay up-to-date with all the RSS feeds you love.
+
+> feeds.sh is a free service
+
 # Features
 
 - Receive email digests for your RSS feeds

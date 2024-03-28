@@ -4,6 +4,10 @@ description: A blog platform for hackers
 keywords: [pico, prose]
 ---
 
+The easiest way to publish blog articles on the web.
+
+> prose.sh is a free service
+
 # Features
 
 - Github flavor markdown
