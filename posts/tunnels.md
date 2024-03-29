@@ -3,8 +3,6 @@ title: Web Tunnels
 description: Passwordless authentication for the web
 ---
 
-Are you ready to experience a new way to authenticate users on your website?
-
 <iframe width="560" height="315" src="https://www.youtube.com/embed/pRLC7dzxZzc?si=CR3W0v9vaRTbQAee" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 By leveraging SSH tunnels, we can use pubkey cryptography to authenticate users
@@ -17,7 +15,7 @@ server. It allows users to access services that firewalls would otherwise
 restrict or prevent. In our case, it allows us to authenticate and authorize
 users using only their SSH keypair.
 
-Ready for a demo? Run this command to access our pico web UI:
+Ready for a demo? Run this command to access our [pico web UI](/ui#web-ui):
 
 ```bash
 ssh -L 1337:localhost:80 -N pico-ui@pgs.sh

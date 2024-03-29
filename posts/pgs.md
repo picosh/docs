@@ -26,6 +26,7 @@ The easiest way to deploy static sites on the web.
 - [SPA support](#single-page-applications)
 - [Image manipulation API](/images#image-manipulation)
 - [Only web assets are supported](#what-file-types-are-supported)
+- [No bandwidth limitations](/faq#are-there-any-bandwidth-limitations)
 
 # Publish your site with one command
 
