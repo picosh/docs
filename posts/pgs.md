@@ -173,7 +173,7 @@ Then open your browser to http://localhost:1337
 By default we support pretty URLs. So there are some rules surrounding pretty
 URLs that are important to understand.
 
-For the route `https://user-project/space`, we will check for the following
+For the route `https://user-project.pgs.sh/space`, we will check for the following
 files:
 
 - `/space`
