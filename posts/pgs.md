@@ -119,6 +119,8 @@ ssh pgs.sh acl project-x --type pubkeys --acl sha256:xxx
 
 # File denylist
 
+You can upload any file you want to pages, with a few exceptions.
+
 Because any file uploaded to pages is public-by-default, we felt it necessary to
 automatically reject some files from being uploaded. At this point in time, we
 reject all files or files inside directories that start with a period `.`.
