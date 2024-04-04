@@ -74,12 +74,16 @@ func main() {
 				Tag:  "Services",
 				Children: []*pdocs.Sitemap{
 					pdocs.AnchorTagSitemap("CLI Reference"),
-					pdocs.AnchorTagSitemap("What file types are supported"),
+					pdocs.AnchorTagSitemap("File denylist"),
+					pdocs.AnchorTagSitemap("Access Control List"),
+					pdocs.AnchorTagSitemap("Pretty URLs"),
+					pdocs.AnchorTagSitemap("Custom Domains"),
 					pdocs.AnchorTagSitemap("Custom Redirects"),
-					pdocs.AnchorTagSitemap("Single-Page Applications"),
 					pdocs.AnchorTagSitemap("Custom Headers"),
+					pdocs.AnchorTagSitemap("Single-Page Applications"),
 					pdocs.AnchorTagSitemap("Reserved Username Project"),
 					pdocs.AnchorTagSitemap("Content Security Policy"),
+					pdocs.AnchorTagSitemap("Does pages have a CDN or muilti-region support"),
 				},
 			},
 			{

@@ -25,7 +25,6 @@ The easiest way to deploy static sites on the web.
 - [Custom headers](#custom-headers)
 - [SPA support](#single-page-applications)
 - [Image manipulation API](/images#image-manipulation)
-- [Only web assets are supported](#what-file-types-are-supported)
 - [No bandwidth limitations](/faq#are-there-any-bandwidth-limitations)
 
 # Publish your site with one command
@@ -118,44 +117,16 @@ ssh pgs.sh retain prefix
 ssh pgs.sh acl project-x --type pubkeys --acl sha256:xxx
 ```
 
-# What file types are supported?
+# File denylist
 
-```
-html
-htm
-css
-js
-jpg
-png
-gif
-webp
-svg
-ico
-pdf
-json
-txt
-otf
-ttf
-woff
-woff2
-md
-rss
-xml
-atom
-map
-webmanifest
-avif
-heic
-heif
-opus
-wav
-mp3
-mp4
-mpeg
-wasm
-```
+Because any file uploaded to pages is public-by-default, we felt it necessary to
+automatically reject some files from being uploaded. At this point in time, we
+reject all files or files inside directories that start with a period `.`.
+Essentially, we reject all dotfiles. This is so users don't accidentally upload
+a `.git` folder or `.env` files.
 
-Don't see a file format you need? Contact us.
+We plan on supporting overriding this denylist when you want those files to be
+uploaded, but for now, it is hardcoded.
 
 # Access Control List
 
@@ -195,6 +166,23 @@ ssh -L 1337:localhost:80 -N pico-ui@pgs.sh
 
 Then open your browser to http://localhost:1337
 
+# Pretty URLs
+
+By default we support pretty URLs. So there are some rules surrounding pretty
+URLs that are important to understand.
+
+For the route `https://user-project/space`, we will check for the following
+files:
+
+- `/space`
+- `/space.html`
+- `/space/`: `301` redirect to `/space/index.html`
+- `/404.html`
+
+As you can see from the third entry, we add a trailing slash to all routes, this
+is a common practice with static sites in order to prevent the footgun of having
+different behavior from visiting a site with and without a trailing slash.
+
 # Custom Domains
 
 We have a very easy-to-setup guide on [custom domains](/custom-domains#pgssh).
@@ -212,6 +200,8 @@ We support custom redirects via a special file `_redirects`.
 /authors/c%C3%A9line /authors/about-c%C3%A9line
 ```
 
+When no status is provided, we default to `301 Moved Permenantly`.
+
 ```
 # Redirect with a 301
 /home         /              301
@@ -224,6 +214,25 @@ We support custom redirects via a special file `_redirects`.
 
 # Rewrite a path
 /pass-through /index.html    200
+```
+
+## Route Shadowing
+
+By default we do not shadow routes that exist. For example:
+
+`/space.html` exists on your site
+
+With a `_redirects` entry:
+
+```
+/space   /   301
+```
+
+If the user goes to `/space` then it will always prefer `/space.html`. You can
+override this preference by adding a force flag to your redirect entry:
+
+```
+/space   /   301!
 ```
 
 # Custom Headers
