@@ -125,10 +125,27 @@ Because any file uploaded to pages is public-by-default, we felt it necessary to
 automatically reject some files from being uploaded. At this point in time, we
 reject all files or files inside directories that start with a period `.`.
 Essentially, we reject all dotfiles. This is so users don't accidentally upload
-a `.git` folder or `.env` files.
+a `.git` folder or `.env` files. This is the equivalent rule in our `.gitignore`
+parser:
+
+```
+.*
+```
 
 We plan on supporting overriding this denylist when you want those files to be
 uploaded, but for now, it is hardcoded.
+
+## Override denylist
+
+Add a `_pgs_ignore` to the root of each project. We are using the same rules as
+`.gitignore` using [this parser](https://github.com/sabhiram/go-gitignore).
+
+If you want to allow all files without ignoring anything, add a `_pgs_ignore`
+with a comment:
+
+```
+# dont ignore files
+```
 
 # Access Control List
 
@@ -173,8 +190,8 @@ Then open your browser to http://localhost:1337
 By default we support pretty URLs. So there are some rules surrounding pretty
 URLs that are important to understand.
 
-For the route `https://user-project.pgs.sh/space`, we will check for the following
-files:
+For the route `https://user-project.pgs.sh/space`, we will check for the
+following files:
 
 - `/space`
 - `/space.html`
