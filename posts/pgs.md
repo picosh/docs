@@ -132,13 +132,10 @@ parser:
 .*
 ```
 
-We plan on supporting overriding this denylist when you want those files to be
-uploaded, but for now, it is hardcoded.
-
 ## Override denylist
 
-Add a `_pgs_ignore` to the root of each project. We are using the same rules as
-`.gitignore` using [this parser](https://github.com/sabhiram/go-gitignore).
+Upload a `_pgs_ignore` to the root of each project. We are using the same rules
+as `.gitignore` using [this parser](https://github.com/sabhiram/go-gitignore).
 
 If you want to allow all files without ignoring anything, add a `_pgs_ignore`
 with a comment:
@@ -146,6 +143,10 @@ with a comment:
 ```
 # dont ignore files
 ```
+
+> Note: when uploading a `_pgs_ignore`, we cannot guarentee it will be uploaded
+> first so we recommend uploading it on its own first and then uploading the
+> rest of your site.
 
 # Access Control List
 
