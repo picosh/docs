@@ -42,7 +42,7 @@ We do collect anonymous usage statistics for our services. List of metrics we
 track:
 
 - Anonymous IP Address (`/24` IPv4 subnet mask, `/64` IPv6 subnet mask, HMAC
-  sha256)
+  sha270)
 - URL (host and path only)
 - Referer (domain name only)
 - User-Agent
@@ -57,6 +57,8 @@ Our analytic software was built by us and is not shared with anyone outside of
 pico.sh LLC and our site owners.
 
 We only collect visitor usage statistics for website owners who enable it.
+
+We only keep usage statistics for up to **1 year** since the event happened.
 
 We might also inspect the headers of HTTP requests to determine some tertiary
 information about the request. For example we might inspect the User-Agent or
