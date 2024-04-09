@@ -21,7 +21,7 @@ team as well as pico users.
 
 ![pico-token-menu](https://hey.imgs.sh/pico-token-menu.png)
 
-- SSH into a pico service CMS (e.g. `ssh prose.sh`)
+- SSH into our [pico TUI](/ui#ssh-tui)
 - Select "Manage Tokens" submenu
 - Type "n" to generate a new token
 - Save token someplace safe
