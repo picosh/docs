@@ -6,25 +6,25 @@ keywords: [pico, pgs]
 
 The easiest way to deploy static sites on the web.
 
-> NOTICE: This is a premium [pico+](/plus) service with a **free trial**
+> NOTICE: This is a premium [pico+](/plus) service with a **free tier**
 
 # Features
 
-- 25MB asset storage with **free trial**
+- No install
+- 25MB asset storage with **free tier**
 - 10GB asset storage with [pico+](/plus)
-- Terminal workflows
 - No client-side installation required to fully manage static sites
 - Distinct static sites as projects
 - Unlimited projects, created instantly upon upload
 - Deploy using [rsync, sftp, or scp](/file-uploads)
 - Promotion/rollback support
 - Managed HTTPS for all projects
-- [Private projects](#access-control-list)
 - [Custom domains](/custom-domains#pgssh) for projects
 - [Custom redirects](#custom-redirects)
 - [Custom headers](#custom-headers)
 - [SPA support](#single-page-applications)
 - [Image manipulation API](/images#image-manipulation)
+- [Private projects](#access-control-list)
 - [No bandwidth limitations](/faq#are-there-any-bandwidth-limitations)
 
 # Publish your site with one command
@@ -138,15 +138,16 @@ Upload a `_pgs_ignore` to the root of each project. We are using the same rules
 as `.gitignore` using [this parser](https://github.com/sabhiram/go-gitignore).
 
 If you want to allow all files without ignoring anything, add a `_pgs_ignore`
-with a comment:
+with any comment (to get around how we handle
+[0-byte files](/file-upload#0-byte-file)):
 
 ```
 # dont ignore files
 ```
 
 > Note: when uploading a `_pgs_ignore`, we cannot guarentee it will be uploaded
-> first so we recommend uploading it on its own first and then uploading the
-> rest of your site.
+> first so we recommend uploading it on its own and then upload the rest of your
+> site.
 
 # Access Control List
 
@@ -188,10 +189,10 @@ Then open your browser to http://localhost:1337
 
 # Pretty URLs
 
-By default we support pretty URLs. So there are some rules surrounding pretty
-URLs that are important to understand.
+By default we support pretty URLs. So there are some rules surrounding URLs that
+are important to understand.
 
-For the route `https://user-project.pgs.sh/space`, we will check for the
+For the route `https://{user}-{project}.pgs.sh/space`, we will check for the
 following files:
 
 - `/space`
@@ -199,17 +200,17 @@ following files:
 - `/space/`: `301` redirect to `/space/index.html`
 - `/404.html`
 
-As you can see from the third entry, we add a trailing slash to all routes, this
-is a common practice with static sites in order to prevent the footgun of having
-different behavior from visiting a site with and without a trailing slash.
+As you can see from the third entry, we add a trailing slash to all routes. This
+is a common practice with static sites in order to prevent having different
+behavior from visiting a site with and without a trailing slash.
 
 # Custom Domains
 
 We have a very easy-to-setup guide on [custom domains](/custom-domains#pgssh).
 
-# Custom Redirects
+# Custom Redirects and rewrites
 
-We support custom redirects via a special file `_redirects`.
+We support custom redirects and rewrites via a special file `_redirects`.
 
 ```
 # Redirect browser request to what we serve
@@ -254,6 +255,11 @@ override this preference by adding a force flag to your redirect entry:
 ```
 /space   /   301!
 ```
+
+## Rewrites
+
+Not completely supported at this point but actively being worked on. You can
+track the status in this [PR](https://github.com/picosh/pico/pull/123).
 
 # Custom Headers
 

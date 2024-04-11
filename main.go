@@ -78,7 +78,7 @@ func main() {
 					pdocs.AnchorTagSitemap("Access Control List"),
 					pdocs.AnchorTagSitemap("Pretty URLs"),
 					pdocs.AnchorTagSitemap("Custom Domains"),
-					pdocs.AnchorTagSitemap("Custom Redirects"),
+					pdocs.AnchorTagSitemap("Custom Redirects and rewrites"),
 					pdocs.AnchorTagSitemap("Custom Headers"),
 					pdocs.AnchorTagSitemap("Single-Page Applications"),
 					pdocs.AnchorTagSitemap("Reserved Username Project"),

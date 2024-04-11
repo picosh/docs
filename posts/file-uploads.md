@@ -39,6 +39,12 @@ supported. At this time, the only options we supported are the following:
 scp hello-world.md {service}:/
 ```
 
+for pgs:
+
+```bash
+scp -R public/ {service}:/site/
+```
+
 ## sftp
 
 ```bash

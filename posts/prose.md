@@ -10,20 +10,17 @@ The easiest way to publish blog articles on the web.
 
 # Features
 
+- No install
 - Github flavor markdown
 - [Custom domains](/custom-domains#prosesh)
 - Publish posts using [rsync, sftp, or scp](/file-uploads)
 - Looks great on any device
 - Bring your own editor
-- You control the source files
-- Terminal workflow with no installation
 - Public-key based authentication
 - No ads, zero browser-based tracking
-- No attempt to identify users
-- No platform lock-in
 - No javascript
-- Subscriptions via RSS
-- Minimalist design
+- Subscriptions with RSS
+- Blog customization with metafiles
 
 # You control the source files
 
