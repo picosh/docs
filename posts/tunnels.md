@@ -3,7 +3,7 @@ title: Web Tunnels
 description: Passwordless authentication for the web
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/pRLC7dzxZzc?si=CR3W0v9vaRTbQAee" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/mgc5Ux1Srbc?si=YMbVNhCw3tkmgezW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 By leveraging SSH tunnels, we can use pubkey cryptography to authenticate users
 on the web. No passwords, no JWTs, no bearer tokens, no complicated webauthn,
