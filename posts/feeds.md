@@ -42,6 +42,9 @@ rsync daily.txt feeds.sh:/
 We don't do anything with your email besides send an email digest. If you delete
 the post containing your email address, we no longer have you email address.
 
+However, you should read our [privacy policy](/privacy) and
+[terms of service](/ops).
+
 Posts are also not accessible by the public and we provide no endpoints to view
 these posts.
 
