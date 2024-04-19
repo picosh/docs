@@ -88,7 +88,7 @@ scp ./delete.md prose.sh:/
 
 # How do I download files?
 
-Using the same tools describe [here](#how-do-i-upload-files) just reverse the
+Using the same tools described [here](#how-do-i-upload-files), just reverse the
 order of `src` and `dest`!
 
 ```bash
