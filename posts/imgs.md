@@ -7,7 +7,7 @@ description: A private docker image registry using SSH
 
 # Features
 
-- 2GB image storage limit
+- 5GB image storage limit
 - Private docker image registry
 - Use SSH keys for authentication
 - `docker push` and `docker pull` work exactly the same
@@ -27,6 +27,14 @@ docker push localhost:1338/my-img:latest
 docker pull localhost:1338/my-img:latest
 # or use the docker API
 curl http://localhost:1338/v2/_catalog
+```
+
+# SSH CLI
+
+```bash
+ssh imgs.sh help
+ssh imgs.sh ls
+ssh imgs.sh rm alpine --write
 ```
 
 # GitHub Action
