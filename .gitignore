@@ -3,3 +3,4 @@ public/*
 *.swp
 *.log
 .DS_Store
+*.bak

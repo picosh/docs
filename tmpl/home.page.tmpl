@@ -81,7 +81,123 @@
         <p>An rss email notification service using SSH.</p>
       </div>
     </article>
-  </div>
+
+    <div>
+      <hr />
+    </div>
+
+    <div class="group-2 home-features">
+      <div class="box">
+        <h3 class="my pt-0 text-lg text-underline-hdr text-hdr inline-block">Deploy a site with a single command</h3>
+        <div class="flex gap flex-collapse">
+          <div class="flex-1 group">
+            <div>Upload your static site to us:</div>
+            <pre>rsync -rv ./public/ pgs.sh:/mysite/</pre>
+          </div>
+          <div class="flex-1 group">
+            <div>Now your site is available with TLS handled for you: <a href="#">https://{user}-mysite.pgs.sh</a></div>
+            <div>We also automatically handle TLS for your custom domains!</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="box">
+        <h3 class="my pt-0 text-lg text-underline-hdr text-hdr inline-block">Access localhost using https</h3>
+        <div class="flex gap flex-collapse">
+          <div class="flex-1 group">
+            <div>
+              if you have a local webserver on <code>localhost:8000</code>,
+              activate an SSH tunnel to us:
+            </div>
+            <pre>ssh -R dev:80:localhost:8000 tuns.sh</pre>
+          </div>
+          <div class="flex-1">
+            Now your local dev server is available on the web: <a href="#">https://dev.tuns.sh</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="box">
+        <h3 class="my pt-0 text-lg text-underline-hdr text-hdr inline-block">Publish blog articles with a single command</h3>
+        <div class="flex gap flex-collapse">
+          <div class="flex-1 group">
+            <div>Create your first post, (e.g. <code>hello-world.md</code>):</div>
+            <pre># hello world!
+
+This is my first blog post.
+
+Cya!</pre>
+          </div>
+          <div class="flex-1 group">
+            <div>Upload the post to us:</div>
+            <pre>scp hello-world.md prose.sh:/</pre>
+            <div>
+              Congrats!  You just published a blog article, accessible here:
+              <a href="#">https://{user}.prose.sh/hello-world</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="box">
+        <h3 class="my pt-0 text-lg text-underline-hdr text-hdr inline-block">Push and pull docker images using SSH</h3>
+        <div class="flex gap flex-collapse">
+          <div class="flex-1 group">
+            <div>Open a tunnel to our docker registry:</div>
+            <pre>ssh -L 1338:localhost:80 -N imgs.sh</pre>
+          </div>
+          <div class="flex-1 group">
+            <div>
+              Now you are authenticated!  You are now able to push
+              and pull like normal:
+            </div>
+            <pre>docker push localhost:1338/alpine:latest
+docker pull localhost:1338/alpine:latest</pre>
+            <div>All images sent to us are private and scoped to your user automatically.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="box">
+        <h3 class="my pt-0 text-lg text-underline-hdr text-hdr inline-block">Easily share code snippets</h3>
+        <div class="flex gap flex-collapse">
+          <div class="flex-1 group">
+            <div>Pipe some stdout to us:</div>
+            <pre>git diff | ssh pastes.sh changes.patch</pre>
+          </div>
+          <div class="flex-1">
+            And instantly share your code snippets:
+            <a href="#">https://{user}.pastes.sh/changes.patch</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="box">
+        <h3 class="my pt-0 text-lg text-underline-hdr text-hdr inline-block">Receive email notifications for your favorite rss feeds</h3>
+        <div class="flex gap flex-collapse">
+          <div class="flex-1 group">
+            <div>Create a <code>blogs.txt</code> file:</div>
+            <pre>=: email rss@myemail.com
+=: digest_interval 1day
+=> https://pico.prose.sh/rss
+=> https://erock.prose.sh/rss</pre>
+          </div>
+          <div class="flex-1 group">
+            <div>Then upload it to us:</div>
+            <pre>scp blogs.txt feeds.sh:/</pre>
+            <div>
+              After the daily interval has been reached, you will
+              receive an email with your feeds!
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <h3 class="my-2 pt-0 text-lg inline-block">Ready to join?</h3>
+        <div><a href="/getting-started" class="btn-link">GET STARTED</a></div>
+      </div>
+    </div>
 
   <hr class="my-4" />
 

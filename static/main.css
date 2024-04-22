@@ -23,6 +23,10 @@
   padding: 5rem 0 0 0;
 }
 
+.home-features pre {
+  margin: 0;
+}
+
 .features {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
