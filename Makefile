@@ -9,7 +9,7 @@ ssg:
 .PHONY: ssg
 
 dev: ssg
-	rsync -vr ./public/ hey@pgs.sh:/docs-local
+	rsync -vr ./public/ pgs.sh:/docs-local
 .PHONY: dev
 
 fmt:
