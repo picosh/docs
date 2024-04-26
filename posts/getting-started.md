@@ -22,7 +22,7 @@ ssh pico.sh
 Getting `Permission denied (publickey)`?
 [Read how to fix it here](faq#permission-denied-when-using-ssh).
 
-![pico-account-create](/pico-account-create.png)
+![pico-create-account](/pico-create-account.png)
 
 All we need to create an account is your username. This username will be used
 for all of your service domains. For example, if your username is `glossy`, we
