@@ -4,13 +4,16 @@ description: How to use pico services
 keywords: [pico, getting, started]
 ---
 
+All of our managed services are connected via our main pico.sh SSH service. So
+in order to be granted access you will need to first create an account.
+
 # Create your account with Public-Key Cryptography
 
 We don't need your email address, all we need is an SSH keypair. So before you
 begin, please make sure you have a valid SSH keypair or
 [generate one](/faq#generating-a-new-ssh-key).
 
-To get started, simply SSH to our CMS:
+To get started, simply use SSH:
 
 ```bash
 ssh pico.sh
@@ -54,9 +57,3 @@ our services:
 - [prose.sh](/prose)
 - [pastes.sh](/pastes)
 - [feeds.sh](/feeds)
-
-# pico+
-
-Want access to our premium services?
-
-<a href="/plus" class="btn-link">JOIN</a>

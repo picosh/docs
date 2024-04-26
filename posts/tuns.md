@@ -10,14 +10,20 @@ An ngrok alternative using just SSH.
 
 # Features
 
+- Managed [sish](https://docs.ssi.sh) service
 - Tunnels to localhost using SSH
 - Share your local webserver privately with another user
+
+Using SSH tunnels, we can forward requests to your localhost from https, wss,
+and tcp.
+
+![sish-example](https://docs.ssi.sh/hiw-sish-public.png)
 
 # Docs
 
 [Read the sish docs](https://docs.ssi.sh)
 
-# Usage
+# Example Usage
 
 ```bash
 # if you have a local webserver on localhost:8000:

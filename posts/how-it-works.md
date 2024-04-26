@@ -4,9 +4,13 @@ description: A brief description of how our services work
 keywords: [pico, how, it, works]
 ---
 
-The secret ingredient to all our pico services is how we let users publish
-changes to their sites without needing to install anything. We accomplish this
-with what is colloquially termed **SSH Apps**.
+The secret ingredient to all our services is how we let users publish content
+without needing to install anything. We accomplish this with the SSH tools you
+already have installed on your system.
+
+Want to publish a blog post? Use rsync, scp, or sftp. Want to publish a website?
+Use rsync, scp, or sftp. Want to share a code snippet with a colleague? Use
+rsync, scp, or sftp. Hopefully you see the trend.
 
 By using the SSH protocol and golang's implementation of SSH, we can create
 golang binaries that interface with SSH in unique ways.

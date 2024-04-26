@@ -31,6 +31,8 @@ curl http://localhost:1338/v2/_catalog
 
 # SSH CLI
 
+We provide a CLI to manage your docker images.
+
 ```bash
 ssh imgs.sh help
 ssh imgs.sh ls
@@ -38,6 +40,9 @@ ssh imgs.sh rm alpine --write
 ```
 
 # GitHub Action
+
+Need to use imgs.sh with CI/CD? Just create the SSH tunnel before trying to use
+`docker`. We provide a custom image based on `autossh` to make this easier:
 
 ```yml
 name: build and push docker image

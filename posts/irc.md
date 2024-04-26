@@ -7,12 +7,12 @@ keywords: [pico, irc, bouncer]
 All our realtime communication happens through IRC: #pico.sh @
 [libera.chat](https://libera.chat).
 
+We are delighted to provide a hosted IRC bouncer and web client for us on the
+team as well as pico users.
+
 If you don't want to use our bouncer and just want to quickly connect to our
 channel, then we recommend
 [the libera-hosted web client](https://web.libera.chat/gamja?autojoin=#pico.sh).
-
-We are delighted to provide a hosted IRC bouncer and web client for us on the
-team as well as pico users.
 
 > NOTE: For libera.chat you must
 > [ensure you have a libera account.](https://libera.chat/guides/registration)
