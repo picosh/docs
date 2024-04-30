@@ -12,7 +12,6 @@ The easiest way to deploy static sites on the web.
 
 - No install
 - 25MB asset storage with **free tier**
-- 10GB asset storage with [pico+](/plus)
 - No client-side installation required to fully manage static sites
 - Distinct static sites as projects
 - Unlimited projects, created instantly upon upload
