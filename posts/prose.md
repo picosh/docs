@@ -1,5 +1,5 @@
 ---
-title: prose.sh
+title: prose
 description: A blog platform for hackers
 keywords: [pico, prose]
 ---

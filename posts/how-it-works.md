@@ -10,7 +10,7 @@ already have installed on your system.
 
 Want to publish a blog post? Use rsync, scp, or sftp. Want to publish a website?
 Use rsync, scp, or sftp. Want to share a code snippet with a colleague? Use
-rsync, scp, or sftp. Hopefully you see the trend.
+rsync, scp, or sftp.
 
 By using the SSH protocol and golang's implementation of SSH, we can create
 golang binaries that interface with SSH in unique ways.

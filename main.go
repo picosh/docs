@@ -68,7 +68,7 @@ func main() {
 				},
 			},
 			{
-				Text: "pgs.sh",
+				Text: "Pages",
 				Href: "/pgs",
 				Page: pager("pgs.md"),
 				Tag:  "Services",
@@ -87,19 +87,19 @@ func main() {
 				},
 			},
 			{
-				Text: "tuns.sh",
+				Text: "Tuns",
 				Href: "/tuns",
 				Page: pager("tuns.md"),
 				Tag:  "Services",
 			},
 			{
-				Text: "imgs.sh",
+				Text: "Docker Registry",
 				Href: "/imgs",
 				Page: pager("imgs.md"),
 				Tag:  "Services",
 			},
 			{
-				Text: "prose.sh",
+				Text: "Prose",
 				Href: "/prose",
 				Page: pager("prose.md"),
 				Tag:  "Services",
@@ -114,7 +114,7 @@ func main() {
 				},
 			},
 			{
-				Text: "pastes.sh",
+				Text: "Pastes",
 				Href: "/pastes",
 				Page: pager("pastes.md"),
 				Tag:  "Services",
@@ -125,7 +125,7 @@ func main() {
 				},
 			},
 			{
-				Text: "feeds.sh",
+				Text: "RSS-To-Email",
 				Href: "/feeds",
 				Page: pager("feeds.md"),
 				Tag:  "Services",

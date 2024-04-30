@@ -1,5 +1,5 @@
 ---
-title: tuns.sh
+title: tuns
 description: Access localhost using https
 keywords: [pico, tuns]
 ---

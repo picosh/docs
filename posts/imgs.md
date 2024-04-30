@@ -1,5 +1,5 @@
 ---
-title: imgs.sh
+title: docker registry
 description: A private docker image registry using SSH
 ---
 
@@ -7,7 +7,6 @@ description: A private docker image registry using SSH
 
 # Features
 
-- 5GB image storage limit
 - Private docker image registry
 - Use SSH keys for authentication
 - `docker push` and `docker pull` work exactly the same

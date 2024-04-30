@@ -1,5 +1,5 @@
 ---
-title: feeds.sh
+title: rss-to-email
 description: An rss email notification service
 keywords: [pico, feeds]
 ---

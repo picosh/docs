@@ -1,5 +1,5 @@
 ---
-title: pgs.sh
+title: pages
 description: A zero-install static site hosting service for hackers
 keywords: [pico, pgs]
 ---

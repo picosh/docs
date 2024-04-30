@@ -1,5 +1,5 @@
 ---
-title: pastes.sh
+title: pastes
 description: A pastebin for hackers
 keywords: [pico, pastes]
 ---
