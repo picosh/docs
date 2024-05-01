@@ -22,6 +22,10 @@ The easiest way to publish blog articles on the web.
 - Subscriptions with RSS
 - Blog customization with metafiles
 
+# Examples
+
+Check out the [discovery page](https://prose.sh) on prose.
+
 # You control the source files
 
 Create posts using your favorite editor in plain text files.
@@ -286,6 +290,14 @@ a file called `barrel.md` then the body element will have:
 
 ```html
 <body id="post" class="barrel"></body>
+```
+
+# How can I remove the prose.sh ad footer?
+
+We don't mind. Upload a CSS file `_styles.css` with:
+
+```css
+.footer { display: none; }
 ```
 
 # How can I change the default 404 page?
