@@ -6,7 +6,7 @@ keywords: [pico, feeds]
 
 Stay up-to-date with all the RSS feeds you love.
 
-> feeds.sh is a free service
+> This is a free service
 
 # Features
 
@@ -34,7 +34,7 @@ to receive email notifications.
 Then copy the file to our server
 
 ```bash
-rsync daily.txt feeds.sh:/
+rsync daily.txt feeds.pico.sh:/
 ```
 
 # Privacy
