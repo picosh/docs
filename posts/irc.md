@@ -40,8 +40,7 @@ We provide pico users with a self-hosted version of gamja.
 
 ### Log into [chat.pico.sh](https://chat.pico.sh)
 
-- You'll be redirected to [auth.pico.sh](https://auth.pico.sh) which implements
-  a fake oauth2 service
+- You'll be redirected to [auth.pico.sh](https://auth.pico.sh)
 - Enter the token from above
 - Click submit
 

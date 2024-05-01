@@ -332,14 +332,6 @@ Content-Security-Policy "default-src 'self'; img-src * 'unsafe-inline'; style-sr
 If you need to access sites that are blocked by this CSP, then you can use a
 [custom domain](/custom-domains) which won't have those security restrictions.
 
-Alternatively, you can upload a [`_headers`](#custom-headers) file that lets you
-override the default CSP.
-
-```
-/*
-  Content-Security-Policy: default-src * 'unsafe-inline';
-```
-
 # Does pages have a CDN or multi-region support?
 
 At this point in time, we are able to serve content from a single VM. If this
