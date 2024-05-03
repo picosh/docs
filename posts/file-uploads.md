@@ -35,6 +35,9 @@ supported. At this time, the only options we supported are the following:
 
 ## scp
 
+There are two versions of `scp`, depending on your openssh version. Anything
+`< v9.0` used "legacy scp." Anything `>= v9.0` uses `sftp`.
+
 ```bash
 scp hello-world.md {service}:/
 ```
@@ -58,6 +61,10 @@ sftp> rm hello-world.md
 sftp> put hello-world.md
 ```
 
+```bash
+echo 'put hello-world.md' | sftp {service}
+```
+
 # How do I update files?
 
 Just send us the files you want to update. With [pgs.sh](/pgs) you can upload
@@ -70,20 +77,11 @@ We have a couple ways to delete files depending on your use-case.
 
 ## sftp
 
-The easiest way to delete a file is via [sftp](#sftp).
-
-## 0-byte file
-
-Because `scp` does not natively support deleting files, we didn't want to bake
-that behavior into our SSH Apps.
-
-However, if a user wants to delete a post they can delete the contents of the
-file and then upload it to our server. If the file contains 0 bytes, we will
-remove the post. For example, if you want to delete `delete.md` you could:
+The easiest way to delete a file is via `sftp`.
 
 ```bash
-cp /dev/null delete.md
-scp ./delete.md prose.sh:/
+sftp {service}
+sftp> rm hello-world.md
 ```
 
 # How do I download files?
