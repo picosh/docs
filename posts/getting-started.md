@@ -4,8 +4,8 @@ description: How to use pico services
 keywords: [pico, getting, started]
 ---
 
-All of our managed services are connected via our main pico.sh SSH service. So
-in order to be granted access you will need to first create an account.
+All of our managed services are connected by our main pico.sh SSH service. So in
+order to be granted access you will need to create an account.
 
 # Create your account with Public-Key Cryptography
 
@@ -22,8 +22,6 @@ ssh pico.sh
 Getting `Permission denied (publickey)`?
 [Read how to fix it here](faq#permission-denied-when-using-ssh).
 
-![pico-create-account](/pico-create-account.png)
-
 All we need to create an account is your username. This username will be used
 for all of your service domains. For example, if your username is `glossy`, we
 will create the following domains on your behalf:
@@ -34,9 +32,7 @@ glossy.pgs.sh
 glossy.pastes.sh
 ```
 
-After that, just set a username and you're ready to start using our services!
-
-From now on when you SSH to us it'll bring you to our account management system:
+From now on when you SSH it'll bring you to our account management system:
 
 ```bash
 ssh pico.sh
@@ -53,7 +49,7 @@ our services:
 
 - [pages](/pgs) <a href="/plus" class="link-alt-hover">(+)</a>
 - [tuns](/tuns) <a href="/plus" class="link-alt-hover">(+)</a>
-- [docker registry](/imgs) <a href="/plus" class="link-alt-hover">(+)</a>
 - [prose](/prose)
 - [pastes](/pastes)
 - [rss-to-email](/feeds)
+- [docker registry](/imgs) <a href="/plus" class="link-alt-hover">(+)</a>

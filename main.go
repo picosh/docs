@@ -93,12 +93,6 @@ func main() {
 				Tag:  "Services",
 			},
 			{
-				Text: "Docker Registry",
-				Href: "/imgs",
-				Page: pager("imgs.md"),
-				Tag:  "Services",
-			},
-			{
 				Text: "Prose",
 				Href: "/prose",
 				Page: pager("prose.md"),
@@ -135,6 +129,12 @@ func main() {
 					pdocs.AnchorTagSitemap("Can I create multiple email digests?"),
 					pdocs.AnchorTagSitemap("Can I fetch Reddit RSS feeds"),
 				},
+			},
+			{
+				Text: "Docker Registry",
+				Href: "/imgs",
+				Page: pager("imgs.md"),
+				Tag:  "Services",
 			},
 			{
 				Text: "pico+",
