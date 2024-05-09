@@ -2,6 +2,7 @@
 title: IRC
 description: How we interact with our users
 keywords: [pico, irc, bouncer]
+toc: 2
 ---
 
 All our realtime communication happens through IRC: #pico.sh @

@@ -2,6 +2,7 @@
 title: File uploads
 description: How to upload and download files from pico services
 keywords: [pico, file, upload, download]
+toc: true
 ---
 
 All of our services require users to send us files in order to manage content.

@@ -2,6 +2,7 @@
 title: Plain text lists
 description: Our spec for plain text lists
 keywords: [pico, lists, spec, plain, text]
+toc: 1
 ---
 
 - Version: **2022.08.05.dev**

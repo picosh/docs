@@ -2,6 +2,7 @@
 title: Privacy policy
 description: Details on our privacy and security approach.
 keywords: [pico, privacy, policy]
+toc: 1
 ---
 
 # Account Data

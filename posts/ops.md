@@ -2,6 +2,7 @@
 title: Operations
 description: Terms of service and other legal requirements.
 keywords: [pico, operations, terms, service, lega]
+toc: 1
 ---
 
 # Purpose

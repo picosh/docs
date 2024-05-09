@@ -2,6 +2,7 @@
 title: rss-to-email
 description: An rss email notification service
 keywords: [pico, feeds]
+toc: true
 ---
 
 Stay up-to-date with all the RSS feeds you love.

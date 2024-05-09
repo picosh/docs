@@ -2,6 +2,7 @@
 title: Custom domains
 description: A guide to setting up your domain to point to pico services
 keywords: [pico, custom, domain]
+toc: true
 ---
 
 All of our services support custom domains and they all work the exact same way.
