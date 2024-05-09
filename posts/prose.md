@@ -2,6 +2,7 @@
 title: prose
 description: A blog platform for hackers
 keywords: [pico, prose]
+toc: 1
 ---
 
 The easiest way to publish blog articles on the web.

@@ -2,6 +2,7 @@
 title: pages
 description: A zero-install static site hosting service for hackers
 keywords: [pico, pgs]
+toc: 1
 ---
 
 The easiest way to deploy static sites on the web.
