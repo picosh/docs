@@ -94,7 +94,6 @@ Next step is to [connect to libera.chat](#connect-to-libera) section.
 Using:
 
 - Network `irc.libera.chat`
-- Network alias `libera`
 - Channel `#pico.sh`
 
 ### Message `BouncerServ`
@@ -106,7 +105,7 @@ Using:
 ### Join a network
 
 ```
-network create -addr irc.libera.chat -name libera -nick <user> -enabled false
+network create -addr irc.libera.chat -nick <user> -enabled false
 sasl set-plain -network libera <user> <sasl-pass>
 network update libera -enabled true
 ```
