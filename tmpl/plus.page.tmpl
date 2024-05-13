@@ -12,57 +12,27 @@
 {{template "nav" .}}
 
 <main>
-  <div class="flex flex-col gap-2">
-    <div class="flex items-center justify-center hero">
-      <div class="flex flex-col items-center gap-2">
-        <h1 class="logo-header text-2xl">pico+</h1>
-        <div class="text-center">
-          <div class="text-2xl">
-            $2/month
-          </div>
-          <div class="text-sm">billed yearly</div>
-
-          <pre class="my">ssh pico.sh</pre>
+  <div class="flex items-center justify-center hero">
+    <div class="group items-center">
+      <h1 class="logo-header text-2xl">pico+</h1>
+      <div class="text-center">
+        <div class="text-2xl">
+          $2/month
+        </div>
+        <div class="text-sm">(billed yearly)</div>
+        <pre class="my inline-block"><span class="visited">ssh</span> pico.sh</pre>
+        <div class="text-sm">
+          Log into our SSH App to learn more and purchase a membership.
         </div>
       </div>
     </div>
-
-    <article class="features">
-      <div class="box">
-        <h3 class="m-0 p-0 text-lg">
-          <a href="/tuns">tuns</a>
-        </h3>
-        <p>Full access!</p>
-      </div>
-
-      <div class="box">
-        <h3 class="m-0 p-0 text-lg">
-          <a href="/pgs">pages</a>
-        </h3>
-        <ol>
-          <li>Full access!</li>
-          <li>Per-site <a href="/privacy#analytics">Analytics</a></li>
-        </ol>
-      </div>
-
-      <div class="box">
-        <h3 class="m-0 p-0 text-lg">
-          <a href="/prose">prose</a>
-        </h3>
-        <ol>
-          <li>Increased storage limits</li>
-          <li>Blog <a href="/privacy#analytics">Analytics</a></li>
-        </ol>
-      </div>
-
-      <div class="box">
-        <h3 class="m-0 p-0 text-lg">
-          <a href="/imgs">docker registry</a>
-        </h3>
-        <p>Full access!</p>
-      </div>
-    </article>
   </div>
+
+  <hr class="my-4" />
+
+  <article class="md">
+    {{.Data.Html}}
+  </article>
 
   {{template "pager" .}}
 

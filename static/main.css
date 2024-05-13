@@ -5,6 +5,10 @@
   #logo { stroke: #f2f2f2; fill: none; }
 }
 
+.visited {
+  color: var(--visited);
+}
+
 .sitemap {
   width: 150px;
 }
