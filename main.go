@@ -137,12 +137,6 @@ func main() {
 				Tag:  "Services",
 			},
 			{
-				Text: "pico+",
-				Href: "/plus",
-				Page: pager("plus.md"),
-				Tag:  "pico+",
-			},
-			{
 				Text: "Images",
 				Href: "/images",
 				Page: pager("images.md"),
@@ -164,15 +158,17 @@ func main() {
 				Tag: "Community",
 			},
 			{
-				Text: "API Tokens",
-				Href: "/api-token",
-				Page: pager("api-token.md"),
-				Children: []*pdocs.Sitemap{
-					pdocs.AnchorTagSitemap("Web"),
-					pdocs.AnchorTagSitemap("Senpai"),
-					pdocs.AnchorTagSitemap("Connect to Libera"),
-				},
-				Tag: "Help",
+				Text:     "API Tokens",
+				Href:     "/api-token",
+				Page:     pager("api-token.md"),
+				Children: []*pdocs.Sitemap{},
+				Tag:      "Help",
+			},
+			{
+				Text: "pico+",
+				Href: "/plus",
+				Page: pager("plus.md"),
+				Tag:  "About",
 			},
 			{
 				Text: "FAQ",
@@ -198,19 +194,19 @@ func main() {
 				Text: "Web Tunnels",
 				Href: "/tunnels",
 				Page: pager("tunnels.md"),
-				Tag:  "Lab",
+				Tag:  "X",
 			},
 			{
 				Text: "Lab",
 				Href: "/lab",
 				Page: pager("lab.md"),
-				Tag:  "Lab",
+				Tag:  "X",
 			},
 			{
 				Text: "Plain text lists",
 				Href: "/plain-text-lists",
 				Page: pager("plain-text-lists.md"),
-				Tag:  "Spec",
+				Tag:  "X",
 			},
 			{
 				Text: "About us",
