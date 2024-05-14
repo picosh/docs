@@ -17,8 +17,7 @@
       <div class="flex flex-col items-center gap-2">
         <h1 class="logo-header text-2xl">pico</h1>
         <div class="text-center text-lg">
-          <div>hacker labs</div>
-          <div>Open source and managed web services leveraging SSH.</div>
+          <div>open and managed web services leveraging <code>ssh</code></div>
         </div>
         <a href="/getting-started" class="btn-link">GET STARTED</a>
       </div>
@@ -26,16 +25,18 @@
 
     <div><hr /></div>
 
-    <div>
-      The secret ingredient to all our services is how we let users
-      publish content without needing to install anything.
-      We accomplish this with the SSH tools you already have installed on your system.
-    </div>
+    <div class="flex flex-col items-center group-2 mb-2">
+      <div class="container-sm">
+        The secret ingredient to all our services is how we let users
+        publish content without needing to install anything.
+        We accomplish this with the SSH tools you already have installed on your system.
+      </div>
 
-    <div>
-      Want to publish a blog post? Use rsync, scp, or sftp.  Want to publish a
-      website?  Use rsync, scp, or sftp.  Want to share a code snippet with a
-      colleague?  Use rsync, scp, or sftp.  Hopefully you see the trend.
+      <div class="container-sm">
+        Want to publish a blog post? Use rsync, scp, or sftp.  Want to publish a
+        website?  Use rsync, scp, or sftp.  Want to share a code snippet with a
+        colleague?  Use rsync, scp, or sftp.  Hopefully you see the trend.
+      </div>
     </div>
 
     <article class="features">
@@ -88,22 +89,22 @@
 
     <div class="group-2 home-features">
       <div class="box">
-        <h3 class="my pt-0 text-lg text-hdr inline-block">Deploy a site with a single command</h3>
-        <div class="flex gap flex-collapse">
+        <h3 class="mt mb-2 pt-0 text-lg text-hdr inline-block">Deploy a site with a single command</h3>
+        <div class="flex gap-2 flex-collapse">
           <div class="flex-1 group">
             <div>Upload your static site to us:</div>
             <pre>rsync -rv ./public/ pgs.sh:/mysite/</pre>
           </div>
           <div class="flex-1 group">
-            <div>Now your site is available with TLS handled for you: <a href="#">https://{user}-mysite.pgs.sh</a></div>
+            <div>Now your site is available with TLS handled for you: <strong>https://{user}-mysite.pgs.sh</strong></div>
             <div>We also automatically handle TLS for your custom domains!</div>
           </div>
         </div>
       </div>
 
       <div class="box">
-        <h3 class="my pt-0 text-lg text-hdr inline-block">Access localhost using https</h3>
-        <div class="flex gap flex-collapse">
+        <h3 class="mt mb-2 pt-0 text-lg text-hdr inline-block">Access localhost using https</h3>
+        <div class="flex gap-2 flex-collapse">
           <div class="flex-1 group">
             <div>
               if you have a local webserver on <code>localhost:8000</code>,
@@ -112,14 +113,14 @@
             <pre>ssh -R dev:80:localhost:8000 tuns.sh</pre>
           </div>
           <div class="flex-1">
-            Now your local dev server is available on the web: <a href="#">https://dev.tuns.sh</a>
+            Now your local dev server is available on the web: <strong>https://dev.tuns.sh</strong>
           </div>
         </div>
       </div>
 
       <div class="box">
-        <h3 class="my pt-0 text-lg text-hdr inline-block">Publish blog articles with a single command</h3>
-        <div class="flex gap flex-collapse">
+        <h3 class="mt mb-2 pt-0 text-lg text-hdr inline-block">Publish blog articles with a single command</h3>
+        <div class="flex gap-2 flex-collapse">
           <div class="flex-1 group">
             <div>Create your first post, (e.g. <code>hello-world.md</code>):</div>
             <pre># hello world!
@@ -133,15 +134,15 @@ Cya!</pre>
             <pre>scp hello-world.md prose.sh:/</pre>
             <div>
               Congrats!  You just published a blog article, accessible here:
-              <a href="#">https://{user}.prose.sh/hello-world</a>
+              <strong>https://{user}.prose.sh/hello-world</strong>
             </div>
           </div>
         </div>
       </div>
 
       <div class="box">
-        <h3 class="my pt-0 text-lg text-hdr inline-block">Push and pull docker images using SSH</h3>
-        <div class="flex gap flex-collapse">
+        <h3 class="mt mb-2 pt-0 text-lg text-hdr inline-block">Push and pull docker images using SSH</h3>
+        <div class="flex gap-2 flex-collapse">
           <div class="flex-1 group">
             <div>Open a tunnel to our docker registry:</div>
             <pre>ssh -L 1338:localhost:80 -N imgs.sh</pre>
@@ -159,22 +160,22 @@ docker pull localhost:1338/alpine:latest</pre>
       </div>
 
       <div class="box">
-        <h3 class="my pt-0 text-lg text-hdr inline-block">Easily share code snippets</h3>
-        <div class="flex gap flex-collapse">
+        <h3 class="mt mb-2 pt-0 text-lg text-hdr inline-block">Easily share code snippets</h3>
+        <div class="flex gap-2 flex-collapse">
           <div class="flex-1 group">
             <div>Pipe some stdout to us:</div>
             <pre>git diff | ssh pastes.sh changes.patch</pre>
           </div>
           <div class="flex-1">
             And instantly share your code snippets:
-            <a href="#">https://{user}.pastes.sh/changes.patch</a>
+            <strong>https://{user}.pastes.sh/changes.patch</strong>
           </div>
         </div>
       </div>
 
       <div class="box">
-        <h3 class="my pt-0 text-lg text-hdr inline-block">Receive email notifications for your favorite rss feeds</h3>
-        <div class="flex gap flex-collapse">
+        <h3 class="mt mb-2 pt-0 text-lg text-hdr inline-block">Receive email notifications for your favorite rss feeds</h3>
+        <div class="flex gap-2 flex-collapse">
           <div class="flex-1 group">
             <div>Create a <code>blogs.txt</code> file:</div>
             <pre>=: email rss@myemail.com
@@ -194,7 +195,7 @@ docker pull localhost:1338/alpine:latest</pre>
       </div>
 
       <div class="text-center">
-        <h3 class="my-2 pt-0 text-lg inline-block">Ready to join?</h3>
+        <h3 class="mt mb-2 pt-0 text-lg inline-block">Ready to join?</h3>
         <div><a href="/getting-started" class="btn-link">GET STARTED</a></div>
       </div>
     </div>
