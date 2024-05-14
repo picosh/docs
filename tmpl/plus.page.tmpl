@@ -12,32 +12,32 @@
 {{template "nav" .}}
 
 <main>
-  <div class="flex items-center justify-center hero">
-    <div class="group items-center">
-      <h1 class="logo-header text-2xl">pico+</h1>
-      <div class="text-center">
-        <div class="text-2xl">
-          $2/month
+  <div class="flex justify-center">
+    <div class="container-xs">
+      <div class="border px-4 py-8 mt-4">
+        <div class="group items-center">
+          <h1 class="logo-header text-2xl">pico+</h1>
+          <div class="text-center">
+            <div class="text-2xl">$2/month</div>
+            <div class="text-sm">(billed yearly)</div>
+            <pre class="my inline-block"><span class="visited">ssh</span> pico.sh</pre>
+            <div class="text-sm">
+              Log into our SSH App to learn more and purchase a membership.
+            </div>
+          </div>
         </div>
-        <div class="text-sm">(billed yearly)</div>
-        <pre class="my inline-block"><span class="visited">ssh</span> pico.sh</pre>
-        <div class="text-sm">
-          Log into our SSH App to learn more and purchase a membership.
-        </div>
+
+        <hr class="my-4" />
+
+        <article class="md plus">
+          {{.Data.Html}}
+        </article>
       </div>
+
+      {{template "pager" .}}
+      <hr class="my-4" />
+      {{template "footer" .}}
     </div>
   </div>
-
-  <hr class="my-4" />
-
-  <article class="md">
-    {{.Data.Html}}
-  </article>
-
-  {{template "pager" .}}
-
-  <hr class="my-4" />
-
-  {{template "footer" .}}
 </main>
 {{end}}

@@ -521,6 +521,16 @@ figure {
   padding: 0;
 }
 
+.px-2 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.px-4 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
 .py {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;

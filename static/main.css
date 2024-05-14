@@ -17,6 +17,11 @@
   max-width: 700px;
 }
 
+.container-xs {
+  max-width: 20em;
+  width: 100%;
+}
+
 .post-container {
   display: flex;
   gap: 1rem;
