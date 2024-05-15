@@ -19,8 +19,8 @@ To get started, simply use SSH:
 ssh pico.sh
 ```
 
-Getting `Permission denied (publickey)`?
-[Read how to fix it here](faq#permission-denied-when-using-ssh).
+Getting an error? Read our FAQ,
+[why can't I login to pico?](faq#why-cant-i-login-to-pico).
 
 All we need to create an account is your username. This username will be used
 for all of your service domains. For example, if your username is `glossy`, we
