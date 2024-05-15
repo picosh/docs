@@ -11,10 +11,11 @@ template: plus.page.tmpl
   - full access
   - per-site [analytics](/privacy#analytics)
 - [prose](/prose)
-  - increased storage limits
+  - no inherent storage limits
   - blog [analytics](/privacy#analytics)
 - [docker registry](/imgs)
   - full access
+- 20GB total storage
 
 <hr class="my-4" />
 
