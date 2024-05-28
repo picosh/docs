@@ -58,10 +58,9 @@ jobs:
       registry:
         image: ghcr.io/picosh/ptun/autossh:latest
         env:
-          USERNAME: <pico_user>
           PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
         ports:
-          - 5000:5000
+          - 1338:1338
     steps:
     - name: Set up QEMU
       uses: docker/setup-qemu-action@v3
