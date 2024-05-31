@@ -78,6 +78,10 @@ erock.io.         300     IN      CNAME   pgs.sh.
 _pgs.erock.io.    300     IN      TXT     "erock-kittens"
 ```
 
+Here's an example of what it looks like inside cloudflare:
+
+![custom domains cloudflare](/custom-domains-cloudflare.png)
+
 ## Example: Subdomain
 
 - Custom domain `meow.erock.io`
