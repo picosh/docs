@@ -709,6 +709,18 @@ figure {
   padding: 0.5rem 0.75rem;
 }
 
+.list-none {
+  list-style-type: none;
+}
+
+.list-disc {
+  list-style-type: disc;
+}
+
+.list-decimal {
+  list-style-type: decimal;
+}
+
 @media only screen and (max-width: 40em) {
   body {
     padding: 0 1rem;

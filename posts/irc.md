@@ -5,8 +5,13 @@ keywords: [pico, irc, bouncer]
 toc: 2
 ---
 
+# Realtime chat
+
 All our realtime communication happens through IRC: #pico.sh @
 [libera.chat](https://libera.chat).
+
+We are pretty friendly and an active group so please do not hesitate to come
+hang out with us.
 
 If you don't want to use our bouncer and just want to quickly connect to our
 channel, then we recommend
@@ -15,7 +20,7 @@ channel, then we recommend
 > NOTE: For libera.chat you must
 > [ensure you have a libera account.](https://libera.chat/guides/registration)
 
-# A public bouncer
+# Our public bouncer
 
 We are delighted to provide a public soju instance available to all pico users.
 
@@ -33,7 +38,7 @@ We are delighted to provide a public soju instance available to all pico users.
 Next you need to pick a client to connect to the bouncer and finish setup:
 
 - [web](#web) - at [chat.pico.sh](https://chat.pico.sh)
-- [terminal](#senpai) - senpai
+- [terminal](#terminal) - senpai
 
 ## Web
 
@@ -56,7 +61,7 @@ We provide pico users with a self-hosted version of gamja.
 
 Next step is to [connect to libera.chat](#connect-to-libera) section.
 
-## Senpai
+## Terminal
 
 Senpai is a modern terminal client coupled pretty tightly to `soju` development
 so it's a great fit for us at pico -- we use it.
