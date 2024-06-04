@@ -1,6 +1,5 @@
 clean:
 	rm -rf ./public/*
-	echo "" > ./public/.gitkeep
 .PHONY: clean
 
 ssg:
