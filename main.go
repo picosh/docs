@@ -26,9 +26,6 @@ func main() {
 						Text: "Create account",
 						Href: "/getting-started",
 						Page: pager("getting-started.md"),
-						Children: []*pdocs.Sitemap{
-							pdocs.AnchorTagSitemap("Create your account with Public-Key Cryptography"),
-						},
 					},
 					{
 						Text: "How it works",

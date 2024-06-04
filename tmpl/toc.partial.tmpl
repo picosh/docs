@@ -1,50 +1,25 @@
 {{define "toc"}}
 <div class="sitemap-grid">
 {{range .Sitemap.Children -}}
-  {{if .Href}}
-  <li><a href="{{.GenHref}}" class="link-alt text-md font-bold">{{.Text}}</a></li>
-  {{else}}
-  <li class="text-md font-bold">{{.Text}}</li>
-  {{end}}
-  {{range .Children -}}
-    <ul class="list-none" style="padding-left: 1.5rem;">
+  {{if .Children}}
+  <div class="box my">
+    <h2 class="text-xl text-underline inline-block">{{.Text}}</h2>
+    <ul class="list-none" style="padding-left: 0;">
+    {{range .Children -}}
       <li>
-        {{- if (and $.Prev (eq $.Prev.GenHref .GenHref)) -}}
-        <a href="{{.GenHref}}" class="link-alt-adj">{{.Text}}</a>
-        {{- else if (and $.Next (eq $.Next.GenHref .GenHref)) -}}
-        <a href="{{.GenHref}}" class="link-alt-adj">{{.Text}}</a>
-        {{- else if (eq $.Href .GenHref) -}}
-        <a href="{{.GenHref}}" class="link-alt-hover">{{.Text}}</a>
-        {{- else -}}
-        <a href="{{.GenHref}}" class="link-alt">{{.Text}}</a>
-        {{- end -}}
-      </li>
-    </ul>
-  {{- end}}
-{{- end}}
-</div>
-{{end}}
-
-{{define "toc"}}
-<div class="sitemap-grid">
-  {{range $key, $value := .SitemapByTag}}
-    <div class="box my">
-      <h2 class="text-xl">{{$key}}</h2>
-      <ul>
-        {{range $value}}
+        <a href="{{.GenHref}}">{{.Text}}</a>
+        <ul class="list-disc" style="padding-left: 2rem;">
+        {{range .Children}}
           <li>
-            <a href="{{.GenHref}}">{{.Text}}</a>
-            {{if .Children}}
-              <ul>
-              {{range .Children}}
-                <li><a href="{{.ParentHref}}{{.GenHref}}">{{.Text}}</a></li>
-              {{end}}
-              </ul>
-            {{end}}
+            <a href="{{.ParentHref}}{{.GenHref}}">{{.Text}}</a>
           </li>
         {{end}}
-      </ul>
-    </div>
+        </ul>
+      </li>
+    {{- end}}
+    </ul>
+  </div>
   {{end}}
+{{- end}}
 </div>
 {{end}}
