@@ -8,4 +8,4 @@ There are two ways to contact the pico team:
 - [hello@pico.sh](mailto:hello@pico.sh)
 - [IRC](/irc)
 
-Are we highly responsive via both channels.
+Are we highly responsive via both channels and are happy to chat.

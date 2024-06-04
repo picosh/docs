@@ -10,7 +10,7 @@
 }
 
 .sitemap {
-  width: 150px;
+  width: 250px;
 }
 
 .post {
@@ -73,6 +73,10 @@
   gap: 1rem;
 }
 
+.sidebar-list {
+  padding-left: 1rem;
+}
+
 @media only screen and (max-width: 800px) {
   body {
     padding: 0 0.75rem;
@@ -99,5 +103,9 @@
 
   .mk-nav {
     padding: 1rem 0;
+  }
+
+  .sidebar-list {
+    padding-left: 0;
   }
 }
