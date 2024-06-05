@@ -38,7 +38,25 @@ ssh imgs.sh ls
 ssh imgs.sh rm alpine --write
 ```
 
-# GitHub Action
+# Always connected
+
+We use a docker compose file to always be connected inside our VMs, for example:
+
+```yml
+services:
+  registry:
+    image: ghcr.io/picosh/ptun/autossh:latest
+    restart: unless-stopped
+    ports:
+      - 1338:1338
+  app:
+    image: localhost:1338/app
+    restart: unless-stopped
+    ports:
+      - "80:80"
+```
+
+# GitHub action
 
 Need to use imgs.sh with CI/CD? Just create the SSH tunnel before trying to use
 `docker`. We provide a custom image based on `autossh` to make this easier:
