@@ -19,5 +19,5 @@ template: plus.page.tmpl
 
 <hr class="my-4" />
 
-Before signing up to `pico+`, please read our [privacy policy](/policy),
+Before signing up to `pico+`, please read our [privacy policy](/privacy),
 [terms of service](/ops), and our [refund policy](/ops#refund-policy).
