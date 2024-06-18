@@ -16,7 +16,7 @@ ssh pico.sh
 
 # SSH CLI
 
-Many of our services make use of the user providing argument to `ssh`:
+Many of our services have a built-in cli with our `ssh` service:
 
 ```bash
 ssh pico.sh help
