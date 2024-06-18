@@ -11,7 +11,7 @@ order to be granted access you will need to create an account.
 
 We don't need your email address, all we need is an SSH keypair. So before you
 begin, please make sure you have a valid SSH keypair or
-[generate one](/faq#generating-a-new-ssh-key).
+[generate one](/faq#how-do-i-generate-an-ssh-key).
 
 To get started, simply use SSH:
 

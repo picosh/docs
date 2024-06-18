@@ -78,7 +78,7 @@ This accepts the default file location. At the prompt, type a secure passphrase.
 
 # How can I setup my `ssh-agent`?
 
-your SSH agent typically hosts your SSH keypairs and serves them when
+Your SSH agent typically hosts your SSH keypairs and serves them when
 authenticating with an SSH server. So, ensuring your `ssh-agent` is setup
 properly is important when connecting to us.
 
