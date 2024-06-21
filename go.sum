@@ -12,6 +12,8 @@ github.com/picosh/pdocs v0.0.0-20240604041559-e4e457618a79 h1:ISjrO1HaL0cgFO7vJE
 github.com/picosh/pdocs v0.0.0-20240604041559-e4e457618a79/go.mod h1:KXO3Z0EVdA811AX6mlK4lwFDT+KgmegRVrEmZU5uLXU=
 github.com/picosh/pdocs v0.0.0-20240605155503-8b60d6355244 h1:5kqyTKIuLWGX9zZwOZoi+maEZEZLkq6QPLspUs8jUJE=
 github.com/picosh/pdocs v0.0.0-20240605155503-8b60d6355244/go.mod h1:KXO3Z0EVdA811AX6mlK4lwFDT+KgmegRVrEmZU5uLXU=
+github.com/picosh/pdocs v0.0.0-20240621040056-5cbf57557db3 h1:VuX6UzKt5bNir3itrMBiROmzZp8PEZJkbD7muwz5x2s=
+github.com/picosh/pdocs v0.0.0-20240621040056-5cbf57557db3/go.mod h1:KXO3Z0EVdA811AX6mlK4lwFDT+KgmegRVrEmZU5uLXU=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
 github.com/stretchr/objx v0.1.0/go.mod h1:HFkY916IF+rwdDfMAkV7OtwuqBVzrE8GR6GFx+wExME=

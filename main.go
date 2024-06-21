@@ -1,6 +1,8 @@
 package main
 
 import (
+	"log/slog"
+
 	"github.com/picosh/pdocs"
 )
 
@@ -36,22 +38,11 @@ func main() {
 						Text: "File uploads",
 						Href: "/file-uploads",
 						Page: pager("file-uploads.md"),
-						Children: []*pdocs.Sitemap{
-							pdocs.AnchorTagSitemap("How do I upload files"),
-							pdocs.AnchorTagSitemap("How do I update files"),
-							pdocs.AnchorTagSitemap("How do I delete files"),
-							pdocs.AnchorTagSitemap("How do I download files"),
-						},
 					},
 					{
 						Text: "UI",
 						Href: "/ui",
 						Page: pager("ui.md"),
-						Children: []*pdocs.Sitemap{
-							pdocs.AnchorTagSitemap("SSH TUI"),
-							pdocs.AnchorTagSitemap("Web UI"),
-							pdocs.AnchorTagSitemap("SSH Config"),
-						},
 					},
 				},
 			},
@@ -63,19 +54,6 @@ func main() {
 						Text: "Pages",
 						Href: "/pgs",
 						Page: pager("pgs.md"),
-						Children: []*pdocs.Sitemap{
-							pdocs.AnchorTagSitemap("CLI Reference"),
-							pdocs.AnchorTagSitemap("File denylist"),
-							pdocs.AnchorTagSitemap("Access Control List"),
-							pdocs.AnchorTagSitemap("Pretty URLs"),
-							pdocs.AnchorTagSitemap("Custom Domains"),
-							pdocs.AnchorTagSitemap("Custom Redirects and rewrites"),
-							pdocs.AnchorTagSitemap("Custom Headers"),
-							pdocs.AnchorTagSitemap("Single-Page Applications"),
-							pdocs.AnchorTagSitemap("Reserved Username Project"),
-							pdocs.AnchorTagSitemap("Content Security Policy"),
-							pdocs.AnchorTagSitemap("Does pages have a CDN or muilti-region support"),
-						},
 					},
 					{
 						Text: "Tuns",
@@ -86,36 +64,16 @@ func main() {
 						Text: "Prose",
 						Href: "/prose",
 						Page: pager("prose.md"),
-						Children: []*pdocs.Sitemap{
-							pdocs.AnchorTagSitemap("How are blogs structured"),
-							pdocs.AnchorTagSitemap("How can I customize my blog"),
-							pdocs.AnchorTagSitemap("How can I customize a blog post"),
-							pdocs.AnchorTagSitemap("Unlisted posts"),
-							pdocs.AnchorTagSitemap("How can I add a footer to all of my posts"),
-							pdocs.AnchorTagSitemap("How can I change the theme of my blog"),
-							pdocs.AnchorTagSitemap("How can I change the default 404 page"),
-						},
 					},
 					{
 						Text: "Pastes",
 						Href: "/pastes",
 						Page: pager("pastes.md"),
-						Children: []*pdocs.Sitemap{
-							pdocs.AnchorTagSitemap("Pipe Support"),
-							pdocs.AnchorTagSitemap("How do I set expiration date"),
-							pdocs.AnchorTagSitemap("How do I unlist a paste"),
-						},
 					},
 					{
 						Text: "RSS-To-Email",
 						Href: "/feeds",
 						Page: pager("feeds.md"),
-						Children: []*pdocs.Sitemap{
-							pdocs.AnchorTagSitemap("Digest interval options"),
-							pdocs.AnchorTagSitemap("Inline content"),
-							pdocs.AnchorTagSitemap("Can I create multiple email digests?"),
-							pdocs.AnchorTagSitemap("Can I fetch Reddit RSS feeds"),
-						},
 					},
 					{
 						Text: "Docker Registry",
@@ -132,20 +90,11 @@ func main() {
 						Text: "Custom domains",
 						Href: "/custom-domains",
 						Page: pager("custom-domains.md"),
-						Children: []*pdocs.Sitemap{
-							pdocs.AnchorTagSitemap("prose.sh"),
-							pdocs.AnchorTagSitemap("pgs.sh"),
-							pdocs.AnchorTagSitemap("My DNS does not support CNAME flattening"),
-						},
 					},
 					{
 						Text: "Images",
 						Href: "/images",
 						Page: pager("images.md"),
-						Children: []*pdocs.Sitemap{
-							pdocs.AnchorTagSitemap("What file types are supported"),
-							pdocs.AnchorTagSitemap("Image manipulation"),
-						},
 					},
 					{
 						Text:     "API Tokens",
@@ -163,29 +112,11 @@ func main() {
 						Text: "FAQ",
 						Href: "/faq",
 						Page: pager("faq.md"),
-						Children: []*pdocs.Sitemap{
-							pdocs.AnchorTagSitemap("Why can't I login to pico"),
-							pdocs.AnchorTagSitemap("How do I force the correct pico SSH key"),
-							pdocs.AnchorTagSitemap("How do I generate an SSH key"),
-							pdocs.AnchorTagSitemap("How can I setup my ssh-agent"),
-							pdocs.AnchorTagSitemap("How can I use git to sync my content"),
-							pdocs.AnchorTagSitemap("Can I create multiple pico accounts"),
-							pdocs.AnchorTagSitemap("Can I associate multiple SSH keypairs to a single account"),
-							pdocs.AnchorTagSitemap("Are there any bandwidth limitations"),
-							pdocs.AnchorTagSitemap("How can I download a copy of all of my content"),
-							pdocs.AnchorTagSitemap("How can I delete my content"),
-							pdocs.AnchorTagSitemap("How can I delete my account with my content"),
-							pdocs.AnchorTagSitemap("I lost my SSH private key how can I recover my account"),
-						},
 					},
 					{
 						Text: "IRC",
 						Href: "/irc",
 						Page: pager("irc.md"),
-						Children: []*pdocs.Sitemap{
-							pdocs.AnchorTagSitemap("Realtime chat"),
-							pdocs.AnchorTagSitemap("Our public bouncer"),
-						},
 					},
 				},
 			},
@@ -249,7 +180,9 @@ func main() {
 		},
 	}
 
+	logger := slog.Default()
 	config := &pdocs.DocConfig{
+		Logger:   logger,
 		Sitemap:  sitemap,
 		Out:      "./public",
 		Tmpl:     "./tmpl",
