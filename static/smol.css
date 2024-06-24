@@ -710,6 +710,11 @@ figure {
   padding: 0.5rem 0.75rem;
 }
 
+.box-sm {
+  border: 2px solid var(--grey-light);
+  padding: 0.15rem 0.35rem;
+}
+
 .list-none {
   list-style-type: none;
 }
