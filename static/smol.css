@@ -126,6 +126,7 @@ small {
 
 summary {
   display: list-item;
+  cursor: pointer;
 }
 
 h1,
