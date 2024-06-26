@@ -111,21 +111,6 @@ code {
   padding: 0.1rem 0.3rem;
 }
 
-.pill {
-  border: 1px solid var(--link-color);
-  color: var(--link-color);
-}
-
-.pill-alert {
-  border: 1px solid var(--hover);
-  color: var(--hover);
-}
-
-.pill-info {
-  border: 1px solid var(--visited);
-  color: var(--visited);
-}
-
 pre {
   font-size: 14px;
   border-radius: 5px;
@@ -751,6 +736,21 @@ figure {
 
 .list-decimal {
   list-style-type: decimal;
+}
+
+.pill {
+  border: 1px solid var(--link-color);
+  color: var(--link-color);
+}
+
+.pill-alert {
+  border: 1px solid var(--hover);
+  color: var(--hover);
+}
+
+.pill-info {
+  border: 1px solid var(--visited);
+  color: var(--visited);
 }
 
 @media only screen and (max-width: 40em) {
