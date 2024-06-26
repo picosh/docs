@@ -730,6 +730,16 @@ figure {
   padding: 0.15rem 0.35rem;
 }
 
+.box-alert {
+  border: 2px solid var(--hover);
+  padding: 0.5rem 0.75rem;
+}
+
+.box-sm-alert {
+  border: 2px solid var(--hover);
+  padding: 0.15rem 0.35rem;
+}
+
 .list-none {
   list-style-type: none;
 }

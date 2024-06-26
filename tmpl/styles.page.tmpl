@@ -10,14 +10,41 @@
 
 {{define "body"}}
 {{template "nav" .}}
+
+<h1 class="text-2xl">Styles</h1>
+
 <div class="group">
-  <div><code class="pill">example</code></div>
-  <div><code class="pill">example longer</code></div>
+  <div class="group">
+    <h2 class="text-xl">Pill</h2>
 
-  <div><code class="pill-alert">example</code></div>
-  <div><code class="pill-alert">example longer</code></div>
+    <div><code class="pill">example</code></div>
+    <div><code class="pill">example longer</code></div>
 
-  <div><code class="pill-info">example</code></div>
-  <div><code class="pill-info">example longer</code></div>
+    <div><code class="pill-alert">example</code></div>
+    <div><code class="pill-alert">example longer</code></div>
+
+    <div><code class="pill-info">example</code></div>
+    <div><code class="pill-info">example longer</code></div>
+  </div>
+
+  <div class="group">
+    <h2 class="text-xl">Box</h2>
+
+    <div class="box">
+      This is a box!
+    </div>
+
+    <div class="box-sm">
+      This is a smaller box!
+    </div>
+
+    <div class="box-alert">
+      This is a box alert!
+    </div>
+
+    <div class="box-sm-alert">
+      This is a smaller box alert!
+    </div>
+  </div>
 </div>
 {{end}}
