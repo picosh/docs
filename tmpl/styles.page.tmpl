@@ -1,0 +1,23 @@
+{{template "base" .}}
+
+{{define "title"}}{{.Data.Title}}{{end}}
+
+{{define "meta"}}
+<meta name="description" content="{{.Data.Description}}" />
+{{end}}
+
+{{define "attrs"}}class="container"{{end}}
+
+{{define "body"}}
+{{template "nav" .}}
+<div class="group">
+  <div><code class="pill">example</code></div>
+  <div><code class="pill">example longer</code></div>
+
+  <div><code class="pill-alert">example</code></div>
+  <div><code class="pill-alert">example longer</code></div>
+
+  <div><code class="pill-info">example</code></div>
+  <div><code class="pill-info">example longer</code></div>
+</div>
+{{end}}

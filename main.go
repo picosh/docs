@@ -139,6 +139,11 @@ func main() {
 						Href: "/plain-text-lists",
 						Page: pager("plain-text-lists.md"),
 					},
+					{
+						Text: "Styles",
+						Href: "/styles",
+						Page: pager("styles.md"),
+					},
 				},
 			},
 

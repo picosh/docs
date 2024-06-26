@@ -41,7 +41,7 @@
     --main-hue: 250;
     --white: #f2f2f2;
     --white-light: #f2f2f2;
-    --white-dark: #c6c6c6;
+    --white-dark: #e8e8e8;
     --code: #414558;
     --pre: #252525;
     --bg-color: #282a36;
@@ -109,6 +109,21 @@ code {
   font-size: 90%;
   border-radius: 0.3rem;
   padding: 0.1rem 0.3rem;
+}
+
+.pill {
+  border: 1px solid var(--link-color);
+  color: var(--link-color);
+}
+
+.pill-alert {
+  border: 1px solid var(--hover);
+  color: var(--hover);
+}
+
+.pill-info {
+  border: 1px solid var(--visited);
+  color: var(--visited);
 }
 
 pre {
