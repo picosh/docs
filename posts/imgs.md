@@ -93,7 +93,7 @@ jobs:
         tags: localhost:5000/image:latest
 ```
 
-# Ready to join pico?
+Ready to join pico?
 
 <div class="flex flex-col items-center justify-center">
   <p>Create an account using only your SSH key.</p>

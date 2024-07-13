@@ -314,7 +314,7 @@ description: Where are you going?
 This page doesn't exist.
 ```
 
-# Ready to join pico?
+Ready to join pico?
 
 <div class="flex flex-col items-center justify-center">
   <p>Create an account using only your SSH key.</p>

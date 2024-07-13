@@ -3,17 +3,23 @@ title: Lab
 description: Experimental ideas, projects, and oss libs
 ---
 
+# git-pr
+
+The simplest git collaboration service
+
+[Source code](https://github.com/picosh/git-pr)
+
 # pobj
 
 rsync, scp, sftp for your object store.
 
 [Source code](https://github.com/picosh/pobj)
 
-# ptun
+# tunkit
 
-A passwordless authentication experience for the browser leveraging SSH tunnels.
+SSH tunnel tooling
 
-[Source code](https://github.com/picosh/ptun)
+[Source code](https://github.com/picosh/tunkit)
 
 # pgit
 

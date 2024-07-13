@@ -31,7 +31,7 @@ ssh -R dev:80:localhost:8000 tuns.sh
 # now anyone can access it at https://dev.tuns.sh
 ```
 
-# Ready to join pico?
+Ready to join pico?
 
 <div class="flex flex-col items-center justify-center">
   <p>Create an account using only your SSH key.</p>

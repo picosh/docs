@@ -60,7 +60,7 @@ pipe command.
 echo "foobar" | ssh pastes.sh FILENAME hidden=true
 ```
 
-# Ready to join pico?
+Ready to join pico?
 
 <div class="flex flex-col items-center justify-center">
   <p>Create an account using only your SSH key.</p>

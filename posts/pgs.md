@@ -256,6 +256,22 @@ override this preference by adding a force flag to your redirect entry:
 /space   /   301!
 ```
 
+## Redirect `www` to naked domain
+
+Our recommended solution is to create a separate project with just a
+`_redirects` file inside of it.
+
+1. Create a `_redirects` file with a 301 to naked domain:
+
+```bash
+echo "/*  nake-domain.com  301" >> _www_redirects
+rsync _www_redirects pgs.sh:/www-proj/_redirects
+```
+
+2. Add a `www` CNAME and TXT record to point to www project
+
+See our [custom domains](/custom-domains#pgssh) page.
+
 ## Rewrites
 
 Not completely supported at this point but actively being worked on. You can
@@ -339,7 +355,7 @@ At this point in time, we are able to serve content from a single VM. If this
 service gains traction we will commit to having a CDN with multiple regions in
 the US.
 
-# Ready to join pico?
+Ready to join pico?
 
 <div class="flex flex-col items-center justify-center">
   <p>Create an account using only your SSH key.</p>

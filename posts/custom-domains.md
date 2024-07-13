@@ -102,3 +102,7 @@ and then use that as an `A` record.
 
 > WARNING: We make **no** guarantees that our IP addresses will stay the same.
 > Use at your own risk!
+
+# Can I use an `ALIAS` record instead of `CNAME`?
+
+Yes, it should work the exact same way.
