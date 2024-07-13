@@ -124,7 +124,7 @@ Email us at [hello@pico.sh](mailto:hello@pico.sh) with any questions.
 In particular we would like to thank the following communities:
 
 - charm.sh
-- golang
+- Go
 - postgresql
 - caddy
 - omg.lol
