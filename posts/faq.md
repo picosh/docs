@@ -67,7 +67,7 @@ Host pico.sh pgs.sh prose.sh
 
 # How do I generate an SSH key?
 
-[Github Reference](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+[GitHub Reference](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
 
 ```bash
 ssh-keygen -t ed25519 -C "your_email@example.com"
@@ -82,7 +82,7 @@ Your SSH agent typically hosts your SSH keypairs and serves them when
 authenticating with an SSH server. So, ensuring your `ssh-agent` is setup
 properly is important when connecting to us.
 
-[Github has a great guide on this.](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#adding-your-ssh-key-to-the-ssh-agent)
+[GitHub has a great guide on this.](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#adding-your-ssh-key-to-the-ssh-agent)
 
 # How can I use `git` to sync my content?
 

@@ -12,7 +12,7 @@ The easiest way to publish blog articles on the web.
 # Features
 
 - No install
-- Github flavor markdown
+- GitHub flavored markdown
 - [Custom domains](/custom-domains#prosesh)
 - Publish posts using [rsync, sftp, or scp](/file-uploads)
 - Looks great on any device
