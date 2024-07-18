@@ -19,6 +19,7 @@ The easiest way to deploy static sites on the web.
 - Deploy using [rsync, sftp, or scp](/file-uploads)
 - Promotion/rollback support
 - Managed HTTPS for all projects
+- Site [analytics](/analytics)
 - [Custom domains](/custom-domains#pgssh) for projects
 - [Custom redirects](#custom-redirects)
 - [Custom headers](#custom-headers)

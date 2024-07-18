@@ -15,6 +15,7 @@ The easiest way to publish blog articles on the web.
 - GitHub flavored markdown
 - [Custom domains](/custom-domains#prosesh)
 - Publish posts using [rsync, sftp, or scp](/file-uploads)
+- Blog [analytics](/analytics)
 - Looks great on any device
 - Bring your own editor
 - Public-key based authentication

@@ -97,10 +97,14 @@ func main() {
 						Page: pager("images.md"),
 					},
 					{
-						Text:     "API Tokens",
-						Href:     "/api-token",
-						Page:     pager("api-token.md"),
-						Children: []*pdocs.Sitemap{},
+						Text: "API Tokens",
+						Href: "/api-token",
+						Page: pager("api-token.md"),
+					},
+					{
+						Text: "Analytics",
+						Href: "/analytics",
+						Page: pager("analytics.md"),
 					},
 				},
 			},
