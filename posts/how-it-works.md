@@ -9,10 +9,10 @@ without needing to install anything. We accomplish this with the SSH tools you
 already have installed on your system. All a user needs is an SSH client to
 manage their content.
 
-By using the SSH protocol and Go's implementation of SSH, we can create
-Go binaries that interface with SSH in unique ways. Further, we are inside
-the context of a Go binary, not a traditional SSH session where the user
-could figure out how to execute arbitrary commands.
+By using the SSH protocol and Go's implementation of SSH, we can create Go
+binaries that interface with SSH in unique ways. Further, we are inside the
+context of a Go binary, not a traditional SSH session where the user could
+figure out how to execute arbitrary commands.
 
 [charm.sh wish](https://github.com/charmbracelet/wish) is the underlying library
 we use to enable all our SSH apps to work seamlessly with SSH clients. Wish lets

@@ -37,8 +37,18 @@ We are delighted to provide a public soju instance available to all pico users.
 
 Next you need to pick a client to connect to the bouncer and finish setup:
 
+- [ssh app](#ssh-app)
 - [web](#web) - at [chat.pico.sh](https://chat.pico.sh)
 - [terminal](#terminal) - senpai
+
+## SSH App
+
+We integrated senpai into our SSH app. If you have a pico account you can
+connect via:
+
+```bash
+ssh pico.sh -t chat
+```
 
 ## Web
 

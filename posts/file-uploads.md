@@ -27,9 +27,9 @@ rsync -rv public/ {service}:/site/
 
 ### What rsync options are supported?
 
-Because in our Go SSH server we re-implement `rsync`, many options are
-currently not supported. For example, `--delete` and `--dry-run` are not
-supported. At this time, the only options we supported are the following:
+Because in our Go SSH server we re-implement `rsync`, many options are currently
+not supported. For example, `--delete` and `--dry-run` are not supported. At
+this time, the only options we supported are the following:
 
 - `-r`
 - `-v`
