@@ -236,8 +236,47 @@ See our [custom domains](/custom-domains#pgssh) page.
 
 ## Rewrites
 
-Not completely supported at this point but actively being worked on. You can
-track the status in this [PR](https://github.com/picosh/pico/pull/123).
+When you assign an HTTP status code of `200` to a redirect rule, it becomes a
+rewrite. This means that the URL in the visitor’s address bar remains the same,
+while pico's servers fetch the new location behind the scenes.
+
+With `_redirects` we also support rewrite rules for when you want to show
+content from another site without a full URL redirect.
+
+This can be useful for single page apps, proxying to other services, proxying to
+other pgs sites, or transitioning for legacy content.
+
+Here are some examples:
+
+```
+/*  https://my-other-site.pgs.sh/:splat 200
+/my-site/*  https://my-other-size.pgs.sh/:splat 200
+/news/:month/:date/:year/*  /blog/:year/:month/:date/:splat 200
+```
+
+### Proxy to another service
+
+Similar to how you can rewrite paths like `/*` to `/index.html`, you can also
+set up rules to let parts of your site proxy to external services. Let’s say you
+need to communicate from a single-page app with an API on
+https://api.example.com that doesn’t support CORS requests. The following rule
+will let you use `/api/` from your JavaScript client:
+
+```
+/api/*  https://api.example.com/:splat  200
+```
+
+### Limitations
+
+- Infinitely looping rules, where the "from" and "to" resolve to the same
+  location, are incorrect and will be ignored.
+- By default, we limit internal rewrites to one "hop".
+- Rewrites can cause pages that use assets specified through relative paths to
+  load incorrectly. To make sure your site's proxied content is displayed as
+  expected, use absolute paths for your assets.
+- Paths handled by proxies may not redirect from HTTP to HTTPS URLs as expected.
+  If you’re working with proxies, we recommend only publishing HTTPS URLs for
+  your visitors to use.
 
 # Custom Headers
 
