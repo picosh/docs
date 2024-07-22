@@ -12,6 +12,12 @@ ssh pico.sh
 # -> Enable analtics [OK]
 ```
 
+# What metrics are captured?
+
+- Unique visitors
+- Top Referrers
+- Top URLs
+
 # Blog
 
 ```bash

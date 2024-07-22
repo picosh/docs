@@ -7,12 +7,11 @@ toc: 1
 
 The easiest way to deploy static sites on the web.
 
-> NOTICE: This is a premium [pico+](/plus) service with a **free tier**
+> NOTICE: This is a premium [pico+](/plus) service with a tiny **free tier**
 
 # Features
 
 - No install
-- 25MB asset storage with **free tier**
 - No client-side installation required to fully manage static sites
 - Distinct static sites as projects
 - Unlimited projects, created instantly upon upload
@@ -149,44 +148,6 @@ with any comment (to get around how we handle
 > Note: when uploading a `_pgs_ignore`, we cannot guarentee it will be uploaded
 > first so we recommend uploading it on its own and then upload the rest of your
 > site.
-
-# Access Control List
-
-Thanks to SSH tunnels we can provide restricted access to projects.
-
-We have three options:
-
-- public (default)
-- pubkeys (list of sha256 public keys to give read access to)
-- pico (list of pico users to grant read access to)
-
-```bash
-# access to anyone with a public key
-ssh pgs.sh acl project-x --type pubkeys 
-
-# access only to public keys provided
-ssh pgs.sh acl project-x --type pubkeys --acl sha256:xxx --acl sha256:yyy
-
-# access to anyone with a pico account
-ssh pgs.sh acl project-x --type pico
-
-# access only to pico users provided
-ssh pgs.sh acl project-x --type pico --acl antonio --acl erock
-
-# access to anyone
-ssh pgs.sh acl project-x --type public
-```
-
-To connect to a private project:
-
-```bash
-ssh -L 1337:localhost:80 -N {subdomain}@pgs.sh
-
-# for example our pico UI is only available through an SSH tunnel:
-ssh -L 1337:localhost:80 -N pico-ui@pgs.sh
-```
-
-Then open your browser to http://localhost:1337
 
 # Pretty URLs
 
@@ -349,6 +310,44 @@ Content-Security-Policy "default-src 'self'; img-src * 'unsafe-inline'; style-sr
 
 If you need to access sites that are blocked by this CSP, then you can use a
 [custom domain](/custom-domains) which won't have those security restrictions.
+
+# Access Control List
+
+Thanks to SSH tunnels we can provide restricted access to projects.
+
+We have three options:
+
+- public (default)
+- pubkeys (list of sha256 public keys to give read access to)
+- pico (list of pico users to grant read access to)
+
+```bash
+# access to anyone with a public key
+ssh pgs.sh acl project-x --type pubkeys 
+
+# access only to public keys provided
+ssh pgs.sh acl project-x --type pubkeys --acl sha256:xxx --acl sha256:yyy
+
+# access to anyone with a pico account
+ssh pgs.sh acl project-x --type pico
+
+# access only to pico users provided
+ssh pgs.sh acl project-x --type pico --acl antonio --acl erock
+
+# access to anyone
+ssh pgs.sh acl project-x --type public
+```
+
+To connect to a private project:
+
+```bash
+ssh -L 1337:localhost:80 -N {subdomain}@pgs.sh
+
+# for example our pico UI is only available through an SSH tunnel:
+ssh -L 1337:localhost:80 -N pico-ui@pgs.sh
+```
+
+Then open your browser to http://localhost:1337
 
 # Does pages have a CDN or multi-region support?
 
