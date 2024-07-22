@@ -3,6 +3,9 @@ title: Analytics
 description: how to get analytics for your blog and sites
 ---
 
+> Read our
+> [privacy policy on storing user analytics](https://pico.sh/privacy#analytics).
+
 For [pico+](/plus) users we provide the ability to view user analytics. This
 feature is opt-in so you need to first enable analytics:
 
