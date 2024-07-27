@@ -7,12 +7,11 @@ toc: 1
 
 The easiest way to deploy static sites on the web.
 
-> NOTICE: This is a premium [pico+](/plus) service with a tiny **free tier**
+> NOTICE: This is a premium [pico+](/plus) service with a **free tier**
 
 # Features
 
-- No install
-- No client-side installation required to fully manage static sites
+- Use familiar cli tools to fully manage static sites
 - Distinct static sites as projects
 - Unlimited projects, created instantly upon upload
 - Deploy using [rsync, sftp, or scp](/file-uploads)
@@ -56,16 +55,16 @@ instantly update your project.
 ssh pgs.sh link project-prod project-d0131d4
 ```
 
-A common way to perform promotions within pgs.sh is to setup CI/CD so every
-`git` push to `main` would trigger a build and create a new project based on the
-git commit hash (e.g. `project-d0131d4`).
+A common way to perform promotions within `pgs` is to setup CI/CD so every `git`
+push to `main` would trigger a build and create a new project based on the git
+commit hash (e.g. `project-d0131d4`).
 
 This command will create a symbolic link from `project-prod` to
 `project-d0131d4`. Want to rollback a release? Just change the link for
 `project-prod` to a previous project.
 
 We also built a [github action](https://github.com/picosh/pgs-action) that
-handles all the logic for uploading to pgs.sh.
+handles all the logic for uploading to `pgs`.
 [Here's an example of it in action.](https://erock-git-neovimcraft.pgs.sh/tree/main/item/.github/workflows/deploy.yml.html#27)
 
 # CLI Reference
@@ -76,7 +75,7 @@ The best way to learn about all the commands we support is via an SSH command:
 ssh pgs.sh help
 ```
 
-Having said that, we do want to demonstrate the power of pgs.sh by discussing
+Having said that, we do want to demonstrate the power of `pgs` by discussing
 design goals. All of our SSH commands are safe-by-default. Meaning, they never
 mutate server state by default. This provides users an opportunity to experiment
 with our commands to see how they work. In order to actually trigger server
@@ -138,14 +137,13 @@ Upload a `_pgs_ignore` to the root of each project. We are using the same rules
 as `.gitignore` using [this parser](https://github.com/sabhiram/go-gitignore).
 
 If you want to allow all files without ignoring anything, add a `_pgs_ignore`
-with any comment (to get around how we handle
-[0-byte files](/file-upload#0-byte-file)):
+with any comment:
 
 ```
 # dont ignore files
 ```
 
-> Note: when uploading a `_pgs_ignore`, we cannot guarentee it will be uploaded
+> Note: when uploading a `_pgs_ignore`, we cannot guarantee it will be uploaded
 > first so we recommend uploading it on its own and then upload the rest of your
 > site.
 
@@ -244,7 +242,7 @@ With `_redirects` we also support rewrite rules for when you want to show
 content from another site without a full URL redirect.
 
 This can be useful for single page apps, proxying to other services, proxying to
-other pgs sites, or transitioning for legacy content.
+other `pgs` sites, or transitioning for legacy content.
 
 Here are some examples:
 
@@ -341,7 +339,7 @@ rsync -rv public/ glossy@pgs.sh:/glossy
 
 # Content security policy
 
-For pico domains we have modestly strict content-security policies.
+For pico domains we have some strict content-security policies.
 
 ```bash
 Content-Security-Policy "default-src 'self'; img-src * 'unsafe-inline'; style-src * 'unsafe-inline'"
@@ -393,6 +391,31 @@ Then open your browser to http://localhost:1337
 At this point in time, we are able to serve content from a single VM. If this
 service gains traction we will commit to having a CDN with multiple regions in
 the US.
+
+# Removing a project
+
+The _only_ way to delete a project and its contents is with our remote cli:
+
+```bash
+ssh pgs.sh rm <project>
+```
+
+# File upload caveats
+
+Everyone's static sites are stored inside our object store. In order for `sftp`
+and `sshfs` to work we need to emulate a folder structure. Object store's are
+just an object with a name prefix that **resembles** a folder structure. As such
+in order for empty folders to be traversed in an emulated filesystem, we need to
+create dummy files `._pico_keep_dir` that let us keep a reference to an empty
+folder inside our object store. As such:
+
+> You cannot delete a project using `sftp` or `sshfs` commands
+
+You must [delete a project](#removing-a-project) using the remote cli.
+
+If you accidentally remove a site you will be stuck in a limbo state. The folder
+will still exist using `sftp` or `sshfs` then you can properly clean it up by
+running the [rm command](#removing-a-project)
 
 Ready to join pico?
 
