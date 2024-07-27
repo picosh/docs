@@ -201,13 +201,8 @@ When no status is provided, we default to `301 Moved Permenantly`.
 
 By default we do not shadow routes that exist. For example:
 
-`/space.html` exists on your site
-
-With a `_redirects` entry:
-
-```
-/space   /   301
-```
+- `/space.html` exists on your site,
+- with a `_redirects` entry `/space   /   301`
 
 If the user goes to `/space` then it will always prefer `/space.html`. You can
 override this preference by adding a force flag to your redirect entry:
@@ -221,10 +216,10 @@ override this preference by adding a force flag to your redirect entry:
 Our recommended solution is to create a separate project with just a
 `_redirects` file inside of it.
 
-1. Create a `_redirects` file with a 301 to naked domain:
+1. Create a `_redirects` file with a `301` to naked domain:
 
 ```bash
-echo "/*  nake-domain.com  301" >> _www_redirects
+echo "/*  naked-domain.com  301" >> _www_redirects
 rsync _www_redirects pgs.sh:/www-proj/_redirects
 ```
 
@@ -247,9 +242,9 @@ other `pgs` sites, or transitioning for legacy content.
 Here are some examples:
 
 ```
-/*  https://my-other-site.pgs.sh/:splat 200
-/my-site/*  https://my-other-size.pgs.sh/:splat 200
-/news/:month/:date/:year/*  /blog/:year/:month/:date/:splat 200
+/*                          https://my-other-site.pgs.sh/:splat 200
+/my-site/*                  https://my-other-size.pgs.sh/:splat 200
+/news/:month/:date/:year/*  /blog/:year/:month/:date/:splat     200
 ```
 
 ### Proxy to another service
@@ -264,7 +259,7 @@ will let you use `/api/` from your JavaScript client:
 /api/*  https://api.example.com/:splat  200
 ```
 
-### Limitations
+### Caveats
 
 - Infinitely looping rules, where the "from" and "to" resolve to the same
   location, are incorrect and will be ignored.
@@ -390,7 +385,7 @@ Then open your browser to http://localhost:1337
 
 At this point in time, we are able to serve content from a single VM. If this
 service gains traction we will commit to having a CDN with multiple regions in
-the US.
+the US and EU.
 
 # Removing a project
 
