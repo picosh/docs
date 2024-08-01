@@ -9,8 +9,6 @@ The easiest way to deploy static sites on the web.
 
 > NOTICE: This is a premium [pico+](/plus) service with a **free tier**
 
-[![pgs demo](https://img.youtube.com/vi/sdbQpD2jV0k/0.jpg)](https://www.youtube.com/watch?v=sdbQpD2jV0k)
-
 # Features
 
 - Use familiar cli tools to fully manage static sites
@@ -27,6 +25,10 @@ The easiest way to deploy static sites on the web.
 - [Image manipulation API](/images#image-manipulation)
 - [Private projects](#access-control-list)
 - [No bandwidth limitations](/faq#are-there-any-bandwidth-limitations)
+
+## DEMO
+
+[![pgs demo](https://img.youtube.com/vi/sdbQpD2jV0k/0.jpg)](https://www.youtube.com/watch?v=sdbQpD2jV0k)
 
 # Publish your site with one command
 
