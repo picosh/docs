@@ -26,7 +26,7 @@ The easiest way to deploy static sites on the web.
 - [Private projects](#access-control-list)
 - [No bandwidth limitations](/faq#are-there-any-bandwidth-limitations)
 
-## DEMO
+## Demo
 
 [![pgs demo](https://img.youtube.com/vi/sdbQpD2jV0k/0.jpg)](https://www.youtube.com/watch?v=sdbQpD2jV0k)
 

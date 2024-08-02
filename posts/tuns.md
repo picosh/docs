@@ -21,6 +21,10 @@ and tcp.
 
 ![sish-example](https://docs.ssi.sh/hiw-sish-public.png)
 
+## Demo
+
+[![tuns demo](https://img.youtube.com/vi/wZHiuR9RqGw/0.jpg)](https://www.youtube.com/watch?v=wZHiuR9RqGw)
+
 # Use cases
 
 Think of tuns as a developer tool. It is designed for the individual developer
