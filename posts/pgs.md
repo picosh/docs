@@ -7,7 +7,8 @@ toc: 1
 
 The easiest way to deploy static sites on the web.
 
-> NOTICE: This is a premium [pico+](/plus) service with a **free tier**
+> NOTICE: This is a premium [pico+](/plus) service with a **free tier** (25mb
+> total storage limit)
 
 # Features
 
@@ -25,6 +26,7 @@ The easiest way to deploy static sites on the web.
 - [Image manipulation API](/images#image-manipulation)
 - [Private projects](#access-control-list)
 - [No bandwidth limitations](/faq#are-there-any-bandwidth-limitations)
+- 20GB total storage limit
 
 ## Demo
 
