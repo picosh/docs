@@ -121,7 +121,7 @@ Email us at [hello@pico.sh](mailto:hello@pico.sh) with any questions.
 
 # Acknowledgments
 
-In particular we would like to thank the following communities:
+In particular we would like to thank the following communities and projects:
 
 - [Go](https://go.dev)
 - [postgresql](https://www.postgresql.org/)
