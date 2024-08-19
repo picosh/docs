@@ -9,9 +9,11 @@ order to be granted access you will need to create an account.
 
 # Create your account with Public-Key Cryptography
 
-We don't need your email address, all we need is an SSH keypair. So before you
-begin, please make sure you have a valid SSH keypair or
-[generate one](/faq#how-do-i-generate-an-ssh-key).
+All we need is an SSH keypair. So before you begin, please make sure you have a
+valid SSH keypair or [generate one](/faq#how-do-i-generate-an-ssh-key).
+
+> By signing up to pico, you agree to our [privacy policy](/privacy) and our
+> [terms of service](/ops).
 
 To get started, simply use SSH:
 
