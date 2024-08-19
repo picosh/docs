@@ -35,16 +35,21 @@ To use pico.sh services, you agree that:
 
 # Code of Content Publication
 
-Content in pico.sh services is unfiltered but monitored. Users are free to
-publish any combination of words and pixels with a few exceptions.
+Content in pico.sh services is unfiltered **but** monitored. Users are free to
+publish any combination of words and pixels, with a few exceptions:
 
-If someone else might own the copyright to it, don't upload it. Don't upload
-gore, "hate speech" (i.e. demeaning race, gender, age, religious or sexual
-orientation, etc.), or material that is threatening, harassing, defamatory, or
-that encourages violence or crime. Don't upload illegal content, nudity, or
-adult sexual content. Don't impersonate someone else. If you do or if you do
-anything illegal, in addition to any other legal rights we may have, we will ban
-you, delete all your images, and report you to the authorities if necessary.
+- Don't upload content if someone else might own the copyright to it
+- Don't upload gore
+- Don't upload "hate speech" (i.e. demeaning race, gender, age, religious or
+  sexual orientation, etc.)
+- Don't upload material that is threatening, harassing, defamatory, or that
+  encourages violence or crime
+- Don't upload illegal content, nudity, or adult sexual content
+- Don't impersonate someone else
+
+If you do or if you do anything illegal, in addition to any other legal rights
+we may have, we will ban you, delete your content, and report you to the
+authorities if necessary.
 
 If anyone notices something along those lines in any content published on our
 platform, please let us know at [abuse@pico.sh](mailto:abuse@pico.sh).
