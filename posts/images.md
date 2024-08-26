@@ -8,6 +8,9 @@ There are two ways to upload images to pico: through [prose.sh](/prose) or
 [pgs.sh](/pgs). They both share similar features to each other, they just serve
 different purposes and have different storage limits.
 
+> Read our [Code of Content section](/ops#code-of-content-publication) to
+> understand what is and isn't allowed on our platform
+
 # Features
 
 - Images can be web optimized
@@ -23,6 +26,7 @@ different purposes and have different storage limits.
 
 - Not a general cloud photo storage solution
 - Not a place to backup or store your photos
+- Not a place illegal content, nudity, or adult sexual content
 
 # Publish your images with one command
 
