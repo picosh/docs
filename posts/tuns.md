@@ -55,7 +55,7 @@ We manage a completely separate doc site for all things related to `sish`:
 ```bash
 # if you have a local webserver on localhost:8000:
 ssh -R dev:80:localhost:8000 tuns.sh
-# now anyone can access it at https://dev.tuns.sh
+# now anyone can access it at https://{user}-dev.tuns.sh
 ```
 
 Ready to join pico?
