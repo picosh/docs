@@ -141,25 +141,6 @@ Cya!</pre>
       </div>
 
       <div class="box">
-        <h3 class="mt mb-2 pt-0 text-lg text-hdr inline-block">Push and pull docker images using SSH</h3>
-        <div class="flex gap-2 flex-collapse">
-          <div class="flex-1 group">
-            <div>Open a tunnel to our docker registry:</div>
-            <pre>ssh -L 1338:localhost:80 -N imgs.sh</pre>
-          </div>
-          <div class="flex-1 group">
-            <div>
-              Now you are authenticated!  You are now able to push
-              and pull like normal:
-            </div>
-            <pre>docker push localhost:1338/alpine:latest
-docker pull localhost:1338/alpine:latest</pre>
-            <div>All images sent to us are private and scoped to your user automatically.</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="box">
         <h3 class="mt mb-2 pt-0 text-lg text-hdr inline-block">Easily share code snippets</h3>
         <div class="flex gap-2 flex-collapse">
           <div class="flex-1 group">
@@ -189,6 +170,25 @@ docker pull localhost:1338/alpine:latest</pre>
             <div>
               After the daily interval has been reached, you will
               receive an email with your feeds!
+            </div>
+          </div>
+        </div>
+
+        <div class="box">
+          <h3 class="mt mb-2 pt-0 text-lg text-hdr inline-block">Push and pull docker images using SSH</h3>
+          <div class="flex gap-2 flex-collapse">
+            <div class="flex-1 group">
+              <div>Open a tunnel to our docker registry:</div>
+              <pre>ssh -L 1338:localhost:80 -N imgs.sh</pre>
+            </div>
+            <div class="flex-1 group">
+              <div>
+                Now you are authenticated!  You are now able to push
+                and pull like normal:
+              </div>
+              <pre>docker push localhost:1338/alpine:latest
+  docker pull localhost:1338/alpine:latest</pre>
+              <div>All images sent to us are private and scoped to your user automatically.</div>
             </div>
           </div>
         </div>
