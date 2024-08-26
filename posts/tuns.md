@@ -23,7 +23,9 @@ and tcp.
 
 ## Demo
 
-[![tuns demo](https://img.youtube.com/vi/wZHiuR9RqGw/0.jpg)](https://www.youtube.com/watch?v=wZHiuR9RqGw)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/wZHiuR9RqGw?si=AJLBbg5jc8ET0lvB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+> [tuns demo](https://www.youtube.com/watch?v=wZHiuR9RqGw)
 
 # Use cases
 

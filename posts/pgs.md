@@ -30,7 +30,9 @@ The easiest way to deploy static sites on the web.
 
 ## Demo
 
-[![pgs demo](https://img.youtube.com/vi/sdbQpD2jV0k/0.jpg)](https://www.youtube.com/watch?v=sdbQpD2jV0k)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/sdbQpD2jV0k?si=B0yoV25XIaDqnTvk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+> [pgs demo](https://www.youtube.com/watch?v=sdbQpD2jV0k)
 
 # Publish your site with one command
 
