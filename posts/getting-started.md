@@ -21,8 +21,8 @@ To get started, simply use SSH:
 ssh pico.sh
 ```
 
-Getting an error? Read our FAQ,
-[why can't I login to pico?](faq#why-cant-i-login-to-pico).
+> Getting an error? Read our FAQ,
+> [why can't I login to pico?](faq#why-cant-i-login-to-pico).
 
 All we need to create an account is your username. This username will be used
 for all of your service domains. For example, if your username is `glossy`, we

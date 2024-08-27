@@ -30,7 +30,7 @@ The easiest way to deploy static sites on the web.
 
 ## Demo
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/sdbQpD2jV0k?si=B0yoV25XIaDqnTvk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/sdbQpD2jV0k?si=B0yoV25XIaDqnTvk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 > [pgs demo](https://www.youtube.com/watch?v=sdbQpD2jV0k)
 
@@ -420,8 +420,7 @@ If you accidentally remove a site you will be stuck in a limbo state. The folder
 will still exist using `sftp` or `sshfs` then you can properly clean it up by
 running the [rm command](#removing-a-project)
 
-Ready to join pico?
-
+<hr />
 <div class="flex flex-col items-center justify-center">
   <p>Create an account using only your SSH key.</p>
   <a href="/getting-started" class="btn-link">Get Started</a>

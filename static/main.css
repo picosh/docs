@@ -10,7 +10,8 @@
 }
 
 .sitemap {
-  width: 250px;
+  width: 200px;
+  flex: 0 0 200px;
 }
 
 .post {
@@ -29,7 +30,7 @@
 }
 
 .hero {
-  padding: 5rem 0 0 0;
+  padding: calc(var(--line-height) * 3) 0 0 0;
 }
 
 .home-features pre {
@@ -39,7 +40,7 @@
 .features {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
-  gap: 1rem;
+  gap: var(--line-height);
 }
 
 .features h3 {
@@ -47,7 +48,7 @@
 }
 
 .mk-nav {
-  padding: 1rem;
+  padding: var(--line-height);
 }
 
 .current {
@@ -74,11 +75,7 @@
 }
 
 .sidebar-list {
-  padding: 0 0 0 1rem;
-}
-
-.sidebar-list li {
-  margin: 0 0 0.5rem 0;
+  padding: 0 0 0 var(--line-height);
 }
 
 @media only screen and (max-width: 800px) {
@@ -95,8 +92,6 @@
   }
 
   .sitemap {
-    text-align: center;
-    -moz-column-count: 2;
     column-count: 2;
     width: 100%;
   }
@@ -106,11 +101,6 @@
   }
 
   .mk-nav {
-    padding: 1rem 0;
-  }
-
-  .sidebar-list {
-    padding: 0 0 0 0.6rem;
-    margin: 0;
+    padding: var(--line-height) 0;
   }
 }

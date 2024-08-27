@@ -5,9 +5,11 @@ keywords: [pico, lists, spec, plain, text]
 toc: 1
 ---
 
-- Version: **2022.08.05.dev**
-- Status: **Draft**
-- Author: **Eric Bower**
+Version: **2022.08.05.dev**
+
+Status: **Draft**
+
+Author: **Eric Bower**
 
 The goal of this specification is to understand how we render plain text lists.
 The overall design of this format is to be easy to parse and render.

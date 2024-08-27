@@ -14,7 +14,7 @@
 <main>
   <div class="flex flex-col gap-2">
     <div class="flex items-center justify-center hero">
-      <div class="flex flex-col items-center gap-2">
+      <div class="flex flex-col items-center gap">
         <h1 class="logo-header text-2xl">pico</h1>
         <div class="text-center text-lg">
           <div>open and managed web services leveraging <code>ssh</code></div>
@@ -25,7 +25,7 @@
 
     <div><hr /></div>
 
-    <div class="flex flex-col items-center group-2 mb-2">
+    <div class="flex flex-col items-center group-2">
       <div class="container-sm">
         The secret ingredient to all our services is how we let users
         publish content without needing to install anything.
@@ -44,42 +44,42 @@
         <h3 class="m-0 p-0 text-lg">
           <a href="/tuns">tuns</a><a href="/plus" class="link-alt-hover ml">(+)</a>
         </h3>
-        <p>https/wss/tcp tunnels to localhost using only SSH.</p>
+        <div>https/wss/tcp tunnels to localhost using only SSH.</div>
       </div>
 
       <div class="box">
         <h3 class="m-0 p-0 text-lg">
           <a href="/pgs">pages</a><a href="/plus" class="link-alt-hover ml">(+)</a>
         </h3>
-        <p>A static site hosting platform using SSH for site deployments.</p>
+        <div>A static site hosting platform using SSH for site deployments.</div>
       </div>
 
       <div class="box">
         <h3 class="m-0 p-0 text-lg">
           <a href="/prose">prose</a>
         </h3>
-        <p>A blog platform using SSH for content management.</p>
+        <div>A blog platform using SSH for content management.</div>
       </div>
 
       <div class="box">
         <h3 class="m-0 p-0 text-lg">
           <a href="/pastes">pastes</a>
         </h3>
-        <p>Upload code snippets using rsync, scp, and sftp.</p>
+        <div>Upload code snippets using rsync, scp, and sftp.</div>
       </div>
 
       <div class="box">
         <h3 class="m-0 p-0 text-lg">
           <a href="/feeds">rss-to-email</a>
         </h3>
-        <p>An rss email notification service using SSH.</p>
+        <div>An rss email notification service using SSH.</div>
       </div>
 
       <div class="box">
         <h3 class="m-0 p-0 text-lg">
           <a href="/imgs">docker registry</a><a href="/plus" class="link-alt-hover ml">(+)</a>
         </h3>
-        <p>A private docker image registry using SSH for authentication.</p>
+        <div>A private docker image registry using SSH for authentication.</div>
       </div>
     </article>
 
@@ -89,7 +89,7 @@
 
     <div class="group-2 home-features">
       <div class="box">
-        <h3 class="mt mb-2 pt-0 text-lg text-hdr inline-block">Access localhost using https</h3>
+        <h3 class="text-lg inline-block mt-0">Access localhost using https</h3>
         <div class="flex gap-2 flex-collapse">
           <div class="flex-1 group">
             <div>
@@ -105,7 +105,7 @@
       </div>
 
       <div class="box">
-        <h3 class="mt mb-2 pt-0 text-lg text-hdr inline-block">Deploy a site with a single command</h3>
+        <h3 class="text-lg inline-block mt-0">Deploy a site with a single command</h3>
         <div class="flex gap-2 flex-collapse">
           <div class="flex-1 group">
             <div>Upload your static site to us:</div>
@@ -119,7 +119,7 @@
       </div>
 
       <div class="box">
-        <h3 class="mt mb-2 pt-0 text-lg text-hdr inline-block">Publish blog articles with a single command</h3>
+        <h3 class="text-lg inline-block mt-0">Publish blog articles with a single command</h3>
         <div class="flex gap-2 flex-collapse">
           <div class="flex-1 group">
             <div>Create your first post, (e.g. <code>hello-world.md</code>):</div>
@@ -141,7 +141,7 @@ Cya!</pre>
       </div>
 
       <div class="box">
-        <h3 class="mt mb-2 pt-0 text-lg text-hdr inline-block">Easily share code snippets</h3>
+        <h3 class="text-lg inline-block mt-0">Easily share code snippets</h3>
         <div class="flex gap-2 flex-collapse">
           <div class="flex-1 group">
             <div>Pipe some stdout to us:</div>
@@ -155,7 +155,7 @@ Cya!</pre>
       </div>
 
       <div class="box">
-        <h3 class="mt mb-2 pt-0 text-lg text-hdr inline-block">Receive email notifications for your favorite rss feeds</h3>
+        <h3 class="text-lg inline-block mt-0">Receive email notifications for your favorite rss feeds</h3>
         <div class="flex gap-2 flex-collapse">
           <div class="flex-1 group">
             <div>Create a <code>blogs.txt</code> file:</div>
@@ -176,7 +176,7 @@ Cya!</pre>
       </div>
 
       <div class="box">
-        <h3 class="mt mb-2 pt-0 text-lg text-hdr inline-block">Push and pull docker images using SSH</h3>
+        <h3 class="text-lg inline-block mt-0">Push and pull docker images using SSH</h3>
         <div class="flex gap-2 flex-collapse">
           <div class="flex-1 group">
             <div>Open a tunnel to our docker registry:</div>
@@ -195,7 +195,7 @@ docker pull localhost:1338/alpine:latest</pre>
       </div>
 
       <div class="text-center">
-        <h3 class="mt mb-2 pt-0 text-lg inline-block">Ready to join?</h3>
+        <h3 class="text-lg inline-block">Ready to join?</h3>
         <div><a href="/getting-started" class="btn-link">GET STARTED</a></div>
       </div>
     </div>
