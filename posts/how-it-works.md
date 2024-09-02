@@ -21,7 +21,7 @@ easy to programmatically compose and extend a traditional SSH server. So we have
 built middleware to serve our needs:
 
 - Authentication and authorization with keypairs and a database
-- Uploading files with `scp`, `sftp`, and `rsync`
+- Uploading files with `scp`, `sftp`, `rsync`, and `sshfs`
 - Piping into an SSH server
 - Rendering a TUI
 - Remote CLI

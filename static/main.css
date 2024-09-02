@@ -5,6 +5,12 @@
   #logo { stroke: #f2f2f2; fill: none; }
 }
 
+.divider {
+  width: 1px;
+  height: auto;
+  background-color: var(--grey-light);
+}
+
 .visited {
   color: var(--visited);
 }
@@ -102,5 +108,9 @@
 
   .mk-nav {
     padding: var(--line-height) 0;
+  }
+
+  .divider {
+    display: none;
   }
 }
