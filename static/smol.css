@@ -114,9 +114,8 @@ code {
 
 pre {
   font-size: 0.8rem;
-  border-radius: 5px;
+  border-radius: 1px;
   padding: var(--line-height);
-  margin: var(--line-height) 0;
   overflow-x: auto;
   background-color: var(--pre) !important;
 }

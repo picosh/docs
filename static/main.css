@@ -46,7 +46,7 @@
 .features {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
-  gap: var(--line-height);
+  gap: calc(var(--line-height) - 4px);
 }
 
 .features h3 {
