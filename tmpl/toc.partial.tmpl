@@ -12,7 +12,11 @@
         <ul>
         {{range .Children}}
           <li>
+            {{if .Data}}
+            <a href="{{.GenHref}}"><img src="{{.Data.Src}}" /> {{.Text}}</a>
+            {{else}}
             <a href="{{.GenHref}}">{{.Text}}</a>
+            {{end}}
           </li>
         {{end}}
         </ul>

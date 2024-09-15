@@ -6,6 +6,10 @@ import (
 	"github.com/picosh/pdocs"
 )
 
+type LogoData struct {
+	Src string
+}
+
 func main() {
 	pager := pdocs.Pager("./posts")
 	sitemap := &pdocs.Sitemap{
@@ -54,16 +58,25 @@ func main() {
 						Text: "Pages",
 						Href: "/pgs",
 						Page: pager("pgs.md"),
+						Data: LogoData{
+							Src: "/logo-pgs.svg",
+						},
 					},
 					{
 						Text: "Tuns",
 						Href: "/tuns",
 						Page: pager("tuns.md"),
+						Data: LogoData{
+							Src: "/logo-tuns.svg",
+						},
 					},
 					{
 						Text: "Prose",
 						Href: "/prose",
 						Page: pager("prose.md"),
+						Data: LogoData{
+							Src: "/logo-prose.svg",
+						},
 					},
 					{
 						Text: "Pastes",

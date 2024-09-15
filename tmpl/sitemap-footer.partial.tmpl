@@ -18,13 +18,22 @@
       {{if .Children}}
       <ul class="list-square sidebar-list">
         {{range .Children}}
-        <li>
-          {{if (eq $.Href .GenHref)}}
-          <a href="{{.GenHref}}" class="link-alt-hover">{{.Text}}</a>
+          {{if .Data}}
+          <li class="flex list-none items-center">
+            <div class="logo-sm" style="margin-right: 9px;">
+              {{template "logo" .Data}}
+            </div>
+            <a href="{{.GenHref}}" class="link-alt{{if (eq $.Href .GenHref)}}-hover{{end}}">
+              {{.Text}}
+            </a>
+          </li>
           {{else}}
-          <a href="{{.GenHref}}" class="link-alt">{{.Text}}</a>
+          <li>
+            <a href="{{.GenHref}}" class="link-alt{{if (eq $.Href .GenHref)}}-hover{{end}}">
+              {{.Text}}
+            </a>
+          </li>
           {{end}}
-        </li>
         {{end}}
       </ul>
       {{end}}
