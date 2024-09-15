@@ -28,10 +28,11 @@
 .sitemap {
   width: 200px;
   flex: 0 0 200px;
+  margin: 0;
 }
 
 .post {
-  max-width: 700px;
+  max-width: 600px;
 }
 
 .container-xs {
