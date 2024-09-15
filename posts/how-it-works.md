@@ -4,7 +4,7 @@ description: A brief description of how our services work
 keywords: [pico, how, it, works]
 ---
 
-The secret ingredient to all our services is how we let users publish content
+The secret ingredient to all our services is how we enable users publish content
 without needing to install anything. We accomplish this with the SSH tools you
 already have installed on your system. All a user needs is an SSH client to
 manage their content.
