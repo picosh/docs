@@ -21,7 +21,7 @@
           {{if .Data}}
           <li class="flex list-none items-center">
             <div class="logo-sm" style="margin-right: 9px;">
-              {{template "logo" .Data}}
+              {{template "logo" .Data.Src}}
             </div>
             <a href="{{.GenHref}}" class="link-alt{{if (eq $.Href .GenHref)}}-hover{{end}}">
               {{.Text}}

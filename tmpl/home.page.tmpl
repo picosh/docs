@@ -15,7 +15,11 @@
   <div class="flex flex-col gap-2">
     <div class="flex items-center justify-center hero">
       <div class="flex flex-col items-center gap">
-        <h1 class="logo-header text-2xl">pico</h1>
+        <h1 class="text-2xl text-hdr flex items-center">
+          <div class="logo-lg" style="margin-right: 9px; height: 50px;">
+            {{template "logo" "/logo.svg"}}
+          </div>
+        </h1>
         <div class="text-center text-lg">
           <div>open and managed web services leveraging <code>ssh</code></div>
         </div>
@@ -37,21 +41,30 @@
 
     <article class="features">
       <div class="box">
-        <h3 class="m-0 p-0 text-lg">
-          <a href="/tuns">tuns</a><a href="/plus" class="link-alt-hover ml">(+)</a>
+        <h3 class="m-0 p-0 text-lg flex items-center">
+          <div class="logo-md" style="margin-right: 9px; height: 25px;">
+            {{template "logo" "/logo-tuns.svg"}}
+          </div>
+          <a href="/tuns">tuns</a>
         </h3>
         <div>https/wss/tcp tunnels to localhost using only SSH.</div>
       </div>
 
       <div class="box">
-        <h3 class="m-0 p-0 text-lg">
-          <a href="/pgs">pages</a><a href="/plus" class="link-alt-hover ml">(+)</a>
+        <h3 class="m-0 p-0 text-lg flex items-center">
+          <div class="logo-md" style="margin-right: 9px; height: 25px;">
+            {{template "logo" "/logo-pgs.svg"}}
+          </div>
+          <a href="/pgs">pages</a>
         </h3>
         <div>A static site hosting platform using SSH for site deployments.</div>
       </div>
 
       <div class="box">
-        <h3 class="m-0 p-0 text-lg">
+        <h3 class="m-0 p-0 text-lg flex items-center">
+          <div class="logo-md" style="margin-right: 9px; height: 25px;">
+            {{template "logo" "/logo-prose.svg"}}
+          </div>
           <a href="/prose">prose</a>
         </h3>
         <div>A blog platform using SSH for content management.</div>
@@ -73,7 +86,7 @@
 
       <div class="box">
         <h3 class="m-0 p-0 text-lg">
-          <a href="/imgs">docker registry</a><a href="/plus" class="link-alt-hover ml">(+)</a>
+          <a href="/imgs">docker registry</a>
         </h3>
         <div>A private docker image registry using SSH for authentication.</div>
       </div>
