@@ -123,6 +123,7 @@ image: og_image.jpg
 card: summary # or summary_large_image
 favicon: favicon.ico
 layout: aside # or default
+with_styles: true
 ---
 ```
 
@@ -157,6 +158,13 @@ This property changes the layout of the blog index page. The options are:
 
 - `aside`
 - `default`
+
+## `with_styles`
+
+This determines whether we load our default styles onto your blog or not. This
+allows for better customization in conjunction with
+[_styles.css](/#how-can-i-change-the-theme-of-my-blog) which is the user-defined
+CSS stylesheet that gets served.
 
 # How can I customize a blog post?
 
