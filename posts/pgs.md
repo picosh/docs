@@ -257,6 +257,8 @@ Here are some examples:
 
 ### Proxy to another service
 
+> NOTICE: This is a premium [pico+](/plus) feature.
+
 Similar to how you can rewrite paths like `/*` to `/index.html`, you can also
 set up rules to let parts of your site proxy to external services. Let’s say you
 need to communicate from a single-page app with an API on

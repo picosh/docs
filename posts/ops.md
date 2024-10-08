@@ -45,6 +45,9 @@ publish any combination of words and pixels, with a few exceptions:
 - Don't upload material that is threatening, harassing, defamatory, or that
   encourages violence or crime
 - Don't upload illegal content, nudity, or adult sexual content
+- Don't upload content to spam users
+- Don't upload content to employ social engineering tactics in an effort to
+  trick users
 - Don't impersonate someone else
 
 If you do or if you do anything illegal, in addition to any other legal rights
