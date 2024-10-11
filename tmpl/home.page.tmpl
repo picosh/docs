@@ -86,6 +86,13 @@
 
       <div class="box">
         <h3 class="m-0 p-0 text-lg">
+          <a href="https://pipe.pico.sh">pipe</a>
+        </h3>
+        <div>Authenticated *nix pipes using SSH.</div>
+      </div>
+
+      <div class="box">
+        <h3 class="m-0 p-0 text-lg">
           <a href="/imgs">docker registry</a>
         </h3>
         <div>A private docker image registry using SSH for authentication.</div>
@@ -195,6 +202,23 @@ Cya!</pre>
               After the daily interval has been reached, you will
               receive an email with your feeds!
             </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="box">
+        <h3 class="text-lg mt-0">Authenticated *nix pipes over SSH</h3>
+        <div class="flex gap-2 flex-collapse">
+          <div class="flex-1 group">
+            <div>Have one terminal listen for an event and another terminal send the event:</div>
+            <pre>ssh pipe.pico.sh sub mytopic</pre>
+            <pre>echo "Hello world!" | ssh pipe.pico.sh pub mytopic</pre>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="flex-1 group">
+            <div>The <code>sub</code> will receive "Hello world!"</div>
           </div>
         </div>
       </div>
