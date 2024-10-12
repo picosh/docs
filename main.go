@@ -79,6 +79,13 @@ func main() {
 						},
 					},
 					{
+						Text: "Pipe",
+						Href: "https://pipe.pico.sh",
+						Data: LogoData{
+							Src: "/logo-pipe.svg",
+						},
+					},
+					{
 						Text: "Pastes",
 						Href: "/pastes",
 						Page: pager("pastes.md"),
