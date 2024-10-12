@@ -227,8 +227,8 @@ Our recommended solution is to create a separate project with just a
 1. Create a `_redirects` file with a `301` to naked domain:
 
 ```bash
-echo "/*  naked-domain.com  301" >> _www_redirects
-rsync _www_redirects pgs.sh:/www-proj/_redirects
+echo "/*  https://naked-domain.com  301" >> _www_redirects
+rsync "$PWD/_www_redirects" pgs.sh:/www-proj/_redirects
 ```
 
 2. Add a `www` CNAME and TXT record to point to www project
@@ -365,7 +365,7 @@ We have three options:
 
 ```bash
 # access to anyone with a public key
-ssh pgs.sh acl project-x --type pubkeys 
+ssh pgs.sh acl project-x --type pubkeys
 
 # access only to public keys provided
 ssh pgs.sh acl project-x --type pubkeys --acl sha256:xxx --acl sha256:yyy
