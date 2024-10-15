@@ -180,6 +180,8 @@ We have a very easy-to-setup guide on [custom domains](/custom-domains#pgssh).
 
 We support custom redirects and rewrites via a special file `_redirects`.
 
+> The `_redirects` filesize cannot exceed 5kb.
+
 ```
 # Redirect browser request to what we serve
 /home                /
@@ -207,7 +209,7 @@ When no status is provided, we default to `301 Moved Permenantly`.
 
 ## Route Shadowing
 
-By default we do not shadow routes that exist. For example:
+By default we do **not** shadow routes that exist. For example:
 
 - `/space.html` exists on your site,
 - with a `_redirects` entry `/space   /   301`
@@ -227,7 +229,7 @@ Our recommended solution is to create a separate project with just a
 1. Create a `_redirects` file with a `301` to naked domain:
 
 ```bash
-echo "/*  https://naked-domain.com  301" >> _www_redirects
+echo "/*  naked-domain.com/:splat  301" >> _www_redirects
 rsync "$PWD/_www_redirects" pgs.sh:/www-proj/_redirects
 ```
 
@@ -239,7 +241,8 @@ See our [custom domains](/custom-domains#pgssh) page.
 
 When you assign an HTTP status code of `200` to a redirect rule, it becomes a
 rewrite. This means that the URL in the visitor’s address bar remains the same,
-while pico's servers fetch the new location behind the scenes.
+while pico's servers fetch the new location behind the scenes, effectively
+proxying the request.
 
 With `_redirects` we also support rewrite rules for when you want to show
 content from another site without a full URL redirect.
@@ -284,6 +287,8 @@ will let you use `/api/` from your JavaScript client:
 # Custom Headers
 
 We support custom headers via a special file `_headers`.
+
+> The `_headers` filesize cannot exceed 5kb.
 
 ```
 # a path:
