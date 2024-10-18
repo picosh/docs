@@ -126,12 +126,12 @@ small {
 
 details {
   border: 2px solid var(--grey-light);
-  padding: calc(var(--line-height) - 2px) 1ch;
-  margin-bottom: var(--line-height);
+  padding: calc(var(--grid-height) - 2px) 1ch;
+  margin-bottom: var(--grid-height);
 }
 
 details[open] summary {
-  margin-bottom: var(--line-height);
+  margin-bottom: var(--grid-height);
 }
 
 summary {
