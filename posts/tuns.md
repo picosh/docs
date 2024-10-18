@@ -94,6 +94,16 @@ services:
 With that docker compose file `httpbin` will be exposed as a public service on
 tuns.
 
+# How do I keep a tunnel open?
+
+If you don't want to use `tunmgr` then we highly recommend using a tool like
+[autossh](https://github.com/Autossh/autossh) to automatically restart a SSH
+tunnel if it exits.
+
+```bash
+autossh -M 0 -R dev:80:localhost:8000 tuns.sh
+```
+
 <hr />
 <div class="flex flex-col items-center justify-center">
   <p>Create an account using only your SSH key.</p>
