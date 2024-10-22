@@ -590,8 +590,8 @@ figure {
   text-align: right;
 }
 
-.transform-none {
-  transform: none;
+.text-transform-none {
+  text-transform: none;
 }
 
 /* ==== MARKDOWN ==== */
