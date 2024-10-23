@@ -101,9 +101,9 @@ _pgs.meow.erock.io.    300     IN      TXT     "erock-kittens"
 
 Custom domains for [tuns.sh](/tuns) require you to set up `CNAME` and `TXT`
 records for the domain/subdomain you would like to use for your forwarded
-connection. The `CNAME` record must point to `tuns.sh`. The TXT record name
-must be `_sish.customdomain` and contain the SSH key fingerprint used for
-creating the tunnel.
+connection. The `CNAME` record must point to `tuns.sh`. The TXT record name must
+be `_sish.customdomain` and contain the SSH key fingerprint used for creating
+the tunnel. This key must also be linked to your pico+ account.
 
 You can retrieve your key fingerprint by running:
 
