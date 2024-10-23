@@ -222,7 +222,8 @@ override this preference by adding a force flag to your redirect entry:
 
 ## Redirect `www` to apex domain
 
-A common requirement is to redirect "www.example.com" to the apex domain "example.com" or the other way around.
+A common requirement is to redirect "www.example.com" to the apex domain
+"example.com" or the other way around.
 
 To accomplish this, we recommend you create a separate project with just a
 `_redirects` file inside of it.
