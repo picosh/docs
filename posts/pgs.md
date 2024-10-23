@@ -180,7 +180,7 @@ We have a very easy-to-setup guide on [custom domains](/custom-domains#pgssh).
 
 We support custom redirects and rewrites via a special file `_redirects`.
 
-> The `_redirects` filesize cannot exceed 5kb.
+> The `_redirects` file size cannot exceed 5KB.
 
 ```
 # Redirect browser request to what we serve
@@ -221,15 +221,17 @@ override this preference by adding a force flag to your redirect entry:
 /space   /   301!
 ```
 
-## Redirect `www` to naked domain
+## Redirect `www` to apex domain
 
-Our recommended solution is to create a separate project with just a
+A common requirement is to redirect "www.example.com" to the apex domain "example.com" or the other way around.
+
+To accomplish this, we recommend you create a separate project with just a
 `_redirects` file inside of it.
 
-1. Create a `_redirects` file with a `301` to naked domain:
+1. Create a `_redirects` file with a `301` to the apex domain:
 
 ```bash
-echo "/*  naked-domain.com/:splat  301" >> _www_redirects
+echo "/*  https://example.com/:splat  301" >> _www_redirects
 rsync "$PWD/_www_redirects" pgs.sh:/www-proj/_redirects
 ```
 
@@ -288,7 +290,7 @@ will let you use `/api/` from your JavaScript client:
 
 We support custom headers via a special file `_headers`.
 
-> The `_headers` filesize cannot exceed 5kb.
+> The `_headers` file size cannot exceed 5KB.
 
 ```
 # a path:
