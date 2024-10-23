@@ -95,17 +95,11 @@ _pgs.meow.erock.io.    300     IN      TXT     "erock-kittens"
 
 # tuns.sh
 
-Custom domains for [tuns.sh](/tuns) are protected by an allow list. To request
-the use of a custom domain, please email [hello@pico.sh](mailto:hello@pico.sh).
-Once allow-listed, your custom domain can be used for any [tuns.sh](/tuns)
-service. We cannot allow-list entire zones; each FQDN must be allow-listed
-individually.
-
-Once allow-listed, you must set up `CNAME` and `TXT` records for the
-domain/subdomain you would like to use for your forwarded connection. The
-`CNAME` record must point to `tuns.sh`. The TXT record name must be
-`_sish.customdomain` and contain the SSH key fingerprint used for creating the
-tunnel.
+Custom domains for [tuns.sh](/tuns) require you to set up `CNAME` and `TXT`
+records for the domain/subdomain you would like to use for your forwarded
+connection. The `CNAME` record must point to `tuns.sh`. The TXT record name
+must be `_sish.customdomain` and contain the SSH key fingerprint used for
+creating the tunnel.
 
 You can retrieve your key fingerprint by running:
 
@@ -118,6 +112,12 @@ Example:
 ```
 customdomain.example.com.          300     IN      CNAME   tuns.sh.
 _sish.customdomain.example.com     300     IN      TXT     "SHA256:mVPwvezndPv/ARoIadVY98vAC0g+P/5633yTC4d/wXE"
+```
+
+Once set up, you can then create tunnels via your custom domain like this:
+
+```
+ssh -R customdomain.example.com:80:localhost:8000 tuns.sh
 ```
 
 # My DNS does **not** support CNAME flattening
