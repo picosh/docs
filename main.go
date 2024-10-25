@@ -95,11 +95,11 @@ func main() {
 						Href: "/feeds",
 						Page: pager("feeds.md"),
 					},
-					{
+					/*{
 						Text: "Docker Registry",
 						Href: "/imgs",
 						Page: pager("imgs.md"),
-					},
+					},*/
 				},
 			},
 

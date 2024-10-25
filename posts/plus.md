@@ -13,8 +13,6 @@ template: plus.page.tmpl
 - [prose](/prose)
   - no inherent storage limits
   - blog [analytics](/analytics)
-- [docker registry](/imgs)
-  - full access
 - 20GB total storage
 
 <hr class="my-4" />
