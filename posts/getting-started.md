@@ -49,8 +49,8 @@ ssh pico.sh
 What service did you want to use first? Read the docs to get started with any of
 our services:
 
-- [pages](/pgs) <a href="/plus" class="link-alt-hover">(+)</a>
 - [tuns](/tuns) <a href="/plus" class="link-alt-hover">(+)</a>
+- [pages](/pgs) <a href="/plus" class="link-alt-hover">(+)</a>
 - [pipe](https://pipe.pico.sh)
 - [prose](/prose)
 - [pastes](/pastes)

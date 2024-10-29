@@ -63,21 +63,21 @@
       <div class="box">
         <h3 class="m-0 p-0 text-lg flex items-center">
           <div class="logo-md" style="margin-right: 9px; height: 25px;">
-            {{template "logo" "/logo-prose.svg"}}
-          </div>
-          <a href="/prose">prose</a>
-        </h3>
-        <div>A blog platform using SSH for content management.</div>
-      </div>
-
-      <div class="box">
-        <h3 class="m-0 p-0 text-lg flex items-center">
-          <div class="logo-md" style="margin-right: 9px; height: 25px;">
             {{template "logo" "/logo-pipe.svg"}}
           </div>
           <a href="https://pipe.pico.sh">pipe</a>
         </h3>
         <div>Authenticated *nix pipes using SSH.</div>
+      </div>
+
+      <div class="box">
+        <h3 class="m-0 p-0 text-lg flex items-center">
+          <div class="logo-md" style="margin-right: 9px; height: 25px;">
+            {{template "logo" "/logo-prose.svg"}}
+          </div>
+          <a href="/prose">prose</a>
+        </h3>
+        <div>A blog platform using SSH for content management.</div>
       </div>
 
       <div class="box">
@@ -137,6 +137,23 @@
       </div>
 
       <div class="box">
+        <h3 class="text-lg mt-0">Authenticated *nix pipes over SSH</h3>
+        <div class="flex gap-2 flex-collapse">
+          <div class="flex-1 group">
+            <div>Have one terminal listen for an event and another terminal send the event:</div>
+            <pre>ssh pipe.pico.sh sub mytopic</pre>
+            <pre>echo "Hello world!" | ssh pipe.pico.sh pub mytopic</pre>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="flex-1 group">
+            <div>The <code>sub</code> will receive "Hello world!"</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="box">
         <h3 class="text-lg mt-0">Publish blog articles with a single command</h3>
         <div class="flex gap-2 flex-collapse">
           <div class="flex-1 group">
@@ -157,23 +174,6 @@ Cya!</pre>
               Congrats!  You just published a blog article, accessible here:
               <strong>https://{user}.prose.sh/hello-world</strong>
             </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="box">
-        <h3 class="text-lg mt-0">Authenticated *nix pipes over SSH</h3>
-        <div class="flex gap-2 flex-collapse">
-          <div class="flex-1 group">
-            <div>Have one terminal listen for an event and another terminal send the event:</div>
-            <pre>ssh pipe.pico.sh sub mytopic</pre>
-            <pre>echo "Hello world!" | ssh pipe.pico.sh pub mytopic</pre>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="flex-1 group">
-            <div>The <code>sub</code> will receive "Hello world!"</div>
           </div>
         </div>
       </div>
