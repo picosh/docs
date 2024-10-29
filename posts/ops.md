@@ -119,9 +119,12 @@ offer service-level agreements but do take uptime seriously.
 # Refund Policy
 
 Our refund policy is simple: If you are unsatisfied with the services we
-provide, we will refund 100% of your purchase. We may ask follow-up questions to
-better understand how we can improve our services, but a refund will always be
-granted.
+provide, we will refund 100% of your purchase, with a single exception. If you
+are banned from our platform because you have violated our
+[Code of Content Publication](#code-of-content-publication).
+
+Finally, We may ask follow-up questions to better understand how we can improve
+our services, but a refund will still be granted.
 
 # Contact and Support
 
