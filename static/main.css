@@ -38,6 +38,9 @@
 
 .post {
   max-width: 600px;
+  height: calc(100vh - 3px - (3 * var(--line-height)));
+  overflow-y: auto;
+  padding-right: 10px;
 }
 
 .container-xs {
@@ -113,9 +116,16 @@
     display: block;
   }
 
+  .post {
+    height: 100%;
+    overflow-y: unset;
+    padding-right: 0;
+  }
+
   .sitemap {
     column-count: 2;
     width: 100%;
+    margin-bottom: calc(2 * var(--line-height));
   }
 
   .sitemap-grid {
