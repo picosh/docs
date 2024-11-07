@@ -56,6 +56,22 @@ ssh -R dev:80:localhost:8000 tuns.sh
 # now anyone can access it at https://{user}-dev.tuns.sh
 ```
 
+# User namespace
+
+When creating a tunnel to `tuns` we always prefix the name with your username:
+
+```
+{user}-{name}.tuns.sh
+```
+
+This includes when a client is using tuns as a ProxyJump:
+
+```bash
+ssh -R foobar:22:localhost:22 tuns.sh
+# On the client side
+ssh -J tuns.sh {user}-foobar
+```
+
 # tunmgr
 
 A tunnel manager for docker services.

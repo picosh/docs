@@ -60,7 +60,7 @@ ssh -o IdentitiesOnly=yes -i ~/.ssh/id_ed25519 pico.sh
 The other is with an SSH config entry (`~/.ssh/config`):
 
 ```bash
-Host pico.sh pgs.sh prose.sh
+Host pico.sh pgs.sh prose.sh tuns.sh
   IdentitiesOnly yes
   IdentityFile ~/.ssh/id_ed25519
 ```
@@ -103,7 +103,23 @@ mind that each [pico+](/plus) membership is assigned to a single account.
 
 # Can I associate multiple SSH keypairs to a single account?
 
-Yes! You can manage your pubkeys for an account via our CMS:
+Yes! There are two ways to manage SSH keys:
+
+## authorized_keys file
+
+We support the `authorized_keys` file format which lets users send and receive
+their virtual authorization file:
+
+```bash
+rsync pico.sh:/authorized_keys .
+# edit keys (add, remove, edit comments)
+rsync ./authorized_keys .
+```
+
+> Caveat: as a safety precaution, we will **never** remove the pubkey currently
+> being used.
+
+## tui
 
 ```bash
 ssh pico.sh
