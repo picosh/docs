@@ -30,6 +30,10 @@
   color: var(--visited);
 }
 
+.container {
+  max-width: 60rem;
+}
+
 .sitemap {
   width: 200px;
   flex: 0 0 200px;
