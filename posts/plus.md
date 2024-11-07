@@ -13,6 +13,7 @@ template: plus.page.tmpl
 - [prose](/prose)
   - no inherent storage limits
   - blog [analytics](/analytics)
+- [private irc bouncer](/bouncer)
 - 10GB total storage
 
 <hr class="my-4" />
