@@ -6,14 +6,12 @@ template: plus.page.tmpl
 ---
 
 - [tuns](/tuns)
-  - full access
 - [pages](/pgs)
-  - full access
   - per-site [analytics](/analytics)
 - [prose](/prose)
   - no inherent storage limits
   - blog [analytics](/analytics)
-- [private irc bouncer](/bouncer)
+- [irc bouncer](/bouncer)
 - 10GB total storage
 
 <hr class="my-4" />
