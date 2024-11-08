@@ -52,10 +52,6 @@
   width: 100%;
 }
 
-.row-reverse {
-  flex-direction: row-reverse;
-}
-
 .hero {
   padding: calc(var(--line-height) * 3) 0 0 0;
 }
@@ -76,19 +72,6 @@
 
 .mk-nav {
   padding: var(--line-height);
-}
-
-.current {
-  background-color: var(--blockquote-bg) !important;
-  border-right: 5px solid var(--blockquote);
-}
-
-.current a {
-  color: var(--white);
-}
-
-.current-page a {
-  color: var(--white);
 }
 
 .pager {
