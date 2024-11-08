@@ -105,6 +105,12 @@
   padding: 0 0 0 var(--line-height);
 }
 
+.post-group {
+  display: flex;
+  gap: 1rem;
+  flex-direction: row-reverse;
+}
+
 @media only screen and (max-width: 800px) {
   body {
     padding: 0 0.75rem;
@@ -114,7 +120,7 @@
     margin: 0;
   }
 
-  .post-container {
+  .post-group {
     display: block;
   }
 
