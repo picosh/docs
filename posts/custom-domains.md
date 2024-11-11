@@ -31,7 +31,7 @@ Resulting in:
 subdomain.yourcustomdomain.com.   300   IN    CNAME   prose.sh.
 ```
 
-And a `TXT` record to tell Prose what blog is hosted on that domain at the
+Add a `TXT` record to tell prose what blog is hosted on that domain at the
 subdomain entry `_prose`
 
 ```
