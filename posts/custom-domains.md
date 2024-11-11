@@ -28,20 +28,22 @@ CNAME subdomain.yourcustomdomain.com -> prose.sh
 Resulting in:
 
 ```
-subdomain.yourcustomdomain.com.         300     IN      CNAME   prose.sh.
+subdomain.yourcustomdomain.com.   300   IN    CNAME   prose.sh.
 ```
 
 And a `TXT` record to tell Prose what blog is hosted on that domain at the
 subdomain entry `_prose`
 
 ```
-TXT _prose.subdomain.yourcustomdomain.com -> yourproseusername
+TXT _prose.subdomain.yourcustomdomain.com -> {user}
 ```
+
+Where `{user}` is your pico username.
 
 Resulting in:
 
 ```
-_prose.subdomain.yourcustomdomain.com.         300     IN      TXT     "hey"
+_prose.subdomain.yourcustomdomain.com.    300   IN    TXT   "erock"
 ```
 
 Depending on your DNS, this could take some time to fully switch over. We have
@@ -61,8 +63,7 @@ subdomain entry `_pgs`.
 
 ```
 subdomain.yourcustomdomain.com.         300     IN      CNAME   pgs.sh.
-_pgs.subdomain.yourcustomdomain.com.    300     IN      TXT
-"{user}-{project}"
+_pgs.subdomain.yourcustomdomain.com.    300     IN      TXT     "{user}-{project}"
 ```
 
 ## Example: Top-Level Domain
@@ -103,6 +104,16 @@ and then use that as an `A` record.
 > WARNING: We make **no** guarantees that our IP addresses will stay the same.
 > Use at your own risk!
 
+```
+subdomain.yourcustomdomain.com.         300     IN      A       129.158.37.104.
+_pgs.subdomain.yourcustomdomain.com.    300     IN      TXT     "{user}-{project}"
+```
+
 # Can I use an `ALIAS` record instead of `CNAME`?
 
 Yes, it should work the exact same way.
+
+```
+subdomain.yourcustomdomain.com.         300     IN      ALIAS   pgs.sh.
+_pgs.subdomain.yourcustomdomain.com.    300     IN      TXT     "{user}-{project}"
+```
