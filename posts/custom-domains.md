@@ -58,7 +58,7 @@ curl -vvvv https://prose.sh/check?domain=xxx
 [pgs.sh](https://pgs.sh) is a little different in that we allow the user to
 configure custom domains per project so it's a little different.
 
-And a `TXT` record to tell pgs what project is hosted on that domain at the
+Add a `TXT` record to tell pgs what project is hosted on that domain at the
 subdomain entry `_pgs`.
 
 ```
