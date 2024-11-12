@@ -107,17 +107,25 @@ Yes! There are two ways to manage SSH keys:
 
 ## authorized_keys file
 
-We support the `authorized_keys` file format which lets users send and receive
-their virtual authorization file:
+We have an API for syncing `authorized_keys`. This file is bidirectional,
+meaning you can download and upload and we will diff and patch your authorized
+pubkeys on the pico platform.
 
 ```bash
 rsync pico.sh:/authorized_keys .
 # edit keys (add, remove, edit comments)
-rsync ./authorized_keys .
+rsync ./authorized_keys pico.sh
 ```
 
 > Caveat: as a safety precaution, we will **never** remove the pubkey currently
 > being used.
+
+For example, if you want to sync your github pubkeys with us:
+
+```bash
+curl https://github.com/neurosnap.keys > ./authorized_keys
+scp ./authorized_keys pico.sh:/
+```
 
 ## tui
 
