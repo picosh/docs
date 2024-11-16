@@ -120,6 +120,42 @@ tunnel if it exits.
 autossh -M 0 -R dev:80:localhost:8000 tuns.sh
 ```
 
+# UDP Tunneling
+
+Using `tuns`, you have the ability to tunnel UDP traffic without any external binary,
+meaning all using SSH. This makes use of the SSH tunneling functionality. To get started,
+you need to follow a few steps:
+
+1. Start some UDP service that you want to forward. For example, a simple
+   socat echo server:
+
+    - ```bash
+      socat -v PIPE udp-recvfrom:5553,fork
+      ```
+
+2. SSH into tuns requesting a tun/tap with the information of where the
+   service is running. This needs to be done as root. Replace
+   `local-ip-of-machines-main-interface` with the ip address of the
+   main interface for proper routing.
+
+    - ```bash
+      sudo ssh -w 0:0 tuns.sh \
+        udp-forward=10000:local-ip-of-machines-main-interface:5553
+      ```
+
+3. Bring the tunnel interface up and assign an ip that is link local
+   (also as root):
+
+    - ```bash
+      ip link set tun0 up; ip r a 10.1.0.1 dev tun0
+      ```
+
+4. Start a udp client to tuns.sh:10000. Here's one with netcat:
+
+    - ```bash
+      nc -u tuns.sh 10000
+      ```
+
 <hr />
 <div class="flex flex-col items-center justify-center">
   <p>Create an account using only your SSH key.</p>
