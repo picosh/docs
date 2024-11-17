@@ -70,9 +70,108 @@ This command will create a symbolic link from `project-prod` to
 `project-d0131d4`. Want to rollback a release? Just change the link for
 `project-prod` to a previous project.
 
+[Here's an example using our github action](https://github.com/neurosnap/neovimcraft/blob/main/.github/workflows/deploy.yml).
+
+# CI/CD
+
+Since we are just using `rsync` for static site deployments, all you need is a
+way to run that command in a CI environment.
+
 We also built a [github action](https://github.com/picosh/pgs-action) that
-handles all the logic for uploading to `pgs`.
-[Here's an example of it in action.](https://erock-git-neovimcraft.pgs.sh/tree/main/item/.github/workflows/deploy.yml.html#27)
+handles all the logic for uploading to `pgs` which includes support for
+promotions and static site retention.
+
+## basic
+
+```yaml
+name: "basic static site deployment"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: denoland/setup-deno@v1
+      with:
+        deno-version: "~1.42"
+    - run: make build
+
+    - name: upload to pgs
+      uses: picosh/pgs-action@v3
+      with:
+        user: erock
+        key: ${{ secrets.PRIVATE_KEY }}
+        src: './public/'
+        # https://erock-myapp.pgs.sh
+        project: "myapp"
+```
+
+## promotion and deployment retention policy
+
+With static site promotion using symbolic links and a site retention policy:
+
+```yaml
+name: "promotion static site deployment"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: denoland/setup-deno@v1
+      with:
+        deno-version: "~1.42"
+    - run: make build
+
+    - name: Set outputs
+      id: vars
+      run: echo "sha_short=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
+
+    - name: upload to pgs
+      uses: picosh/pgs-action@v3
+      with:
+        user: erock
+        key: ${{ secrets.PRIVATE_KEY }}
+        src: './public/'
+        # git sha to create a project specific to this commit
+        project: "myapp-${{ steps.vars.outputs.sha_short }}"
+        # promote the project above to the "production" site
+        promote: "myapp"
+        # delete all sites matching this prefix ...
+        retain: "myapp-"
+        # ... except for the latest (1) deployment
+        retain_num: 1
+```
+
+## preview apps
+
+```yaml
+name: "preview apps"
+
+on:
+  pull_request:
+    branches:
+      - "main"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: denoland/setup-deno@v1
+      with:
+        deno-version: "~1.42"
+    - run: make build
+
+    - name: upload to pgs
+      uses: picosh/pgs-action@v3
+      with:
+        user: erock
+        key: ${{ secrets.PRIVATE_KEY }}
+        src: './public/'
+        # create a site based on pr
+        project: "myapp-pr${{ github.event.pull_request.number }}"
+```
 
 # CLI Reference
 
