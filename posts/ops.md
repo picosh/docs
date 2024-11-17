@@ -92,7 +92,7 @@ Department at:
 
 ```
 pico.sh LLC
-206 E Huron St STE 103
+206 E Huron St
 Ann Arbor MI 48104
 dmca@pico.sh
 ```
