@@ -30,21 +30,27 @@
   color: var(--visited);
 }
 
+.toc {
+  padding: 0 var(--line-height) 0 0;
+  width: 250px;
+}
+
 .sitemap {
-  width: 200px;
-  flex: 0 0 200px;
+  width: 250px;
   margin: 0;
+  padding-bottom: 2rem !important;
+  height: calc(100vh - 3px - (3 * var(--line-height)));
+  overflow-y: auto;
 }
 
 .post {
   max-width: 700px;
   height: calc(100vh - 3px - (3 * var(--line-height)));
   overflow-y: auto;
-  padding-right: 20px;
 }
 
 .post-container {
-  max-width: 60rem;
+  max-width: 100%;
 }
 
 .container-xs {
@@ -92,6 +98,7 @@
   display: flex;
   gap: 1rem;
   flex-direction: row-reverse;
+  justify-content: center;
 }
 
 @media only screen and (max-width: 800px) {
@@ -111,6 +118,10 @@
     height: 100%;
     overflow-y: unset;
     padding-right: 0;
+  }
+
+  .toc {
+    display: none;
   }
 
   .sitemap {
