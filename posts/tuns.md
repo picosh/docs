@@ -2,6 +2,7 @@
 title: tuns
 description: Host public web services on localhost
 keywords: [pico, tuns]
+toc: 1
 ---
 
 An `ngrok` alternative using just SSH.
