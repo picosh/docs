@@ -122,9 +122,11 @@ autossh -M 0 -R dev:80:localhost:8000 tuns.sh
 
 # UDP Tunneling
 
+## Easy (`-o Tunnel=point-to-point`)
+
 Using `tuns`, you have the ability to tunnel UDP traffic without any external
 binary, meaning all using SSH. This makes use of the SSH tunneling
-functionality. To get started, you need to follow a few steps:
+functionality and a `tun` interface. To get started, you need to follow a few steps:
 
 1. Start some UDP service that you want to forward. For example, a simple socat
    echo server:
@@ -133,8 +135,8 @@ functionality. To get started, you need to follow a few steps:
    socat -v PIPE udp-recvfrom:5553,fork
    ```
 
-2. SSH into tuns requesting a tun/tap with the information of where the service
-   is running. This needs to be done as root. Replace
+2. SSH into tuns requesting a `tun` interface with the information of where
+   the service is running. This needs to be done as root. Replace
    `local-ip-of-machines-main-interface` with the ip address of the main
    interface for proper routing.
 
@@ -148,6 +150,46 @@ functionality. To get started, you need to follow a few steps:
 
    ```bash
    ip link set tun0 up; ip r a 10.1.0.1 dev tun0
+   ```
+
+4. Start a udp client to tuns.sh:10000. Here's one with netcat:
+
+   ```bash
+   nc -u tuns.sh 10000
+   ```
+
+## Hard (`-o Tunnel=ethernet`)
+
+You can also use an ethernet tunnel for UDP forwarding. This makes a `tap` interface.
+This is considered "hard mode" since you'll also need to handle ARP. We don't process
+ARP packets, but we expect you to be an expert to be able to make this work! The `SRC`
+interface `MAC` is `00:00:00:00:00:01`, while the `DST` interface `MAC` is `00:00:00:00:00:02`
+
+1. Start some UDP service that you want to forward. For example, a simple socat
+   echo server:
+
+   ```bash
+   socat -v PIPE udp-recvfrom:5553,fork
+   ```
+
+2. SSH into tuns requesting a `tap` interface with the information of where
+   the service is running. This needs to be done as root. Replace
+   `local-ip-of-machines-main-interface` with the ip address of the main
+   interface for proper routing.
+
+   ```bash
+   sudo ssh -o Tunnel=ethernet -w 0:0 tuns.sh \
+     udp-forward=10000:local-ip-of-machines-main-interface:5553
+   ```
+
+3. Bring the tunnel interface up and assign an ip that is link local (also as
+   root). You need to set the ARP entry and interface `MAC` as well:
+
+   ```bash
+   ip link set dev tap0 address 00:00:00:00:00:02
+   ip link set tap0 up
+   ip r a 10.1.0.1 dev tap0
+   ip neigh add 10.1.0.1 lladdr 00:00:00:00:00:01 dev tap0 nud permanent
    ```
 
 4. Start a udp client to tuns.sh:10000. Here's one with netcat:
