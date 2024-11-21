@@ -126,8 +126,8 @@ autossh -M 0 -R dev:80:localhost:8000 tuns.sh
 ## Easy (`-o Tunnel=point-to-point`)
 
 Using `tuns`, you have the ability to tunnel UDP traffic without any external
-binary, meaning all using SSH. This makes use of the SSH tunneling
-functionality and a `tun` interface. To get started, you need to follow a few steps:
+binary, meaning all using SSH. This makes use of the SSH tunneling functionality
+and a `tun` interface. To get started, you need to follow a few steps:
 
 1. Start some UDP service that you want to forward. For example, a simple socat
    echo server:
@@ -136,8 +136,8 @@ functionality and a `tun` interface. To get started, you need to follow a few st
    socat -v PIPE udp-recvfrom:5553,fork
    ```
 
-2. SSH into tuns requesting a `tun` interface with the information of where
-   the service is running. This needs to be done as root. Replace
+2. SSH into tuns requesting a `tun` interface with the information of where the
+   service is running. This needs to be done as root. Replace
    `local-ip-of-machines-main-interface` with the ip address of the main
    interface for proper routing.
 
@@ -161,10 +161,11 @@ functionality and a `tun` interface. To get started, you need to follow a few st
 
 ## Hard (`-o Tunnel=ethernet`)
 
-You can also use an ethernet tunnel for UDP forwarding. This makes a `tap` interface.
-This is considered "hard mode" since you'll also need to handle ARP. We don't process
-ARP packets, but we expect you to be an expert to be able to make this work! The `SRC`
-interface `MAC` is `00:00:00:00:00:01`, while the `DST` interface `MAC` is `00:00:00:00:00:02`
+You can also use an ethernet tunnel for UDP forwarding. This makes a `tap`
+interface. This is considered "hard mode" since you'll also need to handle ARP.
+We don't process ARP packets, but we expect you to be an expert to be able to
+make this work! The `SRC` interface `MAC` is `00:00:00:00:00:01`, while the
+`DST` interface `MAC` is `00:00:00:00:00:02`
 
 1. Start some UDP service that you want to forward. For example, a simple socat
    echo server:
@@ -173,8 +174,8 @@ interface `MAC` is `00:00:00:00:00:01`, while the `DST` interface `MAC` is `00:0
    socat -v PIPE udp-recvfrom:5553,fork
    ```
 
-2. SSH into tuns requesting a `tap` interface with the information of where
-   the service is running. This needs to be done as root. Replace
+2. SSH into tuns requesting a `tap` interface with the information of where the
+   service is running. This needs to be done as root. Replace
    `local-ip-of-machines-main-interface` with the ip address of the main
    interface for proper routing.
 
