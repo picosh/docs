@@ -20,7 +20,7 @@ An `ngrok` alternative using just SSH.
 Using SSH tunnels, we can forward requests to your localhost from https, wss,
 and tcp.
 
-![sish-example](https://docs.ssi.sh/hiw-sish-public.png)
+![Eric connects to sish on the Internet with the command 'ssh -R eric:80:localhost:3000 tuns.sh'. Tony visits 'https://eric.tuns.sh', which connects to sish, and forwards Eric's local server to Tony.](https://docs.ssi.sh/hiw-sish-public.png)
 
 ## Demo
 
