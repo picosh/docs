@@ -125,6 +125,6 @@ That's it! Join any other channels or networks using the same method.
 - [libera.chat](https://libera.chat)
 - [pico bouncer](ircs://irc.pico.sh:6697)
 - [soju man page](https://soju.im/doc/soju.1.html)
-- [soju](https://git.sr.ht/~emersion/soju)
-- [gamja](https://git.sr.ht/~emersion/gamja)
+- [soju](https://codeberg.org/emersion/soju)
+- [gamja](https://codeberg.org/emersion/gamja)
 - [senpai](https://git.sr.ht/~delthas/senpai)
