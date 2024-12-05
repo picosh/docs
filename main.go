@@ -129,6 +129,11 @@ func main() {
 						Page: pager("analytics.md"),
 					},
 					{
+						Text: "Logs",
+						Href: "/logs",
+						Page: pager("logs.md"),
+					},
+					{
 						Text: "Host Keys",
 						Href: "/host-keys",
 						Page: pager("host-keys.md"),
