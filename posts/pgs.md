@@ -448,17 +448,6 @@ rsync -rv public/ glossy@pgs.sh:/glossy
 # => https://glossy.pgs.sh
 ```
 
-# Content security policy
-
-For pico domains we have some strict content-security policies.
-
-```bash
-Content-Security-Policy "default-src 'self'; img-src * 'unsafe-inline'; style-src * 'unsafe-inline'"
-```
-
-If you need to access sites that are blocked by this CSP, then you can use a
-[custom domain](/custom-domains) which won't have those security restrictions.
-
 # Access Control List
 
 Thanks to SSH tunnels we can provide restricted access to projects.
@@ -525,7 +514,7 @@ folder inside our object store. As such:
 You must [delete a project](#removing-a-project) using the remote cli.
 
 If you accidentally remove a site you will be stuck in a limbo state. The folder
-will still exist using `sftp` or `sshfs` then you can properly clean it up by
+will still exist using `sftp` or `sshfs`. You can properly clean it up by
 running the [rm command](#removing-a-project)
 
 <hr />
