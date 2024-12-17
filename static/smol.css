@@ -227,7 +227,6 @@ ul[style*="list-style-type: none;"] {
 
 ol {
   padding: 0 0 0 var(--line-height);
-  list-style-position: inside;
   list-style-type: decimal;
   margin: var(--line-height) 0;
 }
