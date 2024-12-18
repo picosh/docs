@@ -11,10 +11,46 @@
 {{define "body"}}
 {{template "nav" .}}
 
-<main>
-  <div class="flex justify-center">
-    <div class="container-xs">
-      <div class="border px-4 py-4 mt-4">
+<main  class="flex justify-center">
+  <div>
+    <div class="group-h flex-collapse">
+      <div class="border px-4 py-4 mt-4 container-xs" style="height: 720px;">
+        <div class="group items-center">
+          <h1 class="text-2xl logo-basic">starter</h1>
+          <div class="text-center">
+            <div class="text-2xl">$0</div>
+            <div class="text-sm">&nbsp;</div>
+            <pre class="my"><span class="visited">ssh</span> pico.sh</pre>
+            <div class="text-sm">
+              Log into our SSH App to learn more and get started.
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <ul>
+            <li>
+              <a href="/pages">pages</a>
+              <ul><li>25MB storage limit</li></ul>
+            </li>
+            <li>
+              <a href="https://pipe.pico.sh">pipe</a>
+            </li>
+            <li>
+              <a href="/prose">prose</a>
+              <ul><li>500MB image limit</li></ul>
+            </li>
+            <li>
+              <a href="/feeds">rss-to-email</a>
+            </li>
+            <li>
+              <a href="/pastes">pastes</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border px-4 py-4 mt-4 container-xs" style="height: 720px;">
         <div class="group items-center">
           <h1 class="logo-header text-2xl">pico+</h1>
           <div class="text-center">
@@ -27,17 +63,40 @@
           </div>
         </div>
 
-        <hr class="my-4" />
+        <div>
+          <ul>
+            <li>
+              <a href="/tuns">tuns</a>
+              <ul><li>per-site <a href="/analytics">analytics</a></li></ul>
+            </li>
+            <li>
+              <a href="/pgs">pages</a>
+              <ul><li>per-site <a href="/analytics">analytics</a></li></ul>
+            </li>
+            <li>
+              <a href="/prose">prose</a>
+              <ul>
+                <li>no inherent storage limits</li>
+                <li>blog <a href="/analytics">analytics</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="/bouncer">irc bouncer</a>
+            </li>
+            <li>10GB storage across all services</li>
+          </ul>
 
-        <article class="md plus">
-          {{.Data.Html}}
-        </article>
+          <hr class="my-4" />
+
+          Before signing up to <code>pico+</code>, please read our <a href="/privacy">privacy policy</a>,
+          <a href="/ops">terms of service</a>, and our <a href="/ops#refund-policy">refund policy</a>.
+        </div>
       </div>
-
-      {{template "pager" .}}
-      <hr class="my-4" />
-      {{template "footer" .}}
     </div>
+
+    {{template "pager" .}}
+    <hr class="my-4" />
+    {{template "footer" .}}
   </div>
 </main>
 {{end}}

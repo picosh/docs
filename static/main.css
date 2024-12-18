@@ -105,6 +105,20 @@
   justify-content: center;
 }
 
+.plus {
+  height: 100%;
+  width: 200px;
+}
+
+.logo-basic {
+  line-height: 1;
+  display: inline-block;
+  border: 3px solid var(--grey-light);
+  padding: 8px 10px 10px 10px;
+  border-radius: 10px;
+  margin: 0;
+}
+
 @media only screen and (max-width: 800px) {
   body {
     padding: 0 0.75rem;
