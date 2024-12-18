@@ -6,6 +6,7 @@ template: plus.page.tmpl
 ---
 
 - [tuns](/tuns)
+  - per-site [analytics](/analytics)
 - [pages](/pgs)
   - per-site [analytics](/analytics)
 - [prose](/prose)
