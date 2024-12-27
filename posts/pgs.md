@@ -215,8 +215,9 @@ ssh pgs.sh rm project-x
 ssh pgs.sh prune prefix
 
 # delete all projects matching a prefix
-# except the last (3) recently updated projects
-ssh pgs.sh retain prefix
+# except the last N recently updated projects (defaults to 3).
+# doesn't count linked projects
+ssh pgs.sh retain prefix -n 3
 
 # set project to private to only you and matching public keys
 ssh pgs.sh acl project-x --type pubkeys --acl sha256:xxx
