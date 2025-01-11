@@ -221,6 +221,9 @@ ssh pgs.sh retain prefix -n 3
 
 # set project to private to only you and matching public keys
 ssh pgs.sh acl project-x --type pubkeys --acl sha256:xxx
+
+# clear the http cache for a project
+ssh pgs.sh cache project-x
 ```
 
 # File denylist
@@ -290,7 +293,7 @@ We support custom redirects and rewrites via a special file `_redirects`.
 /authors/c%C3%A9line /authors/about-c%C3%A9line
 ```
 
-When no status is provided, we default to `301 Moved Permenantly`.
+When no status is provided, we default to `301 Moved Permanently`.
 
 ```
 # Redirect with a 301
@@ -486,6 +489,14 @@ ssh -L 1337:localhost:80 -N pico-ui@pgs.sh
 ```
 
 Then open your browser to http://localhost:1337
+
+# Caching
+
+To improve the page speed, pgs sites are cached for 10 minutes by default. This is controlled by the [`Cache-Control: max-age=600` header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control) which you can [override with a `_headers` file](#Headers).
+
+There are two levels of caching: server-side and client-side. The server-side cache is automatically cleared every time you upload files, but client-side caches only expire when `max-age` seconds pass, or if you force-reload or clear your browser cache manually.
+
+In case of issues, you can manually clear the server-side cache with `ssh pgs.sh cache project-name`.
 
 # Does pages have a CDN or multi-region support?
 
