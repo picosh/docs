@@ -1,6 +1,6 @@
 ---
 title: Frequently Asked Questions
-description: Answers to frequently asked questions 
+description: Answers to frequently asked questions
 keywords: [pico, faq, question, answer]
 toc: 1
 ---

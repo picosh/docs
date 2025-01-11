@@ -20,8 +20,8 @@ The easiest way to deploy static sites on the web.
 - Managed HTTPS for all projects
 - Site [analytics](/analytics)
 - [Custom domains](/custom-domains#pgssh) for projects
-- [Custom redirects](#custom-redirects)
-- [Custom headers](#custom-headers)
+- [Custom redirects and rewrites](#redirects-and-rewrites)
+- [Custom headers](#headers)
 - [SPA support](#single-page-applications)
 - [Image manipulation API](/images#image-manipulation)
 - [Private projects](#access-control-list)
@@ -90,20 +90,20 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - uses: denoland/setup-deno@v1
-      with:
-        deno-version: "~1.42"
-    - run: make build
+      - uses: actions/checkout@v3
+      - uses: denoland/setup-deno@v1
+        with:
+          deno-version: "~1.42"
+      - run: make build
 
-    - name: upload to pgs
-      uses: picosh/pgs-action@v3
-      with:
-        user: erock
-        key: ${{ secrets.PRIVATE_KEY }}
-        src: './public/'
-        # https://erock-myapp.pgs.sh
-        project: "myapp"
+      - name: upload to pgs
+        uses: picosh/pgs-action@v3
+        with:
+          user: erock
+          key: ${{ secrets.PRIVATE_KEY }}
+          src: "./public/"
+          # https://erock-myapp.pgs.sh
+          project: "myapp"
 ```
 
 ## promotion and deployment retention policy
@@ -117,30 +117,30 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - uses: denoland/setup-deno@v1
-      with:
-        deno-version: "~1.42"
-    - run: make build
+      - uses: actions/checkout@v3
+      - uses: denoland/setup-deno@v1
+        with:
+          deno-version: "~1.42"
+      - run: make build
 
-    - name: Set outputs
-      id: vars
-      run: echo "sha_short=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
+      - name: Set outputs
+        id: vars
+        run: echo "sha_short=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
 
-    - name: upload to pgs
-      uses: picosh/pgs-action@v3
-      with:
-        user: erock
-        key: ${{ secrets.PRIVATE_KEY }}
-        src: './public/'
-        # git sha to create a project specific to this commit
-        project: "myapp-${{ steps.vars.outputs.sha_short }}"
-        # promote the project above to the "production" site
-        promote: "myapp"
-        # delete all sites matching this prefix ...
-        retain: "myapp-"
-        # ... except for the latest (1) deployment
-        retain_num: 1
+      - name: upload to pgs
+        uses: picosh/pgs-action@v3
+        with:
+          user: erock
+          key: ${{ secrets.PRIVATE_KEY }}
+          src: "./public/"
+          # git sha to create a project specific to this commit
+          project: "myapp-${{ steps.vars.outputs.sha_short }}"
+          # promote the project above to the "production" site
+          promote: "myapp"
+          # delete all sites matching this prefix ...
+          retain: "myapp-"
+          # ... except for the latest (1) deployment
+          retain_num: 1
 ```
 
 ## preview apps
@@ -157,20 +157,20 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - uses: denoland/setup-deno@v1
-      with:
-        deno-version: "~1.42"
-    - run: make build
+      - uses: actions/checkout@v3
+      - uses: denoland/setup-deno@v1
+        with:
+          deno-version: "~1.42"
+      - run: make build
 
-    - name: upload to pgs
-      uses: picosh/pgs-action@v3
-      with:
-        user: erock
-        key: ${{ secrets.PRIVATE_KEY }}
-        src: './public/'
-        # create a site based on pr
-        project: "myapp-pr${{ github.event.pull_request.number }}"
+      - name: upload to pgs
+        uses: picosh/pgs-action@v3
+        with:
+          user: erock
+          key: ${{ secrets.PRIVATE_KEY }}
+          src: "./public/"
+          # create a site based on pr
+          project: "myapp-pr${{ github.event.pull_request.number }}"
 ```
 
 # CLI Reference
@@ -275,7 +275,7 @@ behavior from visiting a site with and without a trailing slash.
 
 We have a very easy-to-setup guide on [custom domains](/custom-domains#pgssh).
 
-# Custom Redirects and rewrites
+# Redirects and rewrites
 
 We support custom redirects and rewrites via a special file `_redirects`.
 
@@ -346,8 +346,8 @@ rewrite. This means that the URL in the visitor’s address bar remains the same
 while pico's servers fetch the new location behind the scenes, effectively
 proxying the request.
 
-With `_redirects` we also support rewrite rules for when you want to show
-content from another site without a full URL redirect.
+We also support rewrite rules for when you want to show content from another
+site without a full URL redirect.
 
 This can be useful for single page apps, proxying to other services, proxying to
 other `pgs` sites, or transitioning for legacy content.
@@ -386,7 +386,7 @@ will let you use `/api/` from your JavaScript client:
   If you’re working with proxies, we recommend only publishing HTTPS URLs for
   your visitors to use.
 
-# Custom Headers
+# Headers
 
 We support custom headers via a special file `_headers`.
 

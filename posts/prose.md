@@ -282,11 +282,11 @@ post pages.
 ```css
 /* _styles.css */
 #post {
-    color: green;
+  color: green;
 }
 
 #blog {
-    color: tomato;
+  color: tomato;
 }
 
 header {}
@@ -307,7 +307,9 @@ a file called `barrel.md` then the body element will have:
 We don't mind. Upload a CSS file `_styles.css` with:
 
 ```css
-.footer { display: none; }
+.footer {
+  display: none;
+}
 ```
 
 # How can I change the default 404 page?

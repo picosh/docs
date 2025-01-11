@@ -80,17 +80,17 @@ jobs:
         ports:
           - 1338:1338
     steps:
-    - name: Set up QEMU
-      uses: docker/setup-qemu-action@v3
-    - name: Set up Docker Buildx
-      uses: docker/setup-buildx-action@v3
-      with:
-        driver-opts: network=host
-    - name: Build and push
-      uses: docker/build-push-action@v5
-      with:
-        push: true
-        tags: localhost:5000/image:latest
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+        with:
+          driver-opts: network=host
+      - name: Build and push
+        uses: docker/build-push-action@v5
+        with:
+          push: true
+          tags: localhost:5000/image:latest
 ```
 
 <hr />
