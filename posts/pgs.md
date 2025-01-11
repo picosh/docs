@@ -492,7 +492,7 @@ Then open your browser to http://localhost:1337
 
 # Caching
 
-To improve the page speed, pgs sites are cached for 10 minutes by default. This is controlled by the [`Cache-Control: max-age=600` header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control) which you can [override with a `_headers` file](#Headers).
+To improve the page speed, pgs sites are cached for 10 minutes by default. This is controlled by the [`Cache-Control: max-age=600` header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control) which you can [override with a `_headers` file](#headers).
 
 There are two levels of caching: server-side and client-side. The server-side cache is automatically cleared every time you upload files, but client-side caches only expire when `max-age` seconds pass, or if you force-reload or clear your browser cache manually.
 
