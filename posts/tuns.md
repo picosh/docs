@@ -121,6 +121,72 @@ tunnel if it exits.
 autossh -M 0 -R dev:80:localhost:8000 tuns.sh
 ```
 
+# Bash script
+
+Here's a helper script that should make it easier to create tunnels.
+
+```bash
+tunnel() {
+    TUNNEL_TYPE=""
+    TUNNEL_ENDPOINT=""
+    TUNNEL_ARGS=""
+
+    case $1 in
+        http|https)
+            TUNNEL_TYPE="-R"
+            TUNNEL_ENDPOINT="$([[ $1 == "http" ]] && echo "80" || echo "443"):"
+
+            if [ -z $2 ]; then
+                echo "Tunnel provided incorrect port. Usage: tunnel $1 <port>"
+                return
+            fi
+
+            if [ ! -z $3 ]; then
+                TUNNEL_ENDPOINT="$3:${TUNNEL_ENDPOINT}"
+            fi
+
+            LOCAL_PORT=$2
+            if [[ $LOCAL_PORT != *":"* ]]; then
+                LOCAL_PORT="localhost:$2"
+            fi
+
+            TUNNEL_ENDPOINT+="$LOCAL_PORT"
+            echo "Starting ${1^^} tunnel to $LOCAL_PORT"
+            ;;
+        tcp)
+            TUNNEL_TYPE="-R"
+            TUNNEL_ENDPOINT="${3:-0}:"
+
+            if [ -z $2 ]; then
+                echo "Tunnel provided incorrect port. Usage: tunnel $1 <port>"
+                return
+            fi
+
+            LOCAL_PORT=$2
+            if [[ $LOCAL_PORT != *":"* ]]; then
+                LOCAL_PORT="localhost:$2"
+            fi
+
+            TUNNEL_ENDPOINT+="$LOCAL_PORT"
+            echo "Starting ${1^^} tunnel to $LOCAL_PORT"
+            ;;
+        *)
+            echo "unknown tunnel"
+            return
+            ;;
+    esac
+
+    ssh $TUNNEL_TYPE $TUNNEL_ENDPOINT tuns.sh $TUNNEL_ARGS
+}
+```
+
+Example usage:
+
+```bash
+./tunnel.sh https 3000
+./tunnel.sh tcp 1337
+```
+
 # UDP Tunneling
 
 ## Easy (`-o Tunnel=point-to-point`)
