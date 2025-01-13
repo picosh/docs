@@ -26,6 +26,7 @@ The easiest way to deploy static sites on the web.
 - [Image manipulation API](/images#image-manipulation)
 - [Private projects](#access-control-list)
 - [No bandwidth limitations](/faq#are-there-any-bandwidth-limitations)
+- Multi-region support
 
 ## Demo
 
@@ -52,6 +53,13 @@ Use our CLI to manage projects:
 ```bash
 ssh pgs.sh help
 ```
+
+# Regions
+
+> pgs.sh is a global service!
+
+See our [regions page](/regions) to learn more about our geographical service
+coverage.
 
 # Instant promotion and rollback
 
@@ -505,12 +513,6 @@ your browser cache manually.
 In case of issues, you can manually clear the server-side cache with
 `ssh pgs.sh cache project-name`.
 
-# Does pages have a CDN or multi-region support?
-
-At this point in time, we are able to serve content from a single VM. If this
-service gains traction we will commit to having a CDN with multiple regions in
-the US and EU.
-
 # Removing a project
 
 The _only_ way to delete a project and its contents is with our remote cli:
@@ -541,8 +543,8 @@ running the [rm command](#removing-a-project)
 The `prose` site is automatically generated when users upload images to their
 [prose](/prose) blog.
 
-It is protected, meaning users are **not** allowed to delete it. For all intents and
-purposes users should just ignore it.
+It is protected, meaning users are **not** allowed to delete it. For all intents
+and purposes users should just ignore it.
 
 However, just know, if you make changes to this project it will effect your
 blog. So if you upload images to it then you'll be able to reference those

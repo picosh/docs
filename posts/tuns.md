@@ -16,6 +16,7 @@ An `ngrok` alternative using just SSH.
 - Host public tcp services on `localhost`
 - Share your local webserver privately with another user
 - Managed [sish](https://docs.ssi.sh) service
+- Multi-region support
 
 Using SSH tunnels, we can forward requests to your localhost from https, wss,
 and tcp.
@@ -56,6 +57,13 @@ We manage a completely separate doc site for all things related to `sish`:
 ssh -R dev:80:localhost:8000 tuns.sh
 # now anyone can access it at https://{user}-dev.tuns.sh
 ```
+
+# Regions
+
+> tuns.sh is a global service!
+
+See our [regions page](/regions) to learn more about our geographical service
+coverage.
 
 # User namespace
 
