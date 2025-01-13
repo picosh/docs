@@ -57,6 +57,19 @@ ssh -R dev:80:localhost:8000 tuns.sh
 # now anyone can access it at https://{user}-dev.tuns.sh
 ```
 
+# Regions
+
+We do **not** have geographical-based routing for tuns.sh.
+
+However, we do provide a way for users to pick a server location. With that we
+have a couple options:
+
+- tuns.sh (us, virginia)
+- eu.tuns.sh (eu, amsterdam)
+
+As usage and demand increases we will add more regions. See [regions](/regions)
+for our official list.
+
 # User namespace
 
 When creating a tunnel to `tuns` we always prefix the name with your username:

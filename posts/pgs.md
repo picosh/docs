@@ -507,9 +507,8 @@ In case of issues, you can manually clear the server-side cache with
 
 # Does pages have a CDN or multi-region support?
 
-At this point in time, we are able to serve content from a single VM. If this
-service gains traction we will commit to having a CDN with multiple regions in
-the US and EU.
+Yes, we run pages in multiple regions, internationally. See our
+[regions page](/regions) to learn more.
 
 # Removing a project
 

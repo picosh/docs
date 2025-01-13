@@ -150,6 +150,11 @@ func main() {
 						Page: pager("faq.md"),
 					},
 					{
+						Text: "Regions",
+						Href: "/regions",
+						Page: pager("regions.md"),
+					},
+					{
 						Text: "IRC",
 						Href: "/irc",
 						Page: pager("irc.md"),
