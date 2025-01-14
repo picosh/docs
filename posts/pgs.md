@@ -335,7 +335,7 @@ To accomplish this, we recommend you create a separate project with just a
 
 ```bash
 echo "/*  https://example.com/:splat  301" >> _www_redirects
-rsync "$PWD/_www_redirects" pgs.sh:/www-proj/_redirects
+scp "$PWD/_www_redirects" pgs.sh:/www-proj/_redirects
 ```
 
 2. Add a `www` CNAME and TXT record to point to www project
