@@ -89,6 +89,10 @@ title: hello world!
 rsync ~/blog/*.jpg prose.sh:/
 ```
 
+> All images are uploaded to a [pages](/pgs) site called `prose`. This means
+> that there's an auto-generated project where you can quickly access all your
+> blog images via https://{user}-prose.pgs.sh
+
 When you upload an image to prose, we make it web optimized (e.g. strip exif,
 convert to webp, and reduce filesize). We also support an
 [image manipulation API](/images#image-manipulation)!
