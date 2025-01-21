@@ -5,18 +5,21 @@ keywords: [pico, services, pgs, tuns]
 toc: 1
 ---
 
-- Ashburn, Virginia ([oci](https://cloud.oracle.com))
-- Amsterdam, Netherlands ([netcup](https://www.netcup.com))
+As of **2025/01** we have two locations:
 
-# Service Locations
+- Ashburn, Virginia ([oci](https://cloud.oracle.com))
+- Nuremberg, Germany ([netcup](https://www.netcup.com))
+
+Service Locations:
 
 - pgs.sh (us, eu)
 - tuns.sh (us)
-- eu.tuns.sh (eu)
+- nue.tuns.sh (eu)
 - pipe.pico.sh (us)
 - prose.sh (us)
 - pastes.sh (us)
 - feeds.pico.sh (us)
 
 As demand for our services increases we will increase our service location
-coverage.
+coverage. Please feel free to request new regions or service location coverage,
+that will only help us decide when to grow.
