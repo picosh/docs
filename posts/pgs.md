@@ -536,22 +536,20 @@ If you accidentally remove a site you will be stuck in a limbo state. The folder
 will still exist using `sftp` or `sshfs`. You can properly clean it up by
 running the [rm command](#removing-a-project)
 
-<hr />
-<div class="flex flex-col items-center justify-center">
-  <p>Create an account using only your SSH key.</p>
-  <a href="/getting-started" class="btn-link">Get Started</a>
-</div>
-
 # Why do I see a `prose` project?
 
 The `prose` site is automatically generated when users upload images to their
 [prose](/prose) blog.
 
-It is protected, meaning users are not allowed to delete it. For all intents and
+It is protected, meaning users are **not** allowed to delete it. For all intents and
 purposes users should just ignore it.
 
 However, just know, if you make changes to this project it will effect your
 blog. So if you upload images to it then you'll be able to reference those
 images in your blog posts.
 
-If this becomes a footgun for users we will end up hiding it.
+<hr />
+<div class="flex flex-col items-center justify-center">
+  <p>Create an account using only your SSH key.</p>
+  <a href="/getting-started" class="btn-link">Get Started</a>
+</div>
