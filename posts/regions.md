@@ -22,6 +22,8 @@ Service Locations:
 | prose.sh      | `us`       |
 | feeds.pico.sh | `us`       |
 | pastes.sh     | `us`       |
+| object store  | `us`       |
+| database      | `us`       |
 
 We are closely monitoring demand for more regions at pico. Our goal is to
 provide excellent service latency for all users. Feel free to
