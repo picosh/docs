@@ -12,14 +12,16 @@ As of **2025/01** we have two locations:
 
 Service Locations:
 
-- pgs.sh (us, eu)
-- tuns.sh (us, eu)
-- ash.tuns.sh (us)
-- nue.tuns.sh (eu)
-- pipe.pico.sh (us)
-- prose.sh (us)
-- feeds.pico.sh (us)
-- pastes.sh (us)
+| Service       | Locations  |
+| ------------- | ---------- |
+| pgs.sh        | `us`, `eu` |
+| tuns.sh       | `us`, `eu` |
+| nue.tuns.sh   | `eu`       |
+| ash.tuns.sh   | `us`       |
+| pipe.pico.sh  | `us`       |
+| prose.sh      | `us`       |
+| feeds.pico.sh | `us`       |
+| pastes.sh     | `us`       |
 
 We are closely monitoring demand for more regions at pico. Our goal is to
 provide excellent service latency for all users. Feel free to
