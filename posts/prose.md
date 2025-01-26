@@ -13,6 +13,7 @@ The easiest way to publish blog articles on the web.
 
 - No install
 - GitHub flavored markdown
+- A managed blog hosted at `https://{user}.prose.sh`
 - [Custom domains](/custom-domains#prosesh)
 - Publish posts using [rsync, sftp, or scp](/file-uploads)
 - Blog [analytics](/analytics)
@@ -35,6 +36,10 @@ Create posts using your favorite editor in plain text files.
 `~/blog/hello-world.md`
 
 ```md
+---
+date: 2022-06-28
+---
+
 # hello world!
 
 This is my first blog post.
@@ -59,11 +64,13 @@ rsync ~/blog/* prose.sh:/
 scp ~/blog/* prose.sh:/
 # - or -
 sftp prose.sh
+# - or -
+sshfs ~/blog prose.sh:/
 ```
 
 [Read more about uploading files](/file-uploads).
 
-We'll either create or update the posts for you.
+We'll either create or update the posts for you instantly.
 
 # Terminal workflow without installation
 
@@ -199,6 +206,9 @@ Title changes the title of the blog post.
 Description changes the description metadata for the blog post.
 
 ## `date`
+
+> We **highly** recommend specifying a date because this preserves your actual
+> publish date and not when the database record was created by us.
 
 This is the published date. It ought to be in `YYYY-MM-DD` format. If this date
 is set to the future, the post will be unlisted until the date provided is today
