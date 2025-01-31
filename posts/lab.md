@@ -24,8 +24,8 @@ keep them active.
 
 # pipemgr
 
-Send docker container logs to [pipe](https://pipe.pico.sh) with supervision to
-keep them active.
+Send docker container logs to [pipe](/pipe) with supervision to keep them
+active.
 
 [Source code](https://github.com/picosh/pipemgr)
 

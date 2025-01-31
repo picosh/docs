@@ -51,7 +51,7 @@ our services:
 
 - [tuns](/tuns) <a href="/plus" class="link-alt-hover">(+)</a>
 - [pages](/pgs) <a href="/plus" class="link-alt-hover">(+)</a>
-- [pipe](https://pipe.pico.sh)
+- [pipe](/pipe)
 - [prose](/prose)
 - [pastes](/pastes)
 - [rss-to-email](/feeds)
