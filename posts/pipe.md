@@ -29,7 +29,7 @@ composable directional streams of data, just like a *nix `|` operator!
   - Write (pub)
   - Read & Write (pipe)
 
-# Some use cases
+# Use cases
 
 - Send desktop notifications
 - File sharing
@@ -343,7 +343,8 @@ process.
 # `pipemgr`
 
 [pipemgr](https://github.com/picosh/pipemgr) is a docker image that will listen
-for logs from other running containers and pipe their logs through a pipe topic.
+for logs from other running containers and pipe their logs through a topic
+called `container-drain`.
 
 ```yaml
 services:
