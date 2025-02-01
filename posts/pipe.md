@@ -5,8 +5,40 @@ keywords: [pico, pipe]
 toc: 2
 ---
 
+The simplest authenticated pubsub system. Send messages through user-defined
+topics (aka channels). By default, topics are private to the authenticated ssh
+user. The default pubsub model is multicast with bidirectional blocking, meaning
+a publisher (pub) will send its message to all subscribers (sub) for a topic.
+There can be many publishers and many subscribers on a topic. Further, both pub
+and sub will wait for at least one event to be sent or received on the topic.
+
 [pipe](https://pipe.pico.sh) is a simple and secure way of putting together
 composable directional streams of data, just like a *nix `|` operator!
+
+# Features
+
+- Zero-install
+- Familiar `*nix` pipes API
+- Authenticated pubsub using ssh
+- Private pubsub by default
+- Public pubsub by topic (opt-in)
+- Multicast (many pubs to many subs)
+- Bidirectional (e.g. chat)
+- Paradigms for connecting to a topic:
+  - Read (sub)
+  - Write (pub)
+  - Read & Write (pipe)
+
+# Some use cases
+
+- Send desktop notifications
+- File sharing
+- Pipe command output
+- Chat
+- Reverse shell
+- CI/CD
+
+# Examples
 
 For example, maybe you have a *nix pipe you're using on the command line like
 so:
@@ -77,21 +109,7 @@ ssh pipe.pico.sh pipe chat
 Will allow you to type and read messages as if you were sitting at the same
 terminal!
 
-# Features
-
-- Zero-install
-- Familiar `*nix` pipes API
-- Authenticated pubsub using ssh
-- Private pubsub by default
-- Public pubsub by topic (opt-in)
-- Multicast (many pubs to many subs)
-- Bidirectional (e.g. chat)
-- Paradigms for connecting to a topic:
-  - Read (sub)
-  - Write (pub)
-  - Read & Write (pipe)
-
-# Usage help
+# CLI
 
 We have a bunch of demo examples on the main [pipe](https://pipe.pico.sh)
 website so be sure to check those out.
@@ -162,15 +180,15 @@ Args:
 # Web Interface
 
 Now what if you don't have a terminal available? Not a problem! Pipe has a web
-component that works side by side. For example, let's start a notification `sub`
-through the terminal like so (not `p` for public, so anyone can send us a
-notification):
+component that works side by side, `pipe-web`. For example, let's start a
+notification `sub` through the terminal like so (not `p` for public, so anyone
+can send us a notification):
 
 ```bash
 ssh pipe.pico.sh sub -p -k notifications | xargs -I{} -L1 osascript -e 'display notification "{}" with title "Pipe Notification"'
 ```
 
-We can send a `POST` to the Pipe-web service to send a message onto that topic
+We can send a `POST` to the `pipe-web` service to send a message onto that topic
 like so:
 
 ```bash
@@ -178,19 +196,19 @@ echo "Hello world" | curl -X POST https://pipe.pico.sh/topic/notifications --dat
 ```
 
 And a notification will pop up! Now it's important to note that this is risky,
-anyone can use a "`p`ublic" topic (on both the terminal or Pipe-web). We can
+anyone can use a "`p`ublic" topic (on both the terminal or `pipe-web`). We can
 make this less risky by starting the notifications topic with an access list
-set. And if we want Pipe-web to access it, we need to provide "pico" to the
+set. And if we want `pipe-web` to access it, we need to provide "pico" to the
 access list setting:
 
 ```bash
 ssh pipe.pico.sh sub -a pico -p -k notifications | xargs -I{} -L1 osascript -e 'display notification "{}" with title "Pipe Notification"'
 ```
 
-Now, only Pipe-web and yourself are able to access this public topic.
+Now, only `pipe-web` and yourself are able to access this public topic.
 
-Pipe-web comes with a few caveats, namely all topics need to be public for it to
-work. You can set an access list on the topic, but Pipe-web is an
+`pipe-web` comes with a few caveats, namely all topics need to be public for it
+to work. You can set an access list on the topic, but `pipe-web` is an
 unauthenticated service. Therefore, anyone can send a post request to the
 process.
 
@@ -327,3 +345,52 @@ process.
   <p>Create an account using only your SSH key.</p>
   <a href="/getting-started" class="btn-link">Get Started</a>
 </div>
+
+# `pipemgr`
+
+[pipemgr](https://github.com/picosh/pipemgr) is a docker image that will listen
+for logs from other running containers and pipe their logs through a pipe topic.
+
+```yaml
+services:
+  pipemgr:
+    build:
+      context: .
+    image: ghcr.io/picosh/pipemgr:latest
+    restart: always
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - $HOME/.ssh/id_ed25519:/key:ro
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 2s
+      timeout: 5s
+      retries: 5
+      start_period: 1s
+  httpbin:
+    image: kennethreitz/httpbin
+    command: gunicorn -b 0.0.0.0:3000 httpbin:app -k gevent --access-logfile -
+    ports:
+      - 3000:3000
+    labels:
+      pipemgr.enable: true
+      # filter log lines with:
+      # pipemgr.filter: "GET.+(404)"
+    depends_on:
+      pipemgr:
+        condition: service_healthy
+```
+
+# Caveats
+
+You must always pipe **something** into pub or else it will block indefinitely
+until the process is killed. However, you can provide a flag to send an empty
+message: `pub topic -e`.
+
+# Inspiration
+
+A special thanks to [patchbay.pub](https://patchbay.pub) for our inspiration.
+
+# Latest posts
+
+2024-10-06 [pipe: our pubsub ssh service](https://blog.pico.sh/ann-022-pubsub)

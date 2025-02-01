@@ -57,6 +57,7 @@
   max-width: 700px;
   height: calc(100vh - 3px - 3 * var(--line-height));
   overflow-y: auto;
+  padding-right: 1rem;
 }
 
 .post-container {
