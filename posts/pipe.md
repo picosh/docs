@@ -340,12 +340,6 @@ process.
 
 </details>
 
-<hr />
-<div class="flex flex-col items-center justify-center">
-  <p>Create an account using only your SSH key.</p>
-  <a href="/getting-started" class="btn-link">Get Started</a>
-</div>
-
 # `pipemgr`
 
 [pipemgr](https://github.com/picosh/pipemgr) is a docker image that will listen
@@ -394,3 +388,9 @@ A special thanks to [patchbay.pub](https://patchbay.pub) for our inspiration.
 # Latest posts
 
 2024-10-06 [pipe: our pubsub ssh service](https://blog.pico.sh/ann-022-pubsub)
+
+<hr />
+<div class="flex flex-col items-center justify-center">
+  <p>Create an account using only your SSH key.</p>
+  <a href="/getting-started" class="btn-link">Get Started</a>
+</div>
