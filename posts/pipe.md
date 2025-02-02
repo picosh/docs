@@ -212,18 +212,20 @@ to work. You can set an access list on the topic, but `pipe-web` is an
 unauthenticated service. Therefore, anyone can send a post request to the
 process.
 
-Just like you can use `pipe-web` for `GET` and `POST` requests, you can also
-use WebSockets to get a bi-directional stream to a topic. This functionality
-is most closely related to the `pipe` CLI option. You can try this functionality
+## WebSockets
+
+Just like you can use `pipe-web` for `GET` and `POST` requests, you can also use
+WebSockets to get a bi-directional stream to a topic. This functionality is most
+closely related to the `pipe` CLI option. You can try this functionality
 [here](https://antonio-ws-pipe-term.pgs.sh/). The API is simple and documented
 below. This example terminal also accepts query params like the following:
 
-> | name    | type     | data type | description                                         |
-> | ------- | -------- | --------- | --------------------------------------------------- |
-> | topic | optional | boolean | The topic to connect to |
-> | replay | optional | boolean | Whether or not to replay message |
-> | binary | optional | string | Connect the client as binary |
-> | autoConnect | optional | string | Autoconnect once the page is loaded |
+| name        | type     | data type | description                         |
+| ----------- | -------- | --------- | ----------------------------------- |
+| topic       | optional | boolean   | The topic to connect to             |
+| replay      | optional | boolean   | Whether or not to replay message    |
+| binary      | optional | string    | Connect the client as binary        |
+| autoConnect | optional | string    | Autoconnect once the page is loaded |
 
 ## Open a pipe
 
@@ -238,18 +240,18 @@ below. This example terminal also accepts query params like the following:
 
 ### Query Parameters
 
-> | name    | type     | data type | description                                         |
-> | ------- | -------- | --------- | --------------------------------------------------- |
-> | status | optional | boolean | Receive pipe status messages |
-> | replay | optional | boolean | Whether or not to replay message |
-> | binary | optional | string | Connect the client as binary |
-> | access | optional | string | Comma separated list of permissible accessors |
+> | name   | type     | data type | description                                   |
+> | ------ | -------- | --------- | --------------------------------------------- |
+> | status | optional | boolean   | Receive pipe status messages                  |
+> | replay | optional | boolean   | Whether or not to replay message              |
+> | binary | optional | string    | Connect the client as binary                  |
+> | access | optional | string    | Comma separated list of permissible accessors |
 
 ### Responses
 
-> | http code | content-type                                         | response                                        |
-> | --------- | ---------------------------------------------------- | ----------------------------------------------- |
-> | `101`     | `N/A` | Switching Protocols |
+> | http code | content-type | response            |
+> | --------- | ------------ | ------------------- |
+> | `101`     | `N/A`        | Switching Protocols |
 
 ### Example websocat
 
