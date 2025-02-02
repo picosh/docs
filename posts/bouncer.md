@@ -11,7 +11,7 @@ toc: 1
 We are delighted to provide a private soju instance available to all
 [pico+](/plus) users.
 
-## Generate a login token for bouncer
+# Generate a login token for bouncer
 
 ![pico-token-menu](https://blog.pico.sh/pico-token-menu.png)
 
@@ -20,7 +20,7 @@ We are delighted to provide a private soju instance available to all
 - Type "n" to generate a new token
 - Save token someplace safe
 
-## Supported Clients
+# Supported Clients
 
 Next you need to pick a client to connect to the bouncer and finish setup:
 
@@ -28,26 +28,30 @@ Next you need to pick a client to connect to the bouncer and finish setup:
 - [web](#web) - at [chat.pico.sh](https://chat.pico.sh)
 - [terminal](#terminal) - senpai
 
-## SSH App
+# SSH App
 
 We integrated senpai into our SSH app. If you have a pico account you can
 connect via:
 
 ```bash
+ssh pico.sh
+# -> Chat
+#
+# OR go there directly:
 ssh pico.sh -t chat
 ```
 
-## Web
+# Web
 
 We provide pico users with a self-hosted version of gamja.
 
-### Log into [chat.pico.sh](https://chat.pico.sh)
+## Log into [chat.pico.sh](https://chat.pico.sh)
 
 - You'll be redirected to [auth.pico.sh](https://auth.pico.sh)
 - Enter the token from above
 - Click submit
 
-### Back to [chat.pico.sh](https://chat.pico.sh)
+## Back to [chat.pico.sh](https://chat.pico.sh)
 
 ![irc-remember-me](https://blog.pico.sh/irc-remember-me.png/x500)
 
@@ -58,14 +62,14 @@ We provide pico users with a self-hosted version of gamja.
 
 Next step is to [connect to libera.chat](#connect-to-libera) section.
 
-## Terminal
+# Terminal
 
 Senpai is a modern terminal client coupled pretty tightly to `soju` development
 so it's a great fit for us at pico -- we use it.
 
 [senpai (terminal client)](https://git.sr.ht/~delthas/senpai)
 
-### Configure senpai
+## Configure senpai
 
 Create a config file
 
@@ -91,20 +95,20 @@ senpai
 
 Next step is to [connect to libera.chat](#connect-to-libera) section.
 
-## Connect to libera
+# Connect to libera
 
 Using:
 
 - Network `irc.libera.chat`
 - Channel `#pico.sh`
 
-### Message `BouncerServ`
+## Message `BouncerServ`
 
 ```
 /msg BouncerServ help
 ```
 
-### Join a network
+## Join a network
 
 ```
 network create -addr irc.libera.chat -nick <user> -enabled false
@@ -112,7 +116,7 @@ sasl set-plain -network libera <user> <sasl-pass>
 network update libera -enabled true
 ```
 
-### Join pico
+## Join pico
 
 ```
 /j #pico.sh
