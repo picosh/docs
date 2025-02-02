@@ -13,7 +13,7 @@ We are delighted to provide a private soju instance available to all
 
 ## Generate a login token for bouncer
 
-![pico-token-menu](https://hey.imgs.sh/pico-token-menu.png)
+![pico-token-menu](https://blog.pico.sh/pico-token-menu.png)
 
 - SSH into our [pico TUI](/ui#ssh-tui)
 - Select "Manage Tokens" submenu
@@ -49,7 +49,7 @@ We provide pico users with a self-hosted version of gamja.
 
 ### Back to [chat.pico.sh](https://chat.pico.sh)
 
-![irc-remember-me](https://hey.imgs.sh/irc-remember-me/x500)
+![irc-remember-me](https://blog.pico.sh/irc-remember-me.png/x500)
 
 - Click "remember me" (this is important)
 - You'll see an error "Cannot interact with channels and users on the bouncer

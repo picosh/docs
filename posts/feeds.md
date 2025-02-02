@@ -28,8 +28,8 @@ to receive email notifications.
 ```
 =: email rss@myemail.com
 =: digest_interval 1day
-=> https://hey.prose.sh/rss
-=> https://erock.prose.sh/rss
+=> https://blog.pico.sh/rss
+=> https://bower.sh/rss
 ```
 
 Then copy the file to our server

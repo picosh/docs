@@ -11,7 +11,7 @@ Common examples:
 - [connecting to our bouncer](/irc)
 - pico+ rss feed
 
-![pico-token-menu](https://hey.imgs.sh/pico-token-menu.png)
+![pico-token-menu](https://blog.pico.sh/pico-token-menu.png)
 
 - SSH into our [pico TUI](/ui#ssh-tui)
 - Select "Manage Tokens" submenu
