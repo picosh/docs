@@ -91,8 +91,8 @@ rsync ~/blog/*.jpg prose.sh:/
 > that there's an auto-generated project where you can quickly access all your
 > blog images via https://{user}-prose.pgs.sh
 
-When you upload an image to prose, we make it web optimized (e.g. strip exif,
-convert to webp, and reduce filesize). We also support an
+When you upload an image to prose, we make it web optimized (e.g. strip exif and
+reduce filesize). We also support an
 [image manipulation API](/images#image-manipulation)!
 
 # Blog structure
@@ -109,15 +109,14 @@ directory structure information and only keep the filename.
 For example, if you have two posts in different folders but the same filename
 and try to upload them to prose, the second post will overwrite the first one.
 
-# Special files
+# Blog customization
 
-We have a shortlist of special files that modify the behavior of your blog.
+User can change the look-and-feel of their blog by uploading special files.
 
 ## _readme.md
 
-There's a special file you can upload `_readme.md` which will allow users to add
-content above the blog post list, add links to their blog landing page, and
-change blog post metadata.
+This file will allow users to add content above the blog post list, add links to
+their blog landing page, and change blog metadata.
 
 ```md
 ---
@@ -176,11 +175,10 @@ which is the user-defined CSS stylesheet that gets served.
 
 ## _styles.css
 
-There's a special file you can upload `_styles.css` which will allow users to
-add a CSS file to their page. It will be the final CSS file loaded on the page
-so it will overwrite whatever styles have previously been added. We've also
-added a couple of convenience id's attached to the body element for the blog and
-post pages.
+This will allow users to change the look-and-feel of their blog. This file will
+be the final CSS loaded on the page so it will overwrite whatever styles have
+previously been added. We've also added a couple of convenience id's attached to
+the body element for the blog and post pages.
 
 ```css
 /* _styles.css */
@@ -207,8 +205,7 @@ a file called `barrel.md` then the body element will have:
 
 ## _footer.md
 
-We have a special file `_footer.md` that will be appended to every single blog
-post.
+This file will be added to the end of every single blog post.
 
 There is nothing that differentiates itself from the rest of the post so it's up
 to you to style it. For convenience we added an `id` to the containing element
@@ -216,7 +213,7 @@ to you to style it. For convenience we added an `id` to the containing element
 
 ## _404.md
 
-Upload a `_404.md` which is formatted just like all the other posts.
+This file will override the default 404 page when a post cannot be found.
 
 ```md
 ---
@@ -227,10 +224,10 @@ description: Where are you going?
 This page doesn't exist.
 ```
 
-# Post metadata
+# Post customization
 
-We support adding frontmatter to the top of your markdown posts. A frontmatter
-looks like the following:
+We support adding frontmatter to the top of your posts. A frontmatter looks like
+the following:
 
 ```md
 ---
@@ -276,6 +273,9 @@ This property will change the listing status of a blog post. If `draft: true`
 then the post will be published but unlisted. It will not show up on the blog
 index page or RSS feed for your blog.
 
+However, the post is still publicly accessible! This gives users the ability to
+share posts before "publishing" them.
+
 ## `toc`
 
 This property adds a table of contents to the blog post based on the headers. If
@@ -316,15 +316,6 @@ If the user does not provide a frontmatter, we will set the following defaults:
 - `date` set to date when uploaded
 - `title` inferred from first h1 header (e.g. `# header`) or else the filename
 - `tags` inferred from any hashtags inside content
-
-# Unlisted posts
-
-When a post has a date in the future or `draft: true` then the post will be
-**unlisted**. This means that it will **not** be shown on your blog page nor
-will it show up in your built-in RSS feed.
-
-However, the post is still publicly accessible! This gives users the ability to
-share posts before "publishing" them.
 
 # Remove ad footer
 
