@@ -2,7 +2,7 @@
 title: prose
 description: A blog platform for hackers
 keywords: [pico, prose]
-toc: 1
+toc: 2
 ---
 
 The easiest way to publish blog articles on the web.
@@ -25,11 +25,9 @@ The easiest way to publish blog articles on the web.
 - Subscriptions with RSS
 - Blog customization with metafiles
 
-# Examples
-
 Check out the [discovery page](https://prose.sh) on prose.
 
-# You control the source files
+# Publish
 
 Create posts using your favorite editor in plain text files.
 
@@ -53,8 +51,6 @@ Check out some resources:
 Cya!
 ```
 
-# Publish your posts with one command
-
 When your post is ready to be published, copy the file to our server with a
 familiar command:
 
@@ -68,18 +64,13 @@ sftp prose.sh
 sshfs ~/blog prose.sh:/
 ```
 
-[Read more about uploading files](/file-uploads).
+> [Read more about uploading files](/file-uploads).
 
-We'll either create or update the posts for you instantly.
+Since we are leveraging tools you already have on your computer, there is
+nothing to install. This provides the convenience of a web app, but from inside
+your terminal!
 
-# Terminal workflow without installation
-
-Since we are leveraging tools you already have on your computer (`ssh` and
-`rsync`), there is nothing to install.
-
-This provides the convenience of a web app, but from inside your terminal!
-
-# Upload images for your blog
+# Images
 
 We also support [image uploading](/images). Simply upload your images alongside
 your markdown files and then reference them from root `/`:
@@ -104,7 +95,7 @@ When you upload an image to prose, we make it web optimized (e.g. strip exif,
 convert to webp, and reduce filesize). We also support an
 [image manipulation API](/images#image-manipulation)!
 
-# How are blogs structured?
+# Blog structure
 
 Think of your blog as a flat list of files, similar to how your blog is rendered
 as a flat list of posts.
@@ -118,10 +109,15 @@ directory structure information and only keep the filename.
 For example, if you have two posts in different folders but the same filename
 and try to upload them to prose, the second post will overwrite the first one.
 
-# How can I customize my blog?
+# Special files
+
+We have a shortlist of special files that modify the behavior of your blog.
+
+## _readme.md
 
 There's a special file you can upload `_readme.md` which will allow users to add
-a bio and links to their blog landing page.
+content above the blog post list, add links to their blog landing page, and
+change blog post metadata.
 
 ```md
 ---
@@ -136,48 +132,102 @@ favicon: favicon.ico
 layout: aside # or default
 with_styles: true
 ---
+
+This block will be rendered above the list of blog posts on the index page!
 ```
 
-## `title`
+### `title`
 
 Title changes your blog's name which will show up as the metadata title for the
 blog index page and changes the blog post link back to the main blog page.
 
-## `description`
+### `description`
 
 The description is used as the metadata description on the blog page.
 
-## `nav`
+### `nav`
 
 This property sets the navigation links on the blog index page. The `rss` link
 is always appended to the end of this list.
 
-## `image` and `card`
+### `image` and `card`
 
 These properties are used for og and image metadata when for when a blog is
 shared. If a blog post does not have its own `image` or `card` properties, then
 it will assume the blog's `image` and `card` properties.
 
-## `favicon`
+### `favicon`
 
 This property will change the `favicon` for the blog and posts. Link to an ico
 image.
 
-## `layout`
+### `layout`
 
 This property changes the layout of the blog index page. The options are:
 
 - `aside`
 - `default`
 
-## `with_styles`
+### `with_styles`
 
 This determines whether we load our default styles onto your blog or not. This
-allows for better customization in conjunction with
-[_styles.css](/#how-can-i-change-the-theme-of-my-blog) which is the user-defined
-CSS stylesheet that gets served.
+allows for better customization in conjunction with [_styles.css](/#_styles.css)
+which is the user-defined CSS stylesheet that gets served.
 
-# How can I customize a blog post?
+## _styles.css
+
+There's a special file you can upload `_styles.css` which will allow users to
+add a CSS file to their page. It will be the final CSS file loaded on the page
+so it will overwrite whatever styles have previously been added. We've also
+added a couple of convenience id's attached to the body element for the blog and
+post pages.
+
+```css
+/* _styles.css */
+#post {
+  color: green;
+}
+
+#blog {
+  color: tomato;
+}
+
+header {}
+main {}
+footer {}
+article {}
+```
+
+Further we add the post slug as a class on the `body` element. So if you upload
+a file called `barrel.md` then the body element will have:
+
+```html
+<body id="post" class="barrel"></body>
+```
+
+## _footer.md
+
+We have a special file `_footer.md` that will be appended to every single blog
+post.
+
+There is nothing that differentiates itself from the rest of the post so it's up
+to you to style it. For convenience we added an `id` to the containing element
+`post-footer`.
+
+## _404.md
+
+Upload a `_404.md` which is formatted just like all the other posts.
+
+```md
+---
+title: Not found
+description: Where are you going?
+---
+
+This page doesn't exist.
+```
+
+# Post metadata
 
 We support adding frontmatter to the top of your markdown posts. A frontmatter
 looks like the following:
@@ -276,47 +326,7 @@ will it show up in your built-in RSS feed.
 However, the post is still publicly accessible! This gives users the ability to
 share posts before "publishing" them.
 
-# How can I add a footer to all of my posts?
-
-We have a special file `_footer.md` that will be appended to every single blog
-post.
-
-There is nothing that differentiates itself from the rest of the post so it's up
-to you to style it. For convenience we added an `id` to the containing element
-`post-footer`.
-
-# How can I change the theme of my blog?
-
-There's a special file you can upload `_styles.css` which will allow users to
-add a CSS file to their page. It will be the final CSS file loaded on the page
-so it will overwrite whatever styles have previously been added. We've also
-added a couple of convenience id's attached to the body element for the blog and
-post pages.
-
-```css
-/* _styles.css */
-#post {
-  color: green;
-}
-
-#blog {
-  color: tomato;
-}
-
-header {}
-main {}
-footer {}
-article {}
-```
-
-Further we add the post slug as a class on the `body` element. So if you upload
-a file called `barrel.md` then the body element will have:
-
-```html
-<body id="post" class="barrel"></body>
-```
-
-# How can I remove the prose.sh ad footer?
+# Remove ad footer
 
 We don't mind. Upload a CSS file `_styles.css` with:
 
@@ -324,19 +334,6 @@ We don't mind. Upload a CSS file `_styles.css` with:
 .footer {
   display: none;
 }
-```
-
-# How can I change the default 404 page?
-
-Upload a `_404.md` which is formatted just like all the other posts.
-
-```md
----
-title: Not found
-description: Where are you going?
----
-
-This page doesn't exist.
 ```
 
 <hr />
