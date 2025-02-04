@@ -322,7 +322,7 @@ If the user does not provide a frontmatter, we will set the following defaults:
 We don't mind. Upload a CSS file `_styles.css` with:
 
 ```css
-.footer {
+footer {
   display: none;
 }
 ```
