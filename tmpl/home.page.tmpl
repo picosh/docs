@@ -3,7 +3,7 @@
 {{define "title"}}{{.Data.Title}}{{end}}
 
 {{define "meta"}}
-<meta name="description" content="{{.Data.Description}}" />
+<meta name="description" content="{{.Data.Description}}">
 {{end}}
 
 {{define "attrs"}}class="container"{{end}}
@@ -15,11 +15,11 @@
   <div class="flex flex-col gap-2">
     <div class="flex items-center justify-center hero">
       <div class="flex flex-col items-center gap">
-        <h1 class="text-2xl text-hdr flex items-center">
-          <div class="logo-lg" style="margin-right: 9px; height: 50px;">
+        <div class="text-2xl text-hdr flex items-center">
+          <span class="logo-lg" style="margin-right: 9px; height: 50px;">
             {{template "logo" "/logo.svg"}}
-          </div>
-        </h1>
+          </span>
+        </div>
         <div class="text-center text-lg">
           <div>Services that empower developers using <code>ssh</code></div>
         </div>
@@ -45,14 +45,14 @@
       </div>
     </div>
 
-    <div><hr /></div>
+    <div><hr></div>
 
     <article class="features">
       <div class="box">
         <h3 class="m-0 p-0 text-lg flex items-center">
-          <div class="logo-md" style="margin-right: 9px; height: 25px;">
+          <span class="logo-md" style="margin-right: 9px; height: 25px;">
             {{template "logo" "/logo-tuns.svg"}}
-          </div>
+          </span>
           <a href="/tuns">tuns</a>
         </h3>
         <div>https/wss/tcp tunnels to localhost using only SSH.</div>
@@ -60,9 +60,9 @@
 
       <div class="box">
         <h3 class="m-0 p-0 text-lg flex items-center">
-          <div class="logo-md" style="margin-right: 9px; height: 25px;">
+          <span class="logo-md" style="margin-right: 9px; height: 25px;">
             {{template "logo" "/logo-pgs.svg"}}
-          </div>
+          </span>
           <a href="/pgs">pages</a>
         </h3>
         <div>A static site hosting platform using SSH for site deployments.</div>
@@ -70,9 +70,9 @@
 
       <div class="box">
         <h3 class="m-0 p-0 text-lg flex items-center">
-          <div class="logo-md" style="margin-right: 9px; height: 25px;">
+          <span class="logo-md" style="margin-right: 9px; height: 25px;">
             {{template "logo" "/logo-pipe.svg"}}
-          </div>
+          </span>
           <a href="/pipe">pipe</a>
         </h3>
         <div>Authenticated *nix pipes using SSH.</div>
@@ -80,9 +80,9 @@
 
       <div class="box">
         <h3 class="m-0 p-0 text-lg flex items-center">
-          <div class="logo-md" style="margin-right: 9px; height: 25px;">
+          <span class="logo-md" style="margin-right: 9px; height: 25px;">
             {{template "logo" "/logo-prose.svg"}}
-          </div>
+          </span>
           <a href="/prose">prose</a>
         </h3>
         <div>A blog platform using SSH for content management.</div>
@@ -104,7 +104,7 @@
     </article>
 
     <div>
-      <hr />
+      <hr>
     </div>
 
     <div class="group-2 home-features">
@@ -233,8 +233,9 @@ Cya!</pre>
       </div>
     </div>
 
-  <hr class="my-4" />
+  <hr class="my-4">
 
   {{template "footer" .}}
+  </div>
 </main>
 {{end}}
