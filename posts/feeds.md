@@ -90,7 +90,7 @@ common reasons:
 - Digest interval has not been reach yet
 - All RSS feed entries have already been fetched
 - Feed digest post validation error
-- Requests fails because of a network blip
+- Requests fail because of network connectivity issues
 - RSS feed is not accessible (e.g. site admins change the url or discontinue it)
 - We are perceived as a bot and are blocked
 
@@ -108,11 +108,6 @@ ssh feeds.pico.sh run {filename}
 If you run this command and still do not understand why your email digest isn't
 being sent, then please [contact us](/contact).
 
-# Multiple feed digest posts
-
-You are free to upload as many email digests as you like, referencing different
-rss feeds, emails, and digest intervals.
-
 # Keep Alive
 
 We require the user to click a link in their email digest every once in awhile
@@ -123,6 +118,11 @@ read their digests.
 
 This keep-alive interval is subject to change. As of writing this (02/2025) we
 require the user to click the keep-alive link once every **12 months**.
+
+# Multiple feed digest posts
+
+You are free to upload as many email digests as you like, referencing different
+rss feeds, emails, and digest intervals.
 
 # Remove feed digest post
 
