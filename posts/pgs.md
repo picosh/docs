@@ -2,7 +2,7 @@
 title: pages
 description: A zero-install static site hosting service for hackers
 keywords: [pico, pgs]
-toc: 1
+toc: 2
 ---
 
 The easiest way to deploy static sites on the web.
@@ -16,25 +16,23 @@ The easiest way to deploy static sites on the web.
 - Distinct static sites as projects
 - Unlimited projects, created instantly upon upload
 - Deploy using [rsync, sftp, or scp](/file-uploads)
-- Promotion/rollback support
 - Managed HTTPS for all projects
+- Promotion and rollback support
 - Site [analytics](/analytics)
 - [Custom domains](/custom-domains#pgssh) for projects
-- [Custom redirects and rewrites](#redirects-and-rewrites)
-- [Custom headers](#headers)
-- [SPA support](#single-page-applications)
-- [Image manipulation API](/images#image-manipulation)
-- [Private projects](#access-control-list)
+- Custom redirects and rewrites
+- Custom headers
+- SPA support
+- Image manipulation API
+- Private projects
+- [Multi-region support](/regions)
 - [No bandwidth limitations](/faq#are-there-any-bandwidth-limitations)
-- Multi-region support
-
-## Demo
 
 <iframe width="100%" height="315" src="https://www.youtube.com/embed/sdbQpD2jV0k?si=B0yoV25XIaDqnTvk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 > [pgs demo](https://www.youtube.com/watch?v=sdbQpD2jV0k)
 
-# Publish your site with one command
+# Publish
 
 When your site is ready to be published, copy the files to our server with a
 familiar command:
@@ -46,22 +44,13 @@ rsync -rv public/ pgs.sh:/myproj
 That's it! There's no need to formally create a project, we create them
 on-the-fly. Further, we provide TLS for every project automatically.
 
-# Manage your projects with a remote CLI
-
-Use our CLI to manage projects:
+Now you can use our CLI to manage projects:
 
 ```bash
 ssh pgs.sh help
 ```
 
-# Regions
-
-> pgs.sh is a global service!
-
-See our [regions page](/regions) to learn more about our geographical service
-coverage.
-
-# Instant promotion and rollback
+# Promotion and rollback
 
 Additionally you can setup a pipeline for promotion and rollbacks, which will
 instantly update your project.
@@ -89,7 +78,7 @@ We also built a [github action](https://github.com/picosh/pgs-action) that
 handles all the logic for uploading to `pgs` which includes support for
 promotions and static site retention.
 
-## basic
+## github action
 
 ```yaml
 name: "basic static site deployment"
@@ -114,7 +103,11 @@ jobs:
           project: "myapp"
 ```
 
-## promotion and deployment retention policy
+## site retention policy
+
+Instead of constantly overwriting the same static site for deployments, you can
+instead create a site retention policy where every deployment gets its own
+static site and then you link your production site to it.
 
 With static site promotion using symbolic links and a site retention policy:
 
@@ -234,37 +227,6 @@ ssh pgs.sh acl project-x --type pubkeys --acl sha256:xxx
 ssh pgs.sh cache project-x
 ```
 
-# File denylist
-
-You can upload any file you want to pages, with a few exceptions.
-
-Because any file uploaded to pages is public-by-default, we felt it necessary to
-automatically reject some files from being uploaded. At this point in time, we
-reject all files or files inside directories that start with a period `.`.
-Essentially, we reject all dotfiles. This is so users don't accidentally upload
-a `.git` folder or `.env` files. This is the equivalent rule in our `.gitignore`
-parser:
-
-```
-.*
-```
-
-## Override denylist
-
-Upload a `_pgs_ignore` to the root of each project. We are using the same rules
-as `.gitignore` using [this parser](https://github.com/sabhiram/go-gitignore).
-
-If you want to allow all files without ignoring anything, add a `_pgs_ignore`
-with any comment:
-
-```
-# dont ignore files
-```
-
-> Note: when uploading a `_pgs_ignore`, we cannot guarantee it will be uploaded
-> first so we recommend uploading it on its own and then upload the rest of your
-> site.
-
 # Pretty URLs
 
 By default we support pretty URLs. So there are some rules surrounding URLs that
@@ -286,7 +248,38 @@ behavior from visiting a site with and without a trailing slash.
 
 We have a very easy-to-setup guide on [custom domains](/custom-domains#pgssh).
 
-# Redirects and rewrites
+# Site customization
+
+## _pgs_ignore
+
+You can upload any file you want to pages, with a few exceptions.
+
+Because any file uploaded to pages is public-by-default, we felt it necessary to
+automatically reject some files from being uploaded. At this point in time, we
+reject all files or files inside directories that start with a period `.`.
+Essentially, we reject all dotfiles. This is so users don't accidentally upload
+a `.git` folder or `.env` files. This is the equivalent rule in our `.gitignore`
+parser:
+
+```
+.*
+```
+
+Upload a `_pgs_ignore` to the root of each project. We are using the same rules
+as `.gitignore` using [this parser](https://github.com/sabhiram/go-gitignore).
+
+If you want to allow all files without ignoring anything, add a `_pgs_ignore`
+with any comment:
+
+```
+# dont ignore files
+```
+
+> Note: when uploading a `_pgs_ignore`, we cannot guarantee it will be uploaded
+> first so we recommend uploading it on its own and then upload the rest of your
+> site.
+
+## _redirects
 
 We support custom redirects and rewrites via a special file `_redirects`.
 
@@ -317,7 +310,7 @@ When no status is provided, we default to `301 Moved Permanently`.
 /pass-through /index.html    200
 ```
 
-## Route Shadowing
+### Route Shadowing
 
 By default we do **not** shadow routes that exist. For example:
 
@@ -331,26 +324,7 @@ override this preference by adding a force flag to your redirect entry:
 /space   /   301!
 ```
 
-## Redirect `www` to apex domain
-
-A common requirement is to redirect "www.example.com" to the apex domain
-"example.com" or the other way around.
-
-To accomplish this, we recommend you create a separate project with just a
-`_redirects` file inside of it.
-
-1. Create a `_redirects` file with a `301` to the apex domain:
-
-```bash
-echo "/*  https://example.com/:splat  301" >> _www_redirects
-scp "$PWD/_www_redirects" pgs.sh:/www-proj/_redirects
-```
-
-2. Add a `www` CNAME and TXT record to point to www project
-
-See our [custom domains](/custom-domains#pgssh) page.
-
-## Rewrites
+### Rewrites
 
 When you assign an HTTP status code of `200` to a redirect rule, it becomes a
 rewrite. This means that the URL in the visitor’s address bar remains the same,
@@ -371,20 +345,6 @@ Here are some examples:
 /news/:month/:date/:year/*  /blog/:year/:month/:date/:splat     200
 ```
 
-### Proxy to another service
-
-> NOTICE: This is a premium [pico+](/plus) feature.
-
-Similar to how you can rewrite paths like `/*` to `/index.html`, you can also
-set up rules to let parts of your site proxy to external services. Let’s say you
-need to communicate from a single-page app with an API on
-https://api.example.com that doesn’t support CORS requests. The following rule
-will let you use `/api/` from your JavaScript client:
-
-```
-/api/*  https://api.example.com/:splat  200
-```
-
 ### Caveats
 
 - Infinitely looping rules, where the "from" and "to" resolve to the same
@@ -397,7 +357,7 @@ will let you use `/api/` from your JavaScript client:
   If you’re working with proxies, we recommend only publishing HTTPS URLs for
   your visitors to use.
 
-# Headers
+## _headers
 
 We support custom headers via a special file `_headers`.
 
@@ -421,7 +381,7 @@ We support custom headers via a special file `_headers`.
   X-XSS-Protection: 1; mode=block
 ```
 
-## Denied Headers
+### Denied Headers
 
 These headers are **not** allowed:
 
@@ -450,7 +410,40 @@ We support SPAs! Upload a `_redirects` file to your project:
 /*  /index.html  200
 ```
 
-# Reserved username project
+# Redirect `www` to apex domain
+
+A common requirement is to redirect "www.example.com" to the apex domain
+"example.com" or the other way around.
+
+To accomplish this, we recommend you create a separate project with just a
+`_redirects` file inside of it.
+
+1. Create a `_redirects` file with a `301` to the apex domain:
+
+```bash
+echo "/*  https://example.com/:splat  301" >> _www_redirects
+scp "$PWD/_www_redirects" pgs.sh:/www-proj/_redirects
+```
+
+2. Add a `www` CNAME and TXT record to point to www project
+
+See our [custom domains](/custom-domains#pgssh) page.
+
+# Proxy to another service
+
+> NOTICE: This is a premium [pico+](/plus) feature.
+
+Similar to how you can rewrite paths like `/*` to `/index.html`, you can also
+set up rules to let parts of your site proxy to external services. Let’s say you
+need to communicate from a single-page app with an API on
+https://api.example.com that doesn’t support CORS requests. The following rule
+will let you use `/api/` from your JavaScript client:
+
+```
+/api/*  https://api.example.com/:splat  200
+```
+
+# Reserved username
 
 If you create a project with the same name as your username, then you can access
 it at:
@@ -460,7 +453,7 @@ rsync -rv public/ glossy@pgs.sh:/glossy
 # => https://glossy.pgs.sh
 ```
 
-# Access Control List
+# Access Control
 
 Thanks to SSH tunnels we can provide restricted access to projects.
 
@@ -521,6 +514,13 @@ The _only_ way to delete a project and its contents is with our remote cli:
 ssh pgs.sh rm <project>
 ```
 
+# Regions
+
+> pgs.sh is a global service!
+
+See our [regions page](/regions) to learn more about our geographical service
+coverage.
+
 # File upload caveats
 
 Everyone's static sites are stored inside our object store. In order for `sftp`
@@ -538,7 +538,7 @@ If you accidentally remove a site you will be stuck in a limbo state. The folder
 will still exist using `sftp` or `sshfs`. You can properly clean it up by
 running the [rm command](#removing-a-project)
 
-# Why do I see a `prose` project?
+# What is `prose` project?
 
 The `prose` site is automatically generated when users upload images to their
 [prose](/prose) blog.
