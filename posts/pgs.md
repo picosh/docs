@@ -88,11 +88,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: denoland/setup-deno@v1
-        with:
-          deno-version: "~1.42"
-      - run: make build
-
       - name: upload to pgs
         uses: picosh/pgs-action@v3
         with:
@@ -119,11 +114,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: denoland/setup-deno@v1
-        with:
-          deno-version: "~1.42"
-      - run: make build
-
       - name: Set outputs
         id: vars
         run: echo "sha_short=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
@@ -159,11 +149,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: denoland/setup-deno@v1
-        with:
-          deno-version: "~1.42"
-      - run: make build
-
       - name: upload to pgs
         uses: picosh/pgs-action@v3
         with:
@@ -249,6 +234,9 @@ behavior from visiting a site with and without a trailing slash.
 We have a very easy-to-setup guide on [custom domains](/custom-domains#pgssh).
 
 # Site customization
+
+We have a couple of special files, when uploaded, will change the behavior of
+your site.
 
 ## _pgs_ignore
 
@@ -433,11 +421,11 @@ See our [custom domains](/custom-domains#pgssh) page.
 
 > NOTICE: This is a premium [pico+](/plus) feature.
 
-Similar to how you can rewrite paths like `/*` to `/index.html`, you can also
-set up rules to let parts of your site proxy to external services. Let’s say you
-need to communicate from a single-page app with an API on
-https://api.example.com that doesn’t support CORS requests. The following rule
-will let you use `/api/` from your JavaScript client:
+Similar to how you can rewrite paths like `/*` to `/index.html` with a
+`_redirects` file, you can also set up rules to let parts of your site proxy to
+external services. Let’s say you need to communicate from a single-page app with
+an API on https://api.example.com that doesn’t support CORS requests. The
+following rule will let you use `/api/` from your JavaScript client:
 
 ```
 /api/*  https://api.example.com/:splat  200
