@@ -34,6 +34,9 @@ func main() {
 						Text: "Create account",
 						Href: "/getting-started",
 						Page: pager("getting-started.md"),
+						Data: LogoData{
+							Src: "/logo.svg",
+						},
 					},
 					{
 						Text: "How it works",

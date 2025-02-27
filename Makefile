@@ -8,7 +8,7 @@ ssg:
 .PHONY: ssg
 
 dev: ssg
-	rsync -vr ./public/ pgs.sh:/docs-local
+	rsync -vr --delete ./public/ pgs.sh:/docs-local
 .PHONY: dev
 
 fmt:

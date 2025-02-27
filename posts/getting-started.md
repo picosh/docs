@@ -4,8 +4,7 @@ description: How to use pico services
 keywords: [pico, getting, started]
 ---
 
-All of our managed services are connected by our main pico.sh SSH service. So in
-order to be granted access you will need to create an account.
+Access to our services requires creating an account using our pico.sh TUI.
 
 # Create your account with Public-Key Cryptography
 
@@ -34,24 +33,46 @@ glossy.pgs.sh
 glossy.pastes.sh
 ```
 
-From now on when you SSH it'll bring you to our account management system:
-
-```bash
-ssh pico.sh
-```
-
 # Next Steps
 
 > After you have created your pico account, we **highly** recommend creating an
 > [API token](/api-token) and keeping it someplace safe. This is how users can
 > recover their account if they lose their SSH private key.
 
-What service did you want to use first? Read the docs to get started with any of
-our services:
+What service did you want to use first?
 
-- [tuns](/tuns) <a href="/plus" class="link-alt-hover">(+)</a>
-- [pages](/pgs) <a href="/plus" class="link-alt-hover">(+)</a>
-- [pipe](/pipe)
-- [prose](/prose)
-- [pastes](/pastes)
-- [rss-to-email](/feeds)
+<div class="group-h justify-center items-center my-4">
+  <div class="box flex justify-center items-center" style="height: 100px; width: 150px;">
+    <a href="/pgs" class="flex flex-col items-center">
+      <img width="40" src="/logo-pgs.svg" />
+      pages
+    </a>
+  </div>
+
+<div class="box flex justify-center items-center" style="height: 100px; width: 150px;">
+    <a href="/tuns" class="flex flex-col items-center">
+      <img width="40" src="/logo-tuns.svg" />
+      tuns
+    </a>
+  </div>
+
+<div class="box flex justify-center items-center" style="height: 100px; width: 150px;">
+    <a href="/pipe" class="flex flex-col items-center">
+      <img width="40" src="/logo-pipe.svg" />
+      pipe
+    </a>
+  </div>
+
+<div class="box flex justify-center items-center" style="height: 100px; width: 150px;">
+    <a href="/prose" class="flex flex-col items-center">
+      <img width="40" src="/logo-prose.svg" />
+      prose
+    </a>
+  </div>
+
+<div class="box flex justify-center items-center" style="height: 100px; width: 150px;">
+    <a href="/feeds" class="flex flex-col items-center">
+      rss-to-email
+    </a>
+  </div>
+</div>
