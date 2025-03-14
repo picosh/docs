@@ -231,7 +231,46 @@ behavior from visiting a site with and without a trailing slash.
 
 # Custom Domains
 
-We have a very easy-to-setup guide on [custom domains](/custom-domains#pgssh).
+Since [pgs.sh](https://pgs.sh) allows the user to configure custom domains per
+project, the `TXT` record format is a little different.
+
+Add a `TXT` record to tell pgs what project is hosted on that domain at the
+subdomain entry `_pgs`.
+
+```
+subdomain.yourcustomdomain.com.         300     IN      CNAME   pgs.sh.
+_pgs.subdomain.yourcustomdomain.com.    300     IN      TXT     "{user}-{project}"
+```
+
+## Example: Top-Level Domain
+
+- Custom domain `erock.io`
+- User `erock`
+- Project `kittens`
+
+Resulting in:
+
+```
+erock.io.         300     IN      CNAME   pgs.sh.
+_pgs.erock.io.    300     IN      TXT     "erock-kittens"
+```
+
+Here's an example of what it looks like inside cloudflare:
+
+![custom domains cloudflare](/custom-domains-cloudflare.png)
+
+## Example: Subdomain
+
+- Custom domain `meow.erock.io`
+- User `erock`
+- Project `kittens`
+
+Resulting in:
+
+```
+meow.erock.io.         300     IN      CNAME   pgs.sh.
+_pgs.meow.erock.io.    300     IN      TXT     "erock-kittens"
+```
 
 # Site customization
 

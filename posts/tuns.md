@@ -5,8 +5,6 @@ keywords: [pico, tuns]
 toc: 1
 ---
 
-An `ngrok` alternative using just SSH.
-
 > NOTICE: This is a premium [pico+](/plus) service
 
 # Features
@@ -15,8 +13,9 @@ An `ngrok` alternative using just SSH.
 - Host public web services on `localhost`
 - Host public tcp services on `localhost`
 - Share your local webserver privately with another user
-- Managed [sish](https://docs.ssi.sh) service
 - Multi-region support
+- Custom domains
+- Managed [sish](https://docs.ssi.sh) service
 
 Using SSH tunnels, we can forward requests to your localhost from https, wss,
 and tcp.
@@ -79,6 +78,33 @@ This includes when a client is using tuns as a ProxyJump:
 ssh -R foobar:22:localhost:22 tuns.sh
 # On the client side
 ssh -J tuns.sh {user}-foobar
+```
+
+# Custom Domains
+
+We require you to set up `CNAME` and `TXT` records for the domain/subdomain you
+would like to use for your forwarded connection. The `CNAME` record must point
+to `tuns.sh`. The TXT record name must be `_sish.customdomain` and contain the
+SSH key fingerprint used for creating the tunnel. This key must also be linked
+to your pico+ account.
+
+You can retrieve your key fingerprint by running:
+
+```
+ssh-keygen -lf ~/.ssh/id_rsa | awk '{print $2}'
+```
+
+Example:
+
+```
+customdomain.example.com.          300     IN      CNAME   tuns.sh.
+_sish.customdomain.example.com     300     IN      TXT     "SHA256:mVPwvezndPv/ARoIadVY98vAC0g+P/5633yTC4d/wXE"
+```
+
+Once set up, you can then create tunnels via your custom domain like this:
+
+```
+ssh -R customdomain.example.com:80:localhost:8000 tuns.sh
 ```
 
 # tunmgr

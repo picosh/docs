@@ -14,7 +14,7 @@ The easiest way to publish blog articles on the web.
 - No install
 - GitHub flavored markdown
 - A managed blog hosted at `https://{user}.prose.sh`
-- [Custom domains](/custom-domains#prosesh)
+- Custom domains
 - Publish posts using [rsync, sftp, or scp](/file-uploads)
 - Blog [analytics](/analytics)
 - Looks great on any device
@@ -325,6 +325,43 @@ We don't mind. Upload a CSS file `_styles.css` with:
 footer {
   display: none;
 }
+```
+
+# Custom Domains
+
+Setting up a custom domain for prose is similar to all other services. First you
+need to create a CNAME record:
+
+```
+CNAME subdomain.yourcustomdomain.com -> prose.sh
+```
+
+Resulting in:
+
+```
+subdomain.yourcustomdomain.com.   300   IN    CNAME   prose.sh.
+```
+
+Next, add a `TXT` record to tell Prose what blog is hosted on that domain at the
+subdomain entry `_prose`
+
+```
+TXT _prose.subdomain.yourcustomdomain.com -> {user}
+```
+
+Where `{user}` is your pico username.
+
+Resulting in:
+
+```
+_prose.subdomain.yourcustomdomain.com.    300   IN    TXT   "erock"
+```
+
+Depending on your DNS, this could take some time to fully switch over. We have
+an endpoint to check whether or not custom domains are setup:
+
+```
+curl -i 'https://prose.sh/check?domain=example.com'
 ```
 
 <hr />
