@@ -19,7 +19,7 @@ The easiest way to deploy static sites on the web.
 - Managed HTTPS for all projects
 - Promotion and rollback support
 - Site [analytics](/analytics)
-- [Custom domains](/custom-domains#pgssh) for projects
+- Custom domains for projects
 - Custom redirects and rewrites
 - Custom headers
 - SPA support
