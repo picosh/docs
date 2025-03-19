@@ -57,6 +57,18 @@ ssh -R dev:80:localhost:8000 tuns.sh
 # now anyone can access it at https://{user}-dev.tuns.sh
 ```
 
+# TUI
+
+We have a TUI viewer to you can see all your active tunnels as well as the
+requests flowing through them.
+
+```bash
+ssh pico.sh
+# -> tuns
+```
+
+[![tuns tui](/tuns-tui.png)](/tuns-tui.png)
+
 # Regions
 
 > tuns.sh is a global service!
