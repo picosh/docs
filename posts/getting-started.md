@@ -20,8 +20,8 @@ To get started, simply use SSH:
 ssh pico.sh
 ```
 
-> Getting an error? Read our FAQ,
-> [why can't I login to pico?](faq#why-cant-i-login-to-pico).
+Getting an error? Read our FAQ,
+[why can't I login to pico?](faq#why-cant-i-login-to-pico).
 
 All we need to create an account is your username. This username will be used
 for all of your service domains. For example, if your username is `glossy`, we
@@ -35,9 +35,9 @@ glossy.pastes.sh
 
 # Next Steps
 
-> After you have created your pico account, we **highly** recommend creating an
-> [API token](/api-token) and keeping it someplace safe. This is how users can
-> recover their account if they lose their SSH private key.
+After you have created your pico account, we **highly** recommend creating an
+[API token](/api-token) and keeping it someplace safe. This is how users can
+recover their account if they lose their SSH private key.
 
 What service did you want to use first?
 
