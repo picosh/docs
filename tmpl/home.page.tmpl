@@ -41,6 +41,10 @@
       </div>
 
       <div class="container-sm">
+        Use our platform entirely using SSH and our TUI.
+      </div>
+
+      <div class="container-sm">
         Read about what motivates us:
         <a href="https://blog.pico.sh/rfc-001-radical-experimentation">RFC-001 radical experimentation</a>
       </div>
@@ -49,6 +53,16 @@
     <div><hr></div>
 
     <article class="features">
+      <div class="box">
+        <h3 class="m-0 p-0 text-lg flex items-center">
+          <span class="logo-md" style="margin-right: 9px; height: 25px;">
+            {{template "logo" "/logo-pgs.svg"}}
+          </span>
+          <a href="/pgs">pages</a>
+        </h3>
+        <div>Host static sites on our global platform using SSH.</div>
+      </div>
+
       <div class="box">
         <h3 class="m-0 p-0 text-lg flex items-center">
           <span class="logo-md" style="margin-right: 9px; height: 25px;">
@@ -62,21 +76,11 @@
       <div class="box">
         <h3 class="m-0 p-0 text-lg flex items-center">
           <span class="logo-md" style="margin-right: 9px; height: 25px;">
-            {{template "logo" "/logo-pgs.svg"}}
-          </span>
-          <a href="/pgs">pages</a>
-        </h3>
-        <div>A static site hosting platform using SSH for site deployments.</div>
-      </div>
-
-      <div class="box">
-        <h3 class="m-0 p-0 text-lg flex items-center">
-          <span class="logo-md" style="margin-right: 9px; height: 25px;">
             {{template "logo" "/logo-pipe.svg"}}
           </span>
           <a href="/pipe">pipe</a>
         </h3>
-        <div>Authenticated *nix pipes using SSH.</div>
+        <div>Stream data between computers using our authenticated *nix pipes using SSH.</div>
       </div>
 
       <div class="box">
@@ -86,21 +90,21 @@
           </span>
           <a href="/prose">prose</a>
         </h3>
-        <div>A blog platform using SSH for content management.</div>
-      </div>
-
-      <div class="box">
-        <h3 class="m-0 p-0 text-lg">
-          <a href="/pastes">pastes</a>
-        </h3>
-        <div>Upload code snippets using rsync, scp, and sftp.</div>
+        <div>Serve your blog using SSH.</div>
       </div>
 
       <div class="box">
         <h3 class="m-0 p-0 text-lg">
           <a href="/feeds">rss-to-email</a>
         </h3>
-        <div>An rss email notification service using SSH.</div>
+        <div>Receive email digests for your RSS feeds using SSH.</div>
+      </div>
+
+      <div class="box">
+        <h3 class="m-0 p-0 text-lg">
+          <a href="/pastes">pastes</a>
+        </h3>
+        <div>Upload code snippets using <code>rsync</code>, <code>scp</code>, and <code>sftp</code>.</div>
       </div>
     </article>
 
@@ -109,6 +113,23 @@
     </div>
 
     <div class="group-2 home-features">
+      <div class="box">
+        <h3 class="text-lg mt-0">Deploy a site with a single command</h3>
+        <div class="flex gap-2 flex-collapse">
+          <div class="flex-1 group">
+            <div>Upload your static site to us:</div>
+            <pre>rsync --delete -rv ./public/ pgs.sh:/mysite/</pre>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="flex-1 group">
+            <div>Now your site is available with TLS handled for you: <strong>https://{user}-mysite.pgs.sh</strong></div>
+            <div>We also automatically handle TLS for your custom domains!</div>
+          </div>
+        </div>
+      </div>
+
       <div class="box">
         <h3 class="text-lg mt-0">Access localhost using https</h3>
         <div class="flex gap-2 flex-collapse">
@@ -124,23 +145,6 @@
 
           <div class="flex-1">
             Now your local dev server is available on the web: <strong>https://{user}-dev.tuns.sh</strong>
-          </div>
-        </div>
-      </div>
-
-      <div class="box">
-        <h3 class="text-lg mt-0">Deploy a site with a single command</h3>
-        <div class="flex gap-2 flex-collapse">
-          <div class="flex-1 group">
-            <div>Upload your static site to us:</div>
-            <pre>rsync -rv ./public/ pgs.sh:/mysite/</pre>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="flex-1 group">
-            <div>Now your site is available with TLS handled for you: <strong>https://{user}-mysite.pgs.sh</strong></div>
-            <div>We also automatically handle TLS for your custom domains!</div>
           </div>
         </div>
       </div>
