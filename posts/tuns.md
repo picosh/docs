@@ -15,6 +15,7 @@ toc: 1
 - Share your local webserver privately with another user
 - Multi-region support
 - Custom domains
+- Alerting for tunnel connect/disconnects
 - Managed [sish](https://docs.ssi.sh) service
 
 Using SSH tunnels, we can forward requests to your localhost from https, wss,
@@ -59,8 +60,7 @@ ssh -R dev:80:localhost:8000 tuns.sh
 
 # TUI
 
-We have a TUI viewer to you can see all your active tunnels as well as the
-requests flowing through them.
+We have a TUI viewer to you can see all your active tunnels for monitoring.
 
 ```bash
 ssh pico.sh
@@ -68,6 +68,13 @@ ssh pico.sh
 ```
 
 [![tuns tui](/tuns-tui.png)](/tuns-tui.png)
+
+# Alerts
+
+We provide notifications for connect and disconnect events using our pico+ RSS
+feed.
+
+You can also see the alerts into our tuns TUI.
 
 # Regions
 
