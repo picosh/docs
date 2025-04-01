@@ -13,14 +13,14 @@ Access to our services requires creating an account using our pico.sh TUI.
 All we need is an SSH keypair. So before you begin, please make sure you have a
 valid SSH keypair or [generate one](/faq#how-do-i-generate-an-ssh-key).
 
-> By signing up to pico, you agree to our [privacy policy](/privacy) and our
-> [terms of service](/ops).
-
 To get started, `ssh` into our TUI console:
 
 ```bash
 ssh pico.sh
 ```
+
+> By signing up to pico, you agree to our [privacy policy](/privacy) and our
+> [terms of service](/ops).
 
 Getting an error? Read our FAQ,
 [why can't I login to pico?](faq#why-cant-i-login-to-pico).
@@ -31,8 +31,9 @@ will create the following domains on your behalf:
 
 ```
 glossy.prose.sh
-glossy.pgs.sh
 glossy.pastes.sh
+glossy-{project}.pgs.sh
+glossy-{tunnel}.tuns.sh
 ```
 
 # Next Steps
