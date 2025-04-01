@@ -92,14 +92,14 @@ func main() {
 						},
 					},
 					{
+						Text: "RSS-to-Email",
+						Href: "/feeds",
+						Page: pager("feeds.md"),
+					},
+					{
 						Text: "Pastes",
 						Href: "/pastes",
 						Page: pager("pastes.md"),
-					},
-					{
-						Text: "RSS-To-Email",
-						Href: "/feeds",
-						Page: pager("feeds.md"),
 					},
 					{
 						Text: "IRC Bouncer",
