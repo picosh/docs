@@ -1,6 +1,6 @@
 ---
 title: pastes
-description: A pastebin for hackers
+description: Upload code snippets using rsync, scp, and sftp
 keywords: [pico, pastes]
 ---
 

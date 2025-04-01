@@ -1,6 +1,6 @@
 ---
 title: rss-to-email
-description: An rss email notification service
+description: Receive email digests for your RSS feeds using SSH
 keywords: [pico, feeds]
 toc: 1
 ---

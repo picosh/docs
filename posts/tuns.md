@@ -1,6 +1,6 @@
 ---
 title: tuns
-description: Host public web services on localhost
+description: Host public web services on localhost using SSH
 keywords: [pico, tuns]
 toc: 1
 ---

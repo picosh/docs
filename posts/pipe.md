@@ -1,6 +1,6 @@
 ---
 title: pipe
-description: Authenticated *nix pipes over ssh
+description: Stream data between computers using our authenticated *nix pipes using SSH
 keywords: [pico, pipe]
 toc: 2
 ---

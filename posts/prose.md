@@ -1,6 +1,6 @@
 ---
 title: prose
-description: A blog platform for hackers
+description: Serve your blog using SSH
 keywords: [pico, prose]
 toc: 2
 ---
