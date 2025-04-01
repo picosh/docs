@@ -1,6 +1,6 @@
 ---
 title: pages
-description: A zero-install static site hosting service for hackers
+description: Host static sites on our global platform using SSH
 keywords: [pico, pgs]
 toc: 2
 ---
@@ -12,7 +12,7 @@ The easiest way to deploy static sites on the web.
 
 # Features
 
-- Use familiar cli tools to fully manage static sites
+- Fully manage static sites using `ssh`
 - Distinct static sites as projects
 - Unlimited projects, created instantly upon upload
 - Deploy using [rsync, sftp, or scp](/file-uploads)
@@ -24,8 +24,8 @@ The easiest way to deploy static sites on the web.
 - Custom headers
 - SPA support
 - Image manipulation API
-- Private projects
 - [Multi-region support](/regions)
+- Private projects
 - [No bandwidth limitations](/faq#are-there-any-bandwidth-limitations)
 
 <iframe width="100%" height="315" src="https://www.youtube.com/embed/sdbQpD2jV0k?si=B0yoV25XIaDqnTvk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
