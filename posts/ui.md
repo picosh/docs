@@ -16,11 +16,10 @@ ssh pico.sh
 
 # SSH CLI
 
-Many of our services have a built-in cli with our `ssh` service:
+Some of our services have a built-in cli with our `ssh` service:
 
 ```bash
-ssh pico.sh help
 ssh pgs.sh help
-ssh prose.sh help
-ssh imgs.sh help
+ssh feeds.pico.sh help
+ssh pipe.pico.sh help
 ```
