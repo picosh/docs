@@ -12,12 +12,12 @@ toc: 1
 - A zero-install developer tool using `ssh`
 - Host public web services on `localhost`
 - Host public tcp services on `localhost`
+- Automatic TLS
 - Custom domains
 - Alerting for tunnel connect/disconnects
 - Per-site [analytics](/analytics)
 - [Multi-region support](/regions)
 - Share your local webserver privately with another user
-- Managed [sish](https://docs.ssi.sh) service
 
 Using SSH tunnels, we can forward requests to your localhost from https, wss,
 and tcp.

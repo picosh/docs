@@ -16,7 +16,8 @@ The easiest way to deploy static sites on the web.
 - Distinct static sites as projects
 - Unlimited projects, created instantly upon upload
 - Deploy using [rsync, sftp, or scp](/file-uploads)
-- Managed HTTPS for all projects
+- Automatic TLS for all projects
+- Github action
 - Promotion and rollback support
 - Site [analytics](/analytics)
 - Custom domains for projects
