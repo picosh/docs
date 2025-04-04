@@ -132,13 +132,13 @@ scp ./authorized_keys pico.sh:/
 ```bash
 ssh pico.sh
 # => Manage Keys
-# Press "n" to add a new pubkey
+# Press "c" to add a new pubkey
 ```
 
 # Are there any bandwidth limitations?
 
 Currently we are not hitting our free egress limit per month through our cloud
-provider. As of **9/2024** we are at around 500GB.
+provider. As of **4/2025** we are at around 800GB.
 
 So until we reach 10TB per month, there are no bandwidth limitations.
 
@@ -156,14 +156,16 @@ We will provide users with their data if they request it via
 
 # How can I delete my account with my content?
 
-You are able to delete your account yourself, but it is a little hidden.
+In order to delete your account you must [contact us](/contact).
 
-```bash
-ssh pico.sh
-# select "Manage keys"
-# Delete all of your keys
-# Confirm delete your account
-```
+# How can I change my username?
+
+The main consideration when changing your username is we do **not** alias your
+old account to your new one. So all your subdomains will instantly change and
+people might get 404s. If you are okay with this outcome then we are more than
+happy to change your username.
+
+In order to change your name you must [contact us](/contact).
 
 # I lost my SSH private key, how can I recover my account?
 
