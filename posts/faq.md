@@ -60,7 +60,7 @@ ssh -o IdentitiesOnly=yes -i ~/.ssh/id_ed25519 pico.sh
 The other is with an SSH config entry (`~/.ssh/config`):
 
 ```bash
-Host pico.sh pgs.sh prose.sh tuns.sh pipe.pico.sh
+Host pico.sh pgs.sh prose.sh tuns.sh pipe.pico.sh pastes.sh feeds.pico.sh
   IdentitiesOnly yes
   IdentityFile ~/.ssh/id_ed25519
 ```
