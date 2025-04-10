@@ -34,7 +34,7 @@ addresses by running `host pgs.sh`.
 
 ```
 subdomain.yourcustomdomain.com.         300     IN      A       129.158.37.104.
-_pgs.subdomain.yourcustomdomain.com.    300     IN      TXT     "{user}-{project}"
+_pgs.subdomain.yourcustomdomain.com.    300     IN      TXT     user-project
 ```
 
 # Can I use an `ALIAS` record instead of `CNAME`?
@@ -43,5 +43,5 @@ Yes, it should work the exact same way.
 
 ```
 subdomain.yourcustomdomain.com.         300     IN      ALIAS   pgs.sh.
-_pgs.subdomain.yourcustomdomain.com.    300     IN      TXT     "{user}-{project}"
+_pgs.subdomain.yourcustomdomain.com.    300     IN      TXT     user-project
 ```
