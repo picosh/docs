@@ -127,9 +127,11 @@ Once set up, you can then create tunnels via your custom domain like this:
 ssh -R customdomain.example.com:80:localhost:8000 tuns.sh
 ```
 
-> NOTICE: Make sure to select the correct (closest) tuns instance. You can find the instance
+> Make sure to select the correct (closest) tuns instance. You can find the instance
 > you're connected to from the connection output from tuns:
+>
 > "You are connected to tuns.sh. The following tunnels are only accessible on this instance."
+>
 > In this case, my CNAME would use tuns.sh
 >
 > You may want to pre-select the region you connect to. Try pinging ash.tuns.sh or nue.tuns.sh
