@@ -7,13 +7,16 @@ API tokens are used for when we cannot leverage SSH pubkey authentication.
 
 Common examples:
 
-- account recovery
-- [connecting to our bouncer](/irc)
-- pico+ rss feed
+- Account recovery
+- [Connecting to our IRC bouncer](/irc)
+- Pico+ rss feed
 
-![pico-token-menu](https://blog.pico.sh/pico-token-menu.png)
+![token-tui](token-tui.png)
 
-- SSH into our [pico TUI](/ui#ssh-tui)
-- Select "Manage Tokens" submenu
-- Type "n" to generate a new token
-- Save token someplace safe
+## Usage
+
+1. SSH into our [pico TUI](/ui#ssh-tui)
+2. Select "tokens" submenu
+3. Type <kbd>c</kbd> to generate a new token
+4. Give it a descriptive name
+5. Copy the generated token string to where you want to use it
