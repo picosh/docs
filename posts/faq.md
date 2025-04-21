@@ -114,7 +114,7 @@ pubkeys on the pico platform.
 ```bash
 rsync pico.sh:/authorized_keys .
 # edit keys (add, remove, edit comments)
-rsync ./authorized_keys pico.sh
+rsync ./authorized_keys pico.sh:/
 ```
 
 > Caveat: as a safety precaution, we will **never** remove the pubkey currently
