@@ -181,7 +181,7 @@ Args:
 
 Now what if you don't have a terminal available? Not a problem! Pipe has a web
 component that works side by side, `pipe-web`. For example, let's start a
-notification `sub` through the terminal like so (not `p` for public, so anyone
+notification `sub` through the terminal like so (note: `p` for public, so anyone
 can send us a notification):
 
 ```bash
