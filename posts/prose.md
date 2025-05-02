@@ -127,7 +127,7 @@ nav:
   - site: https://some.site
 image: og_image.jpg
 card: summary # or summary_large_image
-favicon: favicon.ico
+favicon: /fav.ico # or https://...
 layout: aside # or default
 with_styles: true
 ---
@@ -158,7 +158,16 @@ it will assume the blog's `image` and `card` properties.
 ### `favicon`
 
 This property will change the `favicon` for the blog and posts. Link to an ico
-image.
+or any other image format using a URL (root and root-relative will reference
+your prose images).
+
+It doesn't have to be an `ico`, other images like `png` are also supported.
+
+For example: `/fav.ico` or `https://other.site/favicon.png`
+
+> If referencing a prose image (e.g. `/fav.ico`), do **not** make your filename
+> `favicon.ico` because we do not currently support overwriting the default
+> prose favicon.
 
 ### `layout`
 
@@ -354,8 +363,10 @@ Where `{user}` is your pico username.
 Resulting in:
 
 ```
-_prose.subdomain.yourcustomdomain.com.    300   IN    TXT   "erock"
+_prose.subdomain.yourcustomdomain.com.    300   IN    TXT   erock
 ```
+
+> We are replacing `{user}` token with the username `erock` as an example.
 
 Depending on your DNS, this could take some time to fully switch over. We have
 an endpoint to check whether or not custom domains are setup:
