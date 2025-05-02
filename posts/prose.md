@@ -179,7 +179,7 @@ This property changes the layout of the blog index page. The options are:
 ### `with_styles`
 
 This determines whether we load our default styles onto your blog or not. This
-allows for better customization in conjunction with [_styles.css](/#_styles.css)
+allows for better customization in conjunction with [_styles.css](/#-stylescss)
 which is the user-defined CSS stylesheet that gets served.
 
 ## _styles.css
