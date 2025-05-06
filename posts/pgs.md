@@ -240,7 +240,7 @@ subdomain entry `_pgs`.
 
 ```
 subdomain.yourcustomdomain.com.         300     IN      CNAME   pgs.sh.
-_pgs.subdomain.yourcustomdomain.com.    300     IN      TXT     "{user}-{project}"
+_pgs.subdomain.yourcustomdomain.com.    300     IN      TXT     {user}-{project}
 ```
 
 ## Example: Top-Level Domain
@@ -253,7 +253,7 @@ Resulting in:
 
 ```
 erock.io.         300     IN      CNAME   pgs.sh.
-_pgs.erock.io.    300     IN      TXT     "erock-kittens"
+_pgs.erock.io.    300     IN      TXT     erock-kittens
 ```
 
 Here's an example of what it looks like inside cloudflare:
@@ -270,7 +270,38 @@ Resulting in:
 
 ```
 meow.erock.io.         300     IN      CNAME   pgs.sh.
-_pgs.meow.erock.io.    300     IN      TXT     "erock-kittens"
+_pgs.meow.erock.io.    300     IN      TXT     erock-kittens
+```
+
+Depending on your DNS, this could take some time to fully switch over.
+
+## Debug custom domains
+
+We have an endpoint to check whether or not custom domains are setup:
+
+```
+curl -i 'https://pgs.sh/check?domain=meow.erock.io'
+```
+
+First check the main record:
+
+```bash
+dig meow.erock.io
+
+; <<>> DiG 9.18.36 <<>> meow.erock.io
+;; QUESTION SECTION:
+;meow.erock.io.               IN      A
+
+;; ANSWER SECTION:
+meow.erock.io.        60      IN      A       129.158.37.104
+```
+
+Then check the `TXT` record:
+
+```bash
+dig -t txt +short _pgs.meow.erock.io
+
+erock-kittens
 ```
 
 # Site customization

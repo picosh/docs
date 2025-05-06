@@ -368,11 +368,35 @@ _prose.subdomain.yourcustomdomain.com.    300   IN    TXT   erock
 
 > We are replacing `{user}` token with the username `erock` as an example.
 
-Depending on your DNS, this could take some time to fully switch over. We have
-an endpoint to check whether or not custom domains are setup:
+Depending on your DNS, this could take some time to fully switch over.
 
+## Debug custom domains
+
+We have an endpoint to check whether or not custom domains are setup:
+
+```bash
+curl -i 'https://prose.sh/check?domain=subdomain.yourcustomdomain.com'
 ```
-curl -i 'https://prose.sh/check?domain=example.com'
+
+First check the main record:
+
+```bash
+dig subdomain.yourcustomdomain.com
+
+; <<>> DiG 9.18.36 <<>> subdomain.yourcustomdomain.com
+;; QUESTION SECTION:
+;subdomain.yourcustomdomain.com.               IN      A
+
+;; ANSWER SECTION:
+subdomain.yourcustomdomain.com.        60      IN      A       129.158.37.104
+```
+
+Then check the `TXT` record:
+
+```bash
+dig -t txt +short _prose.subdomain.yourcustomdomain.com
+
+erock
 ```
 
 <hr />

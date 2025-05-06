@@ -140,6 +140,29 @@ You may want to pre-select the region you connect to. Try pinging `ash.tuns.sh`
 or `nue.tuns.sh` to find the instance closest to you (lowest latency), and use
 that for both your SSH connection and CNAME.
 
+## Debug custom domains
+
+First check the main record:
+
+```bash
+dig customdomain.example.com
+
+; <<>> DiG 9.18.36 <<>> customdomain.example.com
+;; QUESTION SECTION:
+;customdomain.example.com.               IN      A
+
+;; ANSWER SECTION:
+customdomain.example.com.        60      IN      A       141.148.85.124
+```
+
+Then check the `TXT` record:
+
+```bash
+dig -t txt +short _sish.customdomain.example.com
+
+SHA256:mVPwvezndPv/ARoIadVY98vAC0g+P/5633yTC4d/wXE
+```
+
 # tunmgr
 
 A tunnel manager for docker services.
