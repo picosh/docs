@@ -29,8 +29,8 @@ to receive email notifications.
 ```
 =: email rss@myemail.com
 =: cron 0 13 * * *
-=> https://blog.pico.sh/rss
-=> https://bower.sh/rss
+https://blog.pico.sh/rss
+https://bower.sh/rss
 ```
 
 Then copy the file to our server
