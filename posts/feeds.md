@@ -85,7 +85,7 @@ Cmd            Desc
 help           this help text
 ls             list feed digest posts with metadata
 rm {filename}  removes feed digest post
-run {filename} runs the feed digest post immediately, ignoring last digest time validation
+run {filename} runs the feed digest post immediately, ignoring cron timer
 ```
 
 # Debugging
