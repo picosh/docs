@@ -15,7 +15,7 @@ Stay up-to-date with all the RSS feeds you love.
 - We try to render all content within the feed as HTML (with ability to disable
   it)
 - Create 1-to-many email digests
-- Set digest interval from `10min` to `30day`
+- Set digest interval using cron format
 - Only receive RSS feed items that haven't already been sent
 
 # Subscribe to feeds
@@ -28,7 +28,7 @@ to receive email notifications.
 
 ```
 =: email rss@myemail.com
-=: digest_interval 1day
+=: cron 0 13 * * *
 => https://blog.pico.sh/rss
 => https://bower.sh/rss
 ```
@@ -41,16 +41,20 @@ rsync daily.txt feeds.pico.sh:/
 scp daily.txt feeds.pico.sh:/
 ```
 
-# Digest interval options
+# cron
+
+Control when a digest is sent using the popular cron format.
+
+See docs for the cron impl we use:
+[adhocore/gronx](https://github.com/adhocore/gronx?tab=readme-ov-file#cron-expression)
+
+Some examples:
 
 ```
-10min
-1hour
-6hour
-12hour
-1day
-7day
-30day
+cron */10 * * * * # every 10 minutes
+cron 0 * * * *    # every hour
+cron 0 13 * * *   # every day at 13:00 utc
+cron 0 13 1 * *   # every first day of the month at 13:00 utc
 ```
 
 # Inline content
@@ -87,7 +91,7 @@ run {filename} runs the feed digest post immediately, ignoring last digest time 
 Sometimes a feed digest post will fail to send an email digest. Here are some
 common reasons:
 
-- Digest interval has not been reach yet
+- Not time to fetch RSS yet
 - All RSS feed entries have already been fetched
 - Feed digest post validation error
 - Requests fail because of network connectivity issues
