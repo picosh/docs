@@ -45,6 +45,8 @@ scp daily.txt feeds.pico.sh:/
 
 Control when a digest is sent using the popular cron format.
 
+> We don't support cron's less than every 5 minutes: `*/5 * * * *`
+
 See docs for the cron impl we use:
 [adhocore/gronx](https://github.com/adhocore/gronx?tab=readme-ov-file#cron-expression)
 
