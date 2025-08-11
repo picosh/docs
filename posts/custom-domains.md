@@ -45,3 +45,31 @@ Yes, it should work the exact same way.
 subdomain.yourcustomdomain.com.         300     IN      ALIAS   pgs.sh.
 _pgs.subdomain.yourcustomdomain.com.    300     IN      TXT     user-project
 ```
+
+# Guides
+
+Here are some guides for known working DNS servers. If you have another DNS
+server working with pico, please submit a [PR](https://pr.pico.sh/r/erock/pico)!
+
+These guides assume we are setting up `pgs.sh` sites with a root domain.
+
+## Cloudflare
+
+Cloudflare support `CNAME` flattening.
+[You can read their docs on it](https://developers.cloudflare.com/dns/cname-flattening/).
+
+```
+CNAME   @     pgs.sh
+TXT     _pgs  user-project
+```
+
+## Namecheap
+
+Namecheap supports `CNAME` flattening through a different mechansim by using the
+`ALIAS` record.
+[You can read their docs on it](https://www.namecheap.com/support/knowledgebase/article.aspx/10128/2237/how-to-create-an-alias-record/).
+
+```
+ALIAS   @     pgs.sh
+TXT     _pgs  user-project
+```

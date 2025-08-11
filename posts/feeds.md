@@ -118,11 +118,11 @@ being sent, then please [contact us](/contact).
 
 We require the user to click a link in their email digest every once in awhile
 in order to keep the feed digest post active. This user requirement plays an
-important role in keeping our rss-to-email service healthy. If we didn't require
-user interaction then we could keep sending an email digest to users that never
-read their digests.
+important role in keeping our rss-to-email service free and healthy. If we
+didn't require user interaction then we could keep sending an email digest to
+users that never read their digests.
 
-This keep-alive interval is subject to change. As of writing this (02/2025) we
+This keep-alive interval is subject to change. As of writing this (08/2025) we
 require the user to click the keep-alive link once every **12 months**.
 
 # Multiple feed digest posts
@@ -148,5 +148,5 @@ the post containing your email address, we no longer have you email address.
 However, you should read our [privacy policy](/privacy) and
 [terms of service](/ops).
 
-Posts are also not accessible by the public and we provide no endpoints to view
-these posts.
+Posts are not accessible to the public and we provide no endpoints to view these
+posts.
