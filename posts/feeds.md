@@ -43,7 +43,8 @@ scp daily.txt feeds.pico.sh:/
 
 # cron
 
-Control when a digest is sent using the popular cron format.
+Control when a digest is sent using the popular cron format. The host server
+runs on the **UTC timezone** so adjust your cron timers accordingly.
 
 > We don't support cron's less than every 5 minutes: `*/5 * * * *`
 
