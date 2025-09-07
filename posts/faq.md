@@ -51,7 +51,12 @@ are more than welcome to join [irc](/irc) and send us a paste of the SSH logs.
 
 # How do I force the correct pico SSH key?
 
-There are two ways, one is when SSHing to us:
+Sometimes your `ssh-agent` can get in the way of which key it wants to send us.
+We accept the first key that is provided to us because our signup flow involves
+accepting any public key presented to us. So you need to make sure you are
+sending us the right key.
+
+Thankfully, there are ssh options to force the correct key. There are two ways, one is when SSHing to us:
 
 ```bash
 ssh -o IdentitiesOnly=yes -i ~/.ssh/id_ed25519 pico.sh
