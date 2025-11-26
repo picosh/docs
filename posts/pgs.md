@@ -309,7 +309,7 @@ erock-kittens
 We have a couple of special files, when uploaded, will change the behavior of
 your site.
 
-## _pgs_ignore
+## \_pgs_ignore
 
 You can upload any file you want to pages, with a few exceptions.
 
@@ -338,7 +338,7 @@ with any comment:
 > first so we recommend uploading it on its own and then upload the rest of your
 > site.
 
-## _redirects
+## \_redirects
 
 We support custom redirects and rewrites via a special file `_redirects`.
 
@@ -416,7 +416,7 @@ Here are some examples:
   If you’re working with proxies, we recommend only publishing HTTPS URLs for
   your visitors to use.
 
-## _headers
+## \_headers
 
 We support custom headers via a special file `_headers`.
 

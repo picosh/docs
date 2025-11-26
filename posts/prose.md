@@ -113,7 +113,7 @@ and try to upload them to prose, the second post will overwrite the first one.
 
 User can change the look-and-feel of their blog by uploading special files.
 
-## _readme.md
+## \_readme.md
 
 This file will allow users to add content above the blog post list, add links to
 their blog landing page, and change blog metadata.
@@ -179,10 +179,10 @@ This property changes the layout of the blog index page. The options are:
 ### `with_styles`
 
 This determines whether we load our default styles onto your blog or not. This
-allows for better customization in conjunction with [_styles.css](/#-stylescss)
+allows for better customization in conjunction with [\_styles.css](/#-stylescss)
 which is the user-defined CSS stylesheet that gets served.
 
-## _styles.css
+## \_styles.css
 
 This will allow users to change the look-and-feel of their blog. This file will
 be the final CSS loaded on the page so it will overwrite whatever styles have
@@ -212,7 +212,7 @@ a file called `barrel.md` then the body element will have:
 <body id="post" class="barrel"></body>
 ```
 
-## _footer.md
+## \_footer.md
 
 This file will be added to the end of every single blog post.
 
@@ -220,7 +220,7 @@ There is nothing that differentiates itself from the rest of the post so it's up
 to you to style it. For convenience we added an `id` to the containing element
 `post-footer`.
 
-## _404.md
+## \_404.md
 
 This file will override the default 404 page when a post cannot be found.
 

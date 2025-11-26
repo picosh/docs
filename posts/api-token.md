@@ -16,7 +16,7 @@ Common examples:
 ## Usage
 
 1. SSH into our [pico TUI](/ui#ssh-tui)
-2. Select "tokens" submenu
-3. Type <kbd>c</kbd> to generate a new token
-4. Give it a descriptive name
-5. Copy the generated token string to where you want to use it
+1. Select "tokens" submenu
+1. Type <kbd>c</kbd> to generate a new token
+1. Give it a descriptive name
+1. Copy the generated token string to where you want to use it

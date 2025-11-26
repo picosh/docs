@@ -292,7 +292,7 @@ and a `tun` interface. To get started, you need to follow a few steps:
    socat -v PIPE udp-recvfrom:5553,fork
    ```
 
-2. SSH into tuns requesting a `tun` interface with the information of where the
+1. SSH into tuns requesting a `tun` interface with the information of where the
    service is running. This needs to be done as root. Replace
    `local-ip-of-machines-main-interface` with the ip address of the main
    interface for proper routing.
@@ -302,14 +302,14 @@ and a `tun` interface. To get started, you need to follow a few steps:
      udp-forward=10000:local-ip-of-machines-main-interface:5553
    ```
 
-3. Bring the tunnel interface up and assign an ip that is link local (also as
+1. Bring the tunnel interface up and assign an ip that is link local (also as
    root):
 
    ```bash
    ip link set tun0 up; ip r a 10.1.0.1 dev tun0
    ```
 
-4. Start a udp client to tuns.sh:10000. Here's one with netcat:
+1. Start a udp client to tuns.sh:10000. Here's one with netcat:
 
    ```bash
    nc -u tuns.sh 10000
@@ -330,7 +330,7 @@ make this work! The `SRC` interface `MAC` is `00:00:00:00:00:01`, while the
    socat -v PIPE udp-recvfrom:5553,fork
    ```
 
-2. SSH into tuns requesting a `tap` interface with the information of where the
+1. SSH into tuns requesting a `tap` interface with the information of where the
    service is running. This needs to be done as root. Replace
    `local-ip-of-machines-main-interface` with the ip address of the main
    interface for proper routing.
@@ -340,7 +340,7 @@ make this work! The `SRC` interface `MAC` is `00:00:00:00:00:01`, while the
      udp-forward=10000:local-ip-of-machines-main-interface:5553
    ```
 
-3. Bring the tunnel interface up and assign an ip that is link local (also as
+1. Bring the tunnel interface up and assign an ip that is link local (also as
    root). You need to set the ARP entry and interface `MAC` as well:
 
    ```bash
@@ -350,7 +350,7 @@ make this work! The `SRC` interface `MAC` is `00:00:00:00:00:01`, while the
    ip neigh add 10.1.0.1 lladdr 00:00:00:00:00:01 dev tap0 nud permanent
    ```
 
-4. Start a udp client to tuns.sh:10000. Here's one with netcat:
+1. Start a udp client to tuns.sh:10000. Here's one with netcat:
 
    ```bash
    nc -u tuns.sh 10000

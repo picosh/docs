@@ -11,7 +11,7 @@ it works is you create two DNS records:
 1. A `CNAME` record to send the traffic to us (or an `A`/`AAAA` if you don't
    have
    [CNAME flattening](https://developers.cloudflare.com/dns/cname-flattening/))
-2. A corresponding `TXT` record which we check to determine what content to
+1. A corresponding `TXT` record which we check to determine what content to
    serve the user.
 
 The first time we receive traffic on the custom domain, a certificate will be

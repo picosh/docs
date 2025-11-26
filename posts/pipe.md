@@ -13,7 +13,7 @@ There can be many publishers and many subscribers on a topic. Further, both pub
 and sub will wait for at least one event to be sent or received on the topic.
 
 [pipe](https://pipe.pico.sh) is a simple and secure way of putting together
-composable directional streams of data, just like a *nix `|` operator!
+composable directional streams of data, just like a \*nix `|` operator!
 
 # Features
 
@@ -40,7 +40,7 @@ composable directional streams of data, just like a *nix `|` operator!
 
 # Examples
 
-For example, maybe you have a *nix pipe you're using on the command line like
+For example, maybe you have a \*nix pipe you're using on the command line like
 so:
 
 ```bash
@@ -143,7 +143,7 @@ Usage: sub <topic> [args...]
 Args:
   -a string
         Comma separated list of pico usernames or ssh-key fingerprints to allow access to a topic
-  -c    Don't send status messages
+  -c    Don\'t send status messages
   -k    Keep the subscription alive even after the publisher has died
   -p    Subscribe to a public topic
 ```
@@ -157,7 +157,7 @@ Args:
   -a string
         Comma separated list of pico usernames or ssh-key fingerprints to allow access to a topic
   -b    Block writes until a subscriber is available (default true)
-  -c    Don't send status messages
+  -c    Don\'t send status messages
   -e    Send an empty message to subs
   -p    Publish message to public topic
   -t duration
@@ -172,7 +172,7 @@ Usage: pipe <topic> [args...]
 Args:
   -a string
         Comma separated list of pico usernames or ssh-key fingerprints to allow access to a topic
-  -c    Don't send status messages
+  -c    Don\'t send status messages
   -p    Pipe to a public topic
   -r    Replay messages to the client that sent it
 ```
