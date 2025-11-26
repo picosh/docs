@@ -234,30 +234,30 @@ below. This example terminal also accepts query params like the following:
 
 ### Parameters
 
-> | name  | type     | data type | description                |
-> | ----- | -------- | --------- | -------------------------- |
-> | topic | required | string    | topic name to subscribe to |
+| name  | type     | data type | description                |
+| ----- | -------- | --------- | -------------------------- |
+| topic | required | string    | topic name to subscribe to |
 
 ### Query Parameters
 
-> | name   | type     | data type | description                                   |
-> | ------ | -------- | --------- | --------------------------------------------- |
-> | status | optional | boolean   | Receive pipe status messages                  |
-> | replay | optional | boolean   | Whether or not to replay message              |
-> | binary | optional | string    | Connect the client as binary                  |
-> | access | optional | string    | Comma separated list of permissible accessors |
+| name   | type     | data type | description                                   |
+| ------ | -------- | --------- | --------------------------------------------- |
+| status | optional | boolean   | Receive pipe status messages                  |
+| replay | optional | boolean   | Whether or not to replay message              |
+| binary | optional | string    | Connect the client as binary                  |
+| access | optional | string    | Comma separated list of permissible accessors |
 
 ### Responses
 
-> | http code | content-type | response            |
-> | --------- | ------------ | ------------------- |
-> | `101`     | `N/A`        | Switching Protocols |
+| http code | content-type | response            |
+| --------- | ------------ | ------------------- |
+| `101`     | `N/A`        | Switching Protocols |
 
 ### Example websocat
 
-> ```bash
-> websocat wss://pipe.pico.sh/socket/test
-> ```
+```bash
+websocat wss://pipe.pico.sh/socket/test
+```
 
 </details>
 
@@ -268,29 +268,30 @@ below. This example terminal also accepts query params like the following:
 
 ### Parameters
 
-> | name  | type     | data type | description                |
-> | ----- | -------- | --------- | -------------------------- |
-> | topic | required | string    | topic name to subscribe to |
+| name  | type     | data type | description                |
+| ----- | -------- | --------- | -------------------------- |
+| topic | required | string    | topic name to subscribe to |
 
 ### Query Parameters
 
-> | name    | type     | data type | description                                         |
-> | ------- | -------- | --------- | --------------------------------------------------- |
-> | persist | optional | boolean   | Persist the subscription after the publisher closes |
-> | access  | optional | string    | Comma separated list of permissible accessors       |
-> | mime    | optional | string    | Content type to return to the client                |
+| name    | type     | data type | description                                                 |
+| ------- | -------- | --------- | ----------------------------------------------------------- |
+| persist | optional | boolean   | Persist the subscription after the publisher closes         |
+| block   | optional | boolean   | Block writes until a subscriber is available (default true) |
+| access  | optional | string    | Comma separated list of permissible accessors               |
+| mime    | optional | string    | Content type to return to the client                        |
 
 ### Responses
 
-> | http code | content-type                                         | response                                        |
-> | --------- | ---------------------------------------------------- | ----------------------------------------------- |
-> | `200`     | `text/plain;charset=UTF-8` or `mime` query parameter | Subscription data. Will hang until a pub occurs |
+| http code | content-type                                         | response                                        |
+| --------- | ---------------------------------------------------- | ----------------------------------------------- |
+| `200`     | `text/plain;charset=UTF-8` or `mime` query parameter | Subscription data. Will hang until a pub occurs |
 
 ### Example cURL
 
-> ```bash
-> curl -vvv https://pipe.pico.sh/topic/test?persist=true
-> ```
+```bash
+curl -vvv https://pipe.pico.sh/topic/test?persist=true
+```
 
 </details>
 
@@ -301,27 +302,27 @@ below. This example terminal also accepts query params like the following:
 
 ### Parameters
 
-> | name  | type     | data type | description                |
-> | ----- | -------- | --------- | -------------------------- |
-> | topic | required | string    | topic name to subscribe to |
+| name  | type     | data type | description                |
+| ----- | -------- | --------- | -------------------------- |
+| topic | required | string    | topic name to subscribe to |
 
 ### Query Parameters
 
-> | name   | type     | data type | description                                   |
-> | ------ | -------- | --------- | --------------------------------------------- |
-> | access | optional | string    | Comma separated list of permissible accessors |
+| name   | type     | data type | description                                   |
+| ------ | -------- | --------- | --------------------------------------------- |
+| access | optional | string    | Comma separated list of permissible accessors |
 
 ### Responses
 
-> | http code | content-type | response            |
-> | --------- | ------------ | ------------------- |
-> | `200`     |              | No content returned |
+| http code | content-type | response            |
+| --------- | ------------ | ------------------- |
+| `200`     |              | No content returned |
 
 ### Example cURL
 
-> ```bash
-> curl -vvvv https://pipe.pico.sh/topic/test -d "hello"
-> ```
+```bash
+curl -vvvv https://pipe.pico.sh/topic/test -d "hello"
+```
 
 </details>
 
@@ -332,29 +333,30 @@ below. This example terminal also accepts query params like the following:
 
 ### Parameters
 
-> | name  | type     | data type | description                |
-> | ----- | -------- | --------- | -------------------------- |
-> | topic | required | string    | topic name to subscribe to |
+| name  | type     | data type | description                |
+| ----- | -------- | --------- | -------------------------- |
+| topic | required | string    | topic name to subscribe to |
 
 ### Query Parameters
 
-> | name    | type     | data type | description                                         |
-> | ------- | -------- | --------- | --------------------------------------------------- |
-> | persist | optional | boolean   | Persist the subscription after the publisher closes |
-> | access  | optional | string    | Comma separated list of permissible accessors       |
-> | mime    | optional | string    | Content type to return to the client                |
+| name    | type     | data type | description                                                 |
+| ------- | -------- | --------- | ----------------------------------------------------------- |
+| persist | optional | boolean   | Persist the subscription after the publisher closes         |
+| block   | optional | boolean   | Block writes until a subscriber is available (default true) |
+| access  | optional | string    | Comma separated list of permissible accessors               |
+| mime    | optional | string    | Content type to return to the client                        |
 
 ### Responses
 
-> | http code | content-type                                         | response                                        |
-> | --------- | ---------------------------------------------------- | ----------------------------------------------- |
-> | `200`     | `text/plain;charset=UTF-8` or `mime` query parameter | Subscription data. Will hang until a pub occurs |
+| http code | content-type                                         | response                                        |
+| --------- | ---------------------------------------------------- | ----------------------------------------------- |
+| `200`     | `text/plain;charset=UTF-8` or `mime` query parameter | Subscription data. Will hang until a pub occurs |
 
 ### Example cURL
 
-> ```bash
-> curl -vvv https://pipe.pico.sh/pubsub/test?persist=true
-> ```
+```bash
+curl -vvv https://pipe.pico.sh/pubsub/test?persist=true
+```
 
 </details>
 
@@ -365,27 +367,27 @@ below. This example terminal also accepts query params like the following:
 
 ### Parameters
 
-> | name  | type     | data type | description                |
-> | ----- | -------- | --------- | -------------------------- |
-> | topic | required | string    | topic name to subscribe to |
+| name  | type     | data type | description                |
+| ----- | -------- | --------- | -------------------------- |
+| topic | required | string    | topic name to subscribe to |
 
 ### Query Parameters
 
-> | name   | type     | data type | description                                   |
-> | ------ | -------- | --------- | --------------------------------------------- |
-> | access | optional | string    | Comma separated list of permissible accessors |
+| name   | type     | data type | description                                   |
+| ------ | -------- | --------- | --------------------------------------------- |
+| access | optional | string    | Comma separated list of permissible accessors |
 
 ### Responses
 
-> | http code | content-type | response            |
-> | --------- | ------------ | ------------------- |
-> | `200`     |              | No content returned |
+| http code | content-type | response            |
+| --------- | ------------ | ------------------- |
+| `200`     |              | No content returned |
 
 ### Example cURL
 
-> ```bash
-> curl -vvvv https://pipe.pico.sh/pubsub/test -d "hello"
-> ```
+```bash
+curl -vvvv https://pipe.pico.sh/pubsub/test -d "hello"
+```
 
 </details>
 
