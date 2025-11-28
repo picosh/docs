@@ -183,7 +183,7 @@ All topics are converted into the following format: `{user}/{topic}`.  Depending
 
 - `pub {topic}` -> owner can access with `sub {topic}` **or** `sub {owner}/{topic}`
 - `pub -a {other} {topic}` -> `other` pico user must access with `sub {owner}/{topic}`
-- `pub -p {topic}` -> anyone can access with `sub public/{topic}`
+- `pub -p {topic}` -> anyone can access with `sub -p {topic}`
 
 # Web Interface
 
