@@ -177,6 +177,14 @@ Args:
   -r    Replay messages to the client that sent it
 ```
 
+# Topic names
+
+All topics are converted into the following format: `{user}/{topic}`.  Depending on how the `pub` is created, it changes how to access the topic.  These rules are created in an effort to make is ergonomic for multiple use cases.
+
+- `pub {topic}` -> owner can access with `sub {topic}` **or** `sub {owner}/{topic}`
+- `pub -a {other} {topic}` -> `other` pico user must access with `sub {owner}/{topic}`
+- `pub -p {topic}` -> anyone can access with `sub public/{topic}`
+
 # Web Interface
 
 Now what if you don't have a terminal available? Not a problem! Pipe has a web
