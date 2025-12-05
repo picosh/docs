@@ -7,6 +7,8 @@ toc: 1
 
 # Why can't I login to pico?
 
+> There are known issues with the `warp` terminal and do **not** officially support it
+
 There are a couple reason why this might be happening. We require a public key
 for authentication to all of our services, so first we need to make sure you
 have a valid SSH keypair and it is being sent to our SSH server.
