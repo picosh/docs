@@ -118,6 +118,11 @@ func main() {
 						Page: pager("custom-domains.md"),
 					},
 					{
+						Text: "Access control",
+						Href: "/access-control",
+						Page: pager("access-control.md"),
+					},
+					{
 						Text: "Images",
 						Href: "/images",
 						Page: pager("images.md"),
