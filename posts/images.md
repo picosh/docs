@@ -4,12 +4,9 @@ description: How image hosting works at pico
 keywords: [pico, images]
 ---
 
-There are two ways to upload images to pico: through [prose.sh](/prose) or
-[pgs.sh](/pgs). They both share similar features to each other, they just serve
-different purposes and have different storage limits.
+There are two ways to upload images to pico: through [prose.sh](/prose) or [pgs.sh](/pgs). They both share similar features to each other, they just serve different purposes and have different storage limits.
 
-> Read our [Code of Content section](/ops#code-of-content-publication) to
-> understand what is and isn't allowed on our platform
+> Read our [Code of Content section](/ops#code-of-content-publication) to understand what is and isn't allowed on our platform
 
 # Features
 
@@ -30,8 +27,7 @@ different purposes and have different storage limits.
 
 # Publish your images with one command
 
-When your image is ready to be published, copy the file to our server with a
-familiar command:
+When your image is ready to be published, copy the file to our server with a familiar command:
 
 ```bash
 rsync *.jpg prose.sh:/
@@ -47,15 +43,11 @@ rsync *.jpg pgs.sh:/imgs
 
 # Web optimized
 
-We do our best to web optimize the images being delivered from pico to users. We
-use [imageproxy](https://github.com/willnorris/imageproxy) to serve images from
-our object store.
+We do our best to web optimize the images being delivered from pico to users. We use [imageproxy](https://github.com/willnorris/imageproxy) to serve images from our object store.
 
-By default, images served from [prose.sh](/prose) are web optimized, meaning we
-strip exif data, convert images to webp, and reduce the quality.
+By default, images served from [prose.sh](/prose) are web optimized, meaning we strip exif data, convert images to webp, and reduce the quality.
 
-We do **not** automatically optimize images from [pgs.sh](/pgs) because we try
-to subscribe to the principle of least surprise.
+We do **not** automatically optimize images from [pgs.sh](/pgs) because we try to subscribe to the principle of least surprise.
 
 # What file types are supported?
 
@@ -69,8 +61,7 @@ svg
 
 # Image manipulation
 
-Our services support an API to manipulate images on-the-fly! Listed below are
-all the supported options:
+Our services support an API to manipulate images on-the-fly! Listed below are all the supported options:
 
 ```md
 [!profile](/profile.jpg/s:500) # downscale width, preserve aspect ratio

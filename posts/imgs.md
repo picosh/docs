@@ -13,9 +13,7 @@ description: A private docker image registry using SSH
 
 # How it works
 
-We leverage web tunnels to open a portal to our private image registry where you
-can access it via `localhost`. This is accomplished by our open source library
-[tunkit](https://github.com/picosh/tunkit).
+We leverage web tunnels to open a portal to our private image registry where you can access it via `localhost`. This is accomplished by our open source library [tunkit](https://github.com/picosh/tunkit).
 
 # Example usage
 
@@ -58,8 +56,7 @@ services:
 
 # GitHub action
 
-Need to use imgs.sh with CI/CD? Just create the SSH tunnel before trying to use
-`docker`. We provide a custom image based on `autossh` to make this easier:
+Need to use imgs.sh with CI/CD? Just create the SSH tunnel before trying to use `docker`. We provide a custom image based on `autossh` to make this easier:
 
 ```yml
 name: build and push docker image

@@ -10,8 +10,7 @@ Access to our services requires creating an account using our pico.sh TUI.
 
 # Create your account with Public-Key Cryptography
 
-All we need is an SSH keypair. So before you begin, please make sure you have a
-valid SSH keypair or [generate one](/faq#how-do-i-generate-an-ssh-key).
+All we need is an SSH keypair. So before you begin, please make sure you have a valid SSH keypair or [generate one](/faq#how-do-i-generate-an-ssh-key).
 
 To get started, `ssh` into our TUI console:
 
@@ -19,15 +18,11 @@ To get started, `ssh` into our TUI console:
 ssh pico.sh
 ```
 
-> By signing up to pico, you agree to our [privacy policy](/privacy) and our
-> [terms of service](/ops).
+> By signing up to pico, you agree to our [privacy policy](/privacy) and our [terms of service](/ops).
 
-Getting an error? Read our FAQ,
-[why can't I login to pico?](faq#why-cant-i-login-to-pico).
+Getting an error? Read our FAQ, [why can't I login to pico?](faq#why-cant-i-login-to-pico).
 
-All we need to create an account is your username. This username will be used
-for all of your service domains. For example, if your username is `glossy`, we
-will create the following domains on your behalf:
+All we need to create an account is your username. This username will be used for all of your service domains. For example, if your username is `glossy`, we will create the following domains on your behalf:
 
 ```
 glossy.prose.sh
@@ -38,9 +33,7 @@ glossy-{tunnel}.tuns.sh
 
 # Next Steps
 
-After you have created your pico account, we **highly** recommend creating an
-[API token](/api-token) and keeping it someplace safe. This is how users can
-recover their account if they lose their SSH private key.
+After you have created your pico account, we **highly** recommend creating an [API token](/api-token) and keeping it someplace safe. This is how users can recover their account if they lose their SSH private key.
 
 What service did you want to use first?
 

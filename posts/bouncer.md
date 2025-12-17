@@ -5,11 +5,9 @@ keywords: [irc, bouncer, soju]
 toc: 1
 ---
 
-> NOTE: For libera.chat you must
-> [ensure you have a libera account.](https://libera.chat/guides/registration)
+> NOTE: For libera.chat you must [ensure you have a libera account.](https://libera.chat/guides/registration)
 
-We are delighted to provide a private soju instance available to all
-[pico+](/plus) users.
+We are delighted to provide a private soju instance available to all [pico+](/plus) users.
 
 # Generate a login token for bouncer
 
@@ -30,8 +28,7 @@ Next you need to pick a client to connect to the bouncer and finish setup:
 
 # SSH App
 
-We integrated senpai into our SSH app. If you have a pico account you can
-connect via:
+We integrated senpai into our SSH app. If you have a pico account you can connect via:
 
 ```bash
 ssh pico.sh
@@ -56,16 +53,14 @@ We provide pico users with a self-hosted version of gamja.
 ![irc-remember-me](https://blog.pico.sh/irc-remember-me.png/x500)
 
 - Click "remember me" (this is important)
-- You'll see an error "Cannot interact with channels and users on the bouncer
-  connection. Did you mean to use a specific network?" that's okay
+- You'll see an error "Cannot interact with channels and users on the bouncer connection. Did you mean to use a specific network?" that's okay
 - Message `BouncerServ` (`/msg BouncerServ help`) to configure the bouncer
 
 Next step is to [connect to libera.chat](#connect-to-libera) section.
 
 # Terminal
 
-Senpai is a modern terminal client coupled pretty tightly to `soju` development
-so it's a great fit for us at pico -- we use it.
+Senpai is a modern terminal client coupled pretty tightly to `soju` development so it's a great fit for us at pico -- we use it.
 
 [senpai (terminal client)](https://git.sr.ht/~delthas/senpai)
 

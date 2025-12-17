@@ -17,15 +17,13 @@ A generic pubsub library written using Go.
 
 # tunmgr
 
-Manage [tuns](https://pico.sh/tuns) tunnels using docker with supervision to
-keep them active.
+Manage [tuns](https://pico.sh/tuns) tunnels using docker with supervision to keep them active.
 
 [Source code](https://github.com/picosh/tunmgr)
 
 # pipemgr
 
-Send docker container logs to [pipe](/pipe) with supervision to keep them
-active.
+Send docker container logs to [pipe](/pipe) with supervision to keep them active.
 
 [Source code](https://github.com/picosh/pipemgr)
 
@@ -55,7 +53,6 @@ A static site generator for pico docs.
 
 # send
 
-SSH wish middleware for sending and receiving files from familiar tools (rsync,
-scp, sftp).
+SSH wish middleware for sending and receiving files from familiar tools (rsync, scp, sftp).
 
 [Source code](https://github.com/picosh/send)

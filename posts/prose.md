@@ -51,8 +51,7 @@ Check out some resources:
 Cya!
 ```
 
-When your post is ready to be published, copy the file to our server with a
-familiar command:
+When your post is ready to be published, copy the file to our server with a familiar command:
 
 ```bash
 rsync ~/blog/* prose.sh:/
@@ -66,14 +65,11 @@ sshfs ~/blog prose.sh:/
 
 > [Read more about uploading files](/file-uploads).
 
-Since we are leveraging tools you already have on your computer, there is
-nothing to install. This provides the convenience of a web app, but from inside
-your terminal!
+Since we are leveraging tools you already have on your computer, there is nothing to install. This provides the convenience of a web app, but from inside your terminal!
 
 # Images
 
-We also support [image uploading](/images). Simply upload your images alongside
-your markdown files and then reference them from root `/`:
+We also support [image uploading](/images). Simply upload your images alongside your markdown files and then reference them from root `/`:
 
 ```md
 ---
@@ -87,27 +83,19 @@ title: hello world!
 rsync ~/blog/*.jpg prose.sh:/
 ```
 
-> All images are uploaded to a [pages](/pgs) site called `prose`. This means
-> that there's an auto-generated project where you can quickly access all your
-> blog images via https://{user}-prose.pgs.sh
+> All images are uploaded to a [pages](/pgs) site called `prose`. This means that there's an auto-generated project where you can quickly access all your blog images via https://{user}-prose.pgs.sh
 
-When you upload an image to prose, we make it web optimized (e.g. strip exif and
-reduce filesize). We also support an
-[image manipulation API](/images#image-manipulation)!
+When you upload an image to prose, we make it web optimized (e.g. strip exif and reduce filesize). We also support an [image manipulation API](/images#image-manipulation)!
 
 # Blog structure
 
-Think of your blog as a flat list of files, similar to how your blog is rendered
-as a flat list of posts.
+Think of your blog as a flat list of files, similar to how your blog is rendered as a flat list of posts.
 
 > All filenames uploaded to prose must be unique.
 
-We do **not** support storing files in different folders. On your local machine,
-you can store files however you like, but once uploaded to us, we lose all
-directory structure information and only keep the filename.
+We do **not** support storing files in different folders. On your local machine, you can store files however you like, but once uploaded to us, we lose all directory structure information and only keep the filename.
 
-For example, if you have two posts in different folders but the same filename
-and try to upload them to prose, the second post will overwrite the first one.
+For example, if you have two posts in different folders but the same filename and try to upload them to prose, the second post will overwrite the first one.
 
 # Blog customization
 
@@ -115,8 +103,7 @@ User can change the look-and-feel of their blog by uploading special files.
 
 ## \_readme.md
 
-This file will allow users to add content above the blog post list, add links to
-their blog landing page, and change blog metadata.
+This file will allow users to add content above the blog post list, add links to their blog landing page, and change blog metadata.
 
 ```md
 ---
@@ -137,8 +124,7 @@ This block will be rendered above the list of blog posts on the index page!
 
 ### `title`
 
-Title changes your blog's name which will show up as the metadata title for the
-blog index page and changes the blog post link back to the main blog page.
+Title changes your blog's name which will show up as the metadata title for the blog index page and changes the blog post link back to the main blog page.
 
 ### `description`
 
@@ -146,28 +132,21 @@ The description is used as the metadata description on the blog page.
 
 ### `nav`
 
-This property sets the navigation links on the blog index page. The `rss` link
-is always appended to the end of this list.
+This property sets the navigation links on the blog index page. The `rss` link is always appended to the end of this list.
 
 ### `image` and `card`
 
-These properties are used for og and image metadata when for when a blog is
-shared. If a blog post does not have its own `image` or `card` properties, then
-it will assume the blog's `image` and `card` properties.
+These properties are used for og and image metadata when for when a blog is shared. If a blog post does not have its own `image` or `card` properties, then it will assume the blog's `image` and `card` properties.
 
 ### `favicon`
 
-This property will change the `favicon` for the blog and posts. Link to an ico
-or any other image format using a URL (root and root-relative will reference
-your prose images).
+This property will change the `favicon` for the blog and posts. Link to an ico or any other image format using a URL (root and root-relative will reference your prose images).
 
 It doesn't have to be an `ico`, other images like `png` are also supported.
 
 For example: `/fav.ico` or `https://other.site/favicon.png`
 
-> If referencing a prose image (e.g. `/fav.ico`), do **not** make your filename
-> `favicon.ico` because we do not currently support overwriting the default
-> prose favicon.
+> If referencing a prose image (e.g. `/fav.ico`), do **not** make your filename `favicon.ico` because we do not currently support overwriting the default prose favicon.
 
 ### `layout`
 
@@ -178,16 +157,11 @@ This property changes the layout of the blog index page. The options are:
 
 ### `with_styles`
 
-This determines whether we load our default styles onto your blog or not. This
-allows for better customization in conjunction with [\_styles.css](/#-stylescss)
-which is the user-defined CSS stylesheet that gets served.
+This determines whether we load our default styles onto your blog or not. This allows for better customization in conjunction with [\_styles.css](/#-stylescss) which is the user-defined CSS stylesheet that gets served.
 
 ## \_styles.css
 
-This will allow users to change the look-and-feel of their blog. This file will
-be the final CSS loaded on the page so it will overwrite whatever styles have
-previously been added. We've also added a couple of convenience id's attached to
-the body element for the blog and post pages.
+This will allow users to change the look-and-feel of their blog. This file will be the final CSS loaded on the page so it will overwrite whatever styles have previously been added. We've also added a couple of convenience id's attached to the body element for the blog and post pages.
 
 ```css
 /* _styles.css */
@@ -205,8 +179,7 @@ footer {}
 article {}
 ```
 
-Further we add the post slug as a class on the `body` element. So if you upload
-a file called `barrel.md` then the body element will have:
+Further we add the post slug as a class on the `body` element. So if you upload a file called `barrel.md` then the body element will have:
 
 ```html
 <body id="post" class="barrel"></body>
@@ -216,9 +189,7 @@ a file called `barrel.md` then the body element will have:
 
 This file will be added to the end of every single blog post.
 
-There is nothing that differentiates itself from the rest of the post so it's up
-to you to style it. For convenience we added an `id` to the containing element
-`post-footer`.
+There is nothing that differentiates itself from the rest of the post so it's up to you to style it. For convenience we added an `id` to the containing element `post-footer`.
 
 ## \_404.md
 
@@ -235,8 +206,7 @@ This page doesn't exist.
 
 # Post customization
 
-We support adding frontmatter to the top of your posts. A frontmatter looks like
-the following:
+We support adding frontmatter to the top of your posts. A frontmatter looks like the following:
 
 ```md
 ---
@@ -263,35 +233,23 @@ Description changes the description metadata for the blog post.
 
 ## `date`
 
-> We **highly** recommend specifying a date because this preserves your actual
-> publish date and not when the database record was created by us.
+> We **highly** recommend specifying a date because this preserves your actual publish date and not when the database record was created by us.
 
-This is the published date. It ought to be in `YYYY-MM-DD` format. If this date
-is set to the future, the post will be unlisted until the date provided is today
-or in the past.
+This is the published date. It ought to be in `YYYY-MM-DD` format. If this date is set to the future, the post will be unlisted until the date provided is today or in the past.
 
 ## `image` and `card`
 
-These properties are used for og and image metadata when for when a blog is
-shared. If a blog post does not have its own `image` or `card` properties, then
-it will assume the blog's `image` and `card` properties.
+These properties are used for og and image metadata when for when a blog is shared. If a blog post does not have its own `image` or `card` properties, then it will assume the blog's `image` and `card` properties.
 
 ## `draft`
 
-This property will change the listing status of a blog post. If `draft: true`
-then the post will be published but unlisted. It will not show up on the blog
-index page or RSS feed for your blog.
+This property will change the listing status of a blog post. If `draft: true` then the post will be published but unlisted. It will not show up on the blog index page or RSS feed for your blog.
 
-However, the post is still publicly accessible! This gives users the ability to
-share posts before "publishing" them.
+However, the post is still publicly accessible! This gives users the ability to share posts before "publishing" them.
 
 ## `toc`
 
-This property adds a table of contents to the blog post based on the headers. If
-set to `false` then no table will be rendered. If set to `true` then table will
-be rendered. If set to an integer greater than `0` then it will set the max
-heading depth to that value. So if set to `2` the table will only render links
-of heading `h1` and `h2`.
+This property adds a table of contents to the blog post based on the headers. If set to `false` then no table will be rendered. If set to `true` then table will be rendered. If set to an integer greater than `0` then it will set the max heading depth to that value. So if set to `2` the table will only render links of heading `h1` and `h2`.
 
 Examples:
 
@@ -307,8 +265,7 @@ toc: 3 # with only h1, h2, and h3 headings
 
 ## `aliases`
 
-This property will redirect all routes listed to this blog post. Primarily used
-for migrating from a different blog platform to prose.
+This property will redirect all routes listed to this blog post. Primarily used for migrating from a different blog platform to prose.
 
 ```md
 ---
@@ -338,8 +295,7 @@ footer {
 
 # Custom Domains
 
-Setting up a custom domain for prose is similar to all other services. First you
-need to create a CNAME record:
+Setting up a custom domain for prose is similar to all other services. First you need to create a CNAME record:
 
 ```
 CNAME subdomain.yourcustomdomain.com -> prose.sh
@@ -351,8 +307,7 @@ Resulting in:
 subdomain.yourcustomdomain.com.   300   IN    CNAME   prose.sh.
 ```
 
-Next, add a `TXT` record to tell Prose what blog is hosted on that domain at the
-subdomain entry `_prose`
+Next, add a `TXT` record to tell Prose what blog is hosted on that domain at the subdomain entry `_prose`
 
 ```
 TXT _prose.subdomain.yourcustomdomain.com -> {user}

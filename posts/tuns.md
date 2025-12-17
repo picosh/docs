@@ -19,8 +19,7 @@ toc: 1
 - [Multi-region support](/regions)
 - Share your local webserver privately with another user
 
-Using SSH tunnels, we can forward requests to your localhost from https, wss,
-and tcp.
+Using SSH tunnels, we can forward requests to your localhost from https, wss, and tcp.
 
 ![Eric connects to sish on the Internet with the command 'ssh -R eric:80:localhost:3000 tuns.sh'. Tony visits 'https://eric.tuns.sh', which connects to sish, and forwards Eric's local server to Tony.](https://docs.ssi.sh/hiw-sish-public.png)
 
@@ -32,16 +31,11 @@ and tcp.
 
 # Use cases
 
-Think of tuns as a developer tool. It is designed for the individual developer
-who is looking to prototype, demo, or otherwise deploy services without the
-overhead of managing a production environment with TLS, HTTP reverse proxy, and
-provisioning cloud infrastructure.
+Think of tuns as a developer tool. It is designed for the individual developer who is looking to prototype, demo, or otherwise deploy services without the overhead of managing a production environment with TLS, HTTP reverse proxy, and provisioning cloud infrastructure.
 
 By using tuns you get automatic and public https for local web services.
 
-Want to prototype a web service without fully deploying it in the cloud? You can
-go from starting a local web service to sharing it with the world using a single
-SSH command.
+Want to prototype a web service without fully deploying it in the cloud? You can go from starting a local web service to sharing it with the world using a single SSH command.
 
 Hosting public web services from your home has never been easier with tuns.
 
@@ -72,8 +66,7 @@ ssh pico.sh
 
 # Alerts
 
-We provide notifications for connect and disconnect events using our pico+ RSS
-feed.
+We provide notifications for connect and disconnect events using our pico+ RSS feed.
 
 You can also see the alerts into our tuns TUI.
 
@@ -81,8 +74,7 @@ You can also see the alerts into our tuns TUI.
 
 > tuns.sh is a global service!
 
-See our [regions page](/regions) to learn more about our geographical service
-coverage.
+See our [regions page](/regions) to learn more about our geographical service coverage.
 
 # User namespace
 
@@ -102,11 +94,7 @@ ssh -J tuns.sh {user}-foobar
 
 # Custom Domains
 
-We require you to set up `CNAME` and `TXT` records for the domain/subdomain you
-would like to use for your forwarded connection. The `CNAME` record must point
-to `tuns.sh`. The TXT record name must be `_sish.customdomain` and contain the
-SSH key fingerprint used for creating the tunnel. This key must also be linked
-to your pico+ account.
+We require you to set up `CNAME` and `TXT` records for the domain/subdomain you would like to use for your forwarded connection. The `CNAME` record must point to `tuns.sh`. The TXT record name must be `_sish.customdomain` and contain the SSH key fingerprint used for creating the tunnel. This key must also be linked to your pico+ account.
 
 You can retrieve your key fingerprint by running:
 
@@ -127,8 +115,7 @@ Once set up, you can then create tunnels via your custom domain like this:
 ssh -R customdomain.example.com:80:localhost:8000 tuns.sh
 ```
 
-Make sure to select the correct (closest) tuns instance. You can find the
-instance you're connected to from the connection output from tuns:
+Make sure to select the correct (closest) tuns instance. You can find the instance you're connected to from the connection output from tuns:
 
 ```
 You are connected to tuns.sh. The following tunnels are only accessible on this instance.
@@ -136,9 +123,7 @@ You are connected to tuns.sh. The following tunnels are only accessible on this 
 
 In this case, my CNAME would use `tuns.sh`
 
-You may want to pre-select the region you connect to. Try pinging `ash.tuns.sh`
-or `nue.tuns.sh` to find the instance closest to you (lowest latency), and use
-that for both your SSH connection and CNAME.
+You may want to pre-select the region you connect to. Try pinging `ash.tuns.sh` or `nue.tuns.sh` to find the instance closest to you (lowest latency), and use that for both your SSH connection and CNAME.
 
 ## Debug custom domains
 
@@ -167,9 +152,7 @@ SHA256:mVPwvezndPv/ARoIadVY98vAC0g+P/5633yTC4d/wXE
 
 A tunnel manager for docker services.
 
-tunmgr automatically set's up tunnels for docker services. It utilizes `Expose`
-ports as well as DNSNames (and the container name/id) to setup different
-permutations of tunnels.
+tunmgr automatically set's up tunnels for docker services. It utilizes `Expose` ports as well as DNSNames (and the container name/id) to setup different permutations of tunnels.
 
 > [source code](https://github.com/picosh/tunmgr)
 
@@ -198,14 +181,11 @@ services:
     command: gunicorn -b 0.0.0.0:80 httpbin:app -k gevent --access-logfile -
 ```
 
-With that docker compose file `httpbin` will be exposed as a public service on
-tuns.
+With that docker compose file `httpbin` will be exposed as a public service on tuns.
 
 # How do I keep a tunnel open?
 
-If you don't want to use `tunmgr` then we highly recommend using a tool like
-[autossh](https://github.com/Autossh/autossh) to automatically restart a SSH
-tunnel if it exits.
+If you don't want to use `tunmgr` then we highly recommend using a tool like [autossh](https://github.com/Autossh/autossh) to automatically restart a SSH tunnel if it exits.
 
 ```bash
 autossh -M 0 -R dev:80:localhost:8000 tuns.sh
@@ -281,29 +261,22 @@ Example usage:
 
 ## Easy (`-o Tunnel=point-to-point`)
 
-Using `tuns`, you have the ability to tunnel UDP traffic without any external
-binary, meaning all using SSH. This makes use of the SSH tunneling functionality
-and a `tun` interface. To get started, you need to follow a few steps:
+Using `tuns`, you have the ability to tunnel UDP traffic without any external binary, meaning all using SSH. This makes use of the SSH tunneling functionality and a `tun` interface. To get started, you need to follow a few steps:
 
-1. Start some UDP service that you want to forward. For example, a simple socat
-   echo server:
+1. Start some UDP service that you want to forward. For example, a simple socat echo server:
 
    ```bash
    socat -v PIPE udp-recvfrom:5553,fork
    ```
 
-1. SSH into tuns requesting a `tun` interface with the information of where the
-   service is running. This needs to be done as root. Replace
-   `local-ip-of-machines-main-interface` with the ip address of the main
-   interface for proper routing.
+1. SSH into tuns requesting a `tun` interface with the information of where the service is running. This needs to be done as root. Replace `local-ip-of-machines-main-interface` with the ip address of the main interface for proper routing.
 
    ```bash
    sudo ssh -w 0:0 tuns.sh \
      udp-forward=10000:local-ip-of-machines-main-interface:5553
    ```
 
-1. Bring the tunnel interface up and assign an ip that is link local (also as
-   root):
+1. Bring the tunnel interface up and assign an ip that is link local (also as root):
 
    ```bash
    ip link set tun0 up; ip r a 10.1.0.1 dev tun0
@@ -317,31 +290,22 @@ and a `tun` interface. To get started, you need to follow a few steps:
 
 ## Hard (`-o Tunnel=ethernet`)
 
-You can also use an ethernet tunnel for UDP forwarding. This makes a `tap`
-interface. This is considered "hard mode" since you'll also need to handle ARP.
-We don't process ARP packets, but we expect you to be an expert to be able to
-make this work! The `SRC` interface `MAC` is `00:00:00:00:00:01`, while the
-`DST` interface `MAC` is `00:00:00:00:00:02`
+You can also use an ethernet tunnel for UDP forwarding. This makes a `tap` interface. This is considered "hard mode" since you'll also need to handle ARP. We don't process ARP packets, but we expect you to be an expert to be able to make this work! The `SRC` interface `MAC` is `00:00:00:00:00:01`, while the `DST` interface `MAC` is `00:00:00:00:00:02`
 
-1. Start some UDP service that you want to forward. For example, a simple socat
-   echo server:
+1. Start some UDP service that you want to forward. For example, a simple socat echo server:
 
    ```bash
    socat -v PIPE udp-recvfrom:5553,fork
    ```
 
-1. SSH into tuns requesting a `tap` interface with the information of where the
-   service is running. This needs to be done as root. Replace
-   `local-ip-of-machines-main-interface` with the ip address of the main
-   interface for proper routing.
+1. SSH into tuns requesting a `tap` interface with the information of where the service is running. This needs to be done as root. Replace `local-ip-of-machines-main-interface` with the ip address of the main interface for proper routing.
 
    ```bash
    sudo ssh -o Tunnel=ethernet -w 0:0 tuns.sh \
      udp-forward=10000:local-ip-of-machines-main-interface:5553
    ```
 
-1. Bring the tunnel interface up and assign an ip that is link local (also as
-   root). You need to set the ARP entry and interface `MAC` as well:
+1. Bring the tunnel interface up and assign an ip that is link local (also as root). You need to set the ARP entry and interface `MAC` as well:
 
    ```bash
    ip link set dev tap0 address 00:00:00:00:00:02

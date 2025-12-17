@@ -39,8 +39,7 @@ echo "foobar" | ssh -T pastes.sh
 
 # How do I set expiration date?
 
-The default expiration date for a paste is 90 days. We do allow the user to set
-the paste to never expire. We also allow custom duration or timestamp.
+The default expiration date for a paste is 90 days. We do allow the user to set the paste to never expire. We also allow custom duration or timestamp.
 
 ```bash
 echo "foobar" | ssh pastes.sh FILENAME expires=false
@@ -52,9 +51,7 @@ echo "foobar" | ssh pastes.sh FILENAME expires=1h
 
 # How do I unlist a paste?
 
-Unlisted in this context means it does not show up on your user landing page
-where we show all of your pastes. In this case, yes, you can "hide" it using a
-pipe command.
+Unlisted in this context means it does not show up on your user landing page where we show all of your pastes. In this case, yes, you can "hide" it using a pipe command.
 
 ```bash
 echo "foobar" | ssh pastes.sh FILENAME hidden=true

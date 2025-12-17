@@ -5,15 +5,9 @@ keywords: [pico, pipe]
 toc: 2
 ---
 
-The simplest authenticated pubsub system. Send messages through user-defined
-topics (aka channels). By default, topics are private to the authenticated ssh
-user. The default pubsub model is multicast with bidirectional blocking, meaning
-a publisher (pub) will send its message to all subscribers (sub) for a topic.
-There can be many publishers and many subscribers on a topic. Further, both pub
-and sub will wait for at least one event to be sent or received on the topic.
+The simplest authenticated pubsub system. Send messages through user-defined topics (aka channels). By default, topics are private to the authenticated ssh user. The default pubsub model is multicast with bidirectional blocking, meaning a publisher (pub) will send its message to all subscribers (sub) for a topic. There can be many publishers and many subscribers on a topic. Further, both pub and sub will wait for at least one event to be sent or received on the topic.
 
-[pipe](https://pipe.pico.sh) is a simple and secure way of putting together
-composable directional streams of data, just like a \*nix `|` operator!
+[pipe](https://pipe.pico.sh) is a simple and secure way of putting together composable directional streams of data, just like a \*nix `|` operator!
 
 # Features
 
@@ -40,18 +34,13 @@ composable directional streams of data, just like a \*nix `|` operator!
 
 # Examples
 
-For example, maybe you have a \*nix pipe you're using on the command line like
-so:
+For example, maybe you have a \*nix pipe you're using on the command line like so:
 
 ```bash
 tail -f -n 0 /tmp/foo.log | grep --line-buffered "ERROR" | xargs -I{} -L1 osascript -e 'display notification "{}" with title "Pipe Notification"'
 ```
 
-This simple one liner will grab new messages from a log file, check if it
-contains `ERROR` and then send a notification for macOS using `AppleScript`.
-This works if you run your app locally, but what if you run the app on a remote
-server? You can use `pipe` to connect remote and local without ever leaving the
-command line!
+This simple one liner will grab new messages from a log file, check if it contains `ERROR` and then send a notification for macOS using `AppleScript`. This works if you run your app locally, but what if you run the app on a remote server? You can use `pipe` to connect remote and local without ever leaving the command line!
 
 On your remote side, you would start a tail and `pub` it to a topic:
 
@@ -65,14 +54,9 @@ On your local side, you would `sub` it to the notify command:
 ssh pipe.pico.sh sub foo.log | grep --line-buffered "ERROR" | xargs -I{} -L1 osascript -e 'display notification "{}" with title "Pipe Notification"'
 ```
 
-The beauty of this method is that the command will wait until the `sub` is
-started before any data is consumed, ensuring you never miss a log line. If you
-didn't want it to wait for a `sub`, you can add `-b=false` (`b` for blocking) to
-the `pub` to prevent it from blocking.
+The beauty of this method is that the command will wait until the `sub` is started before any data is consumed, ensuring you never miss a log line. If you didn't want it to wait for a `sub`, you can add `-b=false` (`b` for blocking) to the `pub` to prevent it from blocking.
 
-Once you stop the `pub` command, the `sub` will also exit. You can also prevent
-this by adding `-k` (`k` for keepalive) to the `sub` command. With both blocking
-disabled and keepalive enabled, the commands would look like so:
+Once you stop the `pub` command, the `sub` will also exit. You can also prevent this by adding `-k` (`k` for keepalive) to the `sub` command. With both blocking disabled and keepalive enabled, the commands would look like so:
 
 Remote:
 
@@ -86,8 +70,7 @@ Local:
 ssh pipe.pico.sh sub -k foo.log | grep --line-buffered "ERROR" | xargs -I{} -L1 osascript -e 'display notification "{}" with title "Pipe Notification"'
 ```
 
-We can combine this with any commands we want and create a pretty robust pub/sub
-system. We can even send full command output through a pipe:
+We can combine this with any commands we want and create a pretty robust pub/sub system. We can even send full command output through a pipe:
 
 ```bash
 ssh pipe.pico.sh sub htop
@@ -97,22 +80,17 @@ ssh pipe.pico.sh sub htop
 htop | ssh pipe.pico.sh pub htop
 ```
 
-Now what if you wanted to have bi-directional IO? That's where our last command
-of Pipe comes in, `pipe`! Pipe allow you to open a bi-directional client on any
-topic. It's fully non-blocking and can allow you to do things like have fully
-interactive chat over pipe. For example, running the following in two terminals:
+Now what if you wanted to have bi-directional IO? That's where our last command of Pipe comes in, `pipe`! Pipe allow you to open a bi-directional client on any topic. It's fully non-blocking and can allow you to do things like have fully interactive chat over pipe. For example, running the following in two terminals:
 
 ```bash
 ssh pipe.pico.sh pipe chat
 ```
 
-Will allow you to type and read messages as if you were sitting at the same
-terminal!
+Will allow you to type and read messages as if you were sitting at the same terminal!
 
 # CLI
 
-We have a bunch of demo examples on the main [pipe](https://pipe.pico.sh)
-website so be sure to check those out.
+We have a bunch of demo examples on the main [pipe](https://pipe.pico.sh) website so be sure to check those out.
 
 ```bash
 ~$ ssh pipe.pico.sh help
@@ -179,7 +157,7 @@ Args:
 
 # Topic names
 
-All topics are converted into the following format: `{user}/{topic}`.  Depending on how the `pub` is created, it changes how to access the topic.  These rules are created in an effort to make is ergonomic for multiple use cases.
+All topics are converted into the following format: `{user}/{topic}`. Depending on how the `pub` is created, it changes how to access the topic. These rules are created in an effort to make is ergonomic for multiple use cases.
 
 - `pub {topic}` -> owner can access with `sub {topic}` **or** `sub {owner}/{topic}`
 - `pub -a {other} {topic}` -> `other` pico user must access with `sub {owner}/{topic}`
@@ -187,27 +165,19 @@ All topics are converted into the following format: `{user}/{topic}`.  Depending
 
 # Web Interface
 
-Now what if you don't have a terminal available? Not a problem! Pipe has a web
-component that works side by side, `pipe-web`. For example, let's start a
-notification `sub` through the terminal like so (note: `p` for public, so anyone
-can send us a notification):
+Now what if you don't have a terminal available? Not a problem! Pipe has a web component that works side by side, `pipe-web`. For example, let's start a notification `sub` through the terminal like so (note: `p` for public, so anyone can send us a notification):
 
 ```bash
 ssh pipe.pico.sh sub -p -k notifications | xargs -I{} -L1 osascript -e 'display notification "{}" with title "Pipe Notification"'
 ```
 
-We can send a `POST` to the `pipe-web` service to send a message onto that topic
-like so:
+We can send a `POST` to the `pipe-web` service to send a message onto that topic like so:
 
 ```bash
 echo "Hello world" | curl -X POST https://pipe.pico.sh/topic/notifications --data-binary @-
 ```
 
-And a notification will pop up! Now it's important to note that this is risky,
-anyone can use a "`p`ublic" topic (on both the terminal or `pipe-web`). We can
-make this less risky by starting the notifications topic with an access list
-set. And if we want `pipe-web` to access it, we need to provide "pico" to the
-access list setting:
+And a notification will pop up! Now it's important to note that this is risky, anyone can use a "`p`ublic" topic (on both the terminal or `pipe-web`). We can make this less risky by starting the notifications topic with an access list set. And if we want `pipe-web` to access it, we need to provide "pico" to the access list setting:
 
 ```bash
 ssh pipe.pico.sh sub -a pico -p -k notifications | xargs -I{} -L1 osascript -e 'display notification "{}" with title "Pipe Notification"'
@@ -215,18 +185,11 @@ ssh pipe.pico.sh sub -a pico -p -k notifications | xargs -I{} -L1 osascript -e '
 
 Now, only `pipe-web` and yourself are able to access this public topic.
 
-`pipe-web` comes with a few caveats, namely all topics need to be public for it
-to work. You can set an access list on the topic, but `pipe-web` is an
-unauthenticated service. Therefore, anyone can send a post request to the
-process.
+`pipe-web` comes with a few caveats, namely all topics need to be public for it to work. You can set an access list on the topic, but `pipe-web` is an unauthenticated service. Therefore, anyone can send a post request to the process.
 
 ## WebSockets
 
-Just like you can use `pipe-web` for `GET` and `POST` requests, you can also use
-WebSockets to get a bi-directional stream to a topic. This functionality is most
-closely related to the `pipe` CLI option. You can try this functionality
-[here](https://antonio-ws-pipe-term.pgs.sh/). The API is simple and documented
-below. This example terminal also accepts query params like the following:
+Just like you can use `pipe-web` for `GET` and `POST` requests, you can also use WebSockets to get a bi-directional stream to a topic. This functionality is most closely related to the `pipe` CLI option. You can try this functionality [here](https://antonio-ws-pipe-term.pgs.sh/). The API is simple and documented below. This example terminal also accepts query params like the following:
 
 | name        | type     | data type | description                         |
 | ----------- | -------- | --------- | ----------------------------------- |
@@ -401,9 +364,7 @@ curl -vvvv https://pipe.pico.sh/pubsub/test -d "hello"
 
 # `pipemgr`
 
-[pipemgr](https://github.com/picosh/pipemgr) is a docker image that will listen
-for logs from other running containers and pipe their logs through a topic
-called `container-drain`.
+[pipemgr](https://github.com/picosh/pipemgr) is a docker image that will listen for logs from other running containers and pipe their logs through a topic called `container-drain`.
 
 ```yaml
 services:
@@ -437,9 +398,7 @@ services:
 
 # Caveats
 
-You must always pipe **something** into pub or else it will block indefinitely
-until the process is killed. However, you can provide a flag to send an empty
-message: `pub topic -e`.
+You must always pipe **something** into pub or else it will block indefinitely until the process is killed. However, you can provide a flag to send an empty message: `pub topic -e`.
 
 # Inspiration
 

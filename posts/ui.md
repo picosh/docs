@@ -5,8 +5,7 @@ description: user interfaces at pico
 
 # SSH TUI
 
-With this TUI you can perform a few basic operations like: create an account,
-manage pubkeys, manage API tokens.
+With this TUI you can perform a few basic operations like: create an account, manage pubkeys, manage API tokens.
 
 To use the TUI just SSH into our site:
 
@@ -27,8 +26,7 @@ ssh pipe.pico.sh help
 
 # pico.sh CLI
 
-The TUI also comes with a CLI for some commands where it makes sense to print to
-stdout.
+The TUI also comes with a CLI for some commands where it makes sense to print to stdout.
 
 ```
 Commands: [help, user, logs, chat]
@@ -39,8 +37,7 @@ chat - IRC chat (must enable pty with `-t` to the SSH command)
 not-found - return all status 404 requests for a host (hostname.com [year|month])
 ```
 
-For example, if you want to drop directly into our chat app without going
-through the tui:
+For example, if you want to drop directly into our chat app without going through the tui:
 
 ```
 ssh pico.sh -t chat

@@ -3,11 +3,9 @@ title: Host Keys
 description: the public keys to our ssh apps
 ---
 
-Here's a list of our host keys by service, use these to confirm the server you
-are connect to is legitimate.
+Here's a list of our host keys by service, use these to confirm the server you are connect to is legitimate.
 
-You can add the following ssh key entries to your `~/.ssh/known_hosts` file to
-avoid manually verifying pico hosts:
+You can add the following ssh key entries to your `~/.ssh/known_hosts` file to avoid manually verifying pico hosts:
 
 ```
 pico.sh ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDhNdE5o9C6OUrlmxyzxQONng2sLbmqIuxXAw9m2gSLL

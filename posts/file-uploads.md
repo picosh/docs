@@ -5,13 +5,11 @@ keywords: [pico, file, upload, download]
 toc: true
 ---
 
-All of our services require users to send us files in order to manage content.
-Read the [How it Works](/how-it-works) for an under-the-hood, technical summary.
+All of our services require users to send us files in order to manage content. Read the [How it Works](/how-it-works) for an under-the-hood, technical summary.
 
 # How do I upload files?
 
-Unless otherwise specified, all our services support the following ways to
-upload files.
+Unless otherwise specified, all our services support the following ways to upload files.
 
 ## rsync
 
@@ -27,9 +25,7 @@ rsync -rv public/ {service}:/site/
 
 ### What rsync options are supported?
 
-Because in our Go SSH server we re-implement `rsync`, many options are currently
-not supported. For example, `--dry-run` is not supported. At this time, the only
-options we supported are the following:
+Because in our Go SSH server we re-implement `rsync`, many options are currently not supported. For example, `--dry-run` is not supported. At this time, the only options we supported are the following:
 
 - `-r`
 - `-v`
@@ -37,8 +33,7 @@ options we supported are the following:
 
 ## scp
 
-There are two versions of `scp`, depending on your openssh version. Anything
-`< v9.0` used "legacy scp." Anything `>= v9.0` uses `sftp`.
+There are two versions of `scp`, depending on your openssh version. Anything `< v9.0` used "legacy scp." Anything `>= v9.0` uses `sftp`.
 
 ```bash
 scp hello-world.md {service}:/
@@ -71,9 +66,7 @@ echo 'put hello-world.md' | sftp {service}
 
 Requirement: [sshfs](https://github.com/libfuse/sshfs)
 
-`sshfs` will allow users to mount their blog and sites like any other drive. So
-you'll be able to view, edit, create, remove, and move folders and files like a
-normal filesystem!
+`sshfs` will allow users to mount their blog and sites like any other drive. So you'll be able to view, edit, create, remove, and move folders and files like a normal filesystem!
 
 Some use cases we think are impactful:
 
@@ -125,15 +118,11 @@ nvim tmpl/base.html
 # changes are published live!
 ```
 
-So what's the downside? Well it's a little slower than a hard drive on your
-machine. We are still experimenting with the technology so quirks or bugs might
-come up. We would love to get your feedback.
+So what's the downside? Well it's a little slower than a hard drive on your machine. We are still experimenting with the technology so quirks or bugs might come up. We would love to get your feedback.
 
 # How do I update files?
 
-Just send us the files you want to update. With [pgs.sh](/pgs) you can upload
-single files to projects, but we also support "deploying" static sites with
-[promotion and rollback](/pgs#project-promotion-and-rollback).
+Just send us the files you want to update. With [pgs.sh](/pgs) you can upload single files to projects, but we also support "deploying" static sites with [promotion and rollback](/pgs#project-promotion-and-rollback).
 
 # How do I delete files?
 
@@ -148,8 +137,7 @@ You could also mount our services via `sshfs` and then delete it that way.
 
 # How do I download files?
 
-Using the same tools described [here](#how-do-i-upload-files), just reverse the
-order of `src` and `dest`!
+Using the same tools described [here](#how-do-i-upload-files), just reverse the order of `src` and `dest`!
 
 ```bash
 rsync prose.sh:/ .

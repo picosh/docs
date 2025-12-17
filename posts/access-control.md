@@ -5,17 +5,17 @@ keywords: [authentication, authorization, access, ssh, certificates]
 toc: 2
 ---
 
-The primary way to access pico services is through SSH keypair authentication.  When you create an account, we record the public key you provided which then allows you to access all of our services.  This passwordless flow is familiar to most developers and ergonomic.  When you add a normal pubkey in the pico.sh TUI, this grants admin access to all services.  For a single-user account, this mostly works fine.  
+The primary way to access pico services is through SSH keypair authentication. When you create an account, we record the public key you provided which then allows you to access all of our services. This passwordless flow is familiar to most developers and ergonomic. When you add a normal pubkey in the pico.sh TUI, this grants admin access to all services. For a single-user account, this mostly works fine.
 
 # SSH Certificates
 
-We also want to enable secure workflows where people might not want every machine to have admin access to their pico account.  Further, we also want to enable teams to use our services without it being a security burden for the account admins.
+We also want to enable secure workflows where people might not want every machine to have admin access to their pico account. Further, we also want to enable teams to use our services without it being a security burden for the account admins.
 
 This is why we also support SSH certificates for authentication and with it we provide more granular access control.
 
 > See our original RFC: https://pico.prose.sh/rfc-007-access-control
 
-All an account admin has to do in order to enable SSH certificates for access control is to add their host CA pubkey to the list of pubkeys authorized to access their account in the pico TUI.  After that, they can sign as many pubkeys as they want and with:
+All an account admin has to do in order to enable SSH certificates for access control is to add their host CA pubkey to the list of pubkeys authorized to access their account in the pico TUI. After that, they can sign as many pubkeys as they want and with:
 
 - Access to specific services
 - Expiration dates

@@ -25,6 +25,4 @@ Service Locations:
 | object store  | `us`       |
 | database      | `us`       |
 
-We are closely monitoring demand for more regions at pico. Our goal is to
-provide excellent service latency for all users. Feel free to
-[contact us](/contact) with recommendations on new locations.
+We are closely monitoring demand for more regions at pico. Our goal is to provide excellent service latency for all users. Feel free to [contact us](/contact) with recommendations on new locations.

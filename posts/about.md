@@ -9,19 +9,15 @@ There are only two core team members at **pico.sh LLC**:
 - [Eric Bower](https://bower.sh)
 - [Antonio Mika](https://antoniomika.me)
 
-We are two software engineers who love experimenting with new technologies.
-Think of pico.sh as a hacker lab for us to bring new ideas to life.
+We are two software engineers who love experimenting with new technologies. Think of pico.sh as a hacker lab for us to bring new ideas to life.
 
-While we are the core team members, we also have to acknowledge the larger
-community. Without whom we would not be so energized to build tools and
-services.
+While we are the core team members, we also have to acknowledge the larger community. Without whom we would not be so energized to build tools and services.
 
 Email us at [hello@pico.sh](mailto:hello@pico.sh) with any questions.
 
 # Acknowledgments
 
-In particular we would like to thank the following communities and projects for
-inspiring us. We are standing on the shoulders of giants:
+In particular we would like to thank the following communities and projects for inspiring us. We are standing on the shoulders of giants:
 
 - [Go](https://go.dev)
 - [postgresql](https://www.postgresql.org/)
