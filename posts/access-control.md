@@ -41,10 +41,15 @@ ssh-keygen -s ./ca_user_ed25519 \
            -V +52w \ # valid for 1 year
            alice.pub
 
-# admin sends alice-cert.pub to alice and then they can use their keypair
-# note: you don't normally need to provide the `-o CertificateFile=` since ssh will find it automatically
-# but we wanted to include for completeness
-rsync -e "ssh -i ./alice -o CertificateFile=./alice-cert.pub" -rv ./public/ pgs:/site/
+# admin sends alice-cert.pub to alice and then they can use their keypair!
+
+# note: for pico.sh and pipe.pico.sh you need to provide the `-o CertificateFile=`
+#  because those services permit non-registered users and your ssh-agent will supply your base keypair
+#  first instead of your certified pubkey and those services accept the first key presented.
+# we recommend adding these opts to your ssh_config
+ssh -o IdentitiesOnly=yes -o CertificateFile=./alice-cert.pub -i ./alice pico.sh
+
+rsync -e "ssh -i ./alice" -rv ./public/ pgs:/site/
 ```
 
 Only an `admin` in `principals` has full access to pico account management and the pico.sh TUI.
