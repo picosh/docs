@@ -17,12 +17,11 @@ jobs:
       - name: build docs site
         run: make ssg
       - name: publish to pgs
-        uses: picosh/pgs-action@v3
+        uses: picosh/pgs-action@v5
         with:
-          user: pico
           key: ${{ secrets.PRIVATE_KEY }}
+          cert_pubkey: ${{ secrets.CERT_PUBKEY }}
           src: "./public/"
           project: "docs-${{ steps.vars.outputs.sha_short }}"
           promote: "docs-prod"
           retain: "docs-"
-          retain_num: 1
