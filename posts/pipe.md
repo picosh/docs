@@ -201,7 +201,7 @@ Just like you can use `pipe-web` for `GET` and `POST` requests, you can also use
 ## Open a pipe
 
 <details>
- <summary><code>GET</code> <code><b>/socket/:topic</b></code> open a pipe to a topic (with upgrade)</summary>
+ <summary><code>GET</code> <code><b>/pipe/:topic</b></code> open a pipe to a topic (with upgrade)</summary>
 
 ### Parameters
 
@@ -227,7 +227,7 @@ Just like you can use `pipe-web` for `GET` and `POST` requests, you can also use
 ### Example websocat
 
 ```bash
-websocat wss://pipe.pico.sh/socket/test
+websocat wss://pipe.pico.sh/pipe/test
 ```
 
 </details>
