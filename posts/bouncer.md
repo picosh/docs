@@ -106,9 +106,9 @@ Using:
 ## Join a network
 
 ```
-network create -addr irc.libera.chat -nick <user> -enabled false
-sasl set-plain -network libera <user> <sasl-pass>
-network update libera -enabled true
+network create -addr irc.libera.chat -nick <network_nick> -enabled false
+sasl set-plain -network irc.libera.chat <sasl-user> <sasl-pass>
+network update irc.libera.chat -enabled true
 ```
 
 ## Join pico
