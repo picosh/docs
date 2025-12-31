@@ -66,8 +66,6 @@ ssh -R 0:5432:localhost:5432 tuns.sh
 # → tuns.sh:{assigned-port}
 ```
 
-For deeper configuration and advanced usage, see the [sish docs](https://docs.ssi.sh).
-
 # How is tuns different?
 
 |                       | tuns                                              | ngrok                    | Cloudflare Tunnels            |
@@ -82,6 +80,11 @@ For deeper configuration and advanced usage, see the [sish docs](https://docs.ss
 | **Open source**       | Yes ([sish](https://github.com/antoniomika/sish)) | No                       | No                            |
 
 If you already use SSH, tuns gets you tunneling with zero setup. No binary to install, no token to configure, no new account to create.
+
+<div class="flex flex-col items-center justify-center my-4">
+  <p>For deeper configuration and advanced usage:</p>
+  <a href="https://docs.ssi.sh" class="btn-link">Read the sish docs</a>
+</div>
 
 # TUI
 
