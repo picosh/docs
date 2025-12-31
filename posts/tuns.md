@@ -7,19 +7,31 @@ toc: 1
 
 > NOTICE: This is a premium [pico+](/plus) service
 
-# Features
+**Share your localhost with the world in one ssh command.**
 
-- A zero-install developer tool using `ssh`
-- Host public web services on `localhost`
-- Host public tcp services on `localhost`
-- Automatic TLS
-- Custom domains
-- Alerting for tunnel connect/disconnects
-- Per-site [analytics](/analytics)
-- [Multi-region support](/regions)
-- Share your local webserver privately with another user
+```bash
+ssh -R dev:80:localhost:3000 tuns.sh
+# Your local server is now live at https://{user}-dev.tuns.sh
+```
 
-Using SSH tunnels, we can forward requests to your localhost from https, wss, and tcp.
+No installs. No configuration. No cloud deployment. Just SSH.
+
+# Why tuns?
+
+**Skip the deployment dance.** You're building something locally and need to share it -- with a client, a teammate, or a webhook. Normally you'd have to deploy to staging, configure DNS, set up TLS, and wait. With tuns, you run one command and you're live.
+
+**Zero infrastructure overhead.** No nginx configs. No Let's Encrypt certificates. No cloud VMs. Your laptop is the server; tuns handles the rest.
+
+**Works everywhere SSH works.** If you can SSH, you can use tuns. No CLI to install, no daemon to run, no firewall rules to configure.
+
+## What can you do with it?
+
+- **Demo a prototype** to a client without deploying to production
+- **Test webhooks** from services like Stripe, GitHub, or Twilio against your local server
+- **Collaborate in real-time** by sharing your dev environment with a teammate
+- **Host services from home** without exposing your network or configuring port forwarding
+- **Debug mobile apps** against your local API
+- **Run integration tests** against external services that need to call back to you
 
 ![Eric connects to sish on the Internet with the command 'ssh -R eric:80:localhost:3000 tuns.sh'. Tony visits 'https://eric.tuns.sh', which connects to sish, and forwards Eric's local server to Tony.](https://docs.ssi.sh/hiw-sish-public.png)
 
@@ -29,29 +41,30 @@ Using SSH tunnels, we can forward requests to your localhost from https, wss, an
 
 > [tuns demo](https://www.youtube.com/watch?v=wZHiuR9RqGw)
 
-# Use cases
+# Features
 
-Think of tuns as a developer tool. It is designed for the individual developer who is looking to prototype, demo, or otherwise deploy services without the overhead of managing a production environment with TLS, HTTP reverse proxy, and provisioning cloud infrastructure.
+- **Zero install** -- uses `ssh`, which you already have
+- **Automatic HTTPS** -- TLS certificates handled for you
+- **Custom domains** -- use your own domain with simple DNS setup
+- **HTTP, WSS, and TCP tunnels** -- not just web traffic
+- **[Multi-region support](/regions)** -- global edge locations for low latency
+- **[Per-site analytics](/analytics)** -- see who's accessing your tunnels
+- **Connection alerts** -- get notified when tunnels connect or disconnect
+- **Private sharing** -- share your local server with specific users only
 
-By using tuns you get automatic and public https for local web services.
-
-Want to prototype a web service without fully deploying it in the cloud? You can go from starting a local web service to sharing it with the world using a single SSH command.
-
-Hosting public web services from your home has never been easier with tuns.
-
-# Docs
-
-We manage a completely separate doc site for all things related to `sish`:
-
-- [Read the sish docs](https://docs.ssi.sh)
-
-# Example Usage
+# Quick start
 
 ```bash
-# if you have a local webserver on localhost:8000:
+# Expose a local web server on port 8000
 ssh -R dev:80:localhost:8000 tuns.sh
-# now anyone can access it at https://{user}-dev.tuns.sh
+# → https://{user}-dev.tuns.sh
+
+# Expose a TCP service (e.g., database, game server)
+ssh -R 0:5432:localhost:5432 tuns.sh
+# → tuns.sh:{assigned-port}
 ```
+
+For deeper configuration and advanced usage, see the [sish docs](https://docs.ssi.sh).
 
 # TUI
 
