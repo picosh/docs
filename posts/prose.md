@@ -5,25 +5,32 @@ keywords: [pico, prose]
 toc: 2
 ---
 
-The easiest way to publish blog articles on the web.
+Write markdown. Pipe it to the server. You're live.
+
+No static site generators. No build step. No deploy pipeline. No YAML configs. Just `rsync` your posts and we handle the rest.
 
 > prose.sh is a free service
 
+# Why prose over self-hosting?
+
+You know how to set up a blog. You've done it before -- Hugo, Jekyll, Astro, whatever's trending this month. But then comes the maintenance: updating dependencies, fixing broken builds, renewing certs, debugging why your CI suddenly fails.
+
+`prose.sh` gives you the same control you'd have self-hosting, minus the operational burden. Your content stays in plain markdown files on your machine. You own your workflow. We just serve it.
+
 # Features
 
-- No install
-- GitHub flavored markdown
-- A managed blog hosted at `https://{user}.prose.sh`
-- Custom domains
-- Publish posts using [rsync, sftp, or scp](/file-uploads)
-- Blog [analytics](/analytics)
-- Looks great on any device
-- Bring your own editor
-- Public-key based authentication
-- No ads, zero browser-based tracking
-- No javascript
-- Subscriptions with RSS
-- Blog customization with metafiles
+| Feature                                                        | What it means for you                                       |
+| -------------------------------------------------------------- | ----------------------------------------------------------- |
+| **Zero dependencies**                                          | If you have `ssh`, you're ready                             |
+| **Your editor, your workflow**                                 | vim, emacs, vscode -- write where you're comfortable        |
+| **Instant publishing**                                         | `rsync ~/blog/* prose.sh:/` and you're live                 |
+| **SSH key auth**                                               | No passwords, no accounts to manage                         |
+| **Custom domains**                                             | Point your DNS and go                                       |
+| **[Site analytics](/analytics)**                               | Privacy-respecting traffic insights, no third-party scripts |
+| **No JavaScript**                                              | Fast, accessible, works everywhere                          |
+| **RSS out of the box**                                         | Readers can subscribe immediately                           |
+| **[GitHub flavored markdown](https://github.github.com/gfm/)** | Write what you already know                                 |
+| **Blog customization**                                         | Tweak layout, styles, and metadata with simple files        |
 
 Check out the [discovery page](https://prose.sh) on prose.
 
