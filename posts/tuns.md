@@ -43,14 +43,16 @@ No installs. No configuration. No cloud deployment. Just SSH.
 
 # Features
 
-- **Zero install** -- uses `ssh`, which you already have
-- **Automatic HTTPS** -- TLS certificates handled for you
-- **Custom domains** -- use your own domain with simple DNS setup
-- **HTTP, WSS, and TCP tunnels** -- not just web traffic
-- **[Multi-region support](/regions)** -- global edge locations for low latency
-- **[Per-site analytics](/analytics)** -- see who's accessing your tunnels
-- **Connection alerts** -- get notified when tunnels connect or disconnect
-- **Private sharing** -- share your local server with specific users only
+| Feature                              | What it means for you                                   |
+| ------------------------------------ | ------------------------------------------------------- |
+| **Zero install**                     | Uses `ssh`, which you already have                      |
+| **Automatic HTTPS**                  | TLS certificates handled for you                        |
+| **Custom domains**                   | Use your own domain with simple DNS setup               |
+| **HTTP, WSS, and TCP tunnels**       | Not just web traffic                                    |
+| **[Multi-region support](/regions)** | Global edge locations for low latency                   |
+| **[Per-site analytics](/analytics)** | See who's accessing your tunnels                        |
+| **Connection alerts**                | Get notified via RSS when tunnels connect or disconnect |
+| **Private sharing**                  | Share your local server with specific users only        |
 
 # Quick start
 
@@ -65,6 +67,21 @@ ssh -R 0:5432:localhost:5432 tuns.sh
 ```
 
 For deeper configuration and advanced usage, see the [sish docs](https://docs.ssi.sh).
+
+# How is tuns different?
+
+|                       | tuns                                              | ngrok                    | Cloudflare Tunnels            |
+| --------------------- | ------------------------------------------------- | ------------------------ | ----------------------------- |
+| **Install**           | None (uses ssh)                                   | Requires CLI             | Requires CLI                  |
+| **Auth**              | SSH keys you already have                         | Separate account + token | Cloudflare account + token    |
+| **Pricing**           | Included with pico+                               | Free tier + paid plans   | Free (with Cloudflare DNS)    |
+| **TCP tunnels**       | Yes                                               | Paid only                | Yes                           |
+| **Custom domains**    | Yes (via DNS)                                     | Paid only                | Cloudflare DNS only           |
+| **Connection alerts** | Yes (via RSS)                                     | Paid only                | No                            |
+| **Site analytics**    | Yes                                               | Paid only                | Requires Cloudflare dashboard |
+| **Open source**       | Yes ([sish](https://github.com/antoniomika/sish)) | No                       | No                            |
+
+If you already use SSH, tuns gets you tunneling with zero setup. No binary to install, no token to configure, no new account to create.
 
 # TUI
 
