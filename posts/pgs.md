@@ -41,10 +41,6 @@ That's the entire workflow. Your SSH key is your identity, and every deploy is i
 | **[No bandwidth limits](/faq#are-there-any-bandwidth-limitations)** | Predictable pricing without surprise overages               |
 | **[Image manipulation API](/images)**                               | Resize, crop, and transform images on-the-fly               |
 
-<iframe width="100%" height="315" src="https://www.youtube.com/embed/sdbQpD2jV0k?si=B0yoV25XIaDqnTvk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-> [pgs demo](https://www.youtube.com/watch?v=sdbQpD2jV0k)
-
 # Promotion and rollback
 
 Additionally you can setup a pipeline for promotion and rollbacks, which will instantly update your project.
@@ -64,6 +60,8 @@ This command will create a symbolic link from `project-prod` to `project-d0131d4
 Since we are just using `rsync` for static site deployments, all you need is a way to run that command in a CI environment.
 
 We also built a [github action](https://github.com/picosh/pgs-action) that handles all the logic for uploading to `pgs` which includes support for promotions and static site retention.
+
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/sdbQpD2jV0k?si=B0yoV25XIaDqnTvk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 # CLI Reference
 

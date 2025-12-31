@@ -35,12 +35,6 @@ No installs. No configuration. No cloud deployment. Just SSH.
 
 ![Eric connects to sish on the Internet with the command 'ssh -R eric:80:localhost:3000 tuns.sh'. Tony visits 'https://eric.tuns.sh', which connects to sish, and forwards Eric's local server to Tony.](https://docs.ssi.sh/hiw-sish-public.png)
 
-## Demo
-
-<iframe width="100%" height="315" src="https://www.youtube.com/embed/wZHiuR9RqGw?si=AJLBbg5jc8ET0lvB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-> [tuns demo](https://www.youtube.com/watch?v=wZHiuR9RqGw)
-
 # Features
 
 | Feature                              | What it means for you                                   |
@@ -78,6 +72,8 @@ ssh -R 0:5432:localhost:5432 tuns.sh
 | **Connection alerts** | Yes (via RSS)                                     | Paid only                | No                            |
 | **Site analytics**    | Yes                                               | Paid only                | Requires Cloudflare dashboard |
 | **Open source**       | Yes ([sish](https://github.com/antoniomika/sish)) | No                       | No                            |
+
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/wZHiuR9RqGw?si=AJLBbg5jc8ET0lvB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 If you already use SSH, tuns gets you tunneling with zero setup. No binary to install, no token to configure, no new account to create.
 
