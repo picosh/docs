@@ -17,12 +17,14 @@ That's it. Private and authenticated by default.
 
 # Features
 
-- **Works on any machine with SSH** — no installation, no dependencies
-- **Your SSH key is your credential** — no API keys to manage or rotate
-- **Private by default** — topics are only accessible to you unless you opt-in to sharing
-- **Public topics when you need them** — share with specific users or make fully public
-- **Primitives that compose** — read (`sub`), write (`pub`), or both (`pipe`)
-- **Multicast built-in** — many publishers, many subscribers, just works
+| Feature                        | What it means for you                               |
+| ------------------------------ | --------------------------------------------------- |
+| **Works on any machine**       | No installation, no dependencies—just SSH           |
+| **SSH key is your credential** | No API keys to manage or rotate                     |
+| **Private by default**         | Topics are only accessible to you unless you opt-in |
+| **Public topics**              | Share with specific users or make fully public      |
+| **Primitives that compose**    | Read (`sub`), write (`pub`), or both (`pipe`)       |
+| **Multicast built-in**         | Many publishers, many subscribers, just works       |
 
 # Examples
 
