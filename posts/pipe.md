@@ -1,158 +1,177 @@
 ---
 title: pipe
-description: Stream data between computers using our authenticated *nix pipes using SSH
+description: PubSub without the infrastructure.
 keywords: [pico, pipe]
 toc: 2
 ---
 
-The simplest authenticated pubsub system. Send messages through user-defined topics (aka channels). By default, topics are private to the authenticated ssh user. The default pubsub model is multicast with bidirectional blocking, meaning a publisher (pub) will send its message to all subscribers (sub) for a topic. There can be many publishers and many subscribers on a topic. Further, both pub and sub will wait for at least one event to be sent or received on the topic.
+Stream data between machines using the SSH key you already have -- no API keys, no SDKs, no setup.
 
-[pipe](https://pipe.pico.sh) is a simple and secure way of putting together composable directional streams of data, just like a \*nix `|` operator!
+```bash
+echo "hello world" | ssh pipe.pico.sh pub mykey
+```
+
+That's it. Private and authenticated by default.
+
+[pipe](https://pipe.pico.sh) brings the simplicity of \*nix pipes to the network. If you know how to use `|`, you already know how to use pipe.
 
 # Features
 
-- Zero-install
-- Familiar `*nix` pipes API
-- Authenticated pubsub using ssh
-- Private pubsub by default
-- Public pubsub by topic (opt-in)
-- Multicast (many pubs to many subs)
-- Bidirectional (e.g. chat)
-- Paradigms for connecting to a topic:
-  - Read (sub)
-  - Write (pub)
-  - Read & Write (pipe)
-
-# Use cases
-
-- Send desktop notifications
-- File sharing
-- Pipe command output
-- Chat
-- Reverse shell
-- CI/CD
+- **Works on any machine with SSH** — no installation, no dependencies
+- **Your SSH key is your credential** — no API keys to manage or rotate
+- **Private by default** — topics are only accessible to you unless you opt-in to sharing
+- **Public topics when you need them** — share with specific users or make fully public
+- **Primitives that compose** — read (`sub`), write (`pub`), or both (`pipe`)
+- **Multicast built-in** — many publishers, many subscribers, just works
 
 # Examples
 
-For example, maybe you have a \*nix pipe you're using on the command line like so:
+## A basic API
+
+Pipe some data into our ssh app and we will send it to anyone listening.
 
 ```bash
-tail -f -n 0 /tmp/foo.log | grep --line-buffered "ERROR" | xargs -I{} -L1 osascript -e 'display notification "{}" with title "Pipe Notification"'
+ssh pipe.pico.sh sub mykey
 ```
-
-This simple one liner will grab new messages from a log file, check if it contains `ERROR` and then send a notification for macOS using `AppleScript`. This works if you run your app locally, but what if you run the app on a remote server? You can use `pipe` to connect remote and local without ever leaving the command line!
-
-On your remote side, you would start a tail and `pub` it to a topic:
 
 ```bash
-tail -f -n 0 /tmp/foo.log | ssh pipe.pico.sh pub foo.log
+echo "hello world!" | ssh pipe.pico.sh pub mykey
 ```
 
-On your local side, you would `sub` it to the notify command:
+## Simple desktop notifications
+
+Want to quickly receive a notification when a job is done? It can be as simple as:
 
 ```bash
-ssh pipe.pico.sh sub foo.log | grep --line-buffered "ERROR" | xargs -I{} -L1 osascript -e 'display notification "{}" with title "Pipe Notification"'
+ssh pipe.pico.sh sub notify; notify-send "job done!"
 ```
-
-The beauty of this method is that the command will wait until the `sub` is started before any data is consumed, ensuring you never miss a log line. If you didn't want it to wait for a `sub`, you can add `-b=false` (`b` for blocking) to the `pub` to prevent it from blocking.
-
-Once you stop the `pub` command, the `sub` will also exit. You can also prevent this by adding `-k` (`k` for keepalive) to the `sub` command. With both blocking disabled and keepalive enabled, the commands would look like so:
-
-Remote:
 
 ```bash
-tail -f -n 0 /tmp/foo.log | ssh pipe.pico.sh pub -b=false foo.log
+./longjob.sh; ssh pipe.pico.sh pub notify -e
 ```
 
-Local:
+## File sharing
+
+Sometimes you need data exfiltration and all you have is SSH:
 
 ```bash
-ssh pipe.pico.sh sub -k foo.log | grep --line-buffered "ERROR" | xargs -I{} -L1 osascript -e 'display notification "{}" with title "Pipe Notification"'
+cat doc.md | ssh pipe.pico.sh pub thedoc
 ```
 
-We can combine this with any commands we want and create a pretty robust pub/sub system. We can even send full command output through a pipe:
+```bash
+ssh pipe.pico.sh sub thedoc > ./important.md
+```
+
+## Pipe command output
+
+Send command output through our `pipe` command. The `pipe` command is just like `pub` except it is non-blocking and also acts like a `sub`. So a client that can read and write to the topic.
 
 ```bash
 ssh pipe.pico.sh sub htop
 ```
 
 ```bash
-htop | ssh pipe.pico.sh pub htop
+htop | ssh pipe.pico.sh pipe htop
 ```
 
-Now what if you wanted to have bi-directional IO? That's where our last command of Pipe comes in, `pipe`! Pipe allow you to open a bi-directional client on any topic. It's fully non-blocking and can allow you to do things like have fully interactive chat over pipe. For example, running the following in two terminals:
+## Chat
+
+Use our `pipe` command to have a chat with someone.
 
 ```bash
-ssh pipe.pico.sh pipe chat
+ssh pipe.pico.sh pipe mychan -p
 ```
 
-Will allow you to type and read messages as if you were sitting at the same terminal!
+Now anyone with a `pico` account can subscribe to this topic using the same command and start typing!
 
-# CLI
+## Pipe reverse shell
 
-We have a bunch of demo examples on the main [pipe](https://pipe.pico.sh) website so be sure to check those out.
+If you squint hard enough you can give users interactive access to your shell.
 
 ```bash
-~$ ssh pipe.pico.sh help
-Command: ssh pipe.pico.sh <help | ls | pub | sub | pipe> <topic> [-h | args...]
-
-The simplest authenticated pubsub system.  Send messages through
-user-defined topics.  Topics are private to the authenticated
-ssh user.  The default pubsub model is multicast with bidirectional
-blocking, meaning a publisher ("pub") will send its message to all
-subscribers ("sub").  Further, both "pub" and "sub" will wait for
-at least one event to be sent or received. Pipe ("pipe") allows
-for bidirectional messages to be sent between any clients connected
-to a pipe.
-
-Think of these different commands in terms of the direction the
-data is being sent:
-
-- pub => writes to client
-- sub => reads from client
-- pipe => read and write between clients
+mkfifo /tmp/f; cat /tmp/f | /bin/sh -i 2>&1 | ssh pipe.pico.sh pipe myshell > /tmp/f
 ```
 
-## Subs
-
 ```bash
-~$ ssh pipe.pico.sh sub -h
-Usage: sub <topic> [args...]
-Args:
-  -a string
-        Comma separated list of pico usernames or ssh-key fingerprints to allow access to a topic
-  -c    Don\'t send status messages
-  -k    Keep the subscription alive even after the publisher has died
-  -p    Subscribe to a public topic
+ssh pipe.pico.sh pipe myshell
 ```
 
-## Pubs
+## Simple CI/CD
+
+Having an authenticated, zero-install event system is handy for deploying apps automatically.
 
 ```bash
-~$ ssh pipe.pico.sh pub -h
-Usage: pub <topic> [args...]
-Args:
-  -a string
-        Comma separated list of pico usernames or ssh-key fingerprints to allow access to a topic
-  -b    Block writes until a subscriber is available (default true)
-  -c    Don\'t send status messages
-  -e    Send an empty message to subs
-  -p    Publish message to public topic
-  -t duration
-        Timeout as a Go duration to block for a subscriber to be available. Valid time units are 'ns', 'us' (or 'Âµs'), 'ms', 's', 'm', 'h'. Default is 30 days. (default 720h0m0s)
+while true; do ssh pipe.pico.sh sub deploy-app; docker compose pull && docker compose up -d; done
 ```
 
-## Pipes
+```bash
+docker buildx build --push -t myapp .; ssh pipe.pico.sh pub deploy-app -e
+```
+
+## Send a public message
 
 ```bash
-~$ ssh pipe.pico.sh pipe -h
-Usage: pipe <topic> [args...]
-Args:
-  -a string
-        Comma separated list of pico usernames or ssh-key fingerprints to allow access to a topic
-  -c    Don\'t send status messages
-  -p    Pipe to a public topic
-  -r    Replay messages to the client that sent it
+echo "hello world!" | ssh pipe.pico.sh pub mychan -p
+```
+
+Now anyone with a `pico` account can subscribe to this topic:
+
+```bash
+ssh pipe.pico.sh sub mychan -p
+```
+
+# Pubsub interactions
+
+## Multiple subs
+
+Have many subscribers, they will all receive the message.
+
+```bash
+ssh pipe.pico.sh sub foobar
+```
+
+```bash
+ssh pipe.pico.sh sub foobar
+```
+
+```bash
+while true; do echo "foobar1"; sleep 1; done | ssh pipe.pico.sh pub foobar
+```
+
+## Multiple pubs
+
+Have many publishers send messages to subscribers.
+
+```bash
+while true; do echo "foobar1"; sleep 1; done | ssh pipe.pico.sh pub foobar
+```
+
+```bash
+while true; do echo "foobar2"; sleep 1; done | ssh pipe.pico.sh pub foobar
+```
+
+```bash
+ssh pipe.pico.sh sub foobar
+```
+
+## Multiple pubs and subs
+
+Have many publishers send messages to many subscribers.
+
+```bash
+ssh pipe.pico.sh sub foobar
+```
+
+```bash
+ssh pipe.pico.sh sub foobar
+```
+
+```bash
+while true; do echo "foobar1"; sleep 1; done | ssh pipe.pico.sh pub foobar
+```
+
+```bash
+while true; do echo "foobar2"; sleep 1; done | ssh pipe.pico.sh pub foobar
 ```
 
 # Topic names
@@ -297,7 +316,7 @@ curl -vvvv https://pipe.pico.sh/topic/test -d "hello"
 
 </details>
 
-## Subscribe to a topic
+## Subscribe to a topic (pubsub)
 
 <details>
  <summary><code>GET</code> <code><b>/pubsub/:topic</b></code> subscribe to a topic</summary>
@@ -331,7 +350,7 @@ curl -vvv https://pipe.pico.sh/pubsub/test?persist=true
 
 </details>
 
-## Publish to a topic
+## Publish to a topic (pubsub)
 
 <details>
  <summary><code>POST</code> <code><b>/pubsub/:topic</b></code> publish to a topic</summary>
