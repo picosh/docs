@@ -66,9 +66,4 @@ What service did you want to use first?
     </a>
   </div>
 
-<div class="box flex justify-center items-center" style="height: 100px; width: 150px;">
-    <a href="/feeds" class="flex flex-col items-center">
-      rss-to-email
-    </a>
-  </div>
 </div>
