@@ -5,48 +5,45 @@ keywords: [pico, pgs]
 toc: 2
 ---
 
-The easiest way to deploy static sites on the web.
+Deploy static sites with a single command. No passwords. No config files. No CI setup. Just your SSH key and `rsync`.
+
+```bash
+rsync --delete -rv ./public/ pgs.sh:/mysite
+# => https://erock-mysite.pgs.sh
+```
+
+That's the entire workflow. Your SSH key is your identity, and every deploy is instant.
 
 > NOTICE: This is a premium [pico+](/plus) service with a **free tier** (25mb total storage limit)
 
+# Why pgs?
+
+**You already know the tools.** No new CLI to install, no proprietary config formats to learn. If you can use `rsync`, `scp`, or `sftp`, you can deploy to pgs.
+
+**Zero ceremony.** Projects are created on first upload. TLS certificates are automatic. There's no dashboard to click through, no deploy button to wait for.
+
+**Production-ready by default.** Instant rollbacks via symbolic links. Preview deploys for every PR. A global CDN with [multi-region support](/regions). All managed through SSH commands you already understand.
+
 # Features
 
-- Fully manage static sites using `ssh`
-- Distinct static sites as projects
-- Unlimited projects, created instantly upon upload
-- Deploy using [rsync, sftp, or scp](/file-uploads)
-- Automatic TLS for all projects
-- Github action
-- Promotion and rollback support
-- Site [analytics](/analytics)
-- Custom domains for projects
-- Custom redirects and rewrites
-- Custom headers
-- SPA support
-- Image manipulation API
-- [Multi-region support](/regions)
-- Private projects
-- [No bandwidth limitations](/faq#are-there-any-bandwidth-limitations)
+| Feature                                                             | What it means for you                                       |
+| ------------------------------------------------------------------- | ----------------------------------------------------------- |
+| **SSH-native workflow**                                             | Deploy with `rsync`, `scp`, or `sftp`—tools you already use |
+| **Instant project creation**                                        | No setup step. Upload to any project name and it exists     |
+| **Automatic TLS**                                                   | HTTPS for every project, zero configuration                 |
+| **Promotion & rollback**                                            | Atomic deploys with `ssh pgs.sh link`—rollback in seconds   |
+| **Custom domains**                                                  | Point any domain to any project with simple DNS             |
+| **Redirects & rewrites**                                            | `_redirects` file for SPAs, proxies, and URL rewriting      |
+| **Custom headers**                                                  | `_headers` file for security headers, caching, CORS         |
+| **Private projects**                                                | Restrict access by SSH public key or pico username          |
+| **[Site analytics](/analytics)**                                    | Privacy-respecting traffic insights                         |
+| **[Global CDN](/regions)**                                          | Multi-region edge caching for fast loads worldwide          |
+| **[No bandwidth limits](/faq#are-there-any-bandwidth-limitations)** | Predictable pricing without surprise overages               |
+| **[Image manipulation API](/images)**                               | Resize, crop, and transform images on-the-fly               |
 
 <iframe width="100%" height="315" src="https://www.youtube.com/embed/sdbQpD2jV0k?si=B0yoV25XIaDqnTvk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 > [pgs demo](https://www.youtube.com/watch?v=sdbQpD2jV0k)
-
-# Publish
-
-When your site is ready to be published, copy the files to our server with a familiar command:
-
-```bash
-rsync -rv public/ pgs.sh:/myproj
-```
-
-That's it! There's no need to formally create a project, we create them on-the-fly. Further, we provide TLS for every project automatically.
-
-Now you can use our CLI to manage projects:
-
-```bash
-ssh pgs.sh help
-```
 
 # Promotion and rollback
 
@@ -68,85 +65,6 @@ Since we are just using `rsync` for static site deployments, all you need is a w
 
 We also built a [github action](https://github.com/picosh/pgs-action) that handles all the logic for uploading to `pgs` which includes support for promotions and static site retention.
 
-## github action
-
-```yaml
-name: "basic static site deployment"
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: upload to pgs
-        uses: picosh/pgs-action@v3
-        with:
-          user: erock
-          key: ${{ secrets.PRIVATE_KEY }}
-          src: "./public/"
-          # https://erock-myapp.pgs.sh
-          project: "myapp"
-```
-
-## site retention policy
-
-Instead of constantly overwriting the same static site for deployments, you can instead create a site retention policy where every deployment gets its own static site and then you link your production site to it.
-
-With static site promotion using symbolic links and a site retention policy:
-
-```yaml
-name: "promotion static site deployment"
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Set outputs
-        id: vars
-        run: echo "sha_short=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
-
-      - name: upload to pgs
-        uses: picosh/pgs-action@v3
-        with:
-          user: erock
-          key: ${{ secrets.PRIVATE_KEY }}
-          src: "./public/"
-          # git sha to create a project specific to this commit
-          project: "myapp-${{ steps.vars.outputs.sha_short }}"
-          # promote the project above to the "production" site
-          promote: "myapp"
-          # delete all sites matching this prefix ...
-          retain: "myapp-"
-          # ... except for the latest (1) deployment
-          retain_num: 1
-```
-
-## preview apps
-
-```yaml
-name: "preview apps"
-
-on:
-  pull_request:
-    branches:
-      - "main"
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: upload to pgs
-        uses: picosh/pgs-action@v3
-        with:
-          user: erock
-          key: ${{ secrets.PRIVATE_KEY }}
-          src: "./public/"
-          # create a site based on pr
-          project: "myapp-pr${{ github.event.pull_request.number }}"
-```
-
 # CLI Reference
 
 The best way to learn about all the commands we support is via an SSH command:
@@ -155,9 +73,9 @@ The best way to learn about all the commands we support is via an SSH command:
 ssh pgs.sh help
 ```
 
-Having said that, we do want to demonstrate the power of `pgs` by discussing design goals. All of our SSH commands are safe-by-default. Meaning, they never mutate server state by default. This provides users an opportunity to experiment with our commands to see how they work. In order to actually trigger server mutations, every command must be appended with `--write`.
+> **Safe by default:** All commands are dry-run. Add `--write` to apply changes.
 
-Further, we want to make sure users are able to manage their static sites exclusively from SSH commands. Below is list of features we support via SSH commands:
+This lets you experiment with commands to see what they'll do before actually mutating state. Below are the commands available:
 
 ```bash
 # storage usage stats
@@ -415,53 +333,9 @@ Transfer-Encoding
 Upgrade
 ```
 
-# Single-Page Applications
-
-We support SPAs! Upload a `_redirects` file to your project:
-
-```
-/*  /index.html  200
-```
-
-# Redirect `www` to apex domain
-
-A common requirement is to redirect "www.example.com" to the apex domain "example.com" or the other way around.
-
-To accomplish this, we recommend you create a separate project with just a `_redirects` file inside of it.
-
-1. Create a `_redirects` file with a `301` to the apex domain:
-
-```bash
-echo "/*  https://example.com/:splat  301" >> _www_redirects
-scp "$PWD/_www_redirects" pgs.sh:/www-proj/_redirects
-```
-
-2. Add a `www` CNAME and TXT record to point to www project
-
-See our [custom domains](/custom-domains#pgssh) page.
-
-# Proxy to another service
-
-> NOTICE: This is a premium [pico+](/plus) feature.
-
-Similar to how you can rewrite paths like `/*` to `/index.html` with a `_redirects` file, you can also set up rules to let parts of your site proxy to external services. Let’s say you need to communicate from a single-page app with an API on https://api.example.com that doesn’t support CORS requests. The following rule will let you use `/api/` from your JavaScript client:
-
-```
-/api/*  https://api.example.com/:splat  200
-```
-
-# Reserved username
-
-If you create a project with the same name as your username, then you can access it at:
-
-```bash
-rsync -rv public/ glossy@pgs.sh:/glossy
-# => https://glossy.pgs.sh
-```
-
 # Access Control
 
-Thanks to SSH tunnels we can provide restricted access to projects.
+Restrict access to projects—perfect for sharing staging sites with your team before launch.
 
 We have three options:
 
@@ -496,6 +370,50 @@ ssh -L 1337:localhost:80 -N pico-ui@pgs.sh
 ```
 
 Then open your browser to http://localhost:1337
+
+# Single-Page Applications
+
+We support SPAs! Upload a `_redirects` file to your project:
+
+```
+/*  /index.html  200
+```
+
+# Redirect `www` to apex domain
+
+A common requirement is to redirect "www.example.com" to the apex domain "example.com" or the other way around.
+
+To accomplish this, we recommend you create a separate project with just a `_redirects` file inside of it.
+
+1. Create a `_redirects` file with a `301` to the apex domain:
+
+```bash
+echo "/*  https://example.com/:splat  301" >> _www_redirects
+scp "$PWD/_www_redirects" pgs.sh:/www-proj/_redirects
+```
+
+2. Add a `www` CNAME and TXT record to point to www project
+
+See our [custom domains](#custom-domains) section.
+
+# Proxy to another service
+
+> NOTICE: This is a premium [pico+](/plus) feature.
+
+Similar to how you can rewrite paths like `/*` to `/index.html` with a `_redirects` file, you can also set up rules to let parts of your site proxy to external services. Let’s say you need to communicate from a single-page app with an API on https://api.example.com that doesn’t support CORS requests. The following rule will let you use `/api/` from your JavaScript client:
+
+```
+/api/*  https://api.example.com/:splat  200
+```
+
+# Vanity URLs
+
+If you create a project with the same name as your username, you get a shorter URL:
+
+```bash
+rsync -rv public/ glossy@pgs.sh:/glossy
+# => https://glossy.pgs.sh
+```
 
 # Caching
 
