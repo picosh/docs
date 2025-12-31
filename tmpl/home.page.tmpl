@@ -92,20 +92,6 @@
         </h3>
         <div>Write markdown. <code>rsync</code>. You're live.</div>
       </div>
-
-      <div class="box">
-        <h3 class="m-0 p-0 text-lg">
-          <a href="/feeds">rss-to-email</a>
-        </h3>
-        <div>Receive email digests for your RSS feeds using SSH.</div>
-      </div>
-
-      <div class="box">
-        <h3 class="m-0 p-0 text-lg">
-          <a href="/pastes">pastes</a>
-        </h3>
-        <div>Upload code snippets using <code>rsync</code>, <code>scp</code>, and <code>sftp</code>.</div>
-      </div>
     </article>
 
     <div>
@@ -186,47 +172,6 @@ Cya!</pre>
             <div>
               Congrats!  You just published a blog article, accessible here:
               <strong>https://{user}.prose.sh/hello-world</strong>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="box">
-        <h3 class="text-lg mt-0">Easily share code snippets</h3>
-        <div class="flex gap-2 flex-collapse">
-          <div class="flex-1 group">
-            <div>Pipe some stdout to us:</div>
-            <pre>git diff | ssh pastes.sh changes.patch</pre>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="flex-1">
-            And instantly share your code snippets:
-            <strong>https://{user}.pastes.sh/changes.patch</strong>
-          </div>
-        </div>
-      </div>
-
-      <div class="box">
-        <h3 class="text-lg mt-0">Receive email notifications for your favorite rss feeds</h3>
-        <div class="flex gap-2 flex-collapse">
-          <div class="flex-1 group">
-            <div>Create a <code>blogs.txt</code> file:</div>
-            <pre>=: email rss@myemail.com
-=: digest_interval 1day
-https://pico.prose.sh/rss
-https://erock.prose.sh/rss</pre>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="flex-1 group">
-            <div>Then upload it to us:</div>
-            <pre>scp blogs.txt feeds.pico.sh:/</pre>
-            <div>
-              After the daily interval has been reached, you will
-              receive an email with your feeds!
             </div>
           </div>
         </div>

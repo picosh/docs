@@ -22,7 +22,7 @@ That's the entire workflow. Your SSH key is your identity, and every deploy is i
 
 **Zero ceremony.** Projects are created on first upload. TLS certificates are automatic. There's no dashboard to click through, no deploy button to wait for.
 
-**Production-ready by default.** Instant rollbacks via symbolic links. Preview deploys for every PR. A global CDN with [multi-region support](/regions). All managed through SSH commands you already understand.
+**Production-ready by default.** Instant rollbacks via symbolic links. A global CDN with [multi-region support](/regions). All managed through SSH commands you already understand.
 
 # Features
 
