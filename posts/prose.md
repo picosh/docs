@@ -24,7 +24,7 @@ You know how to set up a blog. You've done it before -- Hugo, Jekyll, Astro, wha
 | **Zero dependencies**                                          | If you have `ssh`, you're ready                             |
 | **Your editor, your workflow**                                 | vim, emacs, vscode -- write where you're comfortable        |
 | **Instant publishing**                                         | `rsync ~/blog/* prose.sh:/` and you're live                 |
-| **SSH key auth**                                               | No passwords, no accounts to manage                         |
+| **SSH key auth**                                               | No passwords, bring the ssh keypair you own                         |
 | **Custom domains**                                             | Point your DNS and go                                       |
 | **[Site analytics](/analytics)**                               | Privacy-respecting traffic insights, no third-party scripts |
 | **No JavaScript**                                              | Fast, accessible, works everywhere                          |
