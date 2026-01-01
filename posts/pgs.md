@@ -28,10 +28,10 @@ That's the entire workflow. Your SSH key is your identity, and every deploy is i
 
 | Feature                                                             | What it means for you                                       |
 | ------------------------------------------------------------------- | ----------------------------------------------------------- |
-| **SSH-native workflow**                                             | Deploy with `rsync`, `scp`, or `sftp`—tools you already use |
+| **SSH-native workflow**                                             | Deploy with `rsync`, `scp`, or `sftp`: tools you already use |
 | **Instant project creation**                                        | No setup step. Upload to any project name and it exists     |
 | **Automatic TLS**                                                   | HTTPS for every project, zero configuration                 |
-| **Promotion & rollback**                                            | Atomic deploys with `ssh pgs.sh link`—rollback in seconds   |
+| **Promotion & rollback**                                            | Atomic deploys with `ssh pgs.sh link`: rollback in seconds   |
 | **Custom domains**                                                  | Point any domain to any project with simple DNS             |
 | **Redirects & rewrites**                                            | `_redirects` file for SPAs, proxies, and URL rewriting      |
 | **Custom headers**                                                  | `_headers` file for security headers, caching, CORS         |

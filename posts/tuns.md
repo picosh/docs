@@ -75,8 +75,6 @@ ssh -R 0:5432:localhost:5432 tuns.sh
 
 <iframe width="100%" height="315" src="https://www.youtube.com/embed/wZHiuR9RqGw?si=AJLBbg5jc8ET0lvB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-If you already use SSH, tuns gets you tunneling with zero setup. No binary to install, no token to configure, no new account to create.
-
 <div class="flex flex-col items-center justify-center my-4">
   <p>For deeper configuration and advanced usage:</p>
   <a href="https://docs.ssi.sh" class="btn-link">Read the sish docs</a>

@@ -135,6 +135,8 @@ sftp> rm hello-world.md
 
 You could also mount our services via `sshfs` and then delete it that way.
 
+You can also use `rsync --delete` which will remove files not in the `src` directory.
+
 # How do I download files?
 
 Using the same tools described [here](#how-do-i-upload-files), just reverse the order of `src` and `dest`!
