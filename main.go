@@ -39,11 +39,6 @@ func main() {
 						},
 					},
 					{
-						Text: "How it works",
-						Href: "/how-it-works",
-						Page: pager("how-it-works.md"),
-					},
-					{
 						Text: "File uploads",
 						Href: "/file-uploads",
 						Page: pager("file-uploads.md"),

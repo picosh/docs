@@ -21,11 +21,9 @@ In particular we would like to thank the following communities and projects for 
 
 - [Go](https://go.dev)
 - [postgresql](https://www.postgresql.org/)
-- [charm.sh](https://charm.sh)
 - [caddy](https://caddyserver.com/)
 - [omg.lol](https://omg.lol)
 - [bearblog.dev](https://bearblog.dev/)
-- [write.as](https://write.as)
 - [mataroa.blog](https://mataroa.blog)
 - [soju.im](https://soju.im/)
 - [senpai](https://git.sr.ht/~delthas/senpai/)
