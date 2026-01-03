@@ -5,7 +5,7 @@ keywords: [pico, prose]
 toc: 2
 ---
 
-Write markdown. Pipe it to the server. You're live.
+Write markdown. Pipe it to our server. You're live.
 
 No static site generators. No build step. No deploy pipeline. No YAML configs. Just `rsync` your posts and we handle the rest.
 
@@ -68,6 +68,10 @@ scp ~/blog/* prose.sh:/
 sftp prose.sh
 # - or -
 sshfs ~/blog prose.sh:/
+# or pipe the file to us
+echo -e "# hello world!\n\nWelcome to my blog!" | ssh prose.sh hello-world.md
+# or pipe the file to us and generate a random name
+echo -e "# hello world!\n\nWelcome to my blog!" | ssh prose.sh
 ```
 
 > [Read more about uploading files](/file-uploads).
