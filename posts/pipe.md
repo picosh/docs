@@ -13,6 +13,8 @@ echo "hello world" | ssh pipe.pico.sh pub mykey
 
 That's it. Private and authenticated by default.
 
+> pipe.pico.sh is a free service
+
 [pipe](https://pipe.pico.sh) brings the simplicity of \*nix pipes to the network. If you know how to use `|`, you already know how to use pipe.
 
 # Features

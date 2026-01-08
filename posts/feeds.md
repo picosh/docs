@@ -7,7 +7,7 @@ toc: 1
 
 Stay up-to-date with all the RSS feeds you love.
 
-> This is a free service
+> feeds.pico.sh is a free service
 
 # Features
 

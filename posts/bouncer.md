@@ -9,6 +9,8 @@ toc: 1
 
 We are delighted to provide a private soju instance available to all [pico+](/plus) users.
 
+> Our bouncer is a [pico+](/plus) service
+
 # Generate a login token for bouncer
 
 ![pico-token-menu](https://blog.pico.sh/pico-token-menu.png)

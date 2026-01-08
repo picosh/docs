@@ -14,7 +14,7 @@ rsync --delete -rv ./public/ pgs.sh:/mysite
 
 That's the entire workflow. Your SSH key is your identity, and every deploy is instant.
 
-> NOTICE: This is a premium [pico+](/plus) service with a **free tier** (25mb total storage limit)
+> pgs.sh is a [pico+](/plus) service with a **free tier** (25mb total storage limit)
 
 # Why pgs?
 

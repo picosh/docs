@@ -5,7 +5,7 @@ keywords: [pico, tuns]
 toc: 1
 ---
 
-> NOTICE: This is a premium [pico+](/plus) service
+> tuns.sh is a [pico+](/plus) service
 
 **Share your localhost with the world in one ssh command.**
 
