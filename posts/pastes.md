@@ -4,23 +4,13 @@ description: Upload code snippets using rsync, scp, and sftp
 keywords: [pico, pastes]
 ---
 
-The easiest pastebin on the web.
-
 > pastes.sh is a free service
 
-# Features
-
-- No installation
-- [Ability to set custom expiration](#how-do-i-set-expiration-date)
-- [Ability to "hide" pastes](#how-do-i-unlist-a-paste)
-- Bring your own editor
-- Pastes last 90 days by default
-- Create pastes using [rsync, sftp, or scp](/file-uploads)
-- No ads
+The easiest pastebin on the web.
 
 # No install
 
-Use tools you already have on your system.
+Use tools you already have installed.
 
 ```bash
 rsync my-changes.patch pastes.sh:/

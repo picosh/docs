@@ -5,6 +5,8 @@ keywords: [pico, pgs]
 toc: 2
 ---
 
+> pgs.sh is a [pico+](/plus) service with a **free tier** (25mb total storage limit)
+
 Deploy static sites with a single command. No passwords. No config files. No CI setup. Just your SSH key and `rsync`.
 
 ```bash
@@ -12,9 +14,7 @@ rsync --delete -rv ./public/ pgs.sh:/mysite
 # => https://erock-mysite.pgs.sh
 ```
 
-That's the entire workflow. Your SSH key is your identity, and every deploy is instant.
-
-> pgs.sh is a [pico+](/plus) service with a **free tier** (25mb total storage limit)
+That's the entire workflow. Your SSH key is your identity and every deploy is instant.
 
 # Why pgs?
 
@@ -26,20 +26,20 @@ That's the entire workflow. Your SSH key is your identity, and every deploy is i
 
 # Features
 
-| Feature                                                             | What it means for you                                       |
-| ------------------------------------------------------------------- | ----------------------------------------------------------- |
+| Feature                                                             | What it means for you                                        |
+| ------------------------------------------------------------------- | ------------------------------------------------------------ |
 | **SSH-native workflow**                                             | Deploy with `rsync`, `scp`, or `sftp`: tools you already use |
-| **Instant project creation**                                        | No setup step. Upload to any project name and it exists     |
-| **Automatic TLS**                                                   | HTTPS for every project, zero configuration                 |
+| **Instant project creation**                                        | No setup step. Upload to any project name and it exists      |
+| **Automatic TLS**                                                   | HTTPS for every project, zero configuration                  |
 | **Promotion & rollback**                                            | Atomic deploys with `ssh pgs.sh link`: rollback in seconds   |
-| **Custom domains**                                                  | Point any domain to any project with simple DNS             |
-| **Redirects & rewrites**                                            | `_redirects` file for SPAs, proxies, and URL rewriting      |
-| **Custom headers**                                                  | `_headers` file for security headers, caching, CORS         |
-| **Private projects**                                                | Restrict access by SSH public key or pico username          |
-| **[Site analytics](/analytics)**                                    | Privacy-respecting traffic insights                         |
-| **[Global CDN](/regions)**                                          | Multi-region edge caching for fast loads worldwide          |
-| **[No bandwidth limits](/faq#are-there-any-bandwidth-limitations)** | Predictable pricing without surprise overages               |
-| **[Image manipulation API](/images)**                               | Resize, crop, and transform images on-the-fly               |
+| **Custom domains**                                                  | Point any domain to any project with simple DNS              |
+| **Redirects & rewrites**                                            | `_redirects` file for SPAs, proxies, and URL rewriting       |
+| **Custom headers**                                                  | `_headers` file for security headers, caching, CORS          |
+| **Private projects**                                                | Restrict access by SSH public key or pico username           |
+| **[Site analytics](/analytics)**                                    | Privacy-respecting traffic insights                          |
+| **[Global CDN](/regions)**                                          | Multi-region edge caching for fast loads worldwide           |
+| **[No bandwidth limits](/faq#are-there-any-bandwidth-limitations)** | Predictable pricing without surprise overages                |
+| **[Image manipulation API](/images)**                               | Resize, crop, and transform images on-the-fly                |
 
 # Promotion and rollback
 

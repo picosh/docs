@@ -5,9 +5,9 @@ keywords: [pico, feeds]
 toc: 1
 ---
 
-Stay up-to-date with all the RSS feeds you love.
-
 > feeds.pico.sh is a free service
+
+Stay up-to-date with all the RSS feeds you love.
 
 # Features
 

@@ -5,6 +5,8 @@ keywords: [pico, pipe]
 toc: 2
 ---
 
+> pipe.pico.sh is a free service
+
 Stream data between machines using the SSH key you already have -- no API keys, no SDKs, no setup.
 
 ```bash
@@ -13,15 +15,13 @@ echo "hello world" | ssh pipe.pico.sh pub mykey
 
 That's it. Private and authenticated by default.
 
-> pipe.pico.sh is a free service
-
 [pipe](https://pipe.pico.sh) brings the simplicity of \*nix pipes to the network. If you know how to use `|`, you already know how to use pipe.
 
 # Features
 
 | Feature                        | What it means for you                               |
 | ------------------------------ | --------------------------------------------------- |
-| **Works on any machine**       | No installation, no dependencies, just SSH           |
+| **Works on any machine**       | No installation, no dependencies, just SSH          |
 | **SSH key is your credential** | No API keys to manage or rotate                     |
 | **Private by default**         | Topics are only accessible to you unless you opt-in |
 | **Public topics**              | Share with specific users or make fully public      |

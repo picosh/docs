@@ -5,11 +5,11 @@ keywords: [irc, bouncer, soju]
 toc: 1
 ---
 
-> NOTE: For libera.chat you must [ensure you have a libera account.](https://libera.chat/guides/registration)
+> Our bouncer is a [pico+](/plus) service
 
 We are delighted to provide a private soju instance available to all [pico+](/plus) users.
 
-> Our bouncer is a [pico+](/plus) service
+> NOTE: For libera.chat you must [ensure you have a libera account.](https://libera.chat/guides/registration)
 
 # Generate a login token for bouncer
 

@@ -5,11 +5,11 @@ keywords: [pico, prose]
 toc: 2
 ---
 
-Write markdown. Pipe it to our server. You're live.
+> prose.sh is a free service
+
+Write your blog with markdown. Send it to our server. You're live.
 
 No static site generators. No build step. No deploy pipeline. No YAML configs. Just `rsync` your posts and we handle the rest.
-
-> prose.sh is a free service
 
 # Why prose over self-hosting?
 
@@ -24,7 +24,7 @@ You know how to set up a blog. You've done it before -- Hugo, Jekyll, Astro, wha
 | **Zero dependencies**                                          | If you have `ssh`, you're ready                             |
 | **Your editor, your workflow**                                 | vim, emacs, vscode -- write where you're comfortable        |
 | **Instant publishing**                                         | `rsync ~/blog/* prose.sh:/` and you're live                 |
-| **SSH key auth**                                               | No passwords, bring the ssh keypair you own                         |
+| **SSH key auth**                                               | No passwords, bring the ssh keypair you own                 |
 | **Custom domains**                                             | Point your DNS and go                                       |
 | **[Site analytics](/analytics)**                               | Privacy-respecting traffic insights, no third-party scripts |
 | **No JavaScript**                                              | Fast, accessible, works everywhere                          |
