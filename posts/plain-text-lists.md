@@ -5,11 +5,11 @@ keywords: [pico, lists, spec, plain, text]
 toc: 1
 ---
 
-Version: **2022.08.05.dev**
-
-Status: **Draft**
-
-Author: **Eric Bower**
+|             |                 |
+| ----------- | --------------- |
+| **version** | 2026.01.10      |
+| **status**  | published       |
+| **site**    | https://pico.sh |
 
 The goal of this specification is to understand how we render plain text lists. The overall design of this format is to be easy to parse and render.
 
@@ -29,7 +29,7 @@ As mentioned, the text format is line-oriented. Each line of a document has a si
 
 # File extension
 
-Plain text lists only supports the `.txt` file extension and will ignore all other file extensions.
+Plain text lists only supports the `.lxt` file extension and will ignore all other file extensions.
 
 # List item
 
@@ -121,19 +121,7 @@ echo "This will not render properly"```
 Variables allow us to store metadata within our system. Variables are list items with key value pairs denoted by `=:` followed by the key, a whitespace character, and then the value.
 
 ```
-=: publish_at 2022-04-20
-```
-
-These variables will not be rendered to the user inside the list.
-
-List of available variables:
-
-```
 =: title Hello World
-=: description A fine description
-=: publish_at 2022-04-20
-=: tags feature, announcement
-=: list_type none
+=: date 2022-04-20
+=: tags one, two, three
 ```
-
-`list_type` value gets sent directly to css property [list-style-type](https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type)
