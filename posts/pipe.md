@@ -11,6 +11,9 @@ Stream data between machines using the SSH key you already have -- no API keys, 
 
 ```bash
 echo "hello world" | ssh pipe.pico.sh pub mykey
+# separate terminal
+ssh pipe.pico.sh sub mykey
+hello world
 ```
 
 That's it. Private and authenticated by default.
@@ -185,6 +188,42 @@ All topics are converted into the following format: `{user}/{topic}`. Depending 
 - `pub {topic}` -> owner can access with `sub {topic}` **or** `sub {owner}/{topic}`
 - `pub -a {other} {topic}` -> `other` pico user must access with `sub {owner}/{topic}`
 - `pub -p {topic}` -> anyone can access with `sub -p {topic}`
+
+# Pipe monitors
+
+Pipe monitors are health checks on your topics. Think of it as a status monitor for any topic. The simplest version of this can be used to check uptime of any site:
+
+```bash
+ssh pipe.pico.sh monitor pico-uptime 1h
+```
+
+Then you would setup a cron to ping your site and on success send a pub to pipe:
+
+```bash
+*/10 * * * * curl -fsS https://pico.sh && ssh pipe.pico.sh pub -e pico-uptime
+# -or-
+0/10 * * * * my_script.sh && ssh pipe.pico.sh pub -e pico-uptime
+```
+
+Now you can check the status of the monitors:
+
+```bash
+ssh pipe.pico.sh status
+```
+
+You can then subscribe to an RSS that will send alerts when a topic has not been hit at least once within the time period specied:
+
+```bash
+https://pipe.pico.sh/rss/<token>
+```
+
+And you can delete monitors:
+
+```bash
+ssh pipe.pico.sh monitor -d pico-uptime
+```
+
+You can read our original RFC to learn more about use cases: \[https://blog.pico.sh/rfc-008-ping\](rfc-008 pipe monitors).
 
 # Web Interface
 
