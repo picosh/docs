@@ -223,7 +223,7 @@ And you can delete monitors:
 ssh pipe.pico.sh monitor -d pico-uptime
 ```
 
-You can read our original RFC to learn more about use cases: \[https://blog.pico.sh/rfc-008-ping\](rfc-008 pipe monitors).
+You can read our original RFC to learn more about use cases: [rfc-008 pipe monitors](https://blog.pico.sh/rfc-008-ping).
 
 # Web Interface
 
