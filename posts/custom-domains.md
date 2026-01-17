@@ -12,6 +12,8 @@ All of our services support custom domains and they all work similarly. The way 
 
 The first time we receive traffic on the custom domain, a certificate will be retrieved from Let's Encrypt to enable HTTPS.
 
+Under-the-hood we use Caddy's [on-demand tls](https://caddyserver.com/on-demand-tls) to automatically create certificates for customer domains.
+
 # My DNS does **not** support CNAME flattening
 
 Some DNS providers do not support [CNAME flattening](https://developers.cloudflare.com/dns/cname-flattening/), which means they don't allow you to create a CNAME record for your apex domain, like "example.com".

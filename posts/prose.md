@@ -333,6 +333,8 @@ footer {
 
 # Custom Domains
 
+All we require for [custom domains](/custom-domains) is **(2)** DNS records, there is no extra configuration within our system as it is automatic.
+
 Setting up a custom domain for prose is similar to all other services. First you need to create a CNAME record:
 
 ```

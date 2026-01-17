@@ -121,6 +121,8 @@ ssh -J tuns.sh {user}-foobar
 
 # Custom Domains
 
+All we require for [custom domains](/custom-domains) is **(2)** DNS records, there is no extra configuration within our system as it is automatic.
+
 We require you to set up `CNAME` and `TXT` records for the domain/subdomain you would like to use for your forwarded connection. The `CNAME` record must point to `tuns.sh`. The TXT record name must be `_sish.customdomain` and contain the SSH key fingerprint used for creating the tunnel. This key must also be linked to your pico+ account.
 
 You can retrieve your key fingerprint by running:

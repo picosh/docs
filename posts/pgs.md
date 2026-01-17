@@ -125,6 +125,8 @@ As you can see from the third entry, we add a trailing slash to all routes. This
 
 # Custom Domains
 
+All we require for [custom domains](/custom-domains) is **(2)** DNS records, there is no extra configuration within our system as it is automatic.
+
 Since [pgs.sh](https://pgs.sh) allows the user to configure custom domains per project, the `TXT` record format is a little different.
 
 Add a `TXT` record to tell pgs what project is hosted on that domain at the subdomain entry `_pgs`.
