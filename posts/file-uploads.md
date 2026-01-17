@@ -5,7 +5,7 @@ keywords: [pico, file, upload, download]
 toc: true
 ---
 
-All of our services require users to send us files in order to manage content. Read the [How it Works](/how-it-works) for an under-the-hood, technical summary.
+Many of our services ask users to send us files in order to manage their content. In order to enable that functionality, we could have asked users to install our own CLI tool and make sure they update on some regular cadence. But that places the burden on our users to install our tool. Instead, we thought it better to bring our services to developers with tools they already understand and have installed. So we enable users to use `rsync`, `scp`, `sftp`, `sshfs`, or even unix pipes to upload their content to us.
 
 # How do I upload files?
 

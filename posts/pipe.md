@@ -1,6 +1,6 @@
 ---
 title: pipe
-description: PubSub without the infrastructure.
+description: Pubsub without the infrastructure. Stream data between machines using SSH.
 keywords: [pico, pipe]
 toc: 2
 ---

@@ -1,6 +1,6 @@
 ---
 title: prose
-description: Serve your blog using SSH
+description: Write your blog with markdown. rsync and you're live.
 keywords: [pico, prose]
 toc: 2
 ---
@@ -27,9 +27,9 @@ You know how to set up a blog. You've done it before -- Hugo, Jekyll, Astro, wha
 | **SSH key auth**                                               | No passwords, bring the ssh keypair you own                 |
 | **Custom domains**                                             | Point your DNS and go                                       |
 | **[Site analytics](/analytics)**                               | Privacy-respecting traffic insights, no third-party scripts |
-| **No JavaScript**                                              | Fast, accessible, works everywhere                          |
 | **RSS out of the box**                                         | Readers can subscribe immediately                           |
 | **[GitHub flavored markdown](https://github.github.com/gfm/)** | Write what you already know                                 |
+| **[Plain text lists](/plain-text-lists)**                      | Write using a simple yet expressive list format             |
 | **Blog customization**                                         | Tweak layout, styles, and metadata with simple files        |
 
 Check out the [discovery page](https://prose.sh) on prose.
@@ -77,6 +77,33 @@ echo -e "# hello world!\n\nWelcome to my blog!" | ssh prose.sh
 > [Read more about uploading files](/file-uploads).
 
 Since we are leveraging tools you already have on your computer, there is nothing to install. This provides the convenience of a web app, but from inside your terminal!
+
+# Plain text lists
+
+We also support the ability to use our homegrown [plain text lists](/plain-text-lists) format `.lxt` to write blog posts. This format is simple yet covers what is necessary for writing prose. It's great for people who like to think in lists and we think perfectly compliments our blog service.
+
+```txt
+=: title hello world
+=: description welcome to my blog
+=: date 2026-01-16
+
+Hello world!
+How are we doing today?
+=> https://pico.sh this is a hyperlink
+> This is a blockquote
+<= https://bower.sh/profile.jpg this is an image
+It supports
+	Nesting!
+		Wow, great!
+```
+
+Then upload the file to us:
+
+```bash
+scp hello-world.lxt prose.sh:/
+```
+
+It uses the exact same metadata variables as our markdown posts. This idea here is that we have an alternative format that is much easier to render and we find easier to write. There is no inline markup, the type of each list item can be determined by reading the first 3 characters of a line.
 
 # Images
 

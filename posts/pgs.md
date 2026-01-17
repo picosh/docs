@@ -1,6 +1,6 @@
 ---
 title: pages
-description: Host static sites on our global platform using SSH
+description: Deploy static sites with a single command. rsync and you're live.
 keywords: [pico, pgs]
 toc: 2
 ---

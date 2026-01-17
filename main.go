@@ -175,11 +175,6 @@ func main() {
 						Page: pager("web-tunnels.md"),
 					},
 					{
-						Text: "Lab",
-						Href: "/lab",
-						Page: pager("lab.md"),
-					},
-					{
 						Text: "Plain text lists",
 						Href: "/plain-text-lists",
 						Page: pager("plain-text-lists.md"),
