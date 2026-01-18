@@ -4,9 +4,9 @@ description: How to use pico services
 keywords: [pico, getting, started]
 ---
 
-Access to our services requires creating an account using our pico.sh TUI.
-
 ![pico.sh tui](/tui.png)
+
+Access to our services requires creating an account using our pico.sh TUI.
 
 # Create your account with Public-Key Cryptography
 
@@ -30,6 +30,12 @@ glossy.pastes.sh
 glossy-{project}.pgs.sh
 glossy-{tunnel}.tuns.sh
 ```
+
+# SSH Certificates
+
+We support the ability for users to use SSH certificates to mint cert pubkeys that grant access to all or specific services. This is great if you want finer-grained access control for some machines -- like build machines that only need pgs access -- or for teams that are looking to use pico as part of their toolkit.
+
+Read our doc on [Access Control](/access-control) to learn more.
 
 # Next Steps
 
