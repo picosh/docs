@@ -13,7 +13,7 @@ We are delighted to provide a private soju instance available to all [pico+](/pl
 
 # Generate a login token for bouncer
 
-![pico-token-menu](https://blog.pico.sh/pico-token-menu.png)
+![pico-token-menu](/pico-tokens.png)
 
 - SSH into our [pico TUI](/ui#ssh-tui)
 - Select "Manage Tokens" submenu

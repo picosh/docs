@@ -11,10 +11,12 @@ We provide a TUI page where the user to view realtime logs.
 
 ```bash
 ssh pico.sh
-# -> Logs
+# -> logs
 ```
 
 On that page we also provide the ability to filter the logs.
+
+![pico-logs](/pico-logs.png)
 
 You can also fetch logs directly in the terminal:
 
