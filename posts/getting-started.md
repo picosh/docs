@@ -33,7 +33,7 @@ glossy-{tunnel}.tuns.sh
 
 # SSH Certificates
 
-We support the ability for users to use SSH certificates to mint cert pubkeys that grant access to all or specific services. This is great if you want finer-grained access control for some machines -- like build machines that only need pgs access -- or for teams that are looking to use pico as part of their toolkit.
+Users can authenticate to pico using SSH certificates. SSH certs are great if you want finer-grained access control for specific machines -- like build machines that only need pgs access -- or for teams that are looking to use pico as part of their toolkit.
 
 Read our doc on [Access Control](/access-control) to learn more.
 
