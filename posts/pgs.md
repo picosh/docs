@@ -234,6 +234,7 @@ We support custom redirects and rewrites via a special file `_redirects`.
 /news                /blog
 /wow                 https://wow.com
 /authors/c%C3%A9line /authors/about-c%C3%A9line
+/sub/*               /pub/:splat
 ```
 
 When no status is provided, we default to `301 Moved Permanently`.
@@ -251,6 +252,30 @@ When no status is provided, we default to `301 Moved Permanently`.
 # Rewrite a path
 /pass-through /index.html    200
 ```
+
+### Splats
+
+When using the wildcard `*` and you want the value of that wildcard to be transposed onto the destination, use `:splat`
+
+```
+/sub/*	/pub/:splat
+# example
+# /sub/to/something/index.html	=> /pub/to/something/index.html
+```
+
+It's not possible to use an asterisk as a wildcard in the middle of a path, for example `/jobs/*.html`. You can only use asterisks at the end of the path segment, such as `/jobs/*`.
+
+> If you use an asterisk without a corresponding splat, then all matches of the wildcard with go to the absolute path provided.
+
+### Placeholders
+
+You can use placeholders in the origin and target paths:
+
+```
+/news/:month/:date/:year/:slug  /blog/:year/:month/:date/:slug
+```
+
+This would redirect a URL like `/news/02/12/2004/my-story` to `/blog/2004/02/12/my-story`. A placeholder either matches a path segment from one `/` to the next `/` or matches a final path segment including a file extension but excluding a query string.
 
 ### Route Shadowing
 
