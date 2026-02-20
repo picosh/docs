@@ -181,7 +181,7 @@ SHA256:mVPwvezndPv/ARoIadVY98vAC0g+P/5633yTC4d/wXE
 
 A tunnel manager for docker services.
 
-tunmgr automatically set's up tunnels for docker services. It utilizes `Expose` ports as well as DNSNames (and the container name/id) to setup different permutations of tunnels.
+tunmgr automatically sets up tunnels for docker services. It utilizes `Expose` ports as well as DNSNames (and the container name/id) to setup different permutations of tunnels.
 
 > [source code](https://github.com/picosh/tunmgr)
 
