@@ -124,7 +124,7 @@ ssh pico.sh
 
 # Are there any bandwidth limitations?
 
-Currently we are not hitting our free egress limit per month through our cloud provider. As of **4/2025** we are at around 800GB.
+Currently we are not hitting our free egress limit per month through our cloud provider. As of **3/2026** we are at around 1.5TB.
 
 So until we reach 10TB per month, there are no bandwidth limitations.
 
