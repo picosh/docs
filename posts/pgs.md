@@ -61,8 +61,6 @@ Since we are just using `rsync` for static site deployments, all you need is a w
 
 We also built a [github action](https://github.com/picosh/pgs-action) that handles all the logic for uploading to `pgs` which includes support for promotions and static site retention.
 
-<iframe width="100%" height="315" src="https://www.youtube.com/embed/sdbQpD2jV0k?si=B0yoV25XIaDqnTvk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
 # CLI Reference
 
 The best way to learn about all the commands we support is via an SSH command:
@@ -108,6 +106,13 @@ ssh pgs.sh acl project-x --type pubkeys --acl sha256:xxx
 
 # clear the http cache for a project
 ssh pgs.sh cache project-x
+
+# list forms
+ssh pgs.sh forms ls
+# list form data as json
+ssh pgs.sh forms project-x
+# delete form data
+ssh pgs.sh forms project-x --rm
 ```
 
 # Pretty URLs
@@ -383,6 +388,9 @@ ssh pgs.sh acl project-x --type pico --acl antonio --acl erock
 
 # access to anyone
 ssh pgs.sh acl project-x --type public
+
+# access site with a password
+ssh pgs.sh acl project-x --type http-pass --acl {pass}
 ```
 
 To connect to a private project:
@@ -421,6 +429,53 @@ scp "$PWD/_www_redirects" pgs.sh:/www-proj/_redirects
 
 See our [custom domains](#custom-domains) section.
 
+# Private projects
+
+> NOTICE: This is a premium [pico+](/plus) feature.
+
+We support private projects that is only accessible through a web tunnel or by copying the files. Think of this more as private object storage. Private projects are set automatically when the project is prefixed with `private-`. These projects can never have their ACL modified after creation, they will always be private.
+
+# Require password to access site
+
+> NOTICE: This is a premium [pico+](/plus) feature.
+
+If you need your site to be gated by a password then you can change the ACL for the site:
+
+```bash
+ssh pgs.sh acl project-x --type http-pass --acl <pass>
+```
+
+Once this ACL is set any request to your site will be redirected to our global login page. Once successully authenticated we set a cookie that is valid for 24 hours in the user's browser. They can close the tab and come back and they will only need to re-authenticate daily.
+
+# Auto-forms
+
+> NOTICE: This is a premium [pico+](/plus) feature.
+
+We can automatically save form data if the form is setup correctly.
+
+```html
+<form method="POST" action="/pgs/forms/{form_name}">
+  <input type="email" name="email" />
+  <button type="submit>Subscribe!</button>
+</form>
+```
+
+We only accept form method `POST` and the endpoint is `/pgs/forms/{form_name}` where the form name is whatever you want it to be. We will automatically save the form data and allow site owners to retrieve that data from our remote cli.
+
+```bash
+# list forms
+ssh pgs.sh forms ls
+
+# list form data as json
+ssh pgs.sh forms project-x
+# => [{...}, {...}]
+
+# delete form data
+ssh pgs.sh forms project-x --rm
+```
+
+Whatever form data is sent through the form is automatically saved in our database. If the form inputs change over time, the data will reflect those changes but will include all the previous entries as well.
+
 # Proxy to another service
 
 > NOTICE: This is a premium [pico+](/plus) feature.
@@ -430,6 +485,16 @@ Similar to how you can rewrite paths like `/*` to `/index.html` with a `_redirec
 ```
 /api/*  https://api.example.com/:splat  200
 ```
+
+# Auto-deleting site after time period
+
+We have a special project for every user called `bin`. Files uploaded to this project will be automatically deleted after 14 days. Think of this as a pastebin but for any file.
+
+```bash
+rsync disapearing.pdf pgs.sh:/bin/
+```
+
+Each file has an associated modtime that we use to determine the age of a file. Once the age of the file exceeds the time period we remove it.
 
 # Vanity URLs
 
@@ -471,6 +536,8 @@ Everyone's static sites are stored inside our object store. In order for `sftp` 
 You must [delete a project](#removing-a-project) using the remote cli.
 
 If you accidentally remove a site you will be stuck in a limbo state. The folder will still exist using `sftp` or `sshfs`. You can properly clean it up by running the [rm command](#removing-a-project)
+
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/sdbQpD2jV0k?si=B0yoV25XIaDqnTvk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <hr />
 <div class="flex flex-col items-center justify-center">
