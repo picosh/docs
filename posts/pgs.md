@@ -26,22 +26,22 @@ That's the entire workflow. Your SSH key is your identity and every deploy is in
 
 # Features
 
-| Feature                                                             | What it means for you                                              |
-| ------------------------------------------------------------------- | ------------------------------------------------------------------ |
-| **SSH-native workflow**                                             | Deploy with `rsync`, `scp`, or `sftp`: tools you already use       |
-| **Instant project creation**                                        | No setup step. Upload to any project name and it exists            |
-| **Automatic TLS**                                                   | HTTPS for every project, zero configuration                        |
-| **Promotion & rollback**                                            | Atomic deploys with `ssh pgs.sh link`: rollback in seconds         |
-| **Custom domains**                                                  | Point any domain to any project with simple DNS                    |
-| **Redirects & rewrites**                                            | `_redirects` file for SPAs, proxies, and URL rewriting             |
-| **Custom headers**                                                  | `_headers` file for security headers, caching, CORS                |
-| **Auto-forms**                                                      | Add forms to your site and we auto collect the data                |
-| **Password Authenticated Sites**                                    | Restrict access to your site with a password                       |
-| **Auto-delete files**                                               | Upload files to a special project that deletes files after 14 days |
-| **[Site analytics](/analytics)**                                    | Privacy-respecting traffic insights                                |
-| **[Global CDN](/regions)**                                          | Multi-region edge caching for fast loads worldwide                 |
-| **[No bandwidth limits](/faq#are-there-any-bandwidth-limitations)** | Predictable pricing without surprise overages                      |
-| **[Image manipulation API](/images)**                               | Resize, crop, and transform images on-the-fly                      |
+| Feature                                                             | What it means for you                                        |
+| ------------------------------------------------------------------- | ------------------------------------------------------------ |
+| **SSH-native workflow**                                             | Deploy with `rsync`, `scp`, or `sftp`: tools you already use |
+| **Instant project creation**                                        | No setup step. Upload to any project name and it exists      |
+| **Automatic TLS**                                                   | HTTPS for every project, zero configuration                  |
+| **Promotion & rollback**                                            | Atomic deploys with `ssh pgs.sh link`: rollback in seconds   |
+| **Custom domains**                                                  | Point any domain to any project with simple DNS              |
+| **Redirects & rewrites**                                            | `_redirects` file for SPAs, proxies, and URL rewriting       |
+| **Custom headers**                                                  | `_headers` file for security headers, caching, CORS          |
+| **Auto-forms**                                                      | Add forms to your site and we auto collect the data          |
+| **Password Authenticated Sites**                                    | Restrict access to your site with a password                 |
+| **Auto-delete files**                                               | Upload to a special project that deletes files after 14 days |
+| **[Site analytics](/analytics)**                                    | Privacy-respecting traffic insights                          |
+| **[Global CDN](/regions)**                                          | Multi-region edge caching for fast loads worldwide           |
+| **[No bandwidth limits](/faq#are-there-any-bandwidth-limitations)** | Predictable pricing without surprise overages                |
+| **[Image manipulation API](/images)**                               | Resize, crop, and transform images on-the-fly                |
 
 # Promotion and rollback
 
