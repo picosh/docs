@@ -39,10 +39,16 @@
 .toc {
   padding: 0 var(--line-height) 0 0;
   width: 250px;
+  height: calc(100vh - 3px - 3 * var(--line-height));
+  overflow-y: auto;
 }
 
 .toc a {
   color: var(--white);
+}
+
+.toc li {
+  margin: 5px 0;
 }
 
 .sitemap {
@@ -105,6 +111,10 @@
   padding: 0 0 0 var(--line-height);
 }
 
+.sidebar-list li {
+  margin: 5px 0;
+}
+
 .post-group {
   display: flex;
   gap: 1rem;
@@ -142,7 +152,7 @@
   .post {
     height: 100%;
     overflow-y: unset;
-    padding-right: 0;
+    padding: 0;
   }
 
   .toc {

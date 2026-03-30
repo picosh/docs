@@ -231,7 +231,7 @@ blockquote code {
 ul,
 ol {
   padding: 0 15px;
-  list-style-position: outside;
+  list-style-position: inside;
   list-style-type: square;
   margin: var(--grid-height) 0;
 }
