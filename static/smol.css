@@ -162,6 +162,7 @@ h4 {
   font-style: normal;
   font-weight: inherit;
   font-size: inherit;
+  font-family: monospace;
 }
 
 path {
@@ -227,25 +228,62 @@ blockquote code {
   border: 1px solid var(--blockquote);
 }
 
-ul {
-  padding: 0 0 0 var(--line-height);
-  list-style-position: inside;
+ul,
+ol {
+  padding: 0 15px;
+  list-style-position: outside;
   list-style-type: square;
-  margin: var(--line-height) 0;
+  margin: var(--grid-height) 0;
 }
 
 ul[style*="list-style-type: none;"] {
   padding: 0;
 }
 
-ol {
+ol ul, ol ol, ul ol, ul ul {
   padding: 0 0 0 var(--line-height);
-  list-style-type: decimal;
-  margin: var(--line-height) 0;
+  margin: 0;
 }
 
-ol[style*="list-style-type: none;"] {
+li {
+  margin: var(--grid-height) 0;
   padding: 0;
+}
+
+li::marker {
+  line-height: 0;
+  color: var(--grey-light);
+}
+
+li blockquote,
+li pre {
+  display: inline-block;
+  margin: 0;
+  width: 100%;
+}
+
+li pre {
+  padding: var(--grid-height);
+}
+
+[role="list"] {
+  display: flex;
+  flex-direction: column;
+  gap: var(--grid-height);
+}
+
+[role="list"] [role="list"] {
+  margin-left: 1.3rem;
+}
+
+[role="listitem"] {
+  display: flex;
+  align-items: flex-start;
+  gap: 5px;
+}
+
+[role="listitem"]:has(pre, img, blockquote) {
+  align-items: center;
 }
 
 table {
@@ -257,20 +295,6 @@ th,
 td {
   border: 1px solid var(--white);
   padding: var(--grid-height);
-}
-
-ol ul, ol ol, ul ol, ul ul {
-  padding: 0 0 0 3ch;
-  margin: 0;
-}
-
-li {
-  margin: 0;
-  padding: 0;
-}
-
-li::marker {
-  line-height: 0;
 }
 
 footer {
@@ -704,7 +728,7 @@ h1 code, h2 code, h3 code, h4 code {
 
 @media only screen and (max-width: 40em) {
   body {
-    padding: 0 1rem;
+    padding: 0 var(--grid-height);
   }
 
   header {
