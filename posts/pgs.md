@@ -451,7 +451,7 @@ Once this ACL is set any request to your site will be redirected to our global l
 
 # Default index listing page
 
-If a user navigates to a site or folder that does not have an `index.html` file then we will auto-generate one that displays a folder/file listing. If users do not want to show a listing of their folders and files then they can upload a 404.html file and it'll remove the listing pages for the entire project.
+If a user navigates to a site or folder that does not have an `index.html` file then we will auto-generate one that displays a folder/file listing. If users do not want to show a listing of their folders and files then they can upload a `404.html` file and it'll remove the listing pages for the entire project.
 
 # Auto-forms
 
