@@ -449,6 +449,10 @@ ssh pgs.sh acl project-x --type http-pass --acl <pass>
 
 Once this ACL is set any request to your site will be redirected to our global login page. Once successully authenticated we set a cookie that is valid for 24 hours in the user's browser. They can close the tab and come back and they will only need to re-authenticate daily.
 
+# Default index listing page
+
+If a user navigates to a site or folder that does not have an `index.html` file then we will auto-generate one that displays a folder/file listing. If users do not want to show a listing of their folders and files then they can upload a 404.html file and it'll remove the listing pages for the entire project.
+
 # Auto-forms
 
 > NOTICE: This is a premium [pico+](/plus) feature.

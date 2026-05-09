@@ -47,6 +47,10 @@ Unlisted in this context means it does not show up on your user landing page whe
 echo "foobar" | ssh pastes.sh FILENAME hidden=true
 ```
 
+# Want a pastebin for any file type?
+
+[pgs.sh:/bin](/pgs#auto-deleting-site-after-time-period) is a generic pastebin for any filetype that auto-deletes after 14 days.
+
 <hr />
 <div class="flex flex-col items-center justify-center">
   <p>Create an account using only your SSH key.</p>
