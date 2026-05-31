@@ -14,15 +14,13 @@ ssh -R dev:80:localhost:3000 tuns.sh
 # Your local server is now live at https://{user}-dev.tuns.sh
 ```
 
-No installs. No configuration. No cloud deployment. Just SSH.
-
 # Why tuns?
 
 **Skip the deployment dance.** You're building something locally and need to share it -- with a client, a teammate, or a webhook. Normally you'd have to deploy to staging, configure DNS, set up TLS, and wait. With tuns, you run one command and you're live.
 
-**Zero infrastructure overhead.** No nginx configs. No Let's Encrypt certificates. No cloud VMs. Your laptop is the server; tuns handles the rest.
+**Zero infrastructure overhead.** Your laptop is the server; tuns handles the rest.
 
-**Works everywhere SSH works.** If you can SSH, you can use tuns. No CLI to install, no daemon to run, no firewall rules to configure.
+**Works everywhere SSH works.** If you can SSH, you can use tuns.
 
 ## What can you do with it?
 

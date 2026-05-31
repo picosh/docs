@@ -16,7 +16,7 @@ ssh pipe.pico.sh sub mykey
 hello world
 ```
 
-That's it. Private and authenticated by default.
+That's it: private and authenticated by default.
 
 [pipe](https://pipe.pico.sh) brings the simplicity of \*nix pipes to the network. If you know how to use `|`, you already know how to use pipe.
 

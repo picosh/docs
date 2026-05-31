@@ -7,15 +7,13 @@ toc: 2
 
 > prose.sh is a free service
 
-Write your blog with markdown. Send it to our server. You're live.
-
-No static site generators. No build step. No deploy pipeline. No YAML configs. Just `rsync` your posts and we handle the rest.
+Write your blog with markdown, `rsync` it to us, and your posts are live.
 
 # Why prose over self-hosting?
 
-You know how to set up a blog. You've done it before -- Hugo, Jekyll, Astro, whatever's trending this month. But then comes the maintenance: updating dependencies, fixing broken builds, renewing certs, debugging why your CI suddenly fails.
+You know how to set up a blog. You've done it before -- Hugo, Jekyll, Astro, whatever's trending this month. But then comes the maintenance: updating dependencies, fixing broken builds, renewing certs, etc.
 
-`prose.sh` gives you the same control you'd have self-hosting, minus the operational burden. Your content stays in plain markdown files on your machine. You own your workflow. We just serve it.
+`prose.sh` gives you the same control you'd have self-hosting, minus the operational burden. Your content stays in plain markdown files on your machine. You own your workflow, we just serve it.
 
 # Features
 

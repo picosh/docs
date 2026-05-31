@@ -7,7 +7,7 @@ toc: 2
 
 > pgs.sh is a [pico+](/plus) service with a **free tier** (25mb total storage limit)
 
-Deploy static sites with a single command. No passwords. No config files. No CI setup. Just your SSH key and `rsync`.
+Deploy static sites with a single command. All you need is an SSH key and `rsync`.
 
 ```bash
 rsync --delete -rv ./public/ pgs.sh:/mysite
@@ -18,7 +18,7 @@ That's the entire workflow. Your SSH key is your identity and every deploy is in
 
 # Why pgs?
 
-**You already know the tools.** No new CLI to install, no proprietary config formats to learn. If you can use `rsync`, `scp`, or `sftp`, you can deploy to pgs.
+**You already have the tools installed.** If you can use `rsync`, `scp`, or `sftp`, you can deploy to pgs.
 
 **Zero ceremony.** Projects are created on first upload. TLS certificates are automatic. There's no dashboard to click through, no deploy button to wait for.
 
@@ -26,22 +26,22 @@ That's the entire workflow. Your SSH key is your identity and every deploy is in
 
 # Features
 
-| Feature                                                             | What it means for you                                        |
-| ------------------------------------------------------------------- | ------------------------------------------------------------ |
-| **SSH-native workflow**                                             | Deploy with `rsync`, `scp`, or `sftp`: tools you already use |
-| **Instant project creation**                                        | No setup step. Upload to any project name and it exists      |
-| **Automatic TLS**                                                   | HTTPS for every project, zero configuration                  |
-| **Promotion & rollback**                                            | Atomic deploys with `ssh pgs.sh link`: rollback in seconds   |
-| **Custom domains**                                                  | Point any domain to any project with simple DNS              |
-| **Redirects & rewrites**                                            | `_redirects` file for SPAs, proxies, and URL rewriting       |
-| **Custom headers**                                                  | `_headers` file for security headers, caching, CORS          |
-| **Auto-forms**                                                      | Add forms to your site and we auto collect the data          |
-| **Password Authenticated Sites**                                    | Restrict access to your site with a password                 |
-| **Auto-delete files**                                               | Upload to a special project that deletes files after 14 days |
-| **[Site analytics](/analytics)**                                    | Privacy-respecting traffic insights                          |
-| **[Global CDN](/regions)**                                          | Multi-region edge caching for fast loads worldwide           |
-| **[No bandwidth limits](/faq#are-there-any-bandwidth-limitations)** | Predictable pricing without surprise overages                |
-| **[Image manipulation API](/images)**                               | Resize, crop, and transform images on-the-fly                |
+| Feature                                                             | What it means for you                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------- |
+| **SSH-native workflow**                                             | Deploy with `rsync`, `scp`, or `sftp`: tools you already use  |
+| **Instant project creation**                                        | Projects are upserted on file upload, no create step required |
+| **Automatic TLS**                                                   | HTTPS for every project, zero configuration                   |
+| **Promotion & rollback**                                            | Atomic deploys with `ssh pgs.sh link`: rollback in seconds    |
+| **Custom domains**                                                  | Point any domain to any project with simple DNS               |
+| **Redirects & rewrites**                                            | `_redirects` file for SPAs, proxies, and URL rewriting        |
+| **Custom headers**                                                  | `_headers` file for security headers, caching, CORS           |
+| **Auto-forms**                                                      | Add forms to your site and we auto collect the data           |
+| **Password Authenticated Sites**                                    | Restrict access to your site with a password                  |
+| **Auto-delete files**                                               | Upload to a special project that deletes files after 14 days  |
+| **[Site analytics](/analytics)**                                    | Privacy-respecting traffic insights                           |
+| **[Global CDN](/regions)**                                          | Multi-region edge caching for fast loads worldwide            |
+| **[No bandwidth limits](/faq#are-there-any-bandwidth-limitations)** | Predictable pricing without surprise overages                 |
+| **[Image manipulation API](/images)**                               | Resize, crop, and transform images on-the-fly                 |
 
 # Promotion and rollback
 
