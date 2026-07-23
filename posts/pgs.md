@@ -5,7 +5,7 @@ keywords: [pico, pgs]
 toc: 2
 ---
 
-> pgs.sh is a [pico+](/plus) service with a **free tier** (25mb total storage limit)
+> pgs.sh is a [pico+](/plus) service
 
 Deploy static sites with a single command. All you need is an SSH key and `rsync`.
 
