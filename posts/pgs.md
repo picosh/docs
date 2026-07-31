@@ -433,13 +433,9 @@ See our [custom domains](#custom-domains) section.
 
 # Private projects
 
-> NOTICE: This is a premium [pico+](/plus) feature.
-
 We support private projects that is only accessible through a web tunnel or by copying the files. Think of this more as private object storage. Private projects are set automatically when the project is prefixed with `private-`. These projects can never have their ACL modified after creation, they will always be private.
 
 # Require password to access site
-
-> NOTICE: This is a premium [pico+](/plus) feature.
 
 If you need your site to be gated by a password then you can change the ACL for the site:
 
@@ -454,8 +450,6 @@ Once this ACL is set any request to your site will be redirected to our global l
 If a user navigates to a site or folder that does not have an `index.html` file then we will auto-generate one that displays a folder/file listing. If users do not want to show a listing of their folders and files then they can upload a `404.html` file and it'll remove the listing pages for the entire project.
 
 # Auto-forms
-
-> NOTICE: This is a premium [pico+](/plus) feature.
 
 We can automatically save form data if the form is setup correctly.
 
@@ -483,8 +477,6 @@ ssh pgs.sh forms project-x --rm
 Whatever form data is sent through the form is automatically saved in our database. If the form inputs change over time, the data will reflect those changes but will include all the previous entries as well.
 
 # Proxy to another service
-
-> NOTICE: This is a premium [pico+](/plus) feature.
 
 Similar to how you can rewrite paths like `/*` to `/index.html` with a `_redirects` file, you can also set up rules to let parts of your site proxy to external services. Let’s say you need to communicate from a single-page app with an API on https://api.example.com that doesn’t support CORS requests. The following rule will let you use `/api/` from your JavaScript client:
 
