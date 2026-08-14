@@ -5,7 +5,7 @@ keywords: [pico, feeds]
 toc: 1
 ---
 
-> feeds.pico.sh is now a [pico+](/plus) service, read our [ann](https://blog.pico.sh/ann-033-moving-rss-to-email-pico-plus)
+> rss-to-email is now a [pico+](/plus) service, read our [ann](https://blog.pico.sh/ann-033-moving-rss-to-email-pico-plus)
 
 Stay up-to-date with all the RSS feeds you love.
 
