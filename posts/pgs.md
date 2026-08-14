@@ -5,7 +5,7 @@ keywords: [pico, pgs]
 toc: 2
 ---
 
-> pgs.sh is a [pico+](/plus) service
+> pgs.sh is now a [pico+](/plus) service, read our [ann](https://blog.pico.sh/ann-037-pgs-pico-plus-only)
 
 Deploy static sites with a single command. All you need is an SSH key and `rsync`.
 
