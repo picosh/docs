@@ -97,6 +97,11 @@ func main() {
 						Page: pager("pastes.md"),
 					},
 					{
+						Text: "Patchbin",
+						Href: "/patchbin",
+						Page: pager("patchbin.md"),
+					},
+					{
 						Text: "IRC Bouncer",
 						Href: "/bouncer",
 						Page: pager("bouncer.md"),

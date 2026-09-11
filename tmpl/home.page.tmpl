@@ -86,6 +86,13 @@
         </h3>
         <div>Write your blog with markdown. <code>rsync</code> and you're live.</div>
       </div>
+
+      <div class="box">
+        <h3 class="m-0 p-0 text-lg flex items-center">
+          <a href="/patchbin">patchbin</a>
+        </h3>
+        <div>A pastebin for patches, supercharged for git collaboration.</div>
+      </div>
     </article>
 
     <div>
@@ -167,6 +174,24 @@ Cya!</pre>
               Congrats!  You just published a blog article, accessible here:
               <strong>https://{user}.prose.sh/hello-world</strong>
             </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="box">
+        <h3 class="text-lg mt-0">Git collaboration with patches</h3>
+        <div class="flex gap-2 flex-collapse">
+          <div class="flex-1 group">
+            <div>Submit a patch request to us:</div>
+            <pre>git format-patch main --stdout | ssh pr.pico.sh pr create {repo}</pre>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="flex-1 group">
+            <div>Pull down and apply the latest patchset:</div>
+            <pre>ssh pr.pico.sh print {prID} | git am -3</pre>
+            <div>Web dashboard available at <strong>https://pr.pico.sh</strong></div>
           </div>
         </div>
       </div>
