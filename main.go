@@ -87,6 +87,11 @@ func main() {
 						},
 					},
 					{
+						Text: "Patchbin",
+						Href: "/patchbin",
+						Page: pager("patchbin.md"),
+					},
+					{
 						Text: "RSS-to-Email",
 						Href: "/feeds",
 						Page: pager("feeds.md"),
@@ -95,11 +100,6 @@ func main() {
 						Text: "Pastes",
 						Href: "/pastes",
 						Page: pager("pastes.md"),
-					},
-					{
-						Text: "Patchbin",
-						Href: "/patchbin",
-						Page: pager("patchbin.md"),
 					},
 					{
 						Text: "IRC Bouncer",
