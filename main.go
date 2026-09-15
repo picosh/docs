@@ -90,6 +90,9 @@ func main() {
 						Text: "Patchbin",
 						Href: "/patchbin",
 						Page: pager("patchbin.md"),
+						Data: LogoData{
+							Src: "/logo-patchbin.svg",
+						},
 					},
 					{
 						Text: "RSS-to-Email",
