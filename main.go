@@ -100,11 +100,6 @@ func main() {
 						Page: pager("feeds.md"),
 					},
 					{
-						Text: "Pastes",
-						Href: "/pastes",
-						Page: pager("pastes.md"),
-					},
-					{
 						Text: "IRC Bouncer",
 						Href: "/bouncer",
 						Page: pager("bouncer.md"),
