@@ -5,7 +5,7 @@ keywords: [pico, prose]
 toc: 2
 ---
 
-> prose.sh is a free service
+> prose.sh is a free service that [requires an invitation](https://blog.pico.sh/ann-038-pico-invite-system)
 
 Write your blog with markdown, `rsync` it to us, and your posts are live.
 
