@@ -169,16 +169,22 @@
 
 .sitemap-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
 }
 
 .sitemap-card {
+  min-width: 0;
+  width: 100%;
   border: 1px dashed var(--grey-light);
   background-color: var(--pre);
   padding: var(--grid-height);
   font-family: var(--font-mono);
   font-size: 0.85rem;
+}
+
+.tier-price {
+  margin: var(--grid-height) 0;
 }
 
 .sitemap-card .sidebar-header {
@@ -236,19 +242,7 @@
   justify-content: center;
 }
 
-.plus {
-  height: 100%;
-  width: 200px;
-}
 
-.logo-basic {
-  line-height: 1;
-  display: inline-block;
-  border: 3px solid var(--grey-light);
-  padding: 8px 10px 10px 10px;
-  border-radius: 10px;
-  margin: 0;
-}
 
 @media only screen and (max-width: 800px) {
   body {

@@ -11,88 +11,112 @@
 {{define "body"}}
 {{template "nav" .}}
 
-<main  class="flex justify-center">
-  <div>
-    <div class="group-h flex-collapse">
-      <div class="border px-4 py-4 mt-4 container-xs" style="height: 800px;">
-        <div class="group items-center">
-          <h1 class="logo-basic">starter</h1>
-          <div class="text-center">
-            <div class="text-2xl">$0</div>
-            <div class="text-sm">&nbsp;</div>
-            <pre class="my"><span class="visited">ssh</span> pico.sh</pre>
-            <div class="text-sm">
-              Log into our SSH App to learn more and get started.
-            </div>
-          </div>
-        </div>
+<main>
+  <h1 class="m-0">{{.Data.Title}}</h1>
+  <p class="m-0 mono text-grey"># {{.Data.Description}}</p>
 
-        <div>
-          <ul>
-            <li>
-              <a href="/prose">prose</a>
-            </li>
-            <li>
-              <a href="/pipe">pipe</a>
-            </li>
-            <li>
-              <a href="/pastes">pastes</a>
-            </li>
-            <li>25MB storage across all services</li>
-          </ul>
-        </div>
+  <hr class="dashed" />
+
+  <div class="box my">
+    <div class="text-sm mono text-grey font-bold"># UPGRADE</div>
+    <pre class="cmd m-0">ssh pico.sh</pre>
+    <div class="text-sm mono text-grey mt">Log into the SSH console and select the <code>pico+</code> menu option.</div>
+  </div>
+
+  <div class="sitemap-grid my">
+    <div class="sitemap-card">
+      <div class="sidebar-header mono text-sm text-grey font-bold">[TIER: STARTER]</div>
+
+      <div class="tier-price">
+        <div class="mono text-2xl font-bold m-0">$0</div>
+        <div class="mono text-sm text-grey">free forever</div>
       </div>
 
-      <div class="border px-4 py-4 mt-4 container-xs" style="height: 800px;">
-        <div class="group items-center">
-          <h1 class="logo-header">pico+</h1>
-          <div class="text-center">
-            <div class="text-2xl">$2/month</div>
-            <div class="text-sm">(billed yearly)</div>
-            <pre class="my"><span class="visited">ssh</span> pico.sh</pre>
-            <div class="text-sm">
-              Log into our SSH App, then select the "pico+" menu option.
-            </div>
-          </div>
-        </div>
+      <hr class="dashed" />
 
-        <div>
-          <ul>
-            <li>
-              <a href="/tuns">tuns</a>
-              <ul><li>per-site <a href="/analytics">analytics</a></li></ul>
-            </li>
-            <li>
-              <a href="/pgs">pages</a>
-              <ul><li>per-file max size 100mb</li></ul>
-              <ul><li>per-site <a href="/analytics">analytics</a></li></ul>
-            </li>
-            <li>
-              <a href="/prose">prose</a>
-              <ul>
-                <li>blog <a href="/analytics">analytics</a></li>
-              </ul>
-            </li>
-            <li>
-              <a href="/bouncer">irc bouncer</a>
-            </li>
-            <li>
-              <a href="/feeds">rss-to-email</a>
-            </li>
-            <li>5GB storage across all services</li>
-          </ul>
+      <div class="mono text-sm">
+        <div class="text-grey font-bold">QUOTA</div>
+        <div>storage: <strong class="text-green">25MB</strong> across all services</div>
 
-          <hr class="my-4" />
-
-          Before signing up to <code>pico+</code>, please read our <a href="/privacy">privacy policy</a>,
-          <a href="/ops">terms of service</a>, and our <a href="/ops#refund-policy">refund policy</a>.
-        </div>
+        <div class="text-grey font-bold mt">INCLUDED SERVICES</div>
+        <ul class="list-none sitemap-tree" style="padding-left: 0; margin: 0;">
+          <li class="sitemap-page-item">
+            <span class="text-grey">></span> <a href="/prose" class="font-bold">prose</a>
+          </li>
+          <li class="sitemap-page-item">
+            <span class="text-grey">></span> <a href="/pipe" class="font-bold">pipe</a>
+          </li>
+          <li class="sitemap-page-item">
+            <span class="text-grey">></span> <a href="/pastes" class="font-bold">pastes</a>
+          </li>
+        </ul>
       </div>
     </div>
 
-    {{template "pager" .}}
-    <hr class="my-4" />
-    {{template "footer" .}}
+    <div class="sitemap-card">
+      <div class="sidebar-header mono text-sm text-grey font-bold">[TIER: PICO+]</div>
+
+      <div class="tier-price">
+        <div class="mono text-2xl font-bold text-green m-0">$2 <span class="text-sm text-grey font-normal">/ month</span></div>
+        <div class="mono text-sm text-grey">billed yearly ($24/yr)</div>
+      </div>
+
+      <hr class="dashed" />
+
+      <div class="mono text-sm">
+        <div class="text-grey font-bold">QUOTA</div>
+        <div>storage: <strong class="text-green">5GB</strong> across all services</div>
+
+        <div class="text-grey font-bold mt">EVERYTHING IN STARTER, PLUS:</div>
+        <ul class="list-none sitemap-tree" style="padding-left: 0; margin: 0;">
+          <li class="sitemap-page-item">
+            <span class="text-grey">></span> <a href="/pgs" class="font-bold">pages (pgs)</a>
+            <ul class="list-none sitemap-heading-list">
+              <li><span class="text-grey">•</span> 100MB per-file upload limit</li>
+              <li><span class="text-grey">•</span> per-site <a href="/analytics">analytics</a></li>
+            </ul>
+          </li>
+          <li class="sitemap-page-item">
+            <span class="text-grey">></span> <a href="/tuns" class="font-bold">tuns</a>
+            <ul class="list-none sitemap-heading-list">
+              <li><span class="text-grey">•</span> per-tunnel <a href="/analytics">analytics</a></li>
+            </ul>
+          </li>
+          <li class="sitemap-page-item">
+            <span class="text-grey">></span> <a href="/prose" class="font-bold">prose</a>
+            <ul class="list-none sitemap-heading-list">
+              <li><span class="text-grey">•</span> blog <a href="/analytics">analytics</a></li>
+            </ul>
+          </li>
+          <li class="sitemap-page-item">
+            <span class="text-grey">></span> <a href="/bouncer" class="font-bold">irc bouncer</a>
+            <ul class="list-none sitemap-heading-list">
+              <li><span class="text-grey">•</span> always-on irc connection</li>
+            </ul>
+          </li>
+          <li class="sitemap-page-item">
+            <span class="text-grey">></span> <a href="/feeds" class="font-bold">rss-to-email</a>
+            <ul class="list-none sitemap-heading-list">
+              <li><span class="text-grey">•</span> subscribe to feeds</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
+
+  <div class="box my mono text-sm">
+    <div class="text-grey font-bold mb"># NOTE</div>
+    <div>
+      Before signing up to <code>pico+</code>, please review our
+      <a href="/privacy">privacy policy</a>,
+      <a href="/ops">terms of service</a>, and
+      <a href="/ops#refund-policy">refund policy</a>.
+    </div>
+  </div>
+
+  {{template "pager" .}}
+  <hr class="dashed my" />
+  {{template "footer" .}}
 </main>
 {{end}}
