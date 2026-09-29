@@ -103,6 +103,7 @@ kbd,
 samp,
 pre {
   font-family: monospace;
+  font-variant-numeric: tabular-nums;
 }
 
 code,
@@ -152,14 +153,67 @@ summary {
 h1,
 h2,
 h3,
-h4 {
+h4,
+h5,
+h6 {
   margin: 0;
   padding: 0;
   border: 0;
-  font-style: normal;
-  font-weight: inherit;
-  font-size: inherit;
   font-family: monospace;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 1.6rem;
+  line-height: calc(var(--line-height) * 1.5);
+  margin-top: calc(var(--line-height) * 1.5);
+  margin-bottom: var(--grid-height);
+}
+
+h2 {
+  font-size: 1.3rem;
+  line-height: var(--line-height);
+  margin-top: calc(var(--line-height) * 1.5);
+  margin-bottom: var(--grid-height);
+}
+
+h3 {
+  font-size: 1.1rem;
+  line-height: var(--line-height);
+  margin-top: var(--line-height);
+  margin-bottom: var(--grid-height);
+}
+
+h4,
+h5,
+h6 {
+  font-size: 1rem;
+  line-height: var(--line-height);
+  margin-top: var(--line-height);
+  margin-bottom: var(--grid-height);
+  color: var(--white-dark);
+}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+  color: inherit;
+  text-decoration: none;
+  padding: 0;
+}
+
+h1 a:hover,
+h2 a:hover,
+h3 a:hover,
+h4 a:hover,
+h5 a:hover,
+h6 a:hover {
+  background-color: transparent;
+  color: var(--hover);
+  text-decoration: underline;
 }
 
 path {
@@ -176,17 +230,29 @@ hr {
 }
 
 a {
-  text-decoration: none;
   color: var(--link-color);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  padding: 0 2px;
+  border-radius: 1px;
+  transition: background-color 0.1s ease, color 0.1s ease;
 }
 
-a:hover,
-a:visited:hover {
-  text-decoration: underline;
+a:hover {
+  background-color: var(--link-color);
+  color: var(--bg-color);
+  text-decoration: none;
 }
 
 a:visited {
   color: var(--visited);
+}
+
+a:visited:hover {
+  background-color: var(--visited);
+  color: var(--bg-color);
+  text-decoration: none;
 }
 
 section {
@@ -335,6 +401,7 @@ sup {
 
 .mono {
   font-family: monospace;
+  font-variant-numeric: tabular-nums;
 }
 
 .link-alt-hover,
@@ -347,6 +414,7 @@ sup {
 
 .link-alt-hover:visited:hover,
 .link-alt-hover:hover {
+  background-color: transparent;
   text-decoration: underline;
 }
 
@@ -360,6 +428,20 @@ sup {
 
 .link-alt:visited:hover,
 .link-alt:hover {
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+.link-grey,
+.link-grey:visited {
+  color: var(--grey-light);
+  text-decoration: none;
+}
+
+.link-grey:hover,
+.link-grey:visited:hover {
+  background-color: transparent;
+  color: var(--text-color);
   text-decoration: underline;
 }
 
@@ -368,19 +450,35 @@ sup {
 }
 
 .text-2xl {
-  font-size: var(--line-height);
+  font-size: 1.6rem;
+  font-weight: bold;
+  line-height: calc(var(--line-height) * 1.5);
+  margin-bottom: var(--grid-height);
+}
+
+.text-xl {
+  font-size: 1.3rem;
   font-weight: bold;
   line-height: var(--line-height);
   margin-bottom: var(--grid-height);
-  text-transform: uppercase;
 }
 
-.text-xl, .text-lg, .text-md {
+.text-lg {
+  font-size: 1.1rem;
+  font-weight: bold;
+  line-height: var(--line-height);
+  margin-bottom: var(--grid-height);
+}
+
+.text-md {
   font-size: 1rem;
   font-weight: bold;
   line-height: var(--line-height);
   margin-bottom: var(--grid-height);
-  text-transform: uppercase;
+}
+
+.text-right {
+  text-align: right;
 }
 
 .text-sm {
@@ -601,7 +699,6 @@ sup {
 .md h4 {
   padding: 0;
   margin: 0;
-  /* margin: 1.5rem 0 0.9rem 0; */
   font-weight: bold;
 }
 
@@ -613,25 +710,17 @@ sup {
   text-decoration: none;
 }
 
+.md h1 a:hover,
+.md h2 a:hover,
+.md h3 a:hover,
+.md h4 a:hover {
+  background-color: transparent;
+  color: var(--hover);
+  text-decoration: underline;
+}
+
 h1 code, h2 code, h3 code, h4 code {
   text-transform: none;
-}
-
-.md h1 {
-  font-size: 1rem;
-  line-height: var(--line-height);
-  margin-top: calc(var(--line-height) * 2);
-  margin-bottom: var(--grid-height);
-  text-transform: uppercase;
-}
-
-.md h2, .md h3, .md h4 {
-  font-size: 1rem;
-  line-height: var(--line-height);
-  margin-top: calc(var(--line-height) * 2);
-  margin-bottom: var(--line-height);
-  text-transform: uppercase;
-  color: var(--white-dark);
 }
 
 /* ==== HELPERS ==== */
@@ -662,6 +751,11 @@ h1 code, h2 code, h3 code, h4 code {
   display: inline-block;
 }
 
+.btn:hover {
+  background-color: var(--link-color);
+  color: var(--bg-color);
+}
+
 .btn-link,
 .btn-link:visited {
   border: 2px solid var(--link-color);
@@ -670,6 +764,13 @@ h1 code, h2 code, h3 code, h4 code {
   text-decoration: none;
   font-weight: bold;
   display: inline-block;
+}
+
+.btn-link:hover,
+.btn-link:visited:hover {
+  background-color: var(--link-color);
+  color: var(--bg-color);
+  text-decoration: none;
 }
 
 .box {
@@ -737,11 +838,11 @@ h1 code, h2 code, h3 code, h4 code {
   }
 }
 
-#debug {
+body {
   position: relative;
 }
 
-#debug .debug-grid {
+.debug-grid {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -749,10 +850,11 @@ h1 code, h2 code, h3 code, h4 code {
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: -1;
+  z-index: 1000;
+  pointer-events: none;
   background-image:
-    repeating-linear-gradient(var(--code) 0 1px, transparent 1px 100%),
-    repeating-linear-gradient(90deg, var(--code) 0 1px, transparent 1px 100%);
+    repeating-linear-gradient(rgba(255, 121, 198, 0.18) 0 1px, transparent 1px 100%),
+    repeating-linear-gradient(90deg, rgba(139, 233, 253, 0.10) 0 1px, transparent 1px 100%);
   background-size: 1ch var(--grid-height);
   margin: 0;
 }
