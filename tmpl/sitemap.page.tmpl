@@ -13,13 +13,13 @@
 
 <main>
   <h1 class="m-0">{{.Data.Title}}</h1>
-  <div>{{.Data.Description}}</div>
+  <p class="m-0 mono text-grey"># {{.Data.Description}}</p>
 
-  <hr />
+  <hr class="dashed" />
 
   {{template "toc" .}}
 
-  <hr />
+  <hr class="dashed" />
 </main>
 
 {{template "footer" .}}

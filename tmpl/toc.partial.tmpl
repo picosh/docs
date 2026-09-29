@@ -2,24 +2,22 @@
 <div class="sitemap-grid">
 {{range .Sitemap.Children -}}
   {{if .Children}}
-  <div class="box">
-    <h2 class="text-xl inline-block">{{.Text}}</h2>
-    <ul class="list-none" style="padding-left: 0;">
+  <div class="sitemap-card">
+    <div class="sidebar-header mono text-sm text-grey font-bold">[{{.Text}}]</div>
+    <ul class="sitemap-tree mono list-none" style="padding-left: 0; margin: 0;">
     {{range .Children -}}
-      <li>
-        <a href="{{.GenHref}}">{{.Text}}</a>
+      <li class="sitemap-page-item">
+        <span class="text-grey">></span> <a href="{{.GenHref}}" class="font-bold">{{.Text}}</a>
 
-        <ul>
+        {{if .Children}}
+        <ul class="list-none sitemap-heading-list">
         {{range .Children}}
           <li>
-            {{if .Data}}
-            <a href="{{.GenHref}}"><img src="{{.Data.Src}}" /> {{.Text}}</a>
-            {{else}}
-            <a href="{{.GenHref}}">{{.Text}}</a>
-            {{end}}
+            <span class="text-grey">#</span> <a href="{{.GenHref}}">{{.Text}}</a>
           </li>
         {{end}}
         </ul>
+        {{end}}
       </li>
     {{- end}}
     </ul>

@@ -1,39 +1,28 @@
 {{define "sitemap-footer"}}
-  <ul class="sitemap mb-4 list-none sidebar-list">
+  <div class="sidebar-header mono text-sm text-grey">[NAV]</div>
+  <ul class="sitemap mb-4 list-none">
   {{range .Sitemap.Children}}
-    {{if .Href}}
-    <li>
-      <span class="font-bold">
+    <li class="sidebar-section">
+      {{if .Href}}
         {{if (eq $.Href .GenHref)}}
-        <a href="{{.GenHref}}" class="link-alt-hover">{{.Text}}</a>
+        <span class="active font-bold"><span class="text-green">></span> <a href="{{.GenHref}}">{{.Text}}</a></span>
         {{else}}
-        <a href="{{.GenHref}}" class="link-alt">{{.Text}}</a>
+        <a href="{{.GenHref}}" class="font-bold">{{.Text}}</a>
         {{end}}
-      </span>
-    {{else}}
-    <li>
-      <span class="font-bold">{{.Text}}</span>
-    {{end}}
+      {{else}}
+      <div class="text-grey font-bold">{{.Text}}</div>
+      {{end}}
 
       {{if .Children}}
-      <ul class="list-square sidebar-list">
+      <ul class="list-none sidebar-sublist">
         {{range .Children}}
-          {{if .Data}}
-          <li class="flex list-none items-center">
-            <div class="logo-sm" style="margin-right: 9px;">
-              {{template "logo" .Data.Src}}
-            </div>
-            <a href="{{.GenHref}}" class="link-alt{{if (eq $.Href .GenHref)}}-hover{{end}}">
-              {{.Text}}
-            </a>
-          </li>
-          {{else}}
           <li>
-            <a href="{{.GenHref}}" class="link-alt{{if (eq $.Href .GenHref)}}-hover{{end}}">
-              {{.Text}}
-            </a>
+            {{if (eq $.Href .GenHref)}}
+            <span class="active font-bold"><span class="text-green">></span> <a href="{{.GenHref}}">{{.Text}}</a></span>
+            {{else}}
+            <span class="text-grey">•</span> <a href="{{.GenHref}}">{{.Text}}</a>
+            {{end}}
           </li>
-          {{end}}
         {{end}}
       </ul>
       {{end}}

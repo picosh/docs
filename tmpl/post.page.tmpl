@@ -12,9 +12,14 @@
 {{template "nav" .}}
 
 <div class="post-group">
-  <article class="md toc">
-    {{.Data.TocHtml}}
-  </article>
+  <aside class="toc-pane">
+    {{if .Data.TocHtml}}
+    <div class="sidebar-header mono text-sm text-grey">[OUTLINE]</div>
+    <div class="toc">
+      {{.Data.TocHtml}}
+    </div>
+    {{end}}
+  </aside>
 
   <main class="post">
     <h1 class="m-0 flex items-center">
@@ -37,7 +42,9 @@
     {{template "footer" .}}
   </main>
 
-  {{template "sitemap-footer" .}}
+  <aside class="sitemap-pane">
+    {{template "sitemap-footer" .}}
+  </aside>
 </div>
 
 {{end}}

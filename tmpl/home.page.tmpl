@@ -13,38 +13,34 @@
 
 <main>
   <div class="flex flex-col gap-2">
-    <div class="flex items-center justify-center hero">
-      <div class="flex flex-col items-center gap">
-        <div class="text-2xl text-hdr flex items-center">
-          <span class="logo-lg" style="margin-right: 9px; height: 50px;">
+    <div class="hero">
+      <div class="box">
+        <div class="text-sm mono text-grey mb">pico@sh: ~</div>
+        <div class="flex items-center gap my">
+          <span class="logo-md" style="height: 25px;">
             {{template "logo" "/logo.svg"}}
           </span>
+          <h1 class="m-0"><span class="text-green">$</span> ssh pico.sh</h1>
         </div>
-        <div class="text-center text-lg">
-          <div>The ultimate <code>ssh</code> powered services for developers</div>
+        <p class="mono mt">The ultimate <code>ssh</code> powered services for developers.</p>
+        <div class="flex items-center gap my mono">
+          <a href="/getting-started">[get started]</a>
+          <a href="/sitemap">[docs]</a>
         </div>
-        <a href="/getting-started" class="btn-link">GET STARTED</a>
       </div>
     </div>
 
-    <div class="flex flex-col items-center group-2">
-			<div class="container-sm">
-        Prototype and publish content without needing to install any tooling.
-        Use SSH tools you already have installed:
-        <code>scp</code>, <code>rsync</code>, <code>sftp</code>, and <code>sshfs</code>.
-      </div>
-
-      <div class="container-sm">
-        Our terminal-centric workflow means you never have to leave the terminal.
-      </div>
-
-      <div class="container-sm">
-        Read about what motivates us:
-        <a href="https://blog.pico.sh/rfc-001-radical-experimentation">RFC-001 radical experimentation</a>
+    <div class="box">
+      <div class="text-sm mono text-grey mb">DESCRIPTION</div>
+      <p class="my">
+        Publish and prototype with the tools already in your <code>$PATH</code>:
+        <code>scp</code>, <code>rsync</code>, <code>sftp</code>, and <code>ssh</code>.
+        Stay in your shell.
+      </p>
+      <div class="mt mono text-sm">
+        <span class="text-grey">see also:</span> <a href="https://blog.pico.sh/rfc-001-radical-experimentation">[rfc-001 radical experimentation]</a>
       </div>
     </div>
-
-    <div><hr></div>
 
     <article class="features">
       <div class="box">
@@ -52,7 +48,7 @@
           <span class="logo-md" style="margin-right: 9px; height: 25px;">
             {{template "logo" "/logo-pgs.svg"}}
           </span>
-          <a href="/pgs">pages</a>
+          <a href="/pgs">[pages]</a>
         </h3>
         <div>Deploy static sites with a single command. <code>rsync</code> and you're live.</div>
       </div>
@@ -62,7 +58,7 @@
           <span class="logo-md" style="margin-right: 9px; height: 25px;">
             {{template "logo" "/logo-tuns.svg"}}
           </span>
-          <a href="/tuns">tuns</a>
+          <a href="/tuns">[tuns]</a>
         </h3>
         <div>Host public web services on localhost using SSH.</div>
       </div>
@@ -72,7 +68,7 @@
           <span class="logo-md" style="margin-right: 9px; height: 25px;">
             {{template "logo" "/logo-pipe.svg"}}
           </span>
-          <a href="/pipe">pipe</a>
+          <a href="/pipe">[pipe]</a>
         </h3>
         <div>Pubsub without the infrastructure. Stream data between machines using SSH.</div>
       </div>
@@ -82,7 +78,7 @@
           <span class="logo-md" style="margin-right: 9px; height: 25px;">
             {{template "logo" "/logo-prose.svg"}}
           </span>
-          <a href="/prose">prose</a>
+          <a href="/prose">[prose]</a>
         </h3>
         <div>Write your blog with markdown. <code>rsync</code> and you're live.</div>
       </div>
@@ -92,7 +88,7 @@
           <span class="logo-md" style="margin-right: 9px; height: 25px;">
             {{template "logo" "/logo-patchbin.svg"}}
           </span>
-          <a href="/patchbin">patchbin</a>
+          <a href="/patchbin">[patchbin]</a>
         </h3>
         <div>A pastebin for patches, supercharged for git collaboration.</div>
       </div>
@@ -105,98 +101,46 @@
     <div class="group-2 home-features">
       <div class="box">
         <h3 class="mt-0">Deploy a site with a single command</h3>
-        <div class="flex gap-2 flex-collapse">
-          <div class="flex-1 group">
-            <div>Upload your static site to us:</div>
-            <pre>rsync --delete -rv ./public/ pgs.sh:/mysite/</pre>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="flex-1 group">
-            <div>Now your site is available with TLS handled for you: <strong>https://{user}-mysite.pgs.sh</strong></div>
-            <div>We also automatically handle TLS for your custom domains!</div>
-          </div>
-        </div>
+        <p class="my">Upload your static site to us:</p>
+        <pre class="cmd">rsync --delete -rv ./public/ pgs.sh:/mysite/</pre>
+        <p class="my">Your site is live with automated TLS: <strong>https://{user}-mysite.pgs.sh</strong> (custom domains included).</p>
       </div>
 
       <div class="box">
         <h3 class="mt-0">Access localhost using https</h3>
-        <div class="flex gap-2 flex-collapse">
-          <div class="flex-1 group">
-            <div>
-              If you have a local webserver on <code>localhost:8000</code>,
-              activate an SSH tunnel to us:
-            </div>
-            <pre>ssh -R dev:80:localhost:8000 tuns.sh</pre>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="flex-1">
-            Now your local dev server is available on the web: <strong>https://{user}-dev.tuns.sh</strong>
-          </div>
-        </div>
+        <p class="my">If you have a local webserver on <code>localhost:8000</code>, activate an SSH tunnel:</p>
+        <pre class="cmd">ssh -R dev:80:localhost:8000 tuns.sh</pre>
+        <p class="my">Now your local dev server is available on the web: <strong>https://{user}-dev.tuns.sh</strong></p>
       </div>
 
       <div class="box">
         <h3 class="mt-0">Authenticated *nix pipes over SSH</h3>
-        <div class="flex gap-2 flex-collapse">
-          <div class="flex-1 group">
-            <div>Have one terminal listen for an event and another terminal send the event:</div>
-            <pre>ssh pipe.pico.sh sub mytopic</pre>
-            <pre>echo "Hello world!" | ssh pipe.pico.sh pub mytopic</pre>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="flex-1 group">
-            <div>The <code>sub</code> will receive "Hello world!"</div>
-          </div>
-        </div>
+        <p class="my">Have one terminal listen for an event and another terminal send the event:</p>
+        <pre class="cmd">ssh pipe.pico.sh sub mytopic</pre>
+        <pre class="cmd">echo "Hello world!" | ssh pipe.pico.sh pub mytopic</pre>
+        <p class="my">The <code>sub</code> subscriber will receive <code>"Hello world!"</code></p>
       </div>
 
       <div class="box">
         <h3 class="mt-0">Publish blog articles with a single command</h3>
-        <div class="flex gap-2 flex-collapse">
-          <div class="flex-1 group">
-            <div>Create your first post, (e.g. <code>hello-world.md</code>):</div>
-            <pre># hello world!
+        <p class="my">Create your first post (e.g. <code>hello-world.md</code>):</p>
+        <pre># hello world!
 
 This is my first blog post.
 
 Cya!</pre>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="flex-1 group">
-            <div>Upload the post to us:</div>
-            <pre>scp hello-world.md prose.sh:/</pre>
-            <div>
-              Congrats!  You just published a blog article, accessible here:
-              <strong>https://{user}.prose.sh/hello-world</strong>
-            </div>
-          </div>
-        </div>
+        <p class="my">Upload the post using scp:</p>
+        <pre class="cmd">scp hello-world.md prose.sh:/</pre>
+        <p class="my">Your blog article is live: <strong>https://{user}.prose.sh/hello-world</strong></p>
       </div>
 
       <div class="box">
         <h3 class="mt-0">Git collaboration with patches</h3>
-        <div class="flex gap-2 flex-collapse">
-          <div class="flex-1 group">
-            <div>Submit a patch request to us:</div>
-            <pre style="max-width: 365px; overflow-x: scroll;">git format-patch main --stdout | ssh pr.pico.sh pr create {repo}</pre>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="flex-1 group">
-            <div>Pull down and apply the latest patchset:</div>
-            <pre>ssh pr.pico.sh print {prID} | git am -3</pre>
-            <div>Web dashboard available at <strong>https://pr.pico.sh</strong></div>
-          </div>
-        </div>
+        <p class="my">Submit a patch request to us:</p>
+        <pre class="cmd" style="max-width: 365px; overflow-x: scroll;">git format-patch main --stdout | ssh pr.pico.sh pr create {repo}</pre>
+        <p class="my">Pull down and apply the latest patchset:</p>
+        <pre class="cmd">ssh pr.pico.sh print {prID} | git am -3</pre>
+        <p class="my">Web dashboard available at <strong>https://pr.pico.sh</strong></p>
       </div>
 
       <div>
@@ -225,9 +169,9 @@ Cya!</pre>
         </div>
       </article>
 
-      <div class="text-center">
+      <div class="text-center mono my">
         <h3 class="inline-block">Ready to join?</h3>
-        <div><a href="/getting-started" class="btn-link">GET STARTED</a></div>
+        <div class="my"><a href="/getting-started">[get started]</a></div>
       </div>
     </div>
 
