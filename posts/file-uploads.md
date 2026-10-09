@@ -25,11 +25,23 @@ rsync -rv public/ {service}:/site/
 
 ### What rsync options are supported?
 
-Because in our Go SSH server we re-implement `rsync`, many options are currently not supported. For example, `--dry-run` is not supported. At this time, the only options we supported are the following:
+Our SSH server speaks the rsync protocol itself, so uploads and downloads work the way they do against any rsync server. Files whose size and modification time match our copy are skipped, and changed files are sent as a delta against our copy.
 
-- `-r`
-- `-v`
-- `--delete`
+Pass `-t` (or `-a`) so we keep your files' modification times. Without it, every file is checksummed and compared on each run.
+
+These options are supported:
+
+- `-r`, `-v`, `-t`, `-a` (permissions, owners and groups are accepted but not stored)
+- `-z`, `--compress-choice=zlib` or `zlibx`, `--compress-level`
+- `-c` / `--checksum`, to compare file contents instead of size and time
+- `--size-only`, `-I` / `--ignore-times`, `-u` / `--update`, `--existing`, `--ignore-existing`
+- `--min-size`, `--max-size`
+- `-n` / `--dry-run`
+- `--exclude`, `--include` and the other filter rules
+- `--delete`, `--delete-before`, `--delete-during`, `--delete-delay`, `--delete-after`, `--delete-excluded`
+- `-W` / `--whole-file`, `--block-size`, `--checksum-choice`
+
+These options are rejected with an error: `-H`, `-A`, `-X`, `-R`, `--append`, `--link-dest`, `--copy-dest`, `--compare-dest`, `--files-from`, `--iconv`, batch mode, `--delete-missing-args`, and `--remove-source-files` when downloading.
 
 ## scp
 

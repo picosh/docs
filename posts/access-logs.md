@@ -7,7 +7,7 @@ We provide a TUI page dedicated to viewing access logs into your pico account. T
 
 ```bash
 ssh pico.sh
-# -> access_logs
+# -> access-logs
 ```
 
 On that page we also provide the ability to filter the logs.
@@ -17,7 +17,7 @@ On that page we also provide the ability to filter the logs.
 You can also fetch logs directly in the terminal:
 
 ```bash
-ssh pico.sh -t access_logs
+ssh pico.sh -t access-logs
 ```
 
 This makes it easier to pipe into tools like `jq` for more advanced viewing and filtering.
