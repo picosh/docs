@@ -177,7 +177,13 @@ Depending on your DNS, this could take some time to fully switch over.
 
 ## Debug custom domains
 
-We have an endpoint to check whether or not custom domains are setup:
+Our CLI checks the `TXT` record and whether it points at a project that exists:
+
+```bash
+ssh pico.sh dns-check meow.erock.io
+```
+
+We also have an endpoint to check whether or not custom domains are setup:
 
 ```
 curl -i 'https://pgs.sh/check?domain=meow.erock.io'

@@ -14,6 +14,25 @@ The first time we receive traffic on the custom domain, a certificate will be re
 
 Under-the-hood we use Caddy's [on-demand tls](https://caddyserver.com/on-demand-tls) to automatically create certificates for customer domains.
 
+# Check your records
+
+Our CLI looks up the `TXT` records for [pgs](/pgs#custom-domains), [prose](/prose#custom-domains) and [tuns](/tuns#custom-domains) on a domain and tells you whether each one points at something that exists:
+
+```bash
+ssh pico.sh dns-check meow.erock.io
+```
+
+```
+_pgs.meow.erock.io: "erock-kittens" is valid, serving pgs project "kittens" of erock
+_prose.meow.erock.io: no TXT record
+_tuns.meow.erock.io: no TXT record
+_sish.meow.erock.io: no TXT record
+```
+
+The check asks DNS directly, so it sees a record as soon as your DNS provider serves it. pgs and prose pick up a new record within 30 seconds of that, and a changed record within 2 minutes. tuns checks the record each time a tunnel connects.
+
+`dns-check` only looks at `TXT` records. Use `dig` to check the `CNAME`, `A` or `AAAA` record.
+
 # My DNS does **not** support CNAME flattening
 
 Some DNS providers do not support [CNAME flattening](https://developers.cloudflare.com/dns/cname-flattening/), which means they don't allow you to create a CNAME record for your apex domain, like "example.com".

@@ -121,7 +121,7 @@ ssh -J tuns.sh {user}-foobar
 
 All we require for [custom domains](/custom-domains) is **(2)** DNS records, there is no extra configuration within our system as it is automatic.
 
-We require you to set up `CNAME` and `TXT` records for the domain/subdomain you would like to use for your forwarded connection. The `CNAME` record must point to `tuns.sh`. The TXT record name must be `_sish.customdomain` and contain the SSH key fingerprint used for creating the tunnel. This key must also be linked to your pico+ account.
+We require you to set up `CNAME` and `TXT` records for the domain/subdomain you would like to use for your forwarded connection. The `CNAME` record must point to `tuns.sh`. The TXT record name must be `_tuns.customdomain` and contain either your pico username or the SSH key fingerprint used for creating the tunnel. Records named `_sish.customdomain` work too. With your username, any key linked to your pico+ account can use the domain. With a fingerprint, only that key can, and it must also be linked to your pico+ account. The record must match exactly, with no surrounding whitespace.
 
 You can retrieve your key fingerprint by running:
 
@@ -133,7 +133,13 @@ Example:
 
 ```
 customdomain.example.com.          300     IN      CNAME   tuns.sh.
-_sish.customdomain.example.com     300     IN      TXT     "SHA256:mVPwvezndPv/ARoIadVY98vAC0g+P/5633yTC4d/wXE"
+_tuns.customdomain.example.com     300     IN      TXT     "SHA256:mVPwvezndPv/ARoIadVY98vAC0g+P/5633yTC4d/wXE"
+```
+
+Or with your username:
+
+```
+_tuns.customdomain.example.com     300     IN      TXT     "erock"
 ```
 
 Once set up, you can then create tunnels via your custom domain like this:
@@ -154,7 +160,13 @@ You may want to pre-select the region you connect to. Try pinging `ash.tuns.sh` 
 
 ## Debug custom domains
 
-First check the main record:
+Our CLI checks the `TXT` record against your username and the keys on your account:
+
+```bash
+ssh pico.sh dns-check customdomain.example.com
+```
+
+Then check the main record:
 
 ```bash
 dig customdomain.example.com
@@ -170,7 +182,7 @@ customdomain.example.com.        60      IN      A       141.148.85.124
 Then check the `TXT` record:
 
 ```bash
-dig -t txt +short _sish.customdomain.example.com
+dig -t txt +short _tuns.customdomain.example.com
 
 SHA256:mVPwvezndPv/ARoIadVY98vAC0g+P/5633yTC4d/wXE
 ```
