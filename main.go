@@ -39,6 +39,11 @@ func main() {
 						},
 					},
 					{
+						Text: "Invites",
+						Href: "/invites",
+						Page: pager("invites.md"),
+					},
+					{
 						Text: "File uploads",
 						Href: "/file-uploads",
 						Page: pager("file-uploads.md"),
@@ -95,9 +100,14 @@ func main() {
 						},
 					},
 					{
-						Text: "RSS-to-Email",
+						Text: "Feeds",
 						Href: "/feeds",
 						Page: pager("feeds.md"),
+					},
+					{
+						Text: "Pastes",
+						Href: "/pastes",
+						Page: pager("pastes.md"),
 					},
 					{
 						Text: "IRC Bouncer",
