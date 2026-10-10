@@ -1,13 +1,13 @@
 ---
-title: rss-to-email
+title: feeds
 description: Receive email digests for your RSS feeds using SSH
 keywords: [pico, feeds]
 toc: 1
 ---
 
-> rss-to-email is now a [pico+](/plus) service, read our [ann](https://blog.pico.sh/ann-033-moving-rss-to-email-pico-plus)
+> feeds is now a [pico+](/plus) service, read our [ann](https://blog.pico.sh/ann-033-moving-rss-to-email-pico-plus)
 
-Stay up-to-date with all the RSS feeds you love.
+feeds emails you a digest of new items from the RSS feeds you follow. You set it up by uploading a text file that lists your feeds, your email and the digest schedule.
 
 # Features
 
@@ -104,7 +104,7 @@ If you run this command and still do not understand why your email digest isn't 
 
 # Keep Alive
 
-We require the user to click a link in their email digest every once in awhile in order to keep the feed digest post active. This user requirement plays an important role in keeping our rss-to-email service free and healthy. If we didn't require user interaction then we could keep sending an email digest to users that never read their digests.
+We require the user to click a link in their email digest every once in awhile in order to keep the feed digest post active. This user requirement plays an important role in keeping our feeds service free and healthy. If we didn't require user interaction then we could keep sending an email digest to users that never read their digests.
 
 This keep-alive interval is subject to change. As of writing this (08/2025) we require the user to click the keep-alive link once every **12 months**.
 
