@@ -5,7 +5,7 @@ keywords: [pico, pgs]
 toc: 2
 ---
 
-> pgs.sh is a [pico+](/plus) service with a free trial that [requires an invitation](https://blog.pico.sh/ann-038-pico-invite-system)
+> pgs.sh requires an [invite](/invites) or [pico+](/plus). Invited accounts get 50MB of storage and pico+ members get 5GB.
 
 Deploy static sites with a single command. All you need is an SSH key and `rsync`.
 

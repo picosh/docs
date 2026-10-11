@@ -31,6 +31,10 @@ glossy-{project}.pgs.sh
 glossy-{tunnel}.tuns.sh
 ```
 
+# Invites
+
+A new account can use [pipe](/pipe) right away. [pgs](/pgs), [prose](/prose) and [pastes](/pastes) require an [invite](/invites) from an existing user or a [pico+](/plus) membership. If you don't know anyone who can invite you, email [hello@pico.sh](mailto:hello@pico.sh) or ask in [#pico.sh on IRC](/irc).
+
 # SSH Certificates
 
 Users can authenticate to pico using SSH certificates. SSH certs are great if you want finer-grained access control for specific machines -- like build machines that only need pgs access -- or for teams that are looking to use pico as part of their toolkit.

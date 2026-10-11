@@ -5,7 +5,7 @@ description: user interfaces at pico
 
 # SSH TUI
 
-With this TUI you can perform a few basic operations like: create an account, manage pubkeys, manage API tokens.
+With this TUI you can perform a few basic operations like: create an account, manage pubkeys, manage API tokens, [invite users](/invites).
 
 To use the TUI just SSH into our site:
 

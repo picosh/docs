@@ -45,6 +45,10 @@ chmod 600 ~/.ssh/id_ed25519
 
 If you cannot figure out what is wrong just by looking at that output, then you are more than welcome to join [irc](/irc) and send us a paste of the SSH logs.
 
+# Why does my upload say it requires an invitation?
+
+pgs, prose and pastes require an [invite](/invites) or a [pico+](/plus) membership. Uploads from an account with neither fail with `ERROR: uploading to pgs requires an invitation or pico+`. Read [how to get an invite](/invites#how-to-get-an-invite).
+
 # How do I force the correct pico SSH key?
 
 Sometimes your `ssh-agent` can get in the way of which key it wants to send us. We accept the first key that is provided to us because our signup flow involves accepting any public key presented to us. So you need to make sure you are sending us the right key.
