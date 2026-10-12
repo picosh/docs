@@ -16,13 +16,14 @@ Under-the-hood we use Caddy's [on-demand tls](https://caddyserver.com/on-demand-
 
 # Check your records
 
-Our CLI looks up the `TXT` records for [pgs](/pgs#custom-domains), [prose](/prose#custom-domains) and [tuns](/tuns#custom-domains) on a domain and tells you whether each one points at something that exists:
+Our CLI shows where a domain points, then looks up the `TXT` records for [pgs](/pgs#custom-domains), [prose](/prose#custom-domains) and [tuns](/tuns#custom-domains) and tells you whether each one points at something that exists:
 
 ```bash
 ssh pico.sh dns-check meow.erock.io
 ```
 
 ```
+meow.erock.io: CNAME pgs.sh, resolves to 129.158.37.104, 2603:c020:400a:d000:dc2d:4f96:f5d5:8a00, which is pgs.sh
 _pgs.meow.erock.io: "erock-kittens" is valid, serving pgs project "kittens" of erock
 _prose.meow.erock.io: no TXT record
 _tuns.meow.erock.io: no TXT record
@@ -31,7 +32,7 @@ _sish.meow.erock.io: no TXT record
 
 The check asks DNS directly, so it sees a record as soon as your DNS provider serves it. pgs and prose pick up a new record within 30 seconds of that, and a changed record within 2 minutes. tuns checks the record each time a tunnel connects.
 
-`dns-check` only looks at `TXT` records. Use `dig` to check the `CNAME`, `A` or `AAAA` record.
+The first line shows the `CNAME`, `A` and `AAAA` records and whether they lead to pgs.sh, prose.sh, tuns.sh or nue.tuns.sh. An `A` record on an apex domain counts as long as it uses one of our addresses.
 
 # My DNS does **not** support CNAME flattening
 

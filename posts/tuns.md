@@ -160,7 +160,7 @@ You may want to pre-select the region you connect to. Try pinging `ash.tuns.sh` 
 
 ## Debug custom domains
 
-Our CLI checks the `TXT` record against your username and the keys on your account:
+Our CLI checks where the domain points, then the `TXT` record against your username and the keys on your account:
 
 ```bash
 ssh pico.sh dns-check customdomain.example.com

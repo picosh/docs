@@ -177,7 +177,7 @@ Depending on your DNS, this could take some time to fully switch over.
 
 ## Debug custom domains
 
-Our CLI checks the `TXT` record and whether it points at a project that exists:
+Our CLI checks where the domain points, then the `TXT` record and whether it points at a project that exists:
 
 ```bash
 ssh pico.sh dns-check meow.erock.io
