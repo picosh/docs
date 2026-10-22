@@ -261,19 +261,19 @@ If you don't want to use `tunmgr` then we highly recommend using a tool like [au
 autossh -M 0 -R dev:80:localhost:8000 tuns.sh
 ```
 
-# Bash script
+# Tunnel script
 
-`tunnel` is a bash function that builds the `ssh` command for you. Load it into your shell:
+`tunnel` is a shell function that builds the `ssh` command for you. It works in bash, zsh, ksh, dash and other POSIX shells. Load it into your shell:
 
 ```bash
-source <(ssh tuns.sh script)
+eval "$(ssh tuns.sh script)"
 ```
 
-Or save it and load it from your `.bashrc`:
+Or save it and load it from your shell's rc file, like `.bashrc` or `.zshrc`:
 
 ```bash
 ssh tuns.sh script > ~/.tunnel.sh
-echo 'source ~/.tunnel.sh' >> ~/.bashrc
+echo '. ~/.tunnel.sh' >> ~/.bashrc
 ```
 
 Then open tunnels with it:
