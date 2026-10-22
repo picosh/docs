@@ -206,6 +206,18 @@ dig -t txt +short _tuns.customdomain.example.com
 SHA256:mVPwvezndPv/ARoIadVY98vAC0g+P/5633yTC4d/wXE
 ```
 
+# SNI
+
+tuns can pass TLS connections on port 443 straight through to your server, picking the tunnel by the hostname the client asks for. tuns doesn't terminate TLS for these tunnels, so your server needs a certificate for that hostname. This works best with a [custom domain](#custom-domains):
+
+```bash
+ssh -R secure.example.com:443:localhost:8443 tuns.sh sni-proxy=true
+```
+
+TLS connections to `secure.example.com:443` now reach port 8443 on your machine. Without a custom domain, the name is prefixed with your username like any other tunnel, so `secure` becomes `{user}-secure.tuns.sh`.
+
+`ssh tuns.sh sni 8443 secure.example.com` prints this command.
+
 # tunmgr
 
 A tunnel manager for docker services.
@@ -270,6 +282,7 @@ Then open tunnels with it:
 tunnel http 3000        # ssh -R 80:localhost:3000 tuns.sh
 tunnel https 8443 dev   # ssh -R dev:443:localhost:8443 tuns.sh
 tunnel tcp 5432         # ssh -R 0:localhost:5432 tuns.sh
+tunnel sni 8443 secure  # ssh -R secure:443:localhost:8443 tuns.sh sni-proxy=true
 ```
 
 Without the script, tuns prints the command for you:
@@ -305,6 +318,8 @@ Using `tuns`, you have the ability to tunnel UDP traffic without any external bi
    ```bash
    ip link set tun0 up; ip r a 10.1.0.1 dev tun0
    ```
+
+   `ssh tuns.sh udp IP:PORT [REMOTE_PORT]` prints the commands for steps 2 and 3. Pass your main interface's address as `IP`, for example `ssh tuns.sh udp 192.168.1.5:5553 10000`.
 
 1. Start a udp client to tuns.sh:10000. Here's one with netcat:
 
