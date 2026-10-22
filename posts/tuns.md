@@ -89,6 +89,25 @@ ssh pico.sh
 
 [![tuns tui](/tuns-tui.png)](/tuns-tui.png)
 
+# Service console
+
+Every HTTP tunnel has a service console that shows requests to your tunnel as they happen. The link is printed when you open a tunnel:
+
+```
+$ ssh -R demo:80:localhost:8787 tuns.sh
+Service console can be accessed here: https://{user}-demo.tuns.sh/_sish/console?x-authorization={token}
+```
+
+[![tuns service console requests](/tuns-console-requests.png)](/tuns-console-requests.png)
+
+The console lists each request with its method, path, status, duration and client IP, and loads the 25 most recent requests when you open it. You can filter by text, method or status class, pause the list, and clear it.
+
+Select a request to see its headers and bodies. JSON is formatted, form posts show as a table of fields, and images render inline. Chunked responses and server-sent events are captured as they stream, and gzip, deflate, brotli and zstd bodies are decoded. "Copy as curl" gives you a command to rerun the request, and "Replay" sends it again from your browser.
+
+[![tuns service console websocket](/tuns-console-websocket.png)](/tuns-console-websocket.png)
+
+WebSocket connections show up with a 101 status and stay marked as open until they close. The Messages tab shows the last 200 frames in both directions, and "Copy as websocat" gives you a command to open the same connection from your terminal.
+
 # Alerts
 
 We provide notifications for connect and disconnect events using our pico+ RSS feed.
