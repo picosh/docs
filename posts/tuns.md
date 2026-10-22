@@ -251,69 +251,35 @@ autossh -M 0 -R dev:80:localhost:8000 tuns.sh
 
 # Bash script
 
-Here's a helper script that should make it easier to create tunnels.
+`tunnel` is a bash function that builds the `ssh` command for you. Load it into your shell:
 
 ```bash
-tunnel() {
-    TUNNEL_TYPE=""
-    TUNNEL_ENDPOINT=""
-    TUNNEL_ARGS=""
-
-    case $1 in
-        http|https)
-            TUNNEL_TYPE="-R"
-            TUNNEL_ENDPOINT="$([[ $1 == "http" ]] && echo "80" || echo "443"):"
-
-            if [ -z $2 ]; then
-                echo "Tunnel provided incorrect port. Usage: tunnel $1 <port>"
-                return
-            fi
-
-            if [ ! -z $3 ]; then
-                TUNNEL_ENDPOINT="$3:${TUNNEL_ENDPOINT}"
-            fi
-
-            LOCAL_PORT=$2
-            if [[ $LOCAL_PORT != *":"* ]]; then
-                LOCAL_PORT="localhost:$2"
-            fi
-
-            TUNNEL_ENDPOINT+="$LOCAL_PORT"
-            echo "Starting ${1^^} tunnel to $LOCAL_PORT"
-            ;;
-        tcp)
-            TUNNEL_TYPE="-R"
-            TUNNEL_ENDPOINT="${3:-0}:"
-
-            if [ -z $2 ]; then
-                echo "Tunnel provided incorrect port. Usage: tunnel $1 <port>"
-                return
-            fi
-
-            LOCAL_PORT=$2
-            if [[ $LOCAL_PORT != *":"* ]]; then
-                LOCAL_PORT="localhost:$2"
-            fi
-
-            TUNNEL_ENDPOINT+="$LOCAL_PORT"
-            echo "Starting ${1^^} tunnel to $LOCAL_PORT"
-            ;;
-        *)
-            echo "unknown tunnel"
-            return
-            ;;
-    esac
-
-    ssh $TUNNEL_TYPE $TUNNEL_ENDPOINT tuns.sh $TUNNEL_ARGS
-}
+source <(ssh tuns.sh script)
 ```
 
-Example usage:
+Or save it and load it from your `.bashrc`:
 
 ```bash
-./tunnel.sh https 3000
-./tunnel.sh tcp 1337
+ssh tuns.sh script > ~/.tunnel.sh
+echo 'source ~/.tunnel.sh' >> ~/.bashrc
 ```
+
+Then open tunnels with it:
+
+```bash
+tunnel http 3000        # ssh -R 80:localhost:3000 tuns.sh
+tunnel https 8443 dev   # ssh -R dev:443:localhost:8443 tuns.sh
+tunnel tcp 5432         # ssh -R 0:localhost:5432 tuns.sh
+```
+
+Without the script, tuns prints the command for you:
+
+```bash
+ssh tuns.sh http 3000 dev
+# ssh -R dev:80:localhost:3000 tuns.sh
+```
+
+`ssh tuns.sh help` lists every command.
 
 # UDP Tunneling
 
