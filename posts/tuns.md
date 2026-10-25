@@ -54,7 +54,7 @@ ssh -R dev:80:localhost:8000 tuns.sh
 # → https://{user}-dev.tuns.sh
 
 # Expose a TCP service (e.g., database, game server)
-ssh -R 0:5432:localhost:5432 tuns.sh
+ssh -R 0:localhost:5432 tuns.sh
 # → tuns.sh:{assigned-port}
 ```
 
@@ -100,7 +100,7 @@ Service console can be accessed here: https://{user}-demo.tuns.sh/_sish/console?
 
 [![tuns service console requests](/tuns-console-requests.png)](/tuns-console-requests.png)
 
-The console lists each request with its method, path, status, duration and client IP, and loads the 25 most recent requests when you open it. You can filter by text, method or status class, pause the list, and clear it.
+The console lists each request with its method, path, status, duration and client IP, and loads the 25 most recent requests when you open it. You can filter by text, method or status class, pause the list, and clear it. Separate filter terms with spaces, quote a phrase to match it exactly, and prefix a term with `-` to exclude it.
 
 Select a request to see its headers and bodies. JSON is formatted, form posts show as a table of fields, and images render inline. Chunked responses and server-sent events are captured as they stream, and gzip, deflate, brotli and zstd bodies are decoded. "Copy as curl" gives you a command to rerun the request, and "Replay" sends it again from your browser.
 

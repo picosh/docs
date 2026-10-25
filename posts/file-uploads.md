@@ -39,9 +39,10 @@ These options are supported:
 - `-n` / `--dry-run`
 - `--exclude`, `--include` and the other filter rules
 - `--delete`, `--delete-before`, `--delete-during`, `--delete-delay`, `--delete-after`, `--delete-excluded`
+- `-R` / `--relative` and `--files-from`, when uploading
 - `-W` / `--whole-file`, `--block-size`, `--checksum-choice`
 
-These options are rejected with an error: `-H`, `-A`, `-X`, `-R`, `--append`, `--link-dest`, `--copy-dest`, `--compare-dest`, `--files-from`, `--iconv`, batch mode, `--delete-missing-args`, and `--remove-source-files` when downloading.
+These options are rejected with an error: `-H`, `-A`, `-X`, `--crtimes`, `--append`, `--link-dest`, `--copy-dest`, `--compare-dest`, `--iconv`, batch mode and `--delete-missing-args`. When downloading, `-R`, `--files-from` and `--remove-source-files` are rejected too.
 
 ## scp
 

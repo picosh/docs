@@ -462,7 +462,7 @@ We can automatically save form data if the form is setup correctly.
 ```html
 <form method="POST" action="/pgs/forms/{form_name}">
   <input type="email" name="email" />
-  <button type="submit>Subscribe!</button>
+  <button type="submit">Subscribe!</button>
 </form>
 ```
 
