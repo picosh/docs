@@ -200,9 +200,9 @@ ssh pipe.pico.sh monitor pico-uptime 1h
 Then you would setup a cron to ping your site and on success send a pub to pipe:
 
 ```bash
-*/10 * * * * curl -fsS https://pico.sh && ssh pipe.pico.sh pub -e pico-uptime
+*/10 * * * * curl -fsS https://pico.sh && ssh pipe.pico.sh pub -b=false -e pico-uptime
 # -or-
-0/10 * * * * my_script.sh && ssh pipe.pico.sh pub -e pico-uptime
+0/10 * * * * my_script.sh && ssh pipe.pico.sh pub -b=false -e pico-uptime
 ```
 
 Now you can check the status of the monitors:
