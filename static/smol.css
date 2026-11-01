@@ -318,6 +318,9 @@ li pre {
 table {
   border-collapse: collapse;
   margin: var(--line-height) 0;
+  max-width: 100%;
+  overflow-x: auto;
+  display: block;
 }
 
 th,
