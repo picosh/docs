@@ -51,15 +51,28 @@
 
 .toc ul {
   list-style: none;
-  padding-left: 1ch;
+  padding-left: 0;
   margin: 0;
 }
 
-.toc li {
+.toc > ul > li {
+  margin-bottom: var(--line-height);
+}
+
+.toc > ul > li > a {
+  font-weight: bold;
+}
+
+.toc ul ul {
+  padding-left: 1.5ch;
   margin: var(--grid-height) 0;
 }
 
-.toc li::before {
+.toc ul ul li {
+  margin: calc(var(--grid-height) / 2) 0;
+}
+
+.toc ul ul li::before {
   content: "> ";
   color: var(--grey-light);
 }
@@ -122,6 +135,10 @@
   padding: 0 2rem;
   border-left: 1px dashed var(--grey-light);
   border-right: 1px dashed var(--grey-light);
+}
+
+.post .md {
+  margin-top: var(--line-height);
 }
 
 .post-container {
