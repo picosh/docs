@@ -482,6 +482,16 @@ ssh pgs.sh forms project-x --rm
 
 Whatever form data is sent through the form is automatically saved in our database. If the form inputs change over time, the data will reflect those changes but will include all the previous entries as well.
 
+## auto-form rss feed
+
+Get notified of new form submissions for all of your forms using our RSS feed:
+
+```
+https://pgs.sh/rss/forms/<token>
+```
+
+Where token is an [an api token](/api-token) and can be created in the pico TUI.
+
 # Proxy to another service
 
 Similar to how you can rewrite paths like `/*` to `/index.html` with a `_redirects` file, you can also set up rules to let parts of your site proxy to external services. Let’s say you need to communicate from a single-page app with an API on https://api.example.com that doesn’t support CORS requests. The following rule will let you use `/api/` from your JavaScript client:
