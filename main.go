@@ -188,11 +188,6 @@ func main() {
 				Text: "X",
 				Children: []*pdocs.Sitemap{
 					{
-						Text: "Plain text lists",
-						Href: "/plain-text-lists",
-						Page: pager("plain-text-lists.md"),
-					},
-					{
 						Text: "Styles",
 						Href: "/styles",
 						Page: pager("styles.md"),
