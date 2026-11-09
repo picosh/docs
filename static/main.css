@@ -74,7 +74,6 @@
 
 .toc ul ul li::before {
   content: "> ";
-  color: var(--grey-light);
 }
 
 .toc a {
@@ -226,7 +225,6 @@
 }
 
 .sitemap-heading-list a {
-  color: var(--grey-light);
   text-decoration: none;
 }
 
