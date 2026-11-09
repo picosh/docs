@@ -76,9 +76,9 @@ echo -e "# hello world!\n\nWelcome to my blog!" | ssh prose.sh
 
 Since we are leveraging tools you already have on your computer, there is nothing to install. This provides the convenience of a web app, but from inside your terminal!
 
-# Plain text lists
+# gemtext support
 
-We also support the ability to use our homegrown [plain text lists](/plain-text-lists) format `.lxt` to write blog posts. This format is simple yet covers what is necessary for writing prose. It's great for people who like to think in lists and we think perfectly compliments our blog service.
+The [gemtext format](https://geminiprotocol.net/docs/gemtext-specification.gmi) is used in the Gemini protocol. If you squint it looks like markdown but much more restricted. For example it does not have any inline marking or formatting.
 
 ```txt
 =: title hello world
@@ -89,19 +89,15 @@ Hello world!
 How are we doing today?
 => https://pico.sh this is a hyperlink
 > This is a blockquote
-<= https://bower.sh/profile.jpg this is an image
-It supports
-	Nesting!
-		Wow, great!
 ```
 
 Then upload the file to us:
 
 ```bash
-scp hello-world.lxt prose.sh:/
+scp hello-world.gmi prose.sh:/
 ```
 
-It uses the exact same metadata variables as our markdown posts. This idea here is that we have an alternative format that is much easier to render and we find easier to write. There is no inline markup, the type of each list item can be determined by reading the first 3 characters of a line.
+It uses the exact same metadata variables as our markdown posts. This idea here is that we have an alternative format that is much easier to render and we find easier to write.
 
 # Images
 
