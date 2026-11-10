@@ -36,7 +36,7 @@ logs - stream user logs
 access-logs - fetch access logs from the last 30 days
 chat - IRC chat (must enable pty with `-t` to the SSH command)
 not-found - return all status 404 requests for a host (hostname.com [year|month])
-dns-check - check a domain's CNAME/A and TXT records for pgs, prose and tuns custom domains (hostname.com or *.hostname.com)
+dns-check - check a domain's CNAME/A and TXT records for pgs, prose, tuns and picd custom domains (hostname.com or *.hostname.com)
 ```
 
 For example, if you want to drop directly into our chat app without going through the tui:
