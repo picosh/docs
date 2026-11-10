@@ -8,7 +8,7 @@ ssg:
 .PHONY: ssg
 
 dev: ssg
-	rsync -vr --delete ./public/ pgs.sh:/docs-local
+	rsync -rvz --checksum --delete ./public/ pgs.sh:/docs-local
 .PHONY: dev
 
 lint:

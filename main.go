@@ -1,12 +1,35 @@
 package main
 
 import (
+	"crypto/sha256"
+	"encoding/hex"
 	"log/slog"
-	"math/rand"
-	"strconv"
+	"os"
+	"path/filepath"
 
 	"github.com/picosh/pdocs"
 )
+
+// staticHash hashes the static assets, so pages' cache-busting query only
+// changes with them and unchanged pages rebuild identically.
+func staticHash() (string, error) {
+	files, err := filepath.Glob("./static/*")
+	if err != nil {
+		return "", err
+	}
+
+	h := sha256.New()
+	for _, f := range files {
+		data, err := os.ReadFile(f)
+		if err != nil {
+			return "", err
+		}
+		h.Write([]byte(f))
+		h.Write(data)
+	}
+
+	return hex.EncodeToString(h.Sum(nil))[:8], nil
+}
 
 type LogoData struct {
 	Src string
@@ -233,6 +256,11 @@ func main() {
 		},
 	}
 
+	cacheID, err := staticHash()
+	if err != nil {
+		panic(err)
+	}
+
 	logger := slog.Default()
 	config := &pdocs.DocConfig{
 		Logger:   logger,
@@ -240,10 +268,10 @@ func main() {
 		Out:      "./public",
 		Tmpl:     "./tmpl",
 		PageTmpl: "post.page.tmpl",
-		CacheId:  strconv.Itoa(rand.Intn(10000)),
+		CacheId:  cacheID,
 	}
 
-	err := config.GenSite()
+	err = config.GenSite()
 	if err != nil {
 		panic(err)
 	}
