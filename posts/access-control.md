@@ -26,10 +26,13 @@ Setup is simple if you already understand how SSH certificates work. If you need
 
 All an account admin needs to do is add their CA pubkey to their Public Keys list. Then the admin requests pubkeys from other teammates or machines, generates a cert pubkey, then sends that cert pubkey back to the user or machine, and finally they use that cert pubkey to authenticate with pico.
 
+Add the CA pubkey itself to your Public Keys list. pico refuses a cert pubkey there: a cert authenticates through the CA that signed it.
+
 Cert pubkeys have additional benefits:
 
 - Access to specific services
 - Expiration dates
+- Restricted to specific IP addresses
 - Tagged with a readable identifier for access logs
 
 ## Workflow
@@ -75,12 +78,25 @@ Only an `admin` in `principals` has full access to pico account management and t
 - `prose`
 - `pastes`
 
+## Critical options
+
+pico checks every cert against the CA that signed it, along with its principals and validity window (`-V`).
+
+The only critical option pico supports is `source-address`, which limits the cert to the listed client IP addresses or CIDR ranges:
+
+```bash
+ssh-keygen -s ./ca_user_ed25519 -I "ci@$(date +%F)" -n pgs -O source-address=203.0.113.10/32,2001:db8::/32 ci.pub
+```
+
+pico rejects a cert with any other critical option, such as `force-command` or `verify-required`. Extensions such as `permit-pty` have no effect.
+
 ## Recipes
 
 ```bash
 ssh-keygen -s ./ca_user_ed25519 -I "alice@$(date +%F)" -n tuns,pgs -V +52w alice.pub
 ssh-keygen -s ./ca_user_ed25519 -I "alice@$(date +%F)" -n admin alice.pub
 ssh-keygen -s ./ca_user_ed25519 -I "alice@$(date +%F)" -n pipe alice.pub
+ssh-keygen -s ./ca_user_ed25519 -I "ci@$(date +%F)" -n pgs -O source-address=203.0.113.10/32 ci.pub
 ```
 
 SSH certificates enable finer-grained access control leveraging systems that have existed for years with minimal pico-specific APIs. What's great is pico doesn't need to worry about implementing this functionality, standing on the shoulders of giants. Our only responsibility is to make sure these cert pubkeys can only access the things listed in their principals.

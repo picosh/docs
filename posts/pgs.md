@@ -399,7 +399,14 @@ ssh pgs.sh acl project-x --type public
 
 # access site with a password
 ssh pgs.sh acl project-x --type http-pass --acl {pass}
+
+# access site with basic auth, one --acl per user
+ssh pgs.sh acl project-x --type http-basic --acl alice:{pass} --acl bob:{pass}
 ```
+
+Passwords can be up to 72 bytes. A visitor who enters the password stays logged in for 24 hours, and changing the password logs everyone out.
+
+`http-basic` uses the browser's own login prompt, and tools like `curl -u alice:{pass}` work too. Setting the access list again replaces every user, and logs everyone out.
 
 To connect to a private project:
 

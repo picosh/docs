@@ -189,6 +189,8 @@ All topics are converted into the following format: `{user}/{topic}`. Depending 
 - `pub -a {other} {topic}` -> `other` pico user must access with `sub {owner}/{topic}`
 - `pub -p {topic}` -> anyone can access with `sub -p {topic}`
 
+An access list (`-a`) can only be set on a topic when everyone already on it is in the list. Otherwise the command fails with `has clients not on the access list`.
+
 # Pipe monitors
 
 Pipe monitors are health checks on your topics. Think of it as a status monitor for any topic. The simplest version of this can be used to check uptime of any site:

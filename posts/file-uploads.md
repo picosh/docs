@@ -148,7 +148,7 @@ sftp> rm hello-world.md
 
 You could also mount our services via `sshfs` and then delete it that way.
 
-You can also use `rsync --delete` which will remove files not in the `src` directory.
+You can also use `rsync --delete` which will remove files not in the `src` directory. pgs refuses `--delete` when the destination is the root (`pgs.sh:/`), since that would delete every project.
 
 # How do I download files?
 

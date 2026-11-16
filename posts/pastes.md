@@ -49,6 +49,17 @@ Unlisted in this context means it does not show up on your user landing page whe
 echo "foobar" | ssh pastes.sh FILENAME hidden=true
 ```
 
+# Can I render markdown or html?
+
+Pastes ending in `.md`, `.markdown`, `.html` or `.htm` get a "rendered" link next to "raw". The rendered page is at `https://{user}.pastes.sh/render/{filename}`:
+
+```bash
+cat report.html | ssh pastes.sh report.html
+# https://{user}.pastes.sh/render/report.html
+```
+
+Rendered pages never run scripts and can't submit forms. Styles, images (including `data:` URLs) and media still load. Markdown is rendered the same way as [prose](/prose).
+
 # Want a pastebin for any file type?
 
 [pgs.sh:/bin](/pgs#auto-deleting-site-after-time-period) is a generic pastebin for any filetype that auto-deletes after 14 days.
