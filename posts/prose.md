@@ -36,15 +36,9 @@ Check out the [discovery page](https://prose.sh) on prose.
 
 Create posts using your favorite editor in plain text files.
 
-`~/blog/hello-world.md`
+`~/blog/2022-06-28-hello-world.md`
 
 ```md
----
-date: 2022-06-28
----
-
-# hello world!
-
 This is my first blog post.
 
 Check out some resources:
@@ -55,6 +49,8 @@ Check out some resources:
 
 Cya!
 ```
+
+> NOTE: if the filename is formatted in `YYYY-MM-DD-title.md` format prose will automatically set the publish date and title of your blog post based on the filename.
 
 When your post is ready to be published, copy the file to our server with a familiar command:
 
@@ -81,9 +77,7 @@ Since we are leveraging tools you already have on your computer, there is nothin
 The [gemtext format](https://geminiprotocol.net/docs/gemtext-specification.gmi) is used in the Gemini protocol. If you squint it looks like markdown but much more restricted. For example it does not have any inline marking or formatting.
 
 ```txt
-=: title hello world
 =: description welcome to my blog
-=: date 2026-01-16
 
 Hello world!
 How are we doing today?
@@ -94,7 +88,7 @@ How are we doing today?
 Then upload the file to us:
 
 ```bash
-scp hello-world.gmi prose.sh:/
+scp 2022-06-28-hello-world.gmi prose.sh:/
 ```
 
 It uses the exact same metadata variables as our markdown posts. This idea here is that we have an alternative format that is much easier to render and we find easier to write.
