@@ -77,6 +77,43 @@ Only an `admin` in `principals` has full access to pico account management and t
 - `feeds`
 - `prose`
 - `pastes`
+- `picd`
+
+A service's name in a cert's principals gives it everything the account can do there. To limit a cert to part of a service, use scopes instead.
+
+## Scopes
+
+A scope is a principal of the form `<service>:<role>:<resource>`:
+
+```bash
+ssh-keygen -s ./ca_user_ed25519 -I "ci@$(date +%F)" -n pgs:deploy:blog,pipe:pub:deploys -V +90d ci.pub
+```
+
+That cert can deploy the `blog` site on pgs, publish to the `deploys` topic on pipe, and do nothing else. Scopes add up. Leave out the resource to cover everything the account reaches with that role, or end it in `*` to match a prefix.
+
+| Scope | Allows |
+|---|---|
+| `pgs:read:<project>` | Download files, list them, and open a web tunnel to the site |
+| `pgs:deploy:<project>` | Also upload and delete files, and `link`, `unlink`, `rm`, `retain`, `prune` and `cache` |
+| `prose:read:<file>`, `pastes:read:<file>`, `feeds:read:<file>` | Download and list |
+| `prose:write:<file>`, `pastes:write:<file>`, `feeds:write:<file>` | Also upload, rename and delete, and `rm` and `run` on feeds |
+| `pipe:pub:<topic>` | Publish |
+| `pipe:sub:<topic>` | Subscribe. Piping needs both roles |
+| `tuns:http:<name>` | An HTTP or HTTPS tunnel on that subdomain or custom domain |
+| `tuns:sni:<name>` | An SNI tunnel on that name |
+| `tuns:tcp:<port>`, `tuns:udp:<port>` | A TCP or UDP tunnel on that port |
+| `tuns:alias:<name>` | A TCP alias, as `<name>` or `<name>:<port>` |
+| `tuns:connect:<alias>` | Connect to an alias, with the same names |
+| `picd:read:<project>`, `picd:deploy:<project>` | See [certificates for one project](https://cd.pico.sh/docs/sharing#certificates-for-one-project), which match names exactly |
+
+- Listing the service itself or `admin` next to a scope gives full access.
+- An unknown role or a mistyped scope refuses the cert.
+- Certs with scopes can't start admin sessions. They can't change a pgs `acl` or pipe monitors either.
+- pgs `link` needs `deploy` on the project and `read` on the one it links to. Deploys that upload a new project and link it need a prefix, such as `pgs:deploy:blog*`.
+- pgs `stats` and `forms`, and the pipe `rss` feed, need a scope without a resource.
+- pipe topics are named as you type them. Public topics are `public/<topic>`.
+- tuns checks the name or port it assigns, so a random one needs a scope that covers it.
+- Don't add the signed key itself to your Public Keys list. ssh falls back to the plain key when a cert is refused, and that key has no limits.
 
 ## Critical options
 
