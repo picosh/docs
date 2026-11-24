@@ -29,11 +29,12 @@ ssh pipe.pico.sh help
 The TUI also comes with a CLI for some commands where it makes sense to print to stdout.
 
 ```
-Commands: [help, user, logs, access-logs, chat, not-found, dns-check]
+Commands: [help, user, logs, access-logs, certs, chat, not-found, dns-check]
 help - this message
 user - display user information (returns name, id, account created, pico+ expiration)
 logs - stream user logs
 access-logs - fetch access logs from the last 30 days
+certs - list, revoke and unrevoke ssh certificates ([revoked | revoke | unrevoke])
 chat - IRC chat (must enable pty with `-t` to the SSH command)
 not-found - return all status 404 requests for a host (hostname.com [year|month])
 dns-check - check a domain's CNAME/A and TXT records for pgs, prose, tuns and picd custom domains (hostname.com or *.hostname.com)

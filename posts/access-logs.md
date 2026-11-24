@@ -3,7 +3,9 @@ title: Access Logs
 description: See which pubkeys accessed which services
 ---
 
-We provide a TUI page dedicated to viewing access logs into your pico account. This page will show you everytime a pubkey successfully authenticated with a service in your pico account.
+We provide a TUI page dedicated to viewing access logs into your pico account. This page shows every time a service recognized one of your pubkeys or certs.
+
+An entry is written when a key is offered, before the client proves it holds the private key. Anyone with a copy of your public key or cert can cause an entry, so one doesn't mean the login succeeded. Keys that aren't on your account, expired certs and [revoked certs](/access-control#revoking-certificates) aren't logged.
 
 ```bash
 ssh pico.sh

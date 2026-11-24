@@ -34,6 +34,7 @@ Cert pubkeys have additional benefits:
 - Expiration dates
 - Restricted to specific IP addresses
 - Tagged with a readable identifier for access logs
+- Revocable before they expire
 
 ## Workflow
 
@@ -66,11 +67,12 @@ ssh -o IdentitiesOnly=yes -o CertificateFile=./alice-cert.pub -i ./alice pico.sh
 rsync -e "ssh -i ./alice" -rv ./public/ pgs:/site/
 ```
 
-Only an `admin` in `principals` has full access to pico account management and the pico.sh TUI.
+Only an `admin` or `pico` in `principals` has access to pico account management and the pico.sh TUI.
 
 ## Principals
 
 - `admin`
+- `pico`
 - `pgs`
 - `tuns`
 - `pipe`
@@ -126,6 +128,39 @@ ssh-keygen -s ./ca_user_ed25519 -I "ci@$(date +%F)" -n pgs -O source-address=203
 ```
 
 pico rejects a cert with any other critical option, such as `force-command` or `verify-required`. Extensions such as `permit-pty` have no effect.
+
+## Revoking certificates
+
+A cert works until it expires unless you revoke it. `certs` lists the unexpired certs your CAs signed, from your [access logs](/access-logs):
+
+```bash
+$ ssh pico.sh certs
+ID       KEY                                                 SCOPES           EXPIRES     LAST SEEN
+ci-blog  SHA256:SzpKxNUbTYd7Bpgh5h1PJlRhwhp2wPbuW+6x1dsBpZU  pgs:deploy:blog  2027-02-22  2 hours ago
+
+# every cert for this key, including ones you sign later
+$ ssh pico.sh certs revoke SHA256:SzpKxNUbTYd7Bpgh5h1PJlRhwhp2wPbuW+6x1dsBpZU --write
+# every cert with this ID (-I)
+$ ssh pico.sh certs revoke id:ci-blog --note retired --write
+
+$ ssh pico.sh certs revoked
+$ ssh pico.sh certs unrevoke id:ci-blog --write
+```
+
+Without `--write`, `revoke` and `unrevoke` only show what they would do. Revoke a key if it leaked, and an ID if you don't have the key. A revoked cert is refused by every service, whether or not it has scopes.
+
+- Only certs signed by a CA in your Public Keys list are affected.
+- You can revoke a cert that isn't listed. `ssh-keygen -lf ci.pub` or `ssh-keygen -lf ci-cert.pub` prints the key's fingerprint.
+- `certs` reads your 1000 most recently offered certs, and says so when it leaves some out. You can still revoke those.
+- `LAST SEEN` is when the cert was last offered. Anyone with a copy of the cert can offer it, even without its private key.
+- An ID is matched exactly, so `id:alice@2026-11-24` doesn't cover a cert you sign for alice on another day. To retire a person or machine, revoke their keys.
+- Quote IDs that have spaces: `ssh pico.sh certs revoke 'id:"alice laptop"' --write`.
+- Revoking stops new logins. Connections that are already open, such as tunnels, stay open.
+- If the key is also in your Public Keys list, it still logs in without a cert. `certs revoke` warns you about that, and you need to remove the key from the list.
+- On pico.sh and pipe, the plain key of a revoked cert is treated like any key without an account.
+- Revoking a cert with `admin` or `pico` doesn't undo what its holder already did. Check your public keys and tokens, and `certs revoked`.
+- Certs with scopes can't revoke or unrevoke. Certs with `admin` or `pico` can.
+- If a CA key leaks, remove it from your Public Keys list. Its holder can sign new keys under new IDs.
 
 ## Recipes
 
