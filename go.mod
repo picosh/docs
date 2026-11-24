@@ -1,6 +1,6 @@
 module github.com/picosh/docs
 
-go 1.23
+go 1.27
 
 // replace github.com/picosh/pdocs => /home/erock/dev/pico/pdocs
 
