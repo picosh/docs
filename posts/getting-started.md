@@ -31,21 +31,25 @@ glossy-{project}.pgs.sh
 glossy-{tunnel}.tuns.sh
 ```
 
-# Invites
+# Invite system
 
 A new account can use [pipe](/pipe) right away. [pgs](/pgs), [prose](/prose) and [pastes](/pastes) require an [invite](/invites) from an existing user or a [pico+](/plus) membership. If you don't know anyone who can invite you, email [hello@pico.sh](mailto:hello@pico.sh) or ask in [#pico.sh on IRC](/irc).
 
-# SSH Certificates
+> Read why we needed an invite system: [ann 038 - pico invite system](https://blog.pico.sh/ann-038-pico-invite-system)
 
-Users can authenticate to pico using SSH certificates. SSH certs are great if you want finer-grained access control for specific machines -- like build machines that only need pgs access -- or for teams that are looking to use pico as part of their toolkit.
+# SSH certificates
+
+Users can authenticate to pico using SSH certificates. SSH certs are great if you want fine-grained access control for specific machines -- like build machines that only need pgs access -- or for teams that are looking to use pico as part of their toolkit.
 
 Read our doc on [Access Control](/access-control) to learn more.
 
-# Next Steps
+# Next steps
 
 After you have created your pico account, we **highly** recommend creating an [API token](/api-token) and keeping it someplace safe. This is how users can recover their account if they lose their SSH private key.
 
-What service did you want to use first?
+> Lose access to your account? [Read our FAQ on recovery](https://pico.sh/faq#i-lost-my-ssh-private-key-how-can-i-recover-my-account)
+
+What service did you want to learn about first?
 
 <div class="group-h justify-center items-center my-4">
   <div class="box flex justify-center items-center" style="height: 100px; width: 150px;">

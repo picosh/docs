@@ -7,7 +7,7 @@ toc: 1
 
 > tuns.sh is a [pico+](/plus) service
 
-**Share your localhost with the world in one ssh command.**
+Share your localhost with the world in one ssh command.
 
 ```bash
 ssh -R dev:80:localhost:3000 tuns.sh
@@ -16,35 +16,25 @@ ssh -R dev:80:localhost:3000 tuns.sh
 
 # Why tuns?
 
-**Skip the deployment dance.** You're building something locally and need to share it -- with a client, a teammate, or a webhook. Normally you'd have to deploy to staging, configure DNS, set up TLS, and wait. With tuns, you run one command and you're live.
-
-**Zero infrastructure overhead.** Your laptop is the server; tuns handles the rest.
-
-**Works everywhere SSH works.** If you can SSH, you can use tuns.
-
-## What can you do with it?
-
-- **Demo a prototype** to a client without deploying to production
-- **Test webhooks** from services like Stripe, GitHub, or Twilio against your local server
-- **Collaborate in real-time** by sharing your dev environment with a teammate
-- **Host services from home** without exposing your network or configuring port forwarding
-- **Debug mobile apps** against your local API
-- **Run integration tests** against external services that need to call back to you
+- Host services from home without exposing your network or configuring port forwarding
+- Demo a prototype to a client without deploying to production
+- Collaborate in real-time by sharing your dev environment with a teammate
+- Test webhooks from services like Stripe, GitHub, or Twilio against your local server
 
 ![Eric connects to sish on the Internet with the command 'ssh -R eric:80:localhost:3000 tuns.sh'. Tony visits 'https://eric.tuns.sh', which connects to sish, and forwards Eric's local server to Tony.](https://docs.ssi.sh/hiw-sish-public.png)
 
 # Features
 
-| Feature                              | What it means for you                                   |
-| ------------------------------------ | ------------------------------------------------------- |
-| **Zero install**                     | Uses `ssh`, which you already have                      |
-| **Automatic HTTPS**                  | TLS certificates handled for you                        |
-| **Custom domains**                   | Use your own domain with simple DNS setup               |
-| **HTTP, WSS, and TCP tunnels**       | Not just web traffic                                    |
-| **[Multi-region support](/regions)** | Global edge locations for low latency                   |
-| **[Per-site analytics](/analytics)** | See who's accessing your tunnels                        |
-| **Connection alerts**                | Get notified via RSS when tunnels connect or disconnect |
-| **Private sharing**                  | Share your local server with specific users only        |
+| Feature                          | What it means for you                                   |
+| -------------------------------- | ------------------------------------------------------- |
+| Zero install                     | Uses `ssh`, which you already have                      |
+| Automatic HTTPS                  | TLS certificates handled for you                        |
+| Custom domains                   | Use your own domain with simple DNS setup               |
+| HTTP, WSS, and TCP tunnels       | Not just web traffic                                    |
+| [Multi-region support](/regions) | Global edge locations for low latency                   |
+| [Per-site analytics](/analytics) | See who's accessing your tunnels                        |
+| Connection alerts                | Get notified via RSS when tunnels connect or disconnect |
+| Private sharing                  | Share your local server with specific users only        |
 
 # Quick start
 
@@ -60,16 +50,16 @@ ssh -R 0:localhost:5432 tuns.sh
 
 # How is tuns different?
 
-|                       | tuns                                              | ngrok                    | Cloudflare Tunnels            |
-| --------------------- | ------------------------------------------------- | ------------------------ | ----------------------------- |
-| **Install**           | None (uses ssh)                                   | Requires CLI             | Requires CLI                  |
-| **Auth**              | SSH keys you already have                         | Separate account + token | Cloudflare account + token    |
-| **Pricing**           | Included with pico+                               | Free tier + paid plans   | Free (with Cloudflare DNS)    |
-| **TCP tunnels**       | Yes                                               | Paid only                | Yes                           |
-| **Custom domains**    | Yes (via DNS)                                     | Paid only                | Cloudflare DNS only           |
-| **Connection alerts** | Yes (via RSS)                                     | Paid only                | No                            |
-| **Site analytics**    | Yes                                               | Paid only                | Requires Cloudflare dashboard |
-| **Open source**       | Yes ([sish](https://github.com/antoniomika/sish)) | No                       | No                            |
+|                   | tuns                                              | ngrok                    | Cloudflare Tunnels            |
+| ----------------- | ------------------------------------------------- | ------------------------ | ----------------------------- |
+| Install           | None (uses ssh)                                   | Requires CLI             | Requires CLI                  |
+| Auth              | SSH keys you already have                         | Separate account + token | Cloudflare account + token    |
+| Pricing           | Included with pico+                               | Free tier + paid plans   | Free (with Cloudflare DNS)    |
+| TCP tunnels       | Yes                                               | Paid only                | Yes                           |
+| Custom domains    | Yes (via DNS)                                     | Paid only                | Cloudflare DNS only           |
+| Connection alerts | Yes (via RSS)                                     | Paid only                | No                            |
+| Site analytics    | Yes                                               | Paid only                | Requires Cloudflare dashboard |
+| Open source       | Yes ([sish](https://github.com/antoniomika/sish)) | No                       | No                            |
 
 <iframe width="100%" height="315" src="https://www.youtube.com/embed/wZHiuR9RqGw?si=AJLBbg5jc8ET0lvB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 

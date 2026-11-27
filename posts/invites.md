@@ -1,23 +1,23 @@
 ---
-title: Invites
+title: Invite system
 description: How to get and send invites for pgs, prose and pastes
-keywords: [pico, invite, invitation, pgs, prose, pastes, access]
+keywords: [pico, invite, invitation, access]
 toc: 2
 ---
 
 Uploading to [pgs](/pgs), [prose](/prose) or [pastes](/pastes) requires an invite or a [pico+](/plus) membership. Anyone can still [create a pico account](/getting-started) without one, and [pipe](/pipe) works for every account.
 
-Signup happens over SSH with no email, which makes automated signups cheap. Invites let us keep that flow while cutting down on bot and spam accounts. Read the [announcement](https://blog.pico.sh/ann-038-pico-invite-system) for the full background.
+Signup happens over ssh with no email, which makes automated signups cheap. Invites let us keep that flow while cutting down on bot and spam accounts. Read the [announcement](https://blog.pico.sh/ann-038-pico-invite-system) for the full background.
 
 # What an invite grants
 
-An invite gives your account access to pgs, prose and pastes for five years. pico+ members already have all three and don't need an invite.
+An invite gives your account access the following services for five years. pico+ members already have all three and don't need an invite.
 
-| Service | Storage | Max file size |
-| ------- | ------- | ------------- |
-| pgs     | 50MB    | 10MB          |
-| prose   | 25MB    | 10MB (images) |
-| pastes  | no quota | 3MB          |
+| Service | Storage  | Max file size |
+| ------- | -------- | ------------- |
+| pgs     | 50MB     | 10MB          |
+| prose   | 25MB     | 10MB (images) |
+| pastes  | no quota | 3MB           |
 
 Prose access includes [blog analytics](/analytics). For more storage, larger files, and the other pico+ services, see [pico+](/plus).
 
@@ -25,9 +25,9 @@ Prose access includes [blog analytics](/analytics). For more storage, larger fil
 
 1. [Create a pico account](/getting-started) if you don't have one. Invites are sent to an existing pico username.
 1. Ask someone who can invite you. If you don't know anyone, email [hello@pico.sh](mailto:hello@pico.sh) or ask in [#pico.sh on IRC](/irc).
-1. Once you've been invited, your next upload to pgs, prose or pastes will work. No action is needed on your end.
+1. Once you've been invited, your next upload to pgs, prose, or pastes will work. No action is needed on your end.
 
-You can confirm you've been invited from the [pico TUI](/ui#ssh-tui): the user info panel shows "invited by" with the inviter's username, and the services list shows pages, prose and pastes as "active".
+You can confirm you've been invited from the [pico TUI](/ui#ssh-tui): the user info panel shows "invited by" with the inviter's username, and the services list shows active services.
 
 # How to invite someone
 

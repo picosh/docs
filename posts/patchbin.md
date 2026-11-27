@@ -34,17 +34,19 @@ Here is all you need to get started:
 Format your commits from git and pipe them straight to our SSH server:
 
 ```bash
-git format-patch main --stdout | ssh pr.pico.sh pr create myproject
+git format-patch main --stdout | ssh pr.pico.sh {repo}:{topic}
 ```
 
-You'll receive a PR ID (e.g. `#42`) and a link to view the diff at `https://pr.pico.sh/prs/42`.
+A topic doesn't have to be a branch but you can think of it as one.
+
+You'll receive a link to view the patch request at `https://pr.pico.sh/{repo}/{topic}`.
 
 ## Pull down and review
 
 Anyone can pull down the latest patchset and apply it locally with `git am`:
 
 ```bash
-ssh pr.pico.sh print 42 | git am -3
+ssh pr.pico.sh print {repo}:{topic} | git am -3
 ```
 
 ## Send follow-up changes
@@ -52,7 +54,7 @@ ssh pr.pico.sh print 42 | git am -3
 Need to address feedback or suggest tweaks? Just commit on top and add a new patchset revision:
 
 ```bash
-git format-patch main --stdout | ssh pr.pico.sh pr add 42
+git format-patch main --stdout | ssh pr.pico.sh {repo}:{topic}
 ```
 
 # Learn more

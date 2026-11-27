@@ -7,7 +7,7 @@ toc: 2
 
 > pgs.sh requires an [invite](/invites) or [pico+](/plus). Invited accounts get 50MB of storage and pico+ members get 5GB.
 
-Deploy static sites with a single command. All you need is an SSH key and `rsync`.
+Deploy static sites with a single command. All you need is an ssh key and `rsync`.
 
 ```bash
 rsync --delete -rv ./public/ pgs.sh:/mysite
@@ -18,34 +18,30 @@ That's the entire workflow. Your SSH key is your identity and every deploy is in
 
 # Why pgs?
 
-**You already have the tools installed.** If you can use `rsync`, `scp`, or `sftp`, you can deploy to pgs.
-
-**Zero ceremony.** Projects are created on first upload. TLS certificates are automatic. There's no dashboard to click through, no deploy button to wait for.
-
-**Production-ready by default.** Instant rollbacks via symbolic links. A global CDN with [multi-region support](/regions). All managed through SSH commands you already understand.
+You already have the tools installed: if you can use `rsync`, `scp`, or `sftp`, you can deploy to pgs. Projects are created on first upload. TLS certificates are automatic. A global CDN with [multi-region support](/regions). All managed through ssh so you never have to leave the terminal.
 
 # Features
 
-| Feature                                                             | What it means for you                                         |
-| ------------------------------------------------------------------- | ------------------------------------------------------------- |
-| **SSH-native workflow**                                             | Deploy with `rsync`, `scp`, or `sftp`: tools you already use  |
-| **Instant project creation**                                        | Projects are upserted on file upload, no create step required |
-| **Automatic TLS**                                                   | HTTPS for every project, zero configuration                   |
-| **Promotion & rollback**                                            | Atomic deploys with `ssh pgs.sh link`: rollback in seconds    |
-| **Custom domains**                                                  | Point any domain to any project with simple DNS               |
-| **Redirects & rewrites**                                            | `_redirects` file for SPAs, proxies, and URL rewriting        |
-| **Custom headers**                                                  | `_headers` file for security headers, caching, CORS           |
-| **Auto-forms**                                                      | Add forms to your site and we auto collect the data           |
-| **Password Authenticated Sites**                                    | Restrict access to your site with a password                  |
-| **Auto-delete files**                                               | Upload to a special project that deletes files after 14 days  |
-| **[Site analytics](/analytics)**                                    | Privacy-respecting traffic insights                           |
-| **[Global CDN](/regions)**                                          | Multi-region edge caching for fast loads worldwide            |
-| **[No bandwidth limits](/faq#are-there-any-bandwidth-limitations)** | Predictable pricing without surprise overages                 |
-| **[Image manipulation API](/images)**                               | Resize, crop, and transform images on-the-fly                 |
+| Feature                                                         | What it means for you                                         |
+| --------------------------------------------------------------- | ------------------------------------------------------------- |
+| ssh-native workflow                                             | Deploy with `rsync`, `scp`, or `sftp`                         |
+| Instant project creation                                        | Projects are upserted on file upload, no create step required |
+| Automatic TLS                                                   | HTTPS for every project, zero configuration                   |
+| Promotion & rollback                                            | Atomic deploys with `ssh pgs.sh link`                         |
+| Custom domains                                                  | Point any domain to any project with two DNS records          |
+| Redirects & rewrites                                            | `_redirects` file for SPAs, proxies, and URL rewriting        |
+| Custom headers                                                  | `_headers` file for security headers, caching, CORS           |
+| Auto-forms                                                      | Add forms to your site and we auto-collect the data           |
+| Password Authenticated Sites                                    | Restrict access to your site with a password                  |
+| Auto-delete files                                               | Upload to a special project that deletes files after 14 days  |
+| [Site analytics](/analytics)                                    | Privacy-respecting traffic insights                           |
+| [Global CDN](/regions)                                          | Multi-region edge caching for fast loads worldwide            |
+| [No bandwidth limits](/faq#are-there-any-bandwidth-limitations) | Predictable pricing without surprise overages                 |
+| [Image manipulation API](/images)                               | Resize, crop, and transform images on-the-fly                 |
 
-# Promotion and rollback
+# Instant deploy and rollbacks
 
-Additionally you can setup a pipeline for promotion and rollbacks, which will instantly update your project.
+You can setup a pipeline for atomic deploys which enable instant deploy and rollbacks.
 
 ```bash
 ssh pgs.sh link project-prod project-d0131d4
@@ -55,13 +51,9 @@ A common way to perform promotions within `pgs` is to setup CI/CD so every `git`
 
 This command will create a symbolic link from `project-prod` to `project-d0131d4`. Want to rollback a release? Just change the link for `project-prod` to a previous project.
 
-[Here's an example using our github action](https://github.com/neurosnap/neovimcraft/blob/main/.github/workflows/deploy.yml).
-
 # CI/CD
 
 Since we are just using `rsync` for static site deployments, all you need is a way to run that command in a CI environment.
-
-We also built a [github action](https://github.com/picosh/pgs-action) that handles all the logic for uploading to `pgs` which includes support for promotions and static site retention.
 
 # CLI Reference
 

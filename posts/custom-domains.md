@@ -59,7 +59,7 @@ _pgs.subdomain.yourcustomdomain.com.    300     IN      TXT     user-project
 
 # Guides
 
-Here are some guides for known working DNS servers. If you have another DNS server working with pico, please submit a [PR](https://pr.pico.sh/r/erock/pico)!
+Here are some guides for known working DNS servers
 
 These guides assume we are setting up `pgs.sh` sites with a root domain.
 

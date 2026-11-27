@@ -7,7 +7,7 @@ toc: 2
 
 > pipe.pico.sh is a free service
 
-Stream data between machines using the SSH key you already have -- no API keys, no SDKs, no setup.
+Stream data between machines using the ssh. All you have to do is send data through a pipe topic:
 
 ```bash
 echo "hello world" | ssh pipe.pico.sh pub mykey
@@ -16,20 +16,20 @@ ssh pipe.pico.sh sub mykey
 hello world
 ```
 
-That's it: private and authenticated by default.
+Pipe topics are private and authenticated by default.
 
-[pipe](https://pipe.pico.sh) brings the simplicity of \*nix pipes to the network. If you know how to use `|`, you already know how to use pipe.
+[pipe](https://pipe.pico.sh) brings the simplicity of \*nix pipes to the network.
 
 # Features
 
-| Feature                        | What it means for you                               |
-| ------------------------------ | --------------------------------------------------- |
-| **Works on any machine**       | No installation, no dependencies, just SSH          |
-| **SSH key is your credential** | No API keys to manage or rotate                     |
-| **Private by default**         | Topics are only accessible to you unless you opt-in |
-| **Public topics**              | Share with specific users or make fully public      |
-| **Primitives that compose**    | Read (`sub`), write (`pub`), or both (`pipe`)       |
-| **Multicast built-in**         | Many publishers, many subscribers, just works       |
+| Feature                    | What it means for you                               |
+| -------------------------- | --------------------------------------------------- |
+| Works on any machine       | All you need is ssh                                 |
+| SSH key is your credential | No API keys to manage or rotate                     |
+| Private by default         | Topics are only accessible to you unless you opt-in |
+| Public topics              | Share with specific users or make fully public      |
+| Primitives that compose    | Read (`sub`), write (`pub`), or both (`pipe`)       |
+| Multicast built-in         | Many publishers, many subscribers, just works       |
 
 # Examples
 

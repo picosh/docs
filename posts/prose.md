@@ -7,28 +7,26 @@ toc: 2
 
 > prose.sh is free and requires an [invite](/invites) or [pico+](/plus).
 
-Write your blog with markdown, `rsync` it to us, and your posts are live.
+Publish your blog with markdown and `rsync`.
 
 # Why prose over self-hosting?
-
-You know how to set up a blog. You've done it before -- Hugo, Jekyll, Astro, whatever's trending this month. But then comes the maintenance: updating dependencies, fixing broken builds, renewing certs, etc.
 
 `prose.sh` gives you the same control you'd have self-hosting, minus the operational burden. Your content stays in plain markdown files on your machine. You own your workflow, we just serve it.
 
 # Features
 
-| Feature                                                        | What it means for you                                       |
-| -------------------------------------------------------------- | ----------------------------------------------------------- |
-| **Zero dependencies**                                          | If you have `ssh`, you're ready                             |
-| **Your editor, your workflow**                                 | vim, emacs, vscode -- write where you're comfortable        |
-| **Instant publishing**                                         | `rsync ~/blog/* prose.sh:/` and you're live                 |
-| **SSH key auth**                                               | No passwords, bring the ssh keypair you own                 |
-| **Custom domains**                                             | Point your DNS and go                                       |
-| **[Site analytics](/analytics)**                               | Privacy-respecting traffic insights, no third-party scripts |
-| **RSS out of the box**                                         | Readers can subscribe immediately                           |
-| **[GitHub flavored markdown](https://github.github.com/gfm/)** | Write what you already know                                 |
-| **[Plain text lists](/plain-text-lists)**                      | Write using a simple yet expressive list format             |
-| **Blog customization**                                         | Tweak layout, styles, and metadata with simple files        |
+| Feature                                                    | What it means for you                                       |
+| ---------------------------------------------------------- | ----------------------------------------------------------- |
+| Zero dependencies                                          | If you have `ssh`, you're ready                             |
+| Your editor, your workflow                                 | vim, emacs, vscode                                          |
+| Instant publishing                                         | `rsync ~/blog/* prose.sh:/`                                 |
+| SSH key auth                                               | No email required                                           |
+| Custom domains                                             | Add two dns records to your domain                          |
+| [Site analytics](/analytics)                               | Privacy-respecting traffic insights, no third-party scripts |
+| RSS out of the box                                         | Readers can subscribe immediately                           |
+| [GitHub flavored markdown](https://github.github.com/gfm/) | Write what you already know                                 |
+| [Plain text lists](/plain-text-lists)                      | Write using a simple yet expressive list format             |
+| Blog customization                                         | Tweak layout, styles, and metadata with simple files        |
 
 Check out the [discovery page](https://prose.sh) on prose.
 

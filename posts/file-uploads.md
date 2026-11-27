@@ -5,7 +5,7 @@ keywords: [pico, file, upload, download]
 toc: true
 ---
 
-Many of our services ask users to send us files in order to manage their content. In order to enable that functionality, we could have asked users to install our own CLI tool and make sure they update on some regular cadence. But that places the burden on our users to install our tool. Instead, we thought it better to bring our services to developers with tools they already understand and have installed. So we enable users to use `rsync`, `scp`, `sftp`, `sshfs`, or even unix pipes to upload their content to us.
+Many of our services ask users to upload files in order to manage their content. In order to enable that functionality, we could have asked users to install our own CLI tool and make sure they update on some regular cadence. But that places the burden on our users to keep our tool updated. Instead, we thought it better to bring our services to developers with tools they already understand and have installed. So we enable users to use `rsync`, `scp`, `sftp`, `sshfs`, or even unix pipes to upload their content to us.
 
 # How do I upload files?
 
@@ -21,6 +21,13 @@ For pgs:
 
 ```bash
 rsync -rv public/ {service}:/site/
+```
+
+For pico:
+
+```bash
+rsync pico.sh:/authorized_keys .
+rsync ./authorized_keys pico.sh:/
 ```
 
 ### What rsync options are supported?
@@ -46,7 +53,7 @@ These options are rejected with an error: `-H`, `-A`, `-X`, `--crtimes`, `--appe
 
 ## scp
 
-There are two versions of `scp`, depending on your openssh version. Anything `< v9.0` used "legacy scp." Anything `>= v9.0` uses `sftp`.
+There are two versions of `scp`, depending on your openssh version. Anything `< v9.0` uses "legacy scp." Anything `>= v9.0` uses `sftp`.
 
 ```bash
 scp hello-world.md {service}:/
